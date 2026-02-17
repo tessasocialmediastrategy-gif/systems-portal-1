@@ -100,6 +100,78 @@ const SystemsBookPage = () => {
       description: 'Scorecards and reporting framework',
       subsections: []
     },
+    {
+      id: 'SB-07',
+      title: 'Finance and Modeling System',
+      icon: Calculator,
+      description: 'Close calendar, forecasting standards, buyer-ready package',
+      subsections: [
+        { id: 'SB-07-01', title: 'Domain Standards' },
+        { id: 'SB-07-02', title: 'Canonical Artifact Set' },
+        { id: 'SB-07-03', title: 'Core Workflows' },
+        { id: 'SB-07-04', title: 'RACI & Metrics' },
+      ]
+    },
+    {
+      id: 'SB-08',
+      title: 'Legal and Compliance System',
+      icon: Scale,
+      description: 'Signature authority, compliance calendar, privacy/security basics',
+      subsections: [
+        { id: 'SB-08-01', title: 'Domain Standards' },
+        { id: 'SB-08-02', title: 'Canonical Artifact Set' },
+        { id: 'SB-08-03', title: 'Core Workflows' },
+        { id: 'SB-08-04', title: 'RACI & Metrics' },
+      ]
+    },
+    {
+      id: 'SB-09',
+      title: 'Operations and Delivery System',
+      icon: Cog,
+      description: 'Delivery phases, QA, escalation, runbooks',
+      subsections: [
+        { id: 'SB-09-01', title: 'Domain Standards' },
+        { id: 'SB-09-02', title: 'Canonical Artifact Set' },
+        { id: 'SB-09-03', title: 'Core Workflows' },
+        { id: 'SB-09-04', title: 'RACI & Metrics' },
+      ]
+    },
+    {
+      id: 'SB-10',
+      title: 'Product and IP System',
+      icon: Lightbulb,
+      description: 'Roadmap governance, IP register rules, release standards',
+      subsections: [
+        { id: 'SB-10-01', title: 'Domain Standards' },
+        { id: 'SB-10-02', title: 'Canonical Artifact Set' },
+        { id: 'SB-10-03', title: 'Core Workflows' },
+        { id: 'SB-10-04', title: 'RACI & Metrics' },
+      ]
+    },
+    {
+      id: 'SB-11',
+      title: 'Technology Stack and Integrations',
+      icon: Server,
+      description: 'Stack layers, access/security, change management',
+      subsections: [
+        { id: 'SB-11-01', title: 'Domain Standards' },
+        { id: 'SB-11-02', title: 'Canonical Artifact Set' },
+        { id: 'SB-11-03', title: 'Core Workflows' },
+        { id: 'SB-11-04', title: 'RACI & Metrics' },
+      ]
+    },
+    {
+      id: 'SB-12',
+      title: 'HR and Org Design System',
+      icon: UserCog,
+      description: 'Role scorecards, hiring/onboarding, performance cadence',
+      subsections: [
+        { id: 'SB-12-01', title: 'Domain Standards' },
+        { id: 'SB-12-02', title: 'Canonical Artifact Set' },
+        { id: 'SB-12-03', title: 'Core Workflows' },
+        { id: 'SB-12-04', title: 'RACI & Metrics' },
+      ]
+    },
   ];
 
   const sectionContent = {
