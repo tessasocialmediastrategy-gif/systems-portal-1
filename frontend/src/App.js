@@ -23,6 +23,7 @@ import TeaserPage from "./pages/TeaserPage";
 import NDARequestPage from "./pages/NDARequestPage";
 import CIMDownloadPage from "./pages/CIMDownloadPage";
 import AppendixPage from "./pages/AppendixPage";
+import SkeletonPage from "./pages/SkeletonPage";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole }) => {
