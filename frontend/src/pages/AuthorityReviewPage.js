@@ -2,23 +2,45 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Send, Building2, User, Mail, Phone, MessageSquare } from 'lucide-react';
 
+const API_URL = process.env.REACT_APP_BACKEND_URL;
+
 const AuthorityReviewPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     phone: '',
-    companySize: '',
+    company_size: '',
     interest: '',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // In production, this would submit to the backend
-    console.log('Authority Review Request:', formData);
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const response = await fetch(`${API_URL}/api/authority-review`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await response.json();
+        setError(data.detail || 'Failed to submit request');
+      }
+    } catch (err) {
+      setError('Network error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e) => {
