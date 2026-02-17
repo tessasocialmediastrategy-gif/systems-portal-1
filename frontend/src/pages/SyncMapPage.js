@@ -457,6 +457,176 @@ source_of_truth: notion`}</pre>
             </div>
           </div>
         )}
+
+        {/* Source of Truth Tab */}
+        {activeTab === 'source-truth' && (
+          <div className="space-y-8 animate-fade-in">
+            <div className="bg-white border border-gray-200 rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-[#111827] mb-6" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                Source-of-Truth Rules
+              </h2>
+              <p className="text-[#6B7280] mb-6">
+                Each content type has exactly one canonical source. Changes flow in one direction to prevent drift.
+              </p>
+              
+              <div className="space-y-4 mb-8">
+                {[
+                  { source: 'Systems Book (Word)', arrow: '→', targets: 'Notion → Website', desc: 'Long-form governance, playbooks, procedures', color: 'bg-green-500' },
+                  { source: 'Notion', arrow: '→', targets: 'Website', desc: 'Operating databases, trackers, dynamic lists', color: 'bg-purple-500' },
+                  { source: 'CIM Registry', arrow: '→', targets: 'Data Room → Notion', desc: 'Version-locked investor materials', color: 'bg-[#C5A059]' },
+                  { source: 'Website', arrow: '↔', targets: 'Notion (selected)', desc: 'Public pages, marketing content (2-way sync)', color: 'bg-blue-500' },
+                ].map((rule, i) => (
+                  <div key={i} className="flex items-center gap-4 p-4 bg-gray-50 border border-gray-200 rounded">
+                    <span className={`w-3 h-3 ${rule.color} rounded-full flex-shrink-0`} />
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="font-semibold text-[#111827]">{rule.source}</span>
+                        <span className="text-[#9CA3AF]">{rule.arrow}</span>
+                        <span className="text-[#6B7280]">{rule.targets}</span>
+                      </div>
+                      <p className="text-sm text-[#6B7280]">{rule.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-red-50 border border-red-200 rounded p-4">
+                <p className="text-sm text-red-800">
+                  <AlertTriangle className="w-4 h-4 inline mr-2" />
+                  <strong>Never edit downstream.</strong> If Website is downstream, don't edit there—update the source and re-sync.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Publishing Cadence Tab */}
+        {activeTab === 'cadence' && (
+          <div className="space-y-8 animate-fade-in">
+            <div className="bg-white border border-gray-200 rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-[#111827] mb-6" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                Publishing Cadence
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {[
+                  { 
+                    freq: 'Weekly', 
+                    title: 'Hygiene Check',
+                    tasks: ['Review Notion Sync Tracker for drift', 'Update Last Synced dates', 'Fix any broken links'],
+                    color: 'bg-blue-500'
+                  },
+                  { 
+                    freq: 'Monthly', 
+                    title: 'External Refresh',
+                    tasks: ['Review public website pages', 'Update marketing content', 'Check CIM versions'],
+                    color: 'bg-purple-500'
+                  },
+                  { 
+                    freq: 'Quarterly', 
+                    title: 'Freeze & Audit',
+                    tasks: ['Lock all external artifacts', 'Full registry audit', 'Archive old versions'],
+                    color: 'bg-[#C5A059]'
+                  },
+                ].map((item, i) => (
+                  <div key={i} className="bg-gray-50 border border-gray-200 rounded p-6">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className={`w-3 h-3 ${item.color} rounded-full`} />
+                      <span className="text-xs font-semibold text-[#6B7280] uppercase">{item.freq}</span>
+                    </div>
+                    <h3 className="font-semibold text-[#111827] mb-3">{item.title}</h3>
+                    <ul className="space-y-2">
+                      {item.tasks.map((task, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-[#6B7280]">
+                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          {task}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-[#0B1C3E] text-white rounded p-6">
+                <h3 className="font-semibold mb-4">Version Lock Rule</h3>
+                <p className="text-gray-300 text-sm">
+                  Any artifact distributed externally (CIM, Teaser, Buyer Deck) is <strong>immutable</strong> once sent. 
+                  New version required for any changes. Log change in registry with reason.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Notion Tracker Tab */}
+        {activeTab === 'notion' && (
+          <div className="space-y-8 animate-fade-in">
+            <div className="bg-white border border-gray-200 rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-[#111827] mb-6" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                OPS — Sync Tracker (Notion Database)
+              </h2>
+              <p className="text-[#6B7280] mb-6">
+                Create this database in Notion to track sync status across all systems.
+              </p>
+
+              <h3 className="text-lg font-semibold text-[#111827] mb-4">Required Properties</h3>
+              <div className="overflow-x-auto mb-8">
+                <table className="w-full">
+                  <thead className="bg-gray-50 border-b border-gray-200">
+                    <tr>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase px-4 py-3">Property</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase px-4 py-3">Type</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase px-4 py-3">Purpose</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100">
+                    {[
+                      { prop: 'CID', type: 'Text (required)', purpose: 'Canonical ID (SB-##, WP-##)' },
+                      { prop: 'Title', type: 'Title', purpose: 'Page/section name' },
+                      { prop: 'Status', type: 'Select', purpose: 'Draft | Review | Locked | Retired' },
+                      { prop: 'Source of Truth', type: 'Select', purpose: 'Book | Notion | Website | CIM' },
+                      { prop: 'Owner', type: 'Person', purpose: 'Responsible for updates' },
+                      { prop: 'Last Synced', type: 'Date', purpose: 'When last verified in sync' },
+                      { prop: 'Version', type: 'Text', purpose: 'v2026-02-17r3' },
+                      { prop: 'Website URL', type: 'URL', purpose: 'Link to live page' },
+                      { prop: 'OneDrive Link', type: 'URL', purpose: 'Link to source file' },
+                      { prop: 'Next Review', type: 'Date', purpose: 'Scheduled review date' },
+                    ].map((row, i) => (
+                      <tr key={i} className="hover:bg-gray-50">
+                        <td className="px-4 py-3">
+                          <code className="text-sm bg-gray-100 px-2 py-1 rounded">{row.prop}</code>
+                        </td>
+                        <td className="px-4 py-3 text-sm text-[#6B7280]">{row.type}</td>
+                        <td className="px-4 py-3 text-sm text-[#374151]">{row.purpose}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 className="text-lg font-semibold text-[#111827] mb-4">Quick Setup</h3>
+              <div className="space-y-3">
+                {[
+                  'Create new database in Notion: "OPS — Sync Tracker"',
+                  'Add all properties from table above',
+                  'Import CSV (from Data Room) to populate initial rows',
+                  'Set Status = Draft for new items',
+                  'Assign Owner to each row',
+                  'Set Source of Truth based on content type',
+                  'Add links to OneDrive + website',
+                  'Set Next Review date',
+                ].map((step, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <span className="flex-shrink-0 w-6 h-6 bg-[#0B1C3E] text-white rounded text-sm flex items-center justify-center font-medium">
+                      {i + 1}
+                    </span>
+                    <span className="text-sm text-[#374151]">{step}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Footer */}
@@ -464,7 +634,7 @@ source_of_truth: notion`}</pre>
         <div className="container-custom">
           <div className="flex items-center justify-between">
             <span className="text-sm text-[#6B7280]">
-              © {new Date().getFullYear()} TessaAuthority. Sync Map v2026-02-17r1
+              © {new Date().getFullYear()} TessaAuthority. Sync Map v2026-02-17r3
             </span>
             <div className="flex items-center gap-4">
               <Link to="/systems-book" className="text-sm text-[#6B7280] hover:text-[#111827]">Systems Book</Link>
