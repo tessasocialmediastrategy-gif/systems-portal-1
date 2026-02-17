@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 import { 
   BookOpen, FolderTree, BarChart3, Briefcase, Settings, Globe,
   ChevronRight, ChevronDown, FileText, CheckCircle, ArrowRight,
-  Shield, Clock, Users, Database, Lock, ExternalLink
+  Shield, Clock, Users, Database, Lock, ExternalLink, Map,
+  Layout, FileCode, Navigation, Search, GitBranch, AlertTriangle,
+  Layers, Target, Mail, TrendingUp, DollarSign, Scale, Cpu,
+  Building, RefreshCw
 } from 'lucide-react';
 
 const SystemsBookPage = () => {
@@ -21,263 +24,185 @@ const SystemsBookPage = () => {
   const sections = [
     {
       id: 'SB-00',
-      title: 'Master Control',
+      title: 'Master Control & Registry',
       icon: Database,
-      description: 'Canonical truth rules, folder architecture, naming standards, and registries',
+      description: 'Single source of truth, version control, naming standards',
       subsections: [
-        { id: 'SB-00.1', title: 'Canonical Truth Rules' },
-        { id: 'SB-00.2', title: 'Folder Architecture' },
-        { id: 'SB-00.3', title: 'File Naming Standard' },
-        { id: 'SB-00.4', title: 'Registries' },
-        { id: 'SB-00.5', title: 'Change Control Workflow' },
+        { id: 'SB-00-01', title: 'Purpose & Non-Negotiables' },
+        { id: 'SB-00-02', title: 'File Naming Standard' },
+        { id: 'SB-00-03', title: 'Registry Fields' },
       ]
     },
     {
       id: 'SB-01',
-      title: 'CEO Control Layer',
-      icon: BarChart3,
-      description: 'Executive dashboard, financial models, and investor pipeline management',
+      title: 'Authority OS Overview',
+      icon: Layers,
+      description: 'Operating system architecture and layer model',
       subsections: [
-        { id: 'SB-01.1', title: 'Executive Dashboard' },
-        { id: 'SB-01.2', title: 'Financial Models' },
-        { id: 'SB-01.3', title: 'Investor / Buyer Pipeline' },
+        { id: 'SB-01-01', title: 'Authority OS Definition' },
+        { id: 'SB-01-02', title: 'Layer Model' },
       ]
     },
     {
       id: 'SB-02',
-      title: 'Deal Room',
-      icon: Briefcase,
-      description: 'M&A and capital raise workflow, external file sets, and gating process',
+      title: 'Data Room & Access Control',
+      icon: FolderTree,
+      description: 'File system taxonomy, permissions, and security',
       subsections: [
-        { id: 'SB-02.1', title: 'Canonical External File Set' },
-        { id: 'SB-02.2', title: 'Gating Workflow' },
-        { id: 'SB-02.3', title: 'Deal Room Folder Layout' },
-        { id: 'SB-02.4', title: 'Release Checklist' },
+        { id: 'SB-02-01', title: 'Folder Taxonomy' },
+        { id: 'SB-02-02', title: 'Access Control Standard' },
       ]
     },
     {
       id: 'SB-03',
-      title: 'Authority OS',
-      icon: Settings,
-      description: 'Internal operating system, cadence, governance, and automation',
+      title: 'CIM Program',
+      icon: Briefcase,
+      description: 'Teaser → NDA → CIM → Buyer Deck → Appendix Pack',
       subsections: [
-        { id: 'SB-03.1', title: 'Operating Rhythm (Cadence)' },
-        { id: 'SB-03.2', title: 'Governance' },
-        { id: 'SB-03.3', title: 'Automation Principles' },
+        { id: 'SB-03-01', title: 'Canonical Deliverable Chain' },
+        { id: 'SB-03-02', title: 'Lock Rules' },
+        { id: 'SB-03-03', title: 'Master vs. External Formats' },
       ]
     },
     {
       id: 'SB-04',
-      title: 'Website & Content Ops',
+      title: 'Investor Readiness + Website Spec',
       icon: Globe,
-      description: 'Source of truth mapping, content types, and publishing workflow',
+      description: 'Complete website architecture and digital layer specification',
       subsections: [
-        { id: 'SB-04.1', title: 'Source of Truth Mapping' },
-        { id: 'SB-04.2', title: 'Content Types' },
-        { id: 'SB-04.3', title: 'Publishing Workflow' },
-        { id: 'SB-04.4', title: 'Website Page Coding Standard' },
+        { id: 'SB-04-01', title: 'Investor Readiness: Core Proof Pack' },
+        { id: 'SB-04-02-01', title: 'Information Architecture & Sitemap' },
+        { id: 'SB-04-02-02', title: 'Page Templates & Components' },
+        { id: 'SB-04-02-03', title: 'Content Types & CMS Fields' },
+        { id: 'SB-04-02-04', title: 'Navigation & UX Standards' },
+        { id: 'SB-04-02-05', title: 'SEO, Analytics & Tracking' },
+        { id: 'SB-04-02-06', title: 'Publishing Workflow & Governance' },
+        { id: 'SB-04-02-07', title: 'Version Tagging & Locking' },
+        { id: 'SB-04-02-08', title: 'QA, Accessibility & Security' },
+        { id: 'SB-04-03', title: 'Website ↔ CIM Mapping' },
       ]
+    },
+    {
+      id: 'SB-05',
+      title: 'Buyer Pipeline',
+      icon: Target,
+      description: 'Pipeline stages and communications library',
+      subsections: [
+        { id: 'SB-05-01', title: 'Pipeline Stages' },
+        { id: 'SB-05-02', title: 'Standard Comms Library' },
+      ]
+    },
+    {
+      id: 'SB-06',
+      title: 'KPI / Metrics',
+      icon: TrendingUp,
+      description: 'Scorecards and reporting framework',
+      subsections: []
     },
   ];
 
   const sectionContent = {
     'SB-00': {
-      title: 'Master Control',
+      title: 'Master Control & Registry System',
       content: (
         <div className="space-y-8">
-          <div id="SB-00.1" className="scroll-mt-24">
+          <div id="SB-00-01" className="scroll-mt-24">
             <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-00.1 Canonical Truth Rules
+              SB-00-01 Purpose & Non-Negotiables
             </h3>
-            <ol className="space-y-3">
+            <div className="space-y-3">
               {[
-                { rule: 'One Master per asset', desc: '(CIM, Buyer Deck, Teaser, etc.). All other files are format outputs.' },
-                { rule: 'Version-locked releases only', desc: 'go external (no "working drafts").' },
-                { rule: 'Registry-driven', desc: 'every external file must have a matching registry entry (ID, version, status, hash/size, owner, distribution rules).' },
-                { rule: 'Naming is non-negotiable', desc: '(see SB-00.3). If a file is renamed manually, it is "uncontrolled."' },
+                { rule: 'Single Source of Truth', desc: 'One master registry governs all deliverables.' },
+                { rule: 'Version-Locked Artifacts', desc: 'Every outward-facing file is immutable once distributed.' },
+                { rule: 'Auditability', desc: 'Every send is logged (who/what/when/version).' },
+                { rule: 'Two External Formats Only', desc: 'Institutional (modern) + classic/print (Garamond/Times).' },
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 bg-[#0B1C3E] text-white rounded text-sm flex items-center justify-center font-medium">
-                    {i + 1}
-                  </span>
+                <div key={i} className="flex items-start gap-3 p-4 bg-white border border-gray-200 rounded">
+                  <CheckCircle className="w-5 h-5 text-[#C5A059] flex-shrink-0 mt-0.5" />
                   <span className="text-[#374151]">
-                    <strong className="text-[#111827]">{item.rule}</strong> {item.desc}
+                    <strong className="text-[#111827]">{item.rule}:</strong> {item.desc}
                   </span>
-                </li>
+                </div>
               ))}
-            </ol>
-          </div>
-
-          <div id="SB-00.2" className="scroll-mt-24">
-            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-00.2 Folder Architecture (Top Level)
-            </h3>
-            <div className="bg-[#0B1C3E] text-white rounded p-6 font-mono text-sm">
-              <div className="space-y-1">
-                {[
-                  '00 MASTER CONTROL/',
-                  '01 CEO CONTROL LAYER/',
-                  '02 AUTHORITY OS/',
-                  '03 DEAL ROOM/',
-                  '04 APPENDIX PACK/',
-                  '05 LEGAL & COMPLIANCE/',
-                  '06 WEBSITE & CONTENT OPS/',
-                  '99 ARCHIVE/',
-                ].map((folder, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <FolderTree className="w-4 h-4 text-[#C5A059]" />
-                    <span>{folder}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
 
-          <div id="SB-00.3" className="scroll-mt-24">
+          <div id="SB-00-02" className="scroll-mt-24">
             <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-00.3 File Naming Standard (Canonical)
+              SB-00-02 Canonical File Naming Standard
             </h3>
             <div className="bg-gray-50 border border-gray-200 rounded p-4 mb-4">
               <p className="text-sm text-[#6B7280] mb-2">Pattern:</p>
-              <code className="text-[#0B1C3E] font-mono bg-white px-2 py-1 rounded border">
-                OnPoint_&lt;AssetName&gt;_&lt;Audience&gt;_vYYYY-MM-DDrN.&lt;ext&gt;
+              <code className="text-[#0B1C3E] font-mono bg-white px-3 py-2 rounded border block">
+                &lt;Org&gt;_&lt;Artifact&gt;_&lt;Audience&gt;_&lt;Format&gt;_&lt;Version&gt;.&lt;ext&gt;
               </code>
             </div>
-            <div className="space-y-2">
-              <p className="text-sm text-[#6B7280]">Examples:</p>
-              {[
-                'OnPoint_CIM_External_v2026-02-17r2.docx',
-                'OnPoint_Buyer_Deck_External_v2026-02-17r2.pptx',
-                'OnPoint_Teaser_External_v2026-02-17r2.pdf',
-                'OnPoint_Appendix_Pack_External_v2026-02-17r2.zip',
-              ].map((file, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm">
-                  <FileText className="w-4 h-4 text-[#6B7280]" />
-                  <code className="font-mono text-[#374151]">{file}</code>
-                </div>
-              ))}
+            <div className="bg-[#0B1C3E] text-white rounded p-4 font-mono text-sm">
+              <p className="text-[#C5A059] mb-2">Example:</p>
+              <code>OnPoint_CIM_External_Modern_v2026-02-17r2.pdf</code>
             </div>
           </div>
 
-          <div id="SB-00.4" className="scroll-mt-24">
+          <div id="SB-00-03" className="scroll-mt-24">
             <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-00.4 Registries (Must Exist)
+              SB-00-03 Registry Fields
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-              {[
-                { name: 'Version Registry', desc: 'Single source of truth for "what\'s live"' },
-                { name: 'CIM Registry', desc: 'CIM-specific release tracking' },
-                { name: 'Distribution Log', desc: 'Who received what, when, and under which NDA' },
-              ].map((reg, i) => (
-                <div key={i} className="bg-white border border-gray-200 rounded p-4">
-                  <Database className="w-5 h-5 text-[#C5A059] mb-2" />
-                  <h4 className="font-semibold text-[#111827] mb-1">{reg.name}</h4>
-                  <p className="text-sm text-[#6B7280]">{reg.desc}</p>
+            <p className="text-[#6B7280] mb-4">Minimum fields for every artifact:</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+              {['Artifact_Code', 'System_Code', 'Title', 'Audience', 'Format', 'File_Type', 'Version', 'Status', 'Owner', 'Last_Updated', 'Hash', 'Notes'].map((field, i) => (
+                <div key={i} className="text-xs bg-white border border-gray-200 px-3 py-2 rounded font-mono">
+                  {field}
                 </div>
               ))}
             </div>
-            <div className="bg-gray-50 border border-gray-200 rounded p-4">
-              <p className="text-sm font-medium text-[#111827] mb-2">Required columns (minimum):</p>
-              <div className="flex flex-wrap gap-2">
-                {['Asset ID', 'Asset Name', 'Version', 'Status', 'Release Date', 'Owner', 'Format Outputs', 'Notes'].map((col, i) => (
-                  <span key={i} className="text-xs bg-white border border-gray-200 px-2 py-1 rounded">
-                    {col}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div id="SB-00.5" className="scroll-mt-24">
-            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-00.5 Change Control Workflow
-            </h3>
-            <div className="flex flex-wrap items-center gap-2">
-              {['Draft', 'Review', 'Release', 'Distribute', 'Archive'].map((step, i, arr) => (
-                <React.Fragment key={i}>
-                  <span className={`px-4 py-2 rounded font-medium text-sm ${
-                    step === 'Release' ? 'bg-[#C5A059] text-white' : 'bg-gray-100 text-[#374151]'
-                  }`}>
-                    {step}
-                  </span>
-                  {i < arr.length - 1 && <ArrowRight className="w-4 h-4 text-[#9CA3AF]" />}
-                </React.Fragment>
-              ))}
-            </div>
-            <p className="text-sm text-[#6B7280] mt-4">
-              <strong>Only the Release step</strong> generates the external outputs (PDF, PPTX, web export, etc.).
-            </p>
           </div>
         </div>
       )
     },
     'SB-01': {
-      title: 'CEO Control Layer',
+      title: 'Authority OS Overview & Architecture',
       content: (
         <div className="space-y-8">
-          <div id="SB-01.1" className="scroll-mt-24">
+          <div id="SB-01-01" className="scroll-mt-24">
             <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-01.1 Executive Dashboard
+              SB-01-01 Authority OS Definition
             </h3>
-            <p className="text-[#6B7280] mb-4">Live CEO-level visibility across the business.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+            <p className="text-[#6B7280] mb-4">
+              <strong className="text-[#111827]">Authority OS</strong> is the documented, repeatable system that:
+            </p>
+            <div className="space-y-3">
               {[
-                { title: 'Sales Pipeline', metrics: 'Pipeline + conversion rates' },
-                { title: 'Financial Health', metrics: 'Revenue, gross margin, cash' },
-                { title: 'Operations', metrics: 'Cycle time, quality, rework' },
-                { title: 'Customer Experience', metrics: 'NPS/CSAT, referrals' },
-                { title: 'People', metrics: 'Capacity, utilization, hiring' },
-              ].map((kpi, i) => (
-                <div key={i} className="bg-white border border-gray-200 rounded p-4">
-                  <BarChart3 className="w-5 h-5 text-[#0B1C3E] mb-2" />
-                  <h4 className="font-semibold text-[#111827]">{kpi.title}</h4>
-                  <p className="text-sm text-[#6B7280]">{kpi.metrics}</p>
-                </div>
-              ))}
-            </div>
-            <div className="bg-[#0B1C3E]/5 border border-[#0B1C3E]/10 rounded p-4">
-              <p className="text-sm font-medium text-[#111827] mb-2">Outputs:</p>
-              <ul className="text-sm text-[#6B7280] space-y-1">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#C5A059]" />
-                  Weekly CEO snapshot (1 page)
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#C5A059]" />
-                  Monthly board / investor summary (5–10 pages)
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div id="SB-01.2" className="scroll-mt-24">
-            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-01.2 Financial Models
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-              {['3-Year Financial Model', 'Revenue Forecast', 'Valuation Model', 'Sensitivity Analysis'].map((model, i) => (
-                <div key={i} className="bg-white border border-gray-200 rounded p-3 text-center">
-                  <FileText className="w-5 h-5 text-[#C5A059] mx-auto mb-2" />
-                  <p className="text-sm font-medium text-[#111827]">{model}</p>
-                </div>
-              ))}
-            </div>
-            <div className="bg-yellow-50 border border-yellow-200 rounded p-4">
-              <p className="text-sm text-yellow-800">
-                <strong>Control rules:</strong> Only one "Master Model" workbook is editable. PDF exports are read-only outputs tied to a release.
-              </p>
-            </div>
-          </div>
-
-          <div id="SB-01.3" className="scroll-mt-24">
-            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-01.3 Investor / Buyer Pipeline
-            </h3>
-            <div className="space-y-2">
-              {['Buyer Outreach CRM', 'Investor Pipeline Tracker', 'NDA Tracker', 'Investor Communications templates'].map((item, i) => (
+                'Produces trusted materials (CIM & support pack)',
+                'Governs distribution (NDA gated)',
+                'Maintains a clean version trail for buyers, bankers, and internal leadership'
+              ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded">
-                  <Users className="w-5 h-5 text-[#0B1C3E]" />
+                  <span className="w-6 h-6 bg-[#0B1C3E] text-white rounded text-sm flex items-center justify-center font-medium">
+                    {i + 1}
+                  </span>
                   <span className="text-[#374151]">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div id="SB-01-02" className="scroll-mt-24">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-01-02 Layer Model
+            </h3>
+            <div className="space-y-3">
+              {[
+                { layer: 'CEO Control Layer', desc: 'KPIs, dashboards, weekly operator cadence', icon: BarChart3 },
+                { layer: 'CIM Program Layer', desc: 'Teaser → NDA → CIM → Buyer Deck → Appendix', icon: Briefcase },
+                { layer: 'Data Room Layer', desc: 'Access, permissions, indexing, audit log', icon: FolderTree },
+                { layer: 'Delivery Layer', desc: 'Pipeline from lead → NDA → distribution → follow-up', icon: Target },
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-4 p-4 bg-white border border-gray-200 rounded">
+                  <item.icon className="w-5 h-5 text-[#C5A059] flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-semibold text-[#111827]">{item.layer}</h4>
+                    <p className="text-sm text-[#6B7280]">{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -286,109 +211,51 @@ const SystemsBookPage = () => {
       )
     },
     'SB-02': {
-      title: 'Deal Room',
+      title: 'Data Room, File System & Access Control',
       content: (
         <div className="space-y-8">
-          <div id="SB-02.1" className="scroll-mt-24">
+          <div id="SB-02-01" className="scroll-mt-24">
             <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-02.1 Canonical External File Set (Release Package)
+              SB-02-01 Folder Taxonomy (Canonical)
             </h3>
-            <p className="text-[#6B7280] mb-4">This is the <strong>only</strong> external package:</p>
-            <div className="space-y-3">
+            <div className="bg-[#0B1C3E] text-white rounded p-6 font-mono text-sm">
               {[
-                { num: 1, name: 'Teaser', desc: 'Blind / sanitized, no sensitive details' },
-                { num: 2, name: 'NDA Email + NDA', desc: 'Gating step' },
-                { num: 3, name: 'CIM', desc: 'Full narrative' },
-                { num: 4, name: 'Buyer Deck', desc: 'Presentation' },
-                { num: 5, name: 'Appendix Pack', desc: 'Supporting docs + exhibits' },
-              ].map((item) => (
-                <div key={item.num} className="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded hover:border-[#C5A059]/50 transition-colors">
-                  <span className="flex-shrink-0 w-8 h-8 bg-[#0B1C3E] text-white rounded font-bold flex items-center justify-center">
-                    {item.num}
-                  </span>
-                  <div>
-                    <h4 className="font-semibold text-[#111827]">{item.name}</h4>
-                    <p className="text-sm text-[#6B7280]">{item.desc}</p>
-                  </div>
+                '00 MASTER CONTROL',
+                '01 CEO CONTROL LAYER',
+                '02 INVESTOR READINESS (CIM PROGRAM)',
+                '03 DATA ROOM (APPENDIX PACK)',
+                '04 BUYER PIPELINE',
+                '05 FINANCIALS',
+                '06 LEGAL & COMPLIANCE',
+                '07 OPERATIONS',
+                '08 TECH & PRODUCT',
+                '09 HR & ORG',
+                '99 ARCHIVE',
+              ].map((folder, i) => (
+                <div key={i} className="flex items-center gap-2 py-1">
+                  <FolderTree className="w-4 h-4 text-[#C5A059]" />
+                  <span>{folder}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div id="SB-02.2" className="scroll-mt-24">
+          <div id="SB-02-02" className="scroll-mt-24">
             <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-02.2 Gating Workflow (Required)
+              SB-02-02 Access Control Standard
             </h3>
-            <div className="relative">
-              <div className="flex flex-wrap items-center gap-2">
-                {[
-                  'Teaser',
-                  'Interested party request',
-                  'NDA email',
-                  'NDA signed',
-                  'CIM access',
-                  'Buyer Deck call',
-                  'Appendix Pack access'
-                ].map((step, i, arr) => (
-                  <React.Fragment key={i}>
-                    <span className={`px-3 py-2 rounded text-sm font-medium ${
-                      i === 0 ? 'bg-green-100 text-green-800' :
-                      i === 3 ? 'bg-[#C5A059] text-white' :
-                      i === arr.length - 1 ? 'bg-[#0B1C3E] text-white' :
-                      'bg-gray-100 text-[#374151]'
-                    }`}>
-                      {step}
-                    </span>
-                    {i < arr.length - 1 && <ArrowRight className="w-4 h-4 text-[#9CA3AF]" />}
-                  </React.Fragment>
-                ))}
-              </div>
+            <div className="bg-yellow-50 border border-yellow-200 rounded p-4 mb-4">
+              <p className="text-sm text-yellow-800">
+                <Lock className="w-4 h-4 inline mr-2" />
+                External buyer access is <strong>time-bound</strong> and <strong>scope-bound</strong>. NDA required for any non-teaser content.
+              </p>
             </div>
-          </div>
-
-          <div id="SB-02.3" className="scroll-mt-24">
-            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-02.3 Deal Room Folder Layout
-            </h3>
-            <div className="bg-[#0B1C3E] text-white rounded p-6 font-mono text-sm">
-              <div className="space-y-1">
-                <div className="flex items-center gap-2 text-[#C5A059]">
-                  <FolderTree className="w-4 h-4" />
-                  <span>03 DEAL ROOM/</span>
-                </div>
-                {[
-                  '01 Teaser/',
-                  '02 NDA/',
-                  '03 CIM/',
-                  '04 Buyer Deck/',
-                  '05 Disclosures & Q&A/',
-                  '06 Distribution Logs/',
-                ].map((folder, i) => (
-                  <div key={i} className="flex items-center gap-2 pl-6">
-                    <FolderTree className="w-4 h-4 text-gray-400" />
-                    <span className="text-gray-300">{folder}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div id="SB-02.4" className="scroll-mt-24">
-            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-02.4 Release Checklist (Before External Send)
-            </h3>
             <div className="space-y-2">
-              {[
-                'Version Registry updated',
-                'CIM Registry updated',
-                'Distribution Log entry created (or placeholder created)',
-                'PDF outputs verified (no tracked changes, no comments)',
-                'Links tested (OneDrive sharing permissions correct)',
-                'Approved by Owner (CEO Control Layer)',
-              ].map((item, i) => (
+              <p className="text-sm font-medium text-[#111827]">Role Tiers:</p>
+              {['Internal Admin', 'Internal Read', 'Banker / Advisor', 'Buyer (NDA)', 'Buyer (Redacted / Limited)'].map((role, i) => (
                 <div key={i} className="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded">
-                  <CheckCircle className="w-5 h-5 text-green-600" />
-                  <span className="text-[#374151]">{item}</span>
+                  <Shield className="w-4 h-4 text-[#0B1C3E]" />
+                  <span className="text-[#374151]">{role}</span>
                 </div>
               ))}
             </div>
@@ -397,66 +264,401 @@ const SystemsBookPage = () => {
       )
     },
     'SB-03': {
-      title: 'Authority OS',
+      title: 'CIM Program',
       content: (
         <div className="space-y-8">
-          <div id="SB-03.1" className="scroll-mt-24">
+          <div id="SB-03-01" className="scroll-mt-24">
             <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-03.1 Operating Rhythm (Cadence)
+              SB-03-01 Canonical Deliverable Chain
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-3">
               {[
-                { freq: 'Daily', activity: 'Pipeline + execution alignment', duration: '15 min' },
-                { freq: 'Weekly', activity: 'CEO dashboard review + priority reset', duration: '60 min' },
-                { freq: 'Monthly', activity: 'Operating review + scorecard', duration: '90 min' },
-                { freq: 'Quarterly', activity: 'Strategy + resource allocation', duration: 'Half-day' },
-              ].map((item, i) => (
-                <div key={i} className="bg-white border border-gray-200 rounded p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-semibold text-[#0B1C3E]">{item.freq}</span>
-                    <span className="text-xs bg-[#C5A059]/10 text-[#C5A059] px-2 py-1 rounded">
-                      {item.duration}
-                    </span>
+                { num: 1, name: 'Teaser', desc: 'No NDA required', badge: 'PUBLIC' },
+                { num: 2, name: 'NDA Email + NDA', desc: 'Gating step', badge: 'GATE' },
+                { num: 3, name: 'CIM', desc: 'PDF + DOCX master', badge: 'NDA' },
+                { num: 4, name: 'Buyer Deck', desc: 'PPTX + PDF', badge: 'NDA' },
+                { num: 5, name: 'Appendix Pack', desc: 'ZIP of exhibits / data room index', badge: 'NDA' },
+              ].map((item) => (
+                <div key={item.num} className="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded">
+                  <span className="flex-shrink-0 w-8 h-8 bg-[#0B1C3E] text-white rounded font-bold flex items-center justify-center">
+                    {item.num}
+                  </span>
+                  <div className="flex-1">
+                    <h4 className="font-semibold text-[#111827]">{item.name}</h4>
+                    <p className="text-sm text-[#6B7280]">{item.desc}</p>
                   </div>
-                  <p className="text-sm text-[#6B7280]">{item.activity}</p>
+                  <span className={`text-xs px-2 py-1 rounded ${
+                    item.badge === 'PUBLIC' ? 'bg-green-100 text-green-800' :
+                    item.badge === 'GATE' ? 'bg-[#C5A059]/20 text-[#C5A059]' :
+                    'bg-red-100 text-red-800'
+                  }`}>
+                    {item.badge}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div id="SB-03.2" className="scroll-mt-24">
+          <div id="SB-03-02" className="scroll-mt-24">
             <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-03.2 Governance
+              SB-03-02 Lock Rules
             </h3>
-            <div className="flex flex-wrap gap-3 mb-4">
-              {['Owner', 'Editor', 'Reviewer', 'Approver'].map((role, i) => (
-                <span key={i} className="px-4 py-2 bg-[#0B1C3E] text-white rounded font-medium">
-                  {role}
-                </span>
+            <div className="bg-red-50 border border-red-200 rounded p-4 mb-4">
+              <p className="text-red-800">
+                <Lock className="w-4 h-4 inline mr-2" />
+                Only <strong>locked</strong> versions can be sent externally.
+              </p>
+            </div>
+            <p className="text-[#6B7280] mb-3">Any change after lock creates a new version and requires:</p>
+            <ul className="space-y-2">
+              {['Updated registry entry', 'Change note', 'Distribution log entry for re-send'].map((item, i) => (
+                <li key={i} className="flex items-center gap-2 text-[#374151]">
+                  <CheckCircle className="w-4 h-4 text-[#C5A059]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div id="SB-03-03" className="scroll-mt-24">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-03-03 Master vs. External Formats
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white border border-gray-200 rounded p-4">
+                <FileText className="w-5 h-5 text-[#0B1C3E] mb-2" />
+                <h4 className="font-semibold text-[#111827]">Master</h4>
+                <p className="text-sm text-[#6B7280]">Word DOCX (editable source of truth)</p>
+              </div>
+              <div className="bg-white border border-gray-200 rounded p-4">
+                <FileText className="w-5 h-5 text-[#C5A059] mb-2" />
+                <h4 className="font-semibold text-[#111827]">External</h4>
+                <p className="text-sm text-[#6B7280]">PDF (Modern + Classic)</p>
+              </div>
+              <div className="bg-white border border-gray-200 rounded p-4">
+                <Layout className="w-5 h-5 text-green-600 mb-2" />
+                <h4 className="font-semibold text-[#111827]">Presentation</h4>
+                <p className="text-sm text-[#6B7280]">PPTX/PDF (Buyer Deck)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    'SB-04': {
+      title: 'Investor Readiness + Website Architecture Spec',
+      content: (
+        <div className="space-y-8">
+          <div className="bg-[#0B1C3E]/5 border border-[#0B1C3E]/10 rounded p-4 mb-6">
+            <p className="text-sm text-[#374151]">
+              <Globe className="w-4 h-4 inline mr-2 text-[#C5A059]" />
+              This section defines the canonical structure for the <strong>public-facing</strong> and <strong>NDA-gated</strong> website layer.
+            </p>
+          </div>
+
+          <div id="SB-04-01" className="scroll-mt-24">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-04-01 Investor Readiness: Core Proof Pack
+            </h3>
+            <p className="text-[#6B7280] mb-4">Your digital layer must be supported by proof:</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {[
+                'Corporate profile + leadership bios',
+                'KPI snapshots + recurring trend charts',
+                'Financial model outputs (summary)',
+                'Contracts / legal summaries',
+                'Case studies / outcomes library',
+                'Operating cadence artifacts'
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2 p-3 bg-white border border-gray-200 rounded">
+                  <CheckCircle className="w-4 h-4 text-[#C5A059]" />
+                  <span className="text-sm text-[#374151]">{item}</span>
+                </div>
               ))}
             </div>
-            <div className="bg-red-50 border border-red-200 rounded p-4">
-              <p className="text-red-800 font-medium">
-                <Lock className="w-4 h-4 inline mr-2" />
-                System rule: "No approval, no release."
+          </div>
+
+          <div id="SB-04-02-01" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              <Map className="w-5 h-5 inline mr-2 text-[#C5A059]" />
+              SB-04-02-01 Information Architecture & Sitemap
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <p className="text-sm font-semibold text-[#111827] mb-3">Public Pages</p>
+                <div className="bg-white border border-gray-200 rounded p-4 font-mono text-sm space-y-1">
+                  {['/ Home', '/about', '/leadership', '/platform', '/outcomes', '/metrics', '/resources', '/faq', '/contact'].map((page, i) => (
+                    <div key={i} className="text-[#374151]">{page}</div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-[#111827] mb-3">NDA-Gated Pages</p>
+                <div className="bg-[#0B1C3E] text-white rounded p-4 font-mono text-sm space-y-1">
+                  {['/data-room', '/data-room/cim', '/data-room/buyer-deck', '/data-room/appendix', '/data-room/registry', '/data-room/updates'].map((page, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <Lock className="w-3 h-3 text-[#C5A059]" />
+                      {page}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="SB-04-02-02" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              <Layout className="w-5 h-5 inline mr-2 text-[#C5A059]" />
+              SB-04-02-02 Page Templates & Components
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <p className="text-sm font-semibold text-[#111827] mb-3">Template Types</p>
+                <div className="space-y-2">
+                  {['Standard Page (hero + sections)', 'Landing Page (single CTA)', 'Index/Hub (lists posts)', 'Gated Download Page', 'Release Notes Page'].map((t, i) => (
+                    <div key={i} className="flex items-center gap-2 text-sm text-[#374151]">
+                      <span className="w-5 h-5 bg-gray-100 rounded text-xs flex items-center justify-center">{i+1}</span>
+                      {t}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-[#111827] mb-3">Component Library</p>
+                <div className="flex flex-wrap gap-2">
+                  {['Hero', 'Credibility bar', 'Benefit blocks', 'Case study', 'KPI cards', 'CTA strip', 'Footer'].map((c, i) => (
+                    <span key={i} className="text-xs bg-gray-100 px-2 py-1 rounded">{c}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="bg-yellow-50 border border-yellow-200 rounded p-4">
+              <p className="text-sm text-yellow-800">
+                <strong>Design Rules:</strong> One primary CTA per page. Every page maps to a single owner and KPI.
               </p>
             </div>
           </div>
 
-          <div id="SB-03.3" className="scroll-mt-24">
+          <div id="SB-04-02-03" className="scroll-mt-24 pt-6 border-t border-gray-200">
             <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-03.3 Automation Principles
+              <FileCode className="w-5 h-5 inline mr-2 text-[#C5A059]" />
+              SB-04-02-03 Content Types & CMS Fields
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
+              {['Page', 'Post', 'CaseStudy', 'MetricSnapshot', 'LeadershipProfile', 'DownloadAsset'].map((type, i) => (
+                <div key={i} className="bg-white border border-gray-200 rounded p-3 text-center">
+                  <code className="text-sm text-[#0B1C3E]">{type}</code>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm font-semibold text-[#111827] mb-2">Required Metadata Fields:</p>
+            <div className="bg-gray-50 border border-gray-200 rounded p-4 font-mono text-xs">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                {['title', 'slug', 'summary', 'primary_cta', 'owner', 'status', 'system_code', 'last_reviewed', 'version_tag'].map((f, i) => (
+                  <span key={i} className="text-[#374151]">{f}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div id="SB-04-02-04" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              <Navigation className="w-5 h-5 inline mr-2 text-[#C5A059]" />
+              SB-04-02-04 Navigation & UX Standards
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div className="bg-white border border-gray-200 rounded p-4">
+                <p className="text-sm font-semibold text-[#111827] mb-2">Primary Nav</p>
+                <p className="text-xs text-[#6B7280]">Home, Platform, Outcomes, Metrics, Resources, About, Contact</p>
+              </div>
+              <div className="bg-[#0B1C3E] text-white rounded p-4">
+                <p className="text-sm font-semibold mb-2">Gated Nav (post-auth)</p>
+                <p className="text-xs text-gray-300">Data Room, CIM, Buyer Deck, Appendix, Registry, Updates</p>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <p className="text-sm font-semibold text-[#111827]">UX Standards:</p>
+              {[
+                'No dead ends: every page ends with a next-step CTA',
+                'Forms must route into CRM (or monitored inbox)',
+                'Gated pages show: version, expiration, request update link'
+              ].map((rule, i) => (
+                <div key={i} className="flex items-start gap-2 text-sm text-[#374151]">
+                  <CheckCircle className="w-4 h-4 text-[#C5A059] flex-shrink-0 mt-0.5" />
+                  {rule}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div id="SB-04-02-05" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              <Search className="w-5 h-5 inline mr-2 text-[#C5A059]" />
+              SB-04-02-05 SEO, Analytics & Tracking
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <p className="text-sm font-semibold text-[#111827] mb-3">SEO Requirements</p>
+                <ul className="space-y-2 text-sm text-[#374151]">
+                  {['Unique title + meta per page', 'Clean slug structure', 'Schema markup (Organization, Article)', 'Canonical tags for duplicates'].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-[#111827] mb-3">Tracking Events</p>
+                <div className="bg-gray-50 border border-gray-200 rounded p-3 text-xs font-mono space-y-1">
+                  {['page_view', 'cta_click', 'form_submit', 'nda_request', 'gated_login', 'file_download'].map((evt, i) => (
+                    <div key={i} className="text-[#374151]">{evt}</div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="mt-4 bg-gray-50 border border-gray-200 rounded p-3">
+              <p className="text-xs font-mono text-[#6B7280]">
+                <strong>Field Schema:</strong> event_name, page_slug, system_code, asset_code, version, user_id
+              </p>
+            </div>
+          </div>
+
+          <div id="SB-04-02-06" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              <RefreshCw className="w-5 h-5 inline mr-2 text-[#C5A059]" />
+              SB-04-02-06 Publishing Workflow & Governance
+            </h3>
+            <div className="flex flex-wrap items-center gap-2 mb-6">
+              {['Draft', 'Review', 'Legal', 'Publish', 'Log', 'Monitor'].map((step, i, arr) => (
+                <React.Fragment key={i}>
+                  <span className={`px-3 py-2 rounded text-sm font-medium ${
+                    step === 'Publish' ? 'bg-[#C5A059] text-white' : 'bg-gray-100 text-[#374151]'
+                  }`}>
+                    {step}
+                  </span>
+                  {i < arr.length - 1 && <ArrowRight className="w-4 h-4 text-[#9CA3AF]" />}
+                </React.Fragment>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { freq: 'Weekly', activity: 'Lead flow + site KPIs' },
+                { freq: 'Monthly', activity: 'Content review (resources)' },
+                { freq: 'Quarterly', activity: 'Architecture review' },
+              ].map((item, i) => (
+                <div key={i} className="bg-white border border-gray-200 rounded p-3">
+                  <span className="text-xs bg-[#C5A059]/10 text-[#C5A059] px-2 py-1 rounded">{item.freq}</span>
+                  <p className="text-sm text-[#374151] mt-2">{item.activity}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div id="SB-04-02-07" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              <GitBranch className="w-5 h-5 inline mr-2 text-[#C5A059]" />
+              SB-04-02-07 Version Tagging & Locking
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div className="bg-white border border-gray-200 rounded p-4">
+                <p className="text-sm font-semibold text-[#111827] mb-2">Website Releases</p>
+                <code className="text-sm text-[#0B1C3E] bg-gray-50 px-2 py-1 rounded">WEB-v2026-02-17r2</code>
+              </div>
+              <div className="bg-white border border-gray-200 rounded p-4">
+                <p className="text-sm font-semibold text-[#111827] mb-2">Gated Assets</p>
+                <code className="text-sm text-[#0B1C3E] bg-gray-50 px-2 py-1 rounded">CIM-v2026-02-17r2</code>
+              </div>
+            </div>
+            <div className="bg-red-50 border border-red-200 rounded p-4">
+              <p className="text-sm text-red-800">
+                <Lock className="w-4 h-4 inline mr-2" />
+                <strong>Locking:</strong> Gated artifacts are immutable once distributed. New version required for changes.
+              </p>
+            </div>
+          </div>
+
+          <div id="SB-04-02-08" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              <AlertTriangle className="w-5 h-5 inline mr-2 text-[#C5A059]" />
+              SB-04-02-08 QA, Accessibility & Security
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { title: 'QA', items: ['Link checks (no 404s)', 'Form tests (E2E)', 'Gated flow tests', 'Download integrity'] },
+                { title: 'Accessibility', items: ['Heading structure', 'Alt text for images', 'Contrast checks', 'Keyboard navigation'] },
+                { title: 'Security', items: ['NDA gate auth', 'Time-bound links', 'Audit log', 'Admin action logging'] },
+                { title: 'Performance', items: ['Lighthouse mobile-first', 'Image compression', 'Caching rules', 'Secure file hosting'] },
+              ].map((section, i) => (
+                <div key={i} className="bg-white border border-gray-200 rounded p-4">
+                  <h4 className="font-semibold text-[#111827] mb-3">{section.title}</h4>
+                  <ul className="space-y-1">
+                    {section.items.map((item, j) => (
+                      <li key={j} className="text-xs text-[#6B7280] flex items-center gap-1">
+                        <CheckCircle className="w-3 h-3 text-green-600" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div id="SB-04-03" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-04-03 Website ↔ CIM Mapping Table
+            </h3>
+            <p className="text-[#6B7280] mb-4">Create a mapping table (Notion database or spreadsheet) with:</p>
+            <div className="bg-gray-50 border border-gray-200 rounded p-4 font-mono text-xs">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                {['Website_Page', 'System_Code', 'CIM_Section', 'Public_Safe?', 'Source_File', 'Owner', 'Last_Reviewed'].map((f, i) => (
+                  <span key={i} className="text-[#374151]">{f}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    'SB-05': {
+      title: 'Buyer Pipeline & Communications',
+      content: (
+        <div className="space-y-8">
+          <div id="SB-05-01" className="scroll-mt-24">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-05-01 Pipeline Stages
+            </h3>
+            <div className="flex flex-wrap items-center gap-2">
+              {['Lead', 'Qualified', 'NDA Sent', 'NDA Signed', 'CIM Delivered', 'Follow-Up', 'LOI', 'Diligence', 'Close'].map((stage, i, arr) => (
+                <React.Fragment key={i}>
+                  <span className={`px-3 py-2 rounded text-sm font-medium ${
+                    stage === 'NDA Signed' ? 'bg-[#C5A059] text-white' :
+                    stage === 'Close' ? 'bg-green-600 text-white' :
+                    'bg-gray-100 text-[#374151]'
+                  }`}>
+                    {stage}
+                  </span>
+                  {i < arr.length - 1 && <ArrowRight className="w-4 h-4 text-[#9CA3AF]" />}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+
+          <div id="SB-05-02" className="scroll-mt-24">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-05-02 Standard Comms Library
             </h3>
             <div className="space-y-3">
               {[
-                { title: 'Automate capture', desc: 'Intake forms, CRM, deal room requests' },
-                { title: 'Automate reporting', desc: 'Dashboards, weekly snapshots' },
-                { title: 'Automate versioning', desc: 'Registry update + release packaging' },
+                { type: 'NDA Email Templates', desc: 'Standard NDA request and follow-up emails' },
+                { type: 'Follow-up Cadence', desc: 'Day 1 / Day 3 / Day 7 / Weekly' },
+                { type: 'Objection Handling', desc: 'Scripts for common buyer concerns' },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 p-4 bg-white border border-gray-200 rounded">
-                  <Settings className="w-5 h-5 text-[#C5A059] flex-shrink-0 mt-0.5" />
+                  <Mail className="w-5 h-5 text-[#C5A059] flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-semibold text-[#111827]">{item.title}</h4>
+                    <h4 className="font-semibold text-[#111827]">{item.type}</h4>
                     <p className="text-sm text-[#6B7280]">{item.desc}</p>
                   </div>
                 </div>
@@ -466,90 +668,23 @@ const SystemsBookPage = () => {
         </div>
       )
     },
-    'SB-04': {
-      title: 'Website & Content Ops',
+    'SB-06': {
+      title: 'KPI / Metrics / Reporting',
       content: (
-        <div className="space-y-8">
-          <div id="SB-04.1" className="scroll-mt-24">
-            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-04.1 Source of Truth Mapping
-            </h3>
-            <div className="space-y-3">
-              {[
-                { source: 'Word/Docx Master', purpose: 'Canonical long-form narrative (CIM, Systems Book)' },
-                { source: 'Notion', purpose: 'Structured databases + operational dashboards' },
-                { source: 'Website', purpose: 'Published pages derived from canonical sources' },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded">
-                  <Database className="w-5 h-5 text-[#0B1C3E]" />
-                  <div>
-                    <span className="font-semibold text-[#111827]">{item.source}</span>
-                    <span className="text-[#6B7280]"> = {item.purpose}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div id="SB-04.2" className="scroll-mt-24">
-            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-04.2 Content Types (Recommended)
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white border border-gray-200 rounded p-4">
-                <h4 className="font-semibold text-[#111827] mb-2">Page</h4>
-                <p className="text-sm text-[#6B7280]">About, Platform, Case Studies, Authority OS, Investor Relations (gated)</p>
+        <div className="space-y-6">
+          <p className="text-[#6B7280]">Scorecard and reporting framework (scaffold):</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { name: 'CEO Weekly Scorecard', icon: BarChart3 },
+              { name: 'Ops KPIs', icon: Settings },
+              { name: 'Sales Pipeline KPIs', icon: Target },
+              { name: 'Website Conversion KPIs', icon: TrendingUp },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded">
+                <item.icon className="w-5 h-5 text-[#C5A059]" />
+                <span className="text-[#374151] font-medium">{item.name}</span>
               </div>
-              <div className="bg-white border border-gray-200 rounded p-4">
-                <h4 className="font-semibold text-[#111827] mb-2">Post</h4>
-                <p className="text-sm text-[#6B7280]">Insights, News, Updates</p>
-              </div>
-              <div className="bg-white border border-gray-200 rounded p-4">
-                <h4 className="font-semibold text-[#111827] mb-2">Library</h4>
-                <p className="text-sm text-[#6B7280]">PDFs (released only), decks, one-pagers</p>
-              </div>
-            </div>
-          </div>
-
-          <div id="SB-04.3" className="scroll-mt-24">
-            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-04.3 Publishing Workflow (No Drift)
-            </h3>
-            <div className="space-y-2">
-              {[
-                'Update Master (Word / Notion)',
-                'Release version (registry updated)',
-                'Export website-ready copy (web formatting rules)',
-                'Publish to site (tagged with version)',
-                'Archive previous website version snapshot',
-              ].map((step, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <span className="flex-shrink-0 w-6 h-6 bg-[#C5A059] text-white rounded text-sm flex items-center justify-center font-medium">
-                    {i + 1}
-                  </span>
-                  <span className="text-[#374151]">{step}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div id="SB-04.4" className="scroll-mt-24">
-            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              SB-04.4 Website Page Coding Standard
-            </h3>
-            <p className="text-[#6B7280] mb-4">Use the same section codes everywhere (website anchors, Notion headings, Word headings):</p>
-            <div className="bg-[#0B1C3E] text-white rounded p-4 font-mono text-sm space-y-1">
-              <div><span className="text-[#C5A059]">SB-00</span> Master Control</div>
-              <div><span className="text-[#C5A059]">SB-01</span> CEO Control Layer</div>
-              <div><span className="text-[#C5A059]">SB-02</span> Deal Room</div>
-              <div><span className="text-[#C5A059]">SB-03</span> Authority OS</div>
-              <div><span className="text-[#C5A059]">SB-04</span> Website & Content Ops</div>
-            </div>
-            <div className="mt-4 bg-gray-50 border border-gray-200 rounded p-4">
-              <p className="text-sm text-[#6B7280] mb-2">Example website anchors:</p>
-              <code className="text-sm text-[#0B1C3E]">/systems-book#SB-02</code><br />
-              <code className="text-sm text-[#0B1C3E]">/systems-book#SB-02-4-release-checklist</code>
-            </div>
+            ))}
           </div>
         </div>
       )
@@ -592,14 +727,14 @@ const SystemsBookPage = () => {
             </h1>
           </div>
           <p className="text-gray-300 max-w-2xl">
-            The canonical operating manual for OnPoint Authority Systems. Defines enterprise architecture, deal room workflow, and governance.
+            The canonical operating manual for OnPoint Authority Systems. Defines enterprise architecture, deal room workflow, investor readiness, and website specifications.
           </p>
           <div className="flex items-center gap-4 mt-6">
             <span className="text-xs bg-[#C5A059]/20 text-[#C5A059] px-3 py-1 rounded-full font-medium">
               v2026-02-17r2
             </span>
             <span className="text-xs text-gray-400">
-              Status: Working Master | Owner: CEO Control Layer
+              Status: Working Master (Registry-Driven)
             </span>
           </div>
         </div>
@@ -610,7 +745,7 @@ const SystemsBookPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar Navigation */}
           <aside className="lg:col-span-1">
-            <div className="sticky top-24 space-y-2">
+            <div className="sticky top-24 space-y-2 max-h-[calc(100vh-8rem)] overflow-y-auto">
               <p className="text-xs font-semibold text-[#6B7280] uppercase tracking-wider mb-4">Contents</p>
               {sections.map((section) => (
                 <div key={section.id}>
@@ -630,22 +765,25 @@ const SystemsBookPage = () => {
                       <section.icon className={`w-4 h-4 ${activeSection === section.id ? 'text-[#C5A059]' : 'text-[#6B7280]'}`} />
                       <span className="text-sm font-medium">{section.id}</span>
                     </div>
-                    {expandedSections.includes(section.id) ? (
-                      <ChevronDown className="w-4 h-4" />
-                    ) : (
-                      <ChevronRight className="w-4 h-4" />
+                    {section.subsections.length > 0 && (
+                      expandedSections.includes(section.id) ? (
+                        <ChevronDown className="w-4 h-4" />
+                      ) : (
+                        <ChevronRight className="w-4 h-4" />
+                      )
                     )}
                   </button>
-                  {expandedSections.includes(section.id) && (
+                  {expandedSections.includes(section.id) && section.subsections.length > 0 && (
                     <div className="ml-4 mt-1 space-y-1">
                       {section.subsections.map((sub) => (
                         <a
                           key={sub.id}
                           href={`#${sub.id}`}
-                          className="block text-xs text-[#6B7280] hover:text-[#111827] py-1 pl-4 border-l border-gray-200"
+                          className="block text-xs text-[#6B7280] hover:text-[#111827] py-1 pl-4 border-l border-gray-200 truncate"
                           onClick={() => setActiveSection(section.id)}
+                          title={`${sub.id} ${sub.title}`}
                         >
-                          {sub.id} {sub.title}
+                          {sub.title}
                         </a>
                       ))}
                     </div>
