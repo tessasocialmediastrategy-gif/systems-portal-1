@@ -67,17 +67,17 @@ export const SB01Registry = {
   ]
 };
 
-// SB-02 Strategy & Positioning Registry
+// SB-02 Offer, Pricing & Packaging Registry
 export const SB02Registry = {
   packParents: [
-    { code: 'SB-02-Wxx', name: 'Website Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-02_Web_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-02 Strategy & Positioning/Web', notes: 'PACK PARENT: contains SB-02-W01…W99' },
-    { code: 'SB-02-Axx', name: 'Appendix Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-02_Appendix_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-02 Strategy & Positioning/Appendix', notes: 'PACK PARENT: contains SB-02-A01…A99' },
-    { code: 'SB-02-Txx', name: 'Toolkit Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-02_Toolkit_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-02 Strategy & Positioning/Toolkit', notes: 'PACK PARENT: contains SB-02-T01…T99' },
+    { code: 'SB-02-Axx', name: 'SB-02 Appendix Assets Pack Rollup', format: 'Pack Rollup (Appendix Assets)', status: 'ACTIVE', file: 'OnPoint_SB-02_Appendix_Assets_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-02 Offer Pricing Packaging/Appendix Assets Pack', notes: 'PARENT PACK: contains SB-02-A01…A05.' },
+    { code: 'SB-02-Wxx', name: 'SB-02 Web Copy Pack Rollup', format: 'Pack Rollup (Web Copy)', status: 'ACTIVE', file: 'OnPoint_SB-02_Web_Copy_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-02 Offer Pricing Packaging/Web Copy Pack', notes: 'PARENT PACK: contains SB-02-W01…W03.' },
+    { code: 'SB-02-Txx', name: 'SB-02 Templates Pack Rollup', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-02_Templates_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-02 Offer Pricing Packaging/Templates Pack', notes: 'PARENT PACK: contains SB-02-T01…T06.' },
   ],
   web: [
-    { code: 'SB-02-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-02_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-02 Strategy & Positioning/Web/W01 Landing Copy', notes: 'Website canonical copy' },
-    { code: 'SB-02-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-02_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-02 Strategy & Positioning/Web/W02 Blocks & Components', notes: 'Modular page sections' },
-    { code: 'SB-02-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-02_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-02 Strategy & Positioning/Web/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
+    { code: 'SB-02-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-02_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-02 Offer Pricing Packaging/Web Copy Pack/W01 Landing Copy', notes: 'Website canonical copy' },
+    { code: 'SB-02-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-02_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-02 Offer Pricing Packaging/Web Copy Pack/W02 Blocks & Components', notes: 'Modular page sections' },
+    { code: 'SB-02-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-02_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-02 Offer Pricing Packaging/Web Copy Pack/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
   ],
   appendix: [
     { code: 'SB-02-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-02_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-02 Strategy & Positioning/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
