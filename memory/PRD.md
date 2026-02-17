@@ -23,6 +23,30 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 6. Systems Book web integration
 
 ## What's Been Implemented
+
+### 2026-02-18 (Full Website Build & Data Room Journey)
+- [x] **Systems Page** (`/systems`): Black/gold theme with clean book images
+  - Added four books grid (Institutional Authority, Certification Gap, Enforce or Erode, Governance Beyond Founders)
+  - Main OnPoint Authority book spread
+  - Certification section with seal
+- [x] **Governance Page** (`/governance`): Framework overview with active/planned systems
+- [x] **Certification Page** (`/certification`): Three-level certification pathway
+- [x] **Authority Review Page** (`/authority-review`): Lead capture form
+- [x] **Public Marketing Pages**:
+  - About (`/about`)
+  - Platform (`/platform`)
+  - Leadership (`/leadership`)
+  - Outcomes (`/outcomes`)
+  - Contact (`/contact`)
+- [x] **Data Room Journey** (Complete investor flow):
+  - Data Room Landing (`/investor/data-room`)
+  - Teaser Page (`/investor/teaser`)
+  - NDA Request Page (`/investor/nda-request`)
+  - CIM Download Page (`/investor/cim-download`) - with NDA gate
+  - Appendix Pack (`/investor/appendix`) - with NDA gate
+- [x] **Refactored**: Created `/app/frontend/src/data/syncMapData.js` to extract SyncMap data
+- [x] **Verified**: "Authority Killers" section confirmed removed from codebase
+
 ### 2026-02-17 (Registry Lock & Control Panel)
 - [x] Version-locked all 204 registry items to ACTIVE status
 - [x] Built SB Control Panel page (`/sb-control-panel`) with:
