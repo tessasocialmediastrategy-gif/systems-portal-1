@@ -3,37 +3,6 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const SystemsPage = () => {
-  const books = [
-    {
-      id: 'institutional-authority',
-      title: 'Institutional Authority',
-      label: 'Authority design',
-      image: '/images/books/four-books-grid.png',
-      gridPosition: 'top-left',
-    },
-    {
-      id: 'certification-gap',
-      title: 'The Certification Gap',
-      label: 'Operator certification',
-      image: '/images/books/four-books-grid.png',
-      gridPosition: 'top-right',
-    },
-    {
-      id: 'enforce-or-erode',
-      title: 'Enforce or Erode',
-      label: 'Enforcement systems',
-      image: '/images/books/four-books-grid.png',
-      gridPosition: 'bottom-left',
-    },
-    {
-      id: 'governance-beyond-founders',
-      title: 'Governance Beyond Founders',
-      label: 'Governance layer',
-      image: '/images/books/four-books-grid.png',
-      gridPosition: 'bottom-right',
-    },
-  ];
-
   const systemPillars = [
     'Authority Architecture Blueprint',
     'Operator Certification Engine',
@@ -103,77 +72,20 @@ const SystemsPage = () => {
         </div>
       </section>
 
-      {/* Books Section - Clean Grid */}
+      {/* Books Section - Clean 2x2 Grid */}
       <section className="py-16 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 gap-8 md:gap-12">
-            {/* Institutional Authority */}
-            <div className="flex flex-col items-center group" data-testid="book-institutional-authority">
-              <div className="relative overflow-hidden mb-4">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/n3pcivav_book%20images.png"
-                  alt="Authority Books Collection"
-                  className="w-full max-w-md object-cover"
-                  style={{ 
-                    clipPath: 'inset(0 50% 50% 0)',
-                    transform: 'scale(2)',
-                    transformOrigin: 'top left'
-                  }}
-                />
-              </div>
-              <p className="text-gray-400 text-sm tracking-wider">Authority design</p>
-            </div>
-
-            {/* The Certification Gap */}
-            <div className="flex flex-col items-center group" data-testid="book-certification-gap">
-              <div className="relative overflow-hidden mb-4">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/n3pcivav_book%20images.png"
-                  alt="Authority Books Collection"
-                  className="w-full max-w-md object-cover"
-                  style={{ 
-                    clipPath: 'inset(0 0 50% 50%)',
-                    transform: 'scale(2)',
-                    transformOrigin: 'top right'
-                  }}
-                />
-              </div>
-              <p className="text-gray-400 text-sm tracking-wider">Operator certification</p>
-            </div>
-
-            {/* Enforce or Erode */}
-            <div className="flex flex-col items-center group" data-testid="book-enforce-erode">
-              <div className="relative overflow-hidden mb-4">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/n3pcivav_book%20images.png"
-                  alt="Authority Books Collection"
-                  className="w-full max-w-md object-cover"
-                  style={{ 
-                    clipPath: 'inset(50% 50% 0 0)',
-                    transform: 'scale(2)',
-                    transformOrigin: 'bottom left'
-                  }}
-                />
-              </div>
-              <p className="text-gray-400 text-sm tracking-wider">Enforcement systems</p>
-            </div>
-
-            {/* Governance Beyond Founders */}
-            <div className="flex flex-col items-center group" data-testid="book-governance-founders">
-              <div className="relative overflow-hidden mb-4">
-                <img 
-                  src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/n3pcivav_book%20images.png"
-                  alt="Authority Books Collection"
-                  className="w-full max-w-md object-cover"
-                  style={{ 
-                    clipPath: 'inset(50% 0 0 50%)',
-                    transform: 'scale(2)',
-                    transformOrigin: 'bottom right'
-                  }}
-                />
-              </div>
-              <p className="text-gray-400 text-sm tracking-wider">Governance layer</p>
-            </div>
+        <div className="max-w-5xl mx-auto">
+          <img 
+            src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/n3pcivav_book%20images.png"
+            alt="OnPoint Authority Books - Institutional Authority, The Certification Gap, Enforce or Erode, Governance Beyond Founders"
+            className="w-full"
+            data-testid="four-books-grid"
+          />
+          <div className="grid grid-cols-2 gap-8 mt-6">
+            <p className="text-gray-400 text-sm tracking-wider text-center">Authority design</p>
+            <p className="text-gray-400 text-sm tracking-wider text-center">Operator certification</p>
+            <p className="text-gray-400 text-sm tracking-wider text-center">Enforcement systems</p>
+            <p className="text-gray-400 text-sm tracking-wider text-center">Governance layer</p>
           </div>
         </div>
       </section>
@@ -205,9 +117,9 @@ const SystemsPage = () => {
             <div className="flex justify-center">
               <img 
                 src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/qypu4we9_BookPowerPointImage2.png"
-                alt="OnPoint Authority Book"
+                alt="OnPoint Authority Book - Front and Back Cover"
                 className="max-w-lg w-full"
-                data-testid="main-book-image"
+                data-testid="main-book-spread"
               />
             </div>
           </div>
@@ -221,7 +133,7 @@ const SystemsPage = () => {
             <div className="flex justify-center order-2 lg:order-1">
               <img 
                 src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/g2m36blt_Certification%20Seal.png"
-                alt="OnPoint Authority Certification"
+                alt="OnPoint Authority Certification Book and Seal"
                 className="max-w-lg w-full"
                 data-testid="certification-image"
               />
