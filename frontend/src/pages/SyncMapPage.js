@@ -296,55 +296,81 @@ source_of_truth: notion`}</pre>
         {/* Sync Table Tab */}
         {activeTab === 'sync-table' && (
           <div className="space-y-6 animate-fade-in">
+            {/* Area Filter */}
+            <div className="flex flex-wrap gap-2">
+              {areas.map((area) => (
+                <button
+                  key={area.id}
+                  onClick={() => setSelectedArea(area.id)}
+                  className={`px-3 py-1.5 text-sm rounded-full transition-colors ${
+                    selectedArea === area.id
+                      ? 'bg-[#0B1C3E] text-white'
+                      : 'bg-white border border-gray-200 text-[#6B7280] hover:bg-gray-50'
+                  }`}
+                >
+                  {area.label}
+                  <span className="ml-1.5 text-xs opacity-70">({area.count})</span>
+                </button>
+              ))}
+            </div>
+
             <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
               <div className="p-6 border-b border-gray-200">
                 <h2 className="text-2xl font-bold text-[#111827]" style={{ fontFamily: 'Libre Baskerville, serif' }}>
                   Sync Map Table
                 </h2>
                 <p className="text-[#6B7280] mt-2">
-                  Complete mapping of CIDs to Website pages, Book sections, and lock states.
+                  Complete mapping of SB codes ↔ WP codes ↔ Notion databases. Version: v2026-02-17r2
                 </p>
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead className="bg-gray-50 border-b border-gray-200">
                     <tr>
-                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">CID</th>
-                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Book Heading</th>
-                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">URL Slug</th>
-                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Type</th>
-                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Source of Truth</th>
-                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Lock</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-4 py-3">SB Code</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-4 py-3">WP Code</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-4 py-3">Title</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-4 py-3">URL Slug</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-4 py-3">Notion DB</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-4 py-3">Sync Rule</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-4 py-3">Status</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
-                    {syncData.map((row, i) => (
+                    {getFilteredData().map((row, i) => (
                       <tr key={i} className="hover:bg-gray-50">
-                        <td className="px-6 py-4">
-                          <code className="text-sm bg-[#0B1C3E] text-white px-2 py-1 rounded font-mono">
-                            {row.cid}
+                        <td className="px-4 py-3">
+                          <code className="text-xs bg-[#0B1C3E] text-white px-2 py-1 rounded font-mono">
+                            {row.sb}
                           </code>
                         </td>
-                        <td className="px-6 py-4 text-sm text-[#374151]">{row.heading}</td>
-                        <td className="px-6 py-4">
+                        <td className="px-4 py-3">
+                          <code className="text-xs bg-[#C5A059]/20 text-[#C5A059] px-2 py-1 rounded font-mono">
+                            {row.wp}
+                          </code>
+                        </td>
+                        <td className="px-4 py-3 text-sm text-[#374151] max-w-xs truncate" title={row.title}>
+                          {row.title}
+                        </td>
+                        <td className="px-4 py-3">
                           <code className="text-xs bg-gray-100 px-2 py-1 rounded font-mono text-[#6B7280]">
                             {row.slug}
                           </code>
                         </td>
-                        <td className="px-6 py-4">
-                          <span className={`text-xs px-2 py-1 rounded ${
-                            row.type === 'Program Hub' || row.type === 'Architecture Hub' 
-                              ? 'bg-[#C5A059]/10 text-[#C5A059]' 
-                              : 'bg-gray-100 text-[#6B7280]'
-                          }`}>
-                            {row.type}
+                        <td className="px-4 py-3">
+                          <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">
+                            {row.db}
                           </span>
                         </td>
-                        <td className="px-6 py-4 text-xs text-[#6B7280]">{row.sot}</td>
-                        <td className="px-6 py-4">
-                          <span className="flex items-center gap-1 text-xs text-green-700 bg-green-100 px-2 py-1 rounded">
-                            <Lock className="w-3 h-3" />
-                            {row.lock}
+                        <td className="px-4 py-3 text-xs text-[#6B7280]">{row.sync}</td>
+                        <td className="px-4 py-3">
+                          <span className={`flex items-center gap-1 text-xs px-2 py-1 rounded ${
+                            row.status === 'Active' 
+                              ? 'bg-green-100 text-green-700' 
+                              : 'bg-yellow-100 text-yellow-700'
+                          }`}>
+                            {row.status === 'Active' ? <Lock className="w-3 h-3" /> : <AlertTriangle className="w-3 h-3" />}
+                            {row.status}
                           </span>
                         </td>
                       </tr>
