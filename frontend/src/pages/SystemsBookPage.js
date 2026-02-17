@@ -114,6 +114,7 @@ const SystemsBookPage = () => {
       subsections: [
         { id: 'SB-01-01', title: 'Authority OS Definition' },
         { id: 'SB-01-02', title: 'Layer Model' },
+        { id: 'SB-01-03', title: 'Expanded Registry' },
       ]
     },
     {
@@ -124,6 +125,7 @@ const SystemsBookPage = () => {
       subsections: [
         { id: 'SB-02-01', title: 'Folder Taxonomy' },
         { id: 'SB-02-02', title: 'Access Control Standard' },
+        { id: 'SB-02-03', title: 'Expanded Registry' },
       ]
     },
     {
@@ -134,7 +136,7 @@ const SystemsBookPage = () => {
       subsections: [
         { id: 'SB-03-01', title: 'Canonical Deliverable Chain' },
         { id: 'SB-03-02', title: 'Lock Rules' },
-        { id: 'SB-03-03', title: 'Master vs. External Formats' },
+        { id: 'SB-03-03', title: 'Expanded Registry' },
       ]
     },
     {
@@ -153,6 +155,7 @@ const SystemsBookPage = () => {
         { id: 'SB-04-02-07', title: 'Version Tagging & Locking' },
         { id: 'SB-04-02-08', title: 'QA, Accessibility & Security' },
         { id: 'SB-04-03', title: 'Website ↔ CIM Mapping' },
+        { id: 'SB-04-04', title: 'Expanded Registry' },
       ]
     },
     {
@@ -163,6 +166,7 @@ const SystemsBookPage = () => {
       subsections: [
         { id: 'SB-05-01', title: 'Pipeline Stages' },
         { id: 'SB-05-02', title: 'Standard Comms Library' },
+        { id: 'SB-05-03', title: 'Expanded Registry' },
       ]
     },
     {
@@ -170,7 +174,9 @@ const SystemsBookPage = () => {
       title: 'KPI / Metrics',
       icon: TrendingUp,
       description: 'Scorecards and reporting framework',
-      subsections: []
+      subsections: [
+        { id: 'SB-06-01', title: 'Expanded Registry' },
+      ]
     },
     {
       id: 'SB-07',
