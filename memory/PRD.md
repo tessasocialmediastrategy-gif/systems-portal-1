@@ -39,6 +39,12 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
   - Website ↔ Notion ↔ Word sync table
   - RACI matrix + metrics + control log requirements
   - Implementation checklist + change control
+- [x] **Expanded Registry** for each chapter (SB-07 to SB-12):
+  - Appendix Pack (A01-A05): System Diagram, SOP Template, Scorecard, Example Pack, Standards & Definitions
+  - Toolkit (T01-T06): Checklist, SOP Template, Tracker, Scripts Pack, Notion Template, Prompt Pack
+  - Each item has: Code, Name, Format (PDF/DOCX/XLSX/MD), Status, Output File, Notion Path, Notes
+  - Collapsible tables for better navigation
+- [x] Created `/app/frontend/src/data/systemsBookRegistry.js` data file for registry
 - [x] Updated version display to v2026-02-17r3 in header and footer
 
 ### 2026-02-17 (Website Book Sync Map v3 - One System Build)
