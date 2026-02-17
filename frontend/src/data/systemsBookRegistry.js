@@ -185,39 +185,41 @@ export const SB05Registry = {
 
 // SB-06 Technology & Data Registry
 export const SB06Registry = {
+// SB-06 Performance Management & KPI Cadence Registry
+export const SB06Registry = {
   packParents: [
-    { code: 'SB-06-Wxx', name: 'Website Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-06_Web_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-06 Technology & Data/Web', notes: 'PACK PARENT: contains SB-06-W01…W99' },
-    { code: 'SB-06-Axx', name: 'Appendix Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-06_Appendix_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-06 Technology & Data/Appendix', notes: 'PACK PARENT: contains SB-06-A01…A99' },
-    { code: 'SB-06-Txx', name: 'Toolkit Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-06_Toolkit_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-06 Technology & Data/Toolkit', notes: 'PACK PARENT: contains SB-06-T01…T99' },
+    { code: 'SB-06-Axx', name: 'SB-06 Appendix Assets Pack Rollup', format: 'Pack Rollup (Appendix Assets)', status: 'ACTIVE', file: 'OnPoint_SB-06_Appendix_Assets_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Appendix Assets Pack', notes: 'PARENT PACK: contains SB-06-A01…A05.' },
+    { code: 'SB-06-Wxx', name: 'SB-06 Web Copy Pack Rollup', format: 'Pack Rollup (Web Copy)', status: 'ACTIVE', file: 'OnPoint_SB-06_Web_Copy_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Web Copy Pack', notes: 'PARENT PACK: contains SB-06-W01…W03.' },
+    { code: 'SB-06-Txx', name: 'SB-06 Templates Pack Rollup', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-06_Templates_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Templates Pack', notes: 'PARENT PACK: contains SB-06-T01…T06.' },
   ],
   web: [
-    { code: 'SB-06-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Technology & Data/Web/W01 Landing Copy', notes: 'Website canonical copy' },
-    { code: 'SB-06-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Technology & Data/Web/W02 Blocks & Components', notes: 'Modular page sections' },
-    { code: 'SB-06-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Technology & Data/Web/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
+    { code: 'SB-06-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Web Copy Pack/W01 Landing Copy', notes: 'Website canonical copy' },
+    { code: 'SB-06-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Web Copy Pack/W02 Blocks & Components', notes: 'Modular page sections' },
+    { code: 'SB-06-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Web Copy Pack/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
   ],
   appendix: [
-    { code: 'SB-06-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-06_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-06 Technology & Data/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
-    { code: 'SB-06-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Technology & Data/Appendix/A02 SOP Template', notes: 'Version-locked template' },
-    { code: 'SB-06-A03', name: 'Scorecard', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-06_A03_Scorecard_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-06 Technology & Data/Appendix/A03 Scorecard', notes: 'KPI/scorecard worksheet' },
-    { code: 'SB-06-A04', name: 'Example Pack', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-06_A04_Examples_v2026-02-17r3.pdf', notion: '/Systems Book/SB-06 Technology & Data/Appendix/A04 Examples', notes: 'Filled examples/screens' },
-    { code: 'SB-06-A05', name: 'Standards & Definitions', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_A05_Standards_Definitions_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Technology & Data/Appendix/A05 Standards & Definitions', notes: 'Glossary + rules' },
+    { code: 'SB-06-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-06_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Appendix Assets Pack/A01 System Diagram', notes: 'Include in Appendix Pack index' },
+    { code: 'SB-06-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Appendix Assets Pack/A02 SOP Template', notes: 'Version-locked template' },
+    { code: 'SB-06-A03', name: 'Scorecard', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-06_A03_Scorecard_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Appendix Assets Pack/A03 Scorecard', notes: 'KPI/scorecard worksheet' },
+    { code: 'SB-06-A04', name: 'Example Pack', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-06_A04_Examples_v2026-02-17r3.pdf', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Appendix Assets Pack/A04 Examples', notes: 'Filled examples/screens' },
+    { code: 'SB-06-A05', name: 'Standards & Definitions', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_A05_Standards_Definitions_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Appendix Assets Pack/A05 Standards & Definitions', notes: 'Glossary + rules' },
   ],
   toolkit: [
-    { code: 'SB-06-T01', name: 'Checklist', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-06_T01_Checklist_v2026-02-17r3.pdf', notion: '/Systems Book/SB-06 Technology & Data/Toolkit/T01 Checklist', notes: 'Printable checklist' },
-    { code: 'SB-06-T02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_T02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Technology & Data/Toolkit/T02 SOP Template', notes: 'Execution SOP' },
-    { code: 'SB-06-T03', name: 'Tracker', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-06_T03_Tracker_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-06 Technology & Data/Toolkit/T03 Tracker', notes: 'Operating tracker' },
-    { code: 'SB-06-T04', name: 'Scripts Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_T04_Scripts_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Technology & Data/Toolkit/T04 Scripts Pack', notes: 'Stakeholder comms scripts' },
-    { code: 'SB-06-T05', name: 'Notion Template', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_T05_Notion_Template_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Technology & Data/Toolkit/T05 Notion Template', notes: 'Database/page template' },
-    { code: 'SB-06-T06', name: 'Prompt Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_T06_Prompt_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Technology & Data/Toolkit/T06 Prompt Pack', notes: 'AI prompts' },
+    { code: 'SB-06-T01', name: 'Checklist', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-06_T01_Checklist_v2026-02-17r3.pdf', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Templates Pack/T01 Checklist', notes: 'Printable checklist' },
+    { code: 'SB-06-T02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_T02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Templates Pack/T02 SOP Template', notes: 'Execution SOP' },
+    { code: 'SB-06-T03', name: 'Tracker', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-06_T03_Tracker_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Templates Pack/T03 Tracker', notes: 'Operating tracker' },
+    { code: 'SB-06-T04', name: 'Scripts Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_T04_Scripts_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Templates Pack/T04 Scripts Pack', notes: 'Stakeholder comms scripts' },
+    { code: 'SB-06-T05', name: 'Notion Template', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_T05_Notion_Template_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Templates Pack/T05 Notion Template', notes: 'Database/page template' },
+    { code: 'SB-06-T06', name: 'Prompt Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_T06_Prompt_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Performance Management KPI Cadence/Templates Pack/T06 Prompt Pack', notes: 'AI prompts' },
   ]
 };
 
-// SB-07 Finance & Modeling System Registry (Delivery & Operations per CSV)
+// SB-07 Delivery & Operations Registry
 export const SB07Registry = {
   packParents: [
-    { code: 'SB-07-Axx', name: 'SB-07 Appendix Pack Rollup — Delivery & Operations', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-07_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Appendix Pack', notes: 'PARENT PACK: contains SB-07-A01… (appendices, references, diagrams, artifacts).' },
-    { code: 'SB-07-Wxx', name: 'SB-07 Web Copy Pack Rollup — Delivery & Operations', format: 'Pack Rollup (Web Copy)', status: 'ACTIVE', file: 'OnPoint_SB-07_Web_Copy_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Web Copy Pack', notes: 'PARENT PACK: contains SB-07-W01…W03 (landing, blocks/components, downloads hub).' },
-    { code: 'SB-07-Txx', name: 'SB-07 Template Pack Rollup — Delivery & Operations', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-07_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Template Pack', notes: 'PARENT PACK: contains SB-07-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
+    { code: 'SB-07-Axx', name: 'SB-07 Appendix Assets Pack Rollup', format: 'Pack Rollup (Appendix Assets)', status: 'ACTIVE', file: 'OnPoint_SB-07_Appendix_Assets_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Appendix Assets Pack', notes: 'PARENT PACK: contains SB-07-A01…A05.' },
+    { code: 'SB-07-Wxx', name: 'SB-07 Web Copy Pack Rollup', format: 'Pack Rollup (Web Copy)', status: 'ACTIVE', file: 'OnPoint_SB-07_Web_Copy_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Web Copy Pack', notes: 'PARENT PACK: contains SB-07-W01…W03.' },
+    { code: 'SB-07-Txx', name: 'SB-07 Templates Pack Rollup', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-07_Templates_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Templates Pack', notes: 'PARENT PACK: contains SB-07-T01…T06.' },
   ],
   web: [
     { code: 'SB-07-W01', name: 'Chapter Landing Page Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-07_W01_Landing_Page_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Delivery & Operations/Web Copy Pack/W01 Landing Page Copy', notes: 'SB-07 main page hero/intro, outcomes, navigation, CTA' },
@@ -225,14 +227,14 @@ export const SB07Registry = {
     { code: 'SB-07-W03', name: 'Downloads Hub Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-07_W03_Downloads_Hub_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Delivery & Operations/Web Copy Pack/W03 Downloads Hub', notes: 'Downloads index text, access notes, disclaimers, what\'s included' },
   ],
   appendix: [
-    { code: 'SB-07-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-07_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-07 Finance & Modeling/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
-    { code: 'SB-07-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-07_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Finance & Modeling/Appendix/A02 SOP Template', notes: 'Version-locked template' },
-    { code: 'SB-07-A03', name: 'Scorecard', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-07_A03_Scorecard_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-07 Finance & Modeling/Appendix/A03 Scorecard', notes: 'KPI/scorecard worksheet' },
-    { code: 'SB-07-A04', name: 'Example Pack', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-07_A04_Examples_v2026-02-17r3.pdf', notion: '/Systems Book/SB-07 Finance & Modeling/Appendix/A04 Examples', notes: 'Filled examples/screens' },
-    { code: 'SB-07-A05', name: 'Standards & Definitions', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-07_A05_Standards_Definitions_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Finance & Modeling/Appendix/A05 Standards & Definitions', notes: 'Glossary + rules' },
+    { code: 'SB-07-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-07_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-07 Delivery & Operations/Appendix Assets Pack/A01 System Diagram', notes: 'Include in Appendix Pack index' },
+    { code: 'SB-07-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-07_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Delivery & Operations/Appendix Assets Pack/A02 SOP Template', notes: 'Version-locked template' },
+    { code: 'SB-07-A03', name: 'Scorecard', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-07_A03_Scorecard_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-07 Delivery & Operations/Appendix Assets Pack/A03 Scorecard', notes: 'KPI/scorecard worksheet' },
+    { code: 'SB-07-A04', name: 'Example Pack', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-07_A04_Examples_v2026-02-17r3.pdf', notion: '/Systems Book/SB-07 Delivery & Operations/Appendix Assets Pack/A04 Examples', notes: 'Filled examples/screens' },
+    { code: 'SB-07-A05', name: 'Standards & Definitions', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-07_A05_Standards_Definitions_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Delivery & Operations/Appendix Assets Pack/A05 Standards & Definitions', notes: 'Glossary + rules' },
   ],
   toolkit: [
-    { code: 'SB-07-T01', name: 'Checklist', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-07_T01_Checklist_v2026-02-17r3.pdf', notion: '/Systems Book/SB-07 Finance & Modeling/Toolkit/T01 Checklist', notes: 'Printable checklist' },
+    { code: 'SB-07-T01', name: 'Checklist', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-07_T01_Checklist_v2026-02-17r3.pdf', notion: '/Systems Book/SB-07 Delivery & Operations/Templates Pack/T01 Checklist', notes: 'Printable checklist' },
     { code: 'SB-07-T02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-07_T02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Finance & Modeling/Toolkit/T02 SOP Template', notes: 'Execution SOP' },
     { code: 'SB-07-T03', name: 'Tracker', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-07_T03_Tracker_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-07 Finance & Modeling/Toolkit/T03 Tracker', notes: 'Operating tracker' },
     { code: 'SB-07-T04', name: 'Scripts Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-07_T04_Scripts_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Finance & Modeling/Toolkit/T04 Scripts Pack', notes: 'Stakeholder comms scripts' },
