@@ -57,6 +57,19 @@ const AppRoutes = () => {
       <Route path="/sync-map" element={<SyncMapPage />} />
       <Route path="/sb-control-panel" element={<SBControlPanelPage />} />
       <Route path="/systems" element={<SystemsPage />} />
+      <Route path="/governance" element={<GovernancePage />} />
+      <Route path="/certification" element={<CertificationPage />} />
+      <Route path="/authority-review" element={<AuthorityReviewPage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/platform" element={<PlatformPage />} />
+      <Route path="/leadership" element={<LeadershipPage />} />
+      <Route path="/outcomes" element={<OutcomesPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/investor/data-room" element={<InvestorDataRoomPage />} />
+      <Route path="/investor/teaser" element={<TeaserPage />} />
+      <Route path="/investor/nda-request" element={<NDARequestPage />} />
+      <Route path="/investor/cim-download" element={<CIMDownloadPage />} />
+      <Route path="/investor/appendix" element={<AppendixPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/admin/login" element={<LoginPage isAdmin />} />
       
