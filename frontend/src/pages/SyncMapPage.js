@@ -205,10 +205,10 @@ const SyncMapPage = () => {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { value: '14', label: 'Mapped Pages' },
-                { value: '3', label: 'Source Systems' },
-                { value: '1', label: 'Shared CID' },
-                { value: 'v2026-02-17r1', label: 'Version' },
+                { value: Object.values(syncData).flat().length.toString(), label: 'Mapped Pages' },
+                { value: '10', label: 'Website Areas' },
+                { value: '6', label: 'Notion DBs' },
+                { value: 'v2026-02-17r2', label: 'Version' },
               ].map((stat, i) => (
                 <div key={i} className="bg-white border border-gray-200 rounded p-4 text-center">
                   <p className="text-2xl font-bold text-[#0B1C3E]">{stat.value}</p>
