@@ -1988,7 +1988,7 @@ const SystemsBookPage = () => {
         <div className="container-custom">
           <div className="flex items-center justify-between">
             <span className="text-sm text-[#6B7280]">
-              © {new Date().getFullYear()} TessaAuthority. Systems Book v2026-02-17r2
+              © {new Date().getFullYear()} TessaAuthority. Systems Book v2026-02-17r3
             </span>
             <div className="flex items-center gap-4">
               <Link to="/" className="text-sm text-[#6B7280] hover:text-[#111827]">Home</Link>
