@@ -58,6 +58,13 @@ const LandingPage = () => {
             </Link>
             <div className="flex items-center gap-4">
               <Link 
+                to="/systems-book" 
+                className="text-sm text-[#6B7280] hover:text-[#111827] transition-colors"
+                data-testid="nav-systems-book"
+              >
+                Systems Book
+              </Link>
+              <Link 
                 to="/login" 
                 className="btn btn-ghost text-sm"
                 data-testid="nav-buyer-login"
