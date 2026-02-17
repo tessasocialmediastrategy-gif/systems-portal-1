@@ -762,6 +762,1092 @@ const SystemsBookPage = () => {
         </div>
       )
     },
+    'SB-07': {
+      title: 'Finance and Modeling System',
+      content: (
+        <div className="space-y-8">
+          {/* Version Lock Block */}
+          <div className="bg-[#0B1C3E]/5 border border-[#0B1C3E]/10 rounded p-4">
+            <div className="flex flex-wrap items-center gap-4 text-sm">
+              <span className="bg-[#C5A059]/20 text-[#C5A059] px-3 py-1 rounded-full font-medium">v2026-02-17r3</span>
+              <span className="text-[#6B7280]">Website Slug: <code className="bg-gray-100 px-2 py-0.5 rounded">/systems-book/finance-modeling</code></span>
+              <span className="text-[#6B7280]">Status: <strong className="text-green-600">ACTIVE</strong></span>
+            </div>
+          </div>
+
+          <div id="SB-07-01" className="scroll-mt-24">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-07-01 Domain Standards
+            </h3>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-[#C5A059]" />
+                  Financial Close Calendar (Minimum)
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    { day: 'Day 0–1', action: 'Reconcile cash, AR/AP, payroll, subscriptions; lock source exports' },
+                    { day: 'Day 2–3', action: 'Update P&L/BS/CF, margin by product/service line, and variance notes' },
+                    { day: 'Day 4', action: 'Executive review + approvals; publish Close Pack (locked PDF)' },
+                    { day: 'Day 5', action: 'Update forecast + KPIs; sync any CIM/Appendix figures if changed materially' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-3 p-3 bg-white border border-gray-200 rounded">
+                      <span className="text-xs bg-[#0B1C3E] text-white px-2 py-1 rounded font-mono">{item.day}</span>
+                      <span className="text-sm text-[#374151]">{item.action}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <TrendingUp className="w-4 h-4 text-[#C5A059]" />
+                  Forecasting Standards
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    'Assumptions live in a single tab/section with: owner, date, source, and confidence level',
+                    'Scenarios are named consistently: Base / Upside / Downside (never overwritten)',
+                    'Revenue drivers are measurable units (leads, conversion, ARPU, churn)',
+                    'Every forecast ties to capacity (people/time) and delivery constraints',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 p-2 text-sm text-[#374151]">
+                      <CheckCircle className="w-4 h-4 text-[#C5A059] flex-shrink-0 mt-0.5" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <Briefcase className="w-4 h-4 text-[#C5A059]" />
+                  Buyer-Ready Finance Package
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {[
+                    'TTM + YTD financials with normalized adjustments',
+                    'Unit economics summary (CAC, LTV, churn, gross margin)',
+                    'Bridge schedule for major variances',
+                    'KPIs that match CIM/Deck numbers',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-2 p-3 bg-white border border-gray-200 rounded text-sm">
+                      <CheckCircle className="w-4 h-4 text-green-600" />
+                      <span className="text-[#374151]">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="SB-07-02" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-07-02 Canonical Artifact Set
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-gray-200 rounded">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Code</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Artifact</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Cadence</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Output</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { code: 'SB-07-A01', name: '3-Year Financial Model (Canon)', cadence: 'Monthly/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-07-A02', name: 'Valuation Model (Canon)', cadence: 'Monthly/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-07-A03', name: 'Revenue Forecast (Canon)', cadence: 'Monthly/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-07-A04', name: 'Sensitivity Analysis (Canon)', cadence: 'Monthly/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-07-A05', name: 'KPI Tracking Model (Finance)', cadence: 'Monthly/Quarterly', output: 'LOCKED (PDF)' },
+                  ].map((row, i) => (
+                    <tr key={i} className="border-t border-gray-200">
+                      <td className="p-3 font-mono text-xs text-[#0B1C3E]">{row.code}</td>
+                      <td className="p-3 text-[#374151]">{row.name}</td>
+                      <td className="p-3 text-[#6B7280]">{row.cadence}</td>
+                      <td className="p-3"><span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">{row.output}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="SB-07-03" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-07-03 Core Workflows
+            </h3>
+            <div className="space-y-4">
+              {[
+                { code: 'SB-07-W01', name: 'Monthly close pack + variance commentary' },
+                { code: 'SB-07-W02', name: 'Quarterly reforecast + scenario update' },
+                { code: 'SB-07-W03', name: 'Annual plan + budget build' },
+                { code: 'SB-07-W04', name: 'Buyer-ready finance package refresh (for CIM/Appendix)' },
+              ].map((wf, i) => (
+                <div key={i} className="p-4 bg-white border border-gray-200 rounded">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-xs bg-[#0B1C3E] text-white px-2 py-1 rounded font-mono">{wf.code}</span>
+                    <span className="font-medium text-[#111827]">{wf.name}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {['Intake', 'Prepare', 'Review', 'Publish', 'Retrospective'].map((step, j, arr) => (
+                      <React.Fragment key={j}>
+                        <span className="text-xs bg-gray-100 px-2 py-1 rounded">{step}</span>
+                        {j < arr.length - 1 && <ArrowRight className="w-3 h-3 text-gray-400" />}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 bg-yellow-50 border border-yellow-200 rounded p-4">
+              <p className="text-sm text-yellow-800">
+                <strong>Control Points:</strong> No external share without NDA coverage, version-locked output, and Registry entry.
+              </p>
+            </div>
+          </div>
+
+          <div id="SB-07-04" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-07-04 Roles (RACI) & Metrics
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3">RACI Matrix</h4>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-xs border border-gray-200 rounded">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="p-2 text-left">Process</th>
+                        <th className="p-2 text-center">R</th>
+                        <th className="p-2 text-center">A</th>
+                        <th className="p-2 text-center">C</th>
+                        <th className="p-2 text-center">I</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { process: 'Artifact update', r: 'Owner', a: 'CEO', c: 'SMEs', i: 'Team' },
+                        { process: 'External distribution', r: 'Steward', a: 'CEO', c: 'Deal Lead', i: 'Stakeholders' },
+                        { process: 'Exception handling', r: 'Owner', a: 'CEO', c: 'SMEs', i: 'Team' },
+                      ].map((row, i) => (
+                        <tr key={i} className="border-t border-gray-200">
+                          <td className="p-2">{row.process}</td>
+                          <td className="p-2 text-center bg-blue-50">{row.r}</td>
+                          <td className="p-2 text-center bg-green-50">{row.a}</td>
+                          <td className="p-2 text-center bg-yellow-50">{row.c}</td>
+                          <td className="p-2 text-center bg-gray-50">{row.i}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3">Key Metrics</h4>
+                <div className="space-y-2">
+                  {[
+                    { metric: 'Freshness', target: '95%+ artifacts updated within cadence' },
+                    { metric: 'Accuracy', target: '<2% material errors' },
+                    { metric: 'Compliance', target: 'Zero external shares without NDA + log' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between p-3 bg-white border border-gray-200 rounded text-sm">
+                      <span className="font-medium text-[#111827]">{item.metric}</span>
+                      <span className="text-[#6B7280]">{item.target}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="mt-4 p-4 bg-gray-50 border border-gray-200 rounded">
+              <p className="text-sm font-semibold text-[#111827] mb-2">Templates</p>
+              <div className="flex flex-wrap gap-2">
+                {['SB-07-T01 Intake form', 'SB-07-T02 Review checklist', 'SB-07-T03 Publish checklist', 'SB-07-T04 Quarterly review agenda'].map((t, i) => (
+                  <span key={i} className="text-xs bg-white border border-gray-200 px-2 py-1 rounded">{t}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    'SB-08': {
+      title: 'Legal and Compliance System',
+      content: (
+        <div className="space-y-8">
+          {/* Version Lock Block */}
+          <div className="bg-[#0B1C3E]/5 border border-[#0B1C3E]/10 rounded p-4">
+            <div className="flex flex-wrap items-center gap-4 text-sm">
+              <span className="bg-[#C5A059]/20 text-[#C5A059] px-3 py-1 rounded-full font-medium">v2026-02-17r3</span>
+              <span className="text-[#6B7280]">Website Slug: <code className="bg-gray-100 px-2 py-0.5 rounded">/systems-book/legal-compliance</code></span>
+              <span className="text-[#6B7280]">Status: <strong className="text-green-600">ACTIVE</strong></span>
+            </div>
+          </div>
+
+          <div id="SB-08-01" className="scroll-mt-24">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-08-01 Domain Standards
+            </h3>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <FileCheck className="w-4 h-4 text-[#C5A059]" />
+                  Signature Authority and Approvals
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    'Define who can sign: NDA, SOW, MSA, vendor contracts, and deal documents (by dollar threshold)',
+                    'No "side letter" commitments without written approval and registry entry',
+                    'All executed documents are stored in the canonical contract repository and linked in the log',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 p-2 text-sm text-[#374151]">
+                      <CheckCircle className="w-4 h-4 text-[#C5A059] flex-shrink-0 mt-0.5" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-[#C5A059]" />
+                  Compliance Calendar (Minimum)
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  {[
+                    { freq: 'Annual', items: 'Insurance renewals, licenses, IP/trademark status, privacy/security review' },
+                    { freq: 'Quarterly', items: 'Vendor risk review + contract renewal watchlist' },
+                    { freq: 'Monthly', items: 'Contract log reconciliation + open obligations review' },
+                  ].map((item, i) => (
+                    <div key={i} className="p-4 bg-white border border-gray-200 rounded">
+                      <span className="text-xs bg-[#C5A059]/20 text-[#C5A059] px-2 py-1 rounded font-medium">{item.freq}</span>
+                      <p className="mt-2 text-sm text-[#374151]">{item.items}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-[#C5A059]" />
+                  Data Privacy and Security Basics
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    'Least-privilege access; MFA required on all core systems',
+                    'Data classification: Public / Internal / Confidential / Restricted (buyer data room is Restricted)',
+                    'Incident response: record, contain, notify (as required), remediate, and log post-mortem',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 p-3 bg-white border border-gray-200 rounded text-sm text-[#374151]">
+                      <Lock className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="SB-08-02" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-08-02 Canonical Artifact Set
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-gray-200 rounded">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Code</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Artifact</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Cadence</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Output</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { code: 'SB-08-A01', name: 'NDA (Mutual/One-way) templates', cadence: 'As-needed/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-08-A02', name: 'MSA / SOW templates', cadence: 'As-needed/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-08-A03', name: 'IP assignment & contractor agreements', cadence: 'As-needed/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-08-A04', name: 'Insurance / licensing binder', cadence: 'As-needed/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-08-A05', name: 'Data privacy & security policy pack', cadence: 'As-needed/Quarterly', output: 'LOCKED (PDF)' },
+                  ].map((row, i) => (
+                    <tr key={i} className="border-t border-gray-200">
+                      <td className="p-3 font-mono text-xs text-[#0B1C3E]">{row.code}</td>
+                      <td className="p-3 text-[#374151]">{row.name}</td>
+                      <td className="p-3 text-[#6B7280]">{row.cadence}</td>
+                      <td className="p-3"><span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">{row.output}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="SB-08-03" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-08-03 Core Workflows
+            </h3>
+            <div className="space-y-4">
+              {[
+                { code: 'SB-08-W01', name: 'Contract intake → review → approval' },
+                { code: 'SB-08-W02', name: 'Annual compliance review + renewals' },
+                { code: 'SB-08-W03', name: 'Data room legal binder refresh' },
+                { code: 'SB-08-W04', name: 'Risk/claims log triage' },
+              ].map((wf, i) => (
+                <div key={i} className="p-4 bg-white border border-gray-200 rounded">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-xs bg-[#0B1C3E] text-white px-2 py-1 rounded font-mono">{wf.code}</span>
+                    <span className="font-medium text-[#111827]">{wf.name}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {['Intake', 'Prepare', 'Review', 'Publish', 'Retrospective'].map((step, j, arr) => (
+                      <React.Fragment key={j}>
+                        <span className="text-xs bg-gray-100 px-2 py-1 rounded">{step}</span>
+                        {j < arr.length - 1 && <ArrowRight className="w-3 h-3 text-gray-400" />}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div id="SB-08-04" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-08-04 Roles (RACI) & Metrics
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3">Key Metrics</h4>
+                <div className="space-y-2">
+                  {[
+                    { metric: 'Freshness', target: '95%+ artifacts updated within cadence' },
+                    { metric: 'Accuracy', target: '<2% material errors' },
+                    { metric: 'Compliance', target: 'Zero external shares without NDA + log' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between p-3 bg-white border border-gray-200 rounded text-sm">
+                      <span className="font-medium text-[#111827]">{item.metric}</span>
+                      <span className="text-[#6B7280]">{item.target}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3">Templates</h4>
+                <div className="space-y-2">
+                  {['SB-08-T01 Intake form', 'SB-08-T02 Review checklist', 'SB-08-T03 Publish checklist', 'SB-08-T04 Quarterly review agenda'].map((t, i) => (
+                    <div key={i} className="text-xs bg-white border border-gray-200 px-3 py-2 rounded">{t}</div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    'SB-09': {
+      title: 'Operations and Delivery System',
+      content: (
+        <div className="space-y-8">
+          {/* Version Lock Block */}
+          <div className="bg-[#0B1C3E]/5 border border-[#0B1C3E]/10 rounded p-4">
+            <div className="flex flex-wrap items-center gap-4 text-sm">
+              <span className="bg-[#C5A059]/20 text-[#C5A059] px-3 py-1 rounded-full font-medium">v2026-02-17r3</span>
+              <span className="text-[#6B7280]">Website Slug: <code className="bg-gray-100 px-2 py-0.5 rounded">/systems-book/operations-delivery</code></span>
+              <span className="text-[#6B7280]">Status: <strong className="text-green-600">ACTIVE</strong></span>
+            </div>
+          </div>
+
+          <div id="SB-09-01" className="scroll-mt-24">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-09-01 Domain Standards
+            </h3>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <Layers className="w-4 h-4 text-[#C5A059]" />
+                  Delivery Phases (Default)
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    { phase: 'Phase 0', desc: 'Sales handoff → scope confirmation → success criteria' },
+                    { phase: 'Phase 1', desc: 'Kickoff → timeline → responsibilities → access & assets' },
+                    { phase: 'Phase 2', desc: 'Execution sprints → weekly reporting → change requests managed' },
+                    { phase: 'Phase 3', desc: 'QA → acceptance → handoff → training' },
+                    { phase: 'Phase 4', desc: '30/60/90-day check-ins + renewal/expansion plan' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-3 p-3 bg-white border border-gray-200 rounded">
+                      <span className="text-xs bg-[#0B1C3E] text-white px-2 py-1 rounded font-mono">{item.phase}</span>
+                      <span className="text-sm text-[#374151]">{item.desc}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-[#C5A059]" />
+                  Quality Control
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    'Pre-flight checklist before work begins (inputs complete, scope signed, access granted)',
+                    'In-flight spot checks (sample audits) + defect tracking with corrective actions',
+                    'Post-delivery acceptance criteria recorded; unresolved issues become tracked change requests',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 p-2 text-sm text-[#374151]">
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4 text-[#C5A059]" />
+                  Escalation
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    'SLA tiers: standard / priority / critical with response + resolution targets',
+                    'Escalation ladder: CSM → Ops Lead → CEO (or delegate) for critical items',
+                    'Every critical escalation triggers a short post-mortem within 72 hours',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 p-3 bg-white border border-gray-200 rounded text-sm text-[#374151]">
+                      <AlertTriangle className="w-4 h-4 text-yellow-500 flex-shrink-0 mt-0.5" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="SB-09-02" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-09-02 Canonical Artifact Set
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-gray-200 rounded">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Code</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Artifact</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Cadence</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Output</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { code: 'SB-09-A01', name: 'Service Delivery Playbook', cadence: 'Weekly/Monthly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-09-A02', name: 'Implementation / onboarding SOP', cadence: 'Weekly/Monthly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-09-A03', name: 'Client Success scorecard', cadence: 'Weekly/Monthly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-09-A04', name: 'Issue/Change Request log', cadence: 'Weekly/Monthly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-09-A05', name: 'SLA & Escalation runbook', cadence: 'Weekly/Monthly', output: 'LOCKED (PDF)' },
+                  ].map((row, i) => (
+                    <tr key={i} className="border-t border-gray-200">
+                      <td className="p-3 font-mono text-xs text-[#0B1C3E]">{row.code}</td>
+                      <td className="p-3 text-[#374151]">{row.name}</td>
+                      <td className="p-3 text-[#6B7280]">{row.cadence}</td>
+                      <td className="p-3"><span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">{row.output}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="SB-09-03" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-09-03 Core Workflows
+            </h3>
+            <div className="space-y-4">
+              {[
+                { code: 'SB-09-W01', name: 'Delivery kickoff → plan → execute → handoff' },
+                { code: 'SB-09-W02', name: 'Weekly ops cadence + KPI review' },
+                { code: 'SB-09-W03', name: 'Quality audits + corrective actions' },
+                { code: 'SB-09-W04', name: 'Post-mortem + continuous improvement' },
+              ].map((wf, i) => (
+                <div key={i} className="p-4 bg-white border border-gray-200 rounded">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-xs bg-[#0B1C3E] text-white px-2 py-1 rounded font-mono">{wf.code}</span>
+                    <span className="font-medium text-[#111827]">{wf.name}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {['Intake', 'Prepare', 'Review', 'Publish', 'Retrospective'].map((step, j, arr) => (
+                      <React.Fragment key={j}>
+                        <span className="text-xs bg-gray-100 px-2 py-1 rounded">{step}</span>
+                        {j < arr.length - 1 && <ArrowRight className="w-3 h-3 text-gray-400" />}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div id="SB-09-04" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-09-04 Roles (RACI) & Metrics
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3">Key Metrics</h4>
+                <div className="space-y-2">
+                  {[
+                    { metric: 'Freshness', target: '95%+ artifacts updated within cadence' },
+                    { metric: 'Accuracy', target: '<2% material errors' },
+                    { metric: 'Speed', target: 'Cycle time from intake → publish' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between p-3 bg-white border border-gray-200 rounded text-sm">
+                      <span className="font-medium text-[#111827]">{item.metric}</span>
+                      <span className="text-[#6B7280]">{item.target}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3">Templates</h4>
+                <div className="space-y-2">
+                  {['SB-09-T01 Intake form', 'SB-09-T02 Review checklist', 'SB-09-T03 Publish checklist', 'SB-09-T04 Quarterly review agenda'].map((t, i) => (
+                    <div key={i} className="text-xs bg-white border border-gray-200 px-3 py-2 rounded">{t}</div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    'SB-10': {
+      title: 'Product and IP System',
+      content: (
+        <div className="space-y-8">
+          {/* Version Lock Block */}
+          <div className="bg-[#0B1C3E]/5 border border-[#0B1C3E]/10 rounded p-4">
+            <div className="flex flex-wrap items-center gap-4 text-sm">
+              <span className="bg-[#C5A059]/20 text-[#C5A059] px-3 py-1 rounded-full font-medium">v2026-02-17r3</span>
+              <span className="text-[#6B7280]">Website Slug: <code className="bg-gray-100 px-2 py-0.5 rounded">/systems-book/product-ip</code></span>
+              <span className="text-[#6B7280]">Status: <strong className="text-green-600">ACTIVE</strong></span>
+            </div>
+          </div>
+
+          <div id="SB-10-01" className="scroll-mt-24">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-10-01 Domain Standards
+            </h3>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <Map className="w-4 h-4 text-[#C5A059]" />
+                  Roadmap Governance
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    'Single backlog with clear intake categories: customer request, internal improvement, compliance, growth',
+                    'Prioritization uses scoring: revenue impact, strategic fit, effort, risk, and dependency load',
+                    'Roadmap is reviewed monthly; major changes require a lock event and comms update',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 p-2 text-sm text-[#374151]">
+                      <CheckCircle className="w-4 h-4 text-[#C5A059] flex-shrink-0 mt-0.5" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-[#C5A059]" />
+                  IP Register Rules
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    'Every asset is tagged: type (doc/code/design), owner, creation date, license status, reuse rights',
+                    'Third-party assets require a recorded license and attribution obligations',
+                    'Protectable IP triggers legal review (trademark, copyright, patentability as relevant)',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 p-3 bg-white border border-gray-200 rounded text-sm text-[#374151]">
+                      <Lock className="w-4 h-4 text-[#0B1C3E] flex-shrink-0 mt-0.5" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <GitBranch className="w-4 h-4 text-[#C5A059]" />
+                  Release Standards
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    'Each release includes: version, changes, migration notes, rollback plan, and owner sign-off',
+                    'Public-facing messaging pulls from Brand/Positioning canon to avoid drift',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 p-2 text-sm text-[#374151]">
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="SB-10-02" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-10-02 Canonical Artifact Set
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-gray-200 rounded">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Code</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Artifact</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Cadence</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Output</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { code: 'SB-10-A01', name: 'Product roadmap + backlog', cadence: 'Monthly/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-10-A02', name: 'Release notes template', cadence: 'Monthly/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-10-A03', name: 'IP register', cadence: 'Monthly/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-10-A04', name: 'Brand + messaging guidelines', cadence: 'Monthly/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-10-A05', name: 'Pricing & packaging sheet', cadence: 'Monthly/Quarterly', output: 'LOCKED (PDF)' },
+                  ].map((row, i) => (
+                    <tr key={i} className="border-t border-gray-200">
+                      <td className="p-3 font-mono text-xs text-[#0B1C3E]">{row.code}</td>
+                      <td className="p-3 text-[#374151]">{row.name}</td>
+                      <td className="p-3 text-[#6B7280]">{row.cadence}</td>
+                      <td className="p-3"><span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">{row.output}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="SB-10-03" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-10-03 Core Workflows
+            </h3>
+            <div className="space-y-4">
+              {[
+                { code: 'SB-10-W01', name: 'Idea → evaluate → prioritize' },
+                { code: 'SB-10-W02', name: 'Build → QA → release' },
+                { code: 'SB-10-W03', name: 'IP creation → protection → reuse' },
+                { code: 'SB-10-W04', name: 'Pricing changes → approval → publish' },
+              ].map((wf, i) => (
+                <div key={i} className="p-4 bg-white border border-gray-200 rounded">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-xs bg-[#0B1C3E] text-white px-2 py-1 rounded font-mono">{wf.code}</span>
+                    <span className="font-medium text-[#111827]">{wf.name}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {['Intake', 'Prepare', 'Review', 'Publish', 'Retrospective'].map((step, j, arr) => (
+                      <React.Fragment key={j}>
+                        <span className="text-xs bg-gray-100 px-2 py-1 rounded">{step}</span>
+                        {j < arr.length - 1 && <ArrowRight className="w-3 h-3 text-gray-400" />}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div id="SB-10-04" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-10-04 Roles (RACI) & Metrics
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3">Key Metrics</h4>
+                <div className="space-y-2">
+                  {[
+                    { metric: 'Freshness', target: '95%+ artifacts updated within cadence' },
+                    { metric: 'Accuracy', target: '<2% material errors' },
+                    { metric: 'Compliance', target: 'Zero external shares without NDA + log' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between p-3 bg-white border border-gray-200 rounded text-sm">
+                      <span className="font-medium text-[#111827]">{item.metric}</span>
+                      <span className="text-[#6B7280]">{item.target}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3">Templates</h4>
+                <div className="space-y-2">
+                  {['SB-10-T01 Intake form', 'SB-10-T02 Review checklist', 'SB-10-T03 Publish checklist', 'SB-10-T04 Quarterly review agenda'].map((t, i) => (
+                    <div key={i} className="text-xs bg-white border border-gray-200 px-3 py-2 rounded">{t}</div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    'SB-11': {
+      title: 'Technology Stack and Integrations',
+      content: (
+        <div className="space-y-8">
+          {/* Version Lock Block */}
+          <div className="bg-[#0B1C3E]/5 border border-[#0B1C3E]/10 rounded p-4">
+            <div className="flex flex-wrap items-center gap-4 text-sm">
+              <span className="bg-[#C5A059]/20 text-[#C5A059] px-3 py-1 rounded-full font-medium">v2026-02-17r3</span>
+              <span className="text-[#6B7280]">Website Slug: <code className="bg-gray-100 px-2 py-0.5 rounded">/systems-book/tech-stack-integrations</code></span>
+              <span className="text-[#6B7280]">Status: <strong className="text-green-600">ACTIVE</strong></span>
+            </div>
+          </div>
+
+          <div id="SB-11-01" className="scroll-mt-24">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-11-01 Domain Standards
+            </h3>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <Layers className="w-4 h-4 text-[#C5A059]" />
+                  Stack Layers to Document
+                </h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
+                  {['Identity & access (SSO/MFA)', 'Messaging', 'CRM', 'Project/work management', 'Finance/billing', 'Analytics', 'Storage', 'Integrations'].map((item, i) => (
+                    <div key={i} className="text-xs bg-white border border-gray-200 px-3 py-2 rounded text-center">{item}</div>
+                  ))}
+                </div>
+                <div className="bg-gray-50 border border-gray-200 rounded p-3 text-sm text-[#6B7280]">
+                  Integrations are mapped with: <strong>source, destination, trigger, data fields, frequency, and owner</strong>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-[#C5A059]" />
+                  Security and Access
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    'Access matrix includes role-based groups; no shared credentials',
+                    'Quarterly access review + immediate offboarding checklist for leavers',
+                    'Backups: define RPO/RTO per system; test restores at least quarterly',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 p-3 bg-white border border-gray-200 rounded text-sm text-[#374151]">
+                      <Lock className="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <RefreshCw className="w-4 h-4 text-[#C5A059]" />
+                  Change Management
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    'All automation changes require: ticket, test plan, rollback, and lock note in registry',
+                    'Production changes occur in defined windows; incidents override with after-action review',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 p-2 text-sm text-[#374151]">
+                      <CheckCircle className="w-4 h-4 text-[#C5A059] flex-shrink-0 mt-0.5" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="SB-11-02" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-11-02 Canonical Artifact Set
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-gray-200 rounded">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Code</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Artifact</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Cadence</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Output</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { code: 'SB-11-A01', name: 'System architecture diagram', cadence: 'As-needed/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-11-A02', name: 'Integration map', cadence: 'As-needed/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-11-A03', name: 'Access control matrix', cadence: 'As-needed/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-11-A04', name: 'Backup & recovery plan', cadence: 'As-needed/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-11-A05', name: 'Vendor inventory', cadence: 'As-needed/Quarterly', output: 'LOCKED (PDF)' },
+                  ].map((row, i) => (
+                    <tr key={i} className="border-t border-gray-200">
+                      <td className="p-3 font-mono text-xs text-[#0B1C3E]">{row.code}</td>
+                      <td className="p-3 text-[#374151]">{row.name}</td>
+                      <td className="p-3 text-[#6B7280]">{row.cadence}</td>
+                      <td className="p-3"><span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">{row.output}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="SB-11-03" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-11-03 Core Workflows
+            </h3>
+            <div className="space-y-4">
+              {[
+                { code: 'SB-11-W01', name: 'New tool evaluation → pilot → deploy' },
+                { code: 'SB-11-W02', name: 'Access provisioning / offboarding' },
+                { code: 'SB-11-W03', name: 'Incident response + uptime tracking' },
+                { code: 'SB-11-W04', name: 'Change management for automations/integrations' },
+              ].map((wf, i) => (
+                <div key={i} className="p-4 bg-white border border-gray-200 rounded">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-xs bg-[#0B1C3E] text-white px-2 py-1 rounded font-mono">{wf.code}</span>
+                    <span className="font-medium text-[#111827]">{wf.name}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {['Intake', 'Prepare', 'Review', 'Publish', 'Retrospective'].map((step, j, arr) => (
+                      <React.Fragment key={j}>
+                        <span className="text-xs bg-gray-100 px-2 py-1 rounded">{step}</span>
+                        {j < arr.length - 1 && <ArrowRight className="w-3 h-3 text-gray-400" />}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div id="SB-11-04" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-11-04 Roles (RACI) & Metrics
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3">Key Metrics</h4>
+                <div className="space-y-2">
+                  {[
+                    { metric: 'Freshness', target: '95%+ artifacts updated within cadence' },
+                    { metric: 'Accuracy', target: '<2% material errors' },
+                    { metric: 'Compliance', target: 'Zero external shares without NDA + log' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between p-3 bg-white border border-gray-200 rounded text-sm">
+                      <span className="font-medium text-[#111827]">{item.metric}</span>
+                      <span className="text-[#6B7280]">{item.target}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3">Templates</h4>
+                <div className="space-y-2">
+                  {['SB-11-T01 Intake form', 'SB-11-T02 Review checklist', 'SB-11-T03 Publish checklist', 'SB-11-T04 Quarterly review agenda'].map((t, i) => (
+                    <div key={i} className="text-xs bg-white border border-gray-200 px-3 py-2 rounded">{t}</div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    'SB-12': {
+      title: 'HR and Org Design System',
+      content: (
+        <div className="space-y-8">
+          {/* Version Lock Block */}
+          <div className="bg-[#0B1C3E]/5 border border-[#0B1C3E]/10 rounded p-4">
+            <div className="flex flex-wrap items-center gap-4 text-sm">
+              <span className="bg-[#C5A059]/20 text-[#C5A059] px-3 py-1 rounded-full font-medium">v2026-02-17r3</span>
+              <span className="text-[#6B7280]">Website Slug: <code className="bg-gray-100 px-2 py-0.5 rounded">/systems-book/hr-org-design</code></span>
+              <span className="text-[#6B7280]">Status: <strong className="text-green-600">ACTIVE</strong></span>
+            </div>
+          </div>
+
+          <div id="SB-12-01" className="scroll-mt-24">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-12-01 Domain Standards
+            </h3>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <Users className="w-4 h-4 text-[#C5A059]" />
+                  Role Scorecards
+                </h4>
+                <div className="space-y-2">
+                  {[
+                    'Each role has: mission, outcomes, KPIs, core responsibilities, required skills, and decision rights',
+                    'Scorecards link directly to SOPs and the cadence they own',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 p-2 text-sm text-[#374151]">
+                      <CheckCircle className="w-4 h-4 text-[#C5A059] flex-shrink-0 mt-0.5" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <UserCog className="w-4 h-4 text-[#C5A059]" />
+                  Hiring and Onboarding
+                </h4>
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-sm font-medium text-[#111827] mb-2">Standard Pipeline:</p>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {['Application', 'Screen', 'Structured Interview', 'Work Sample', 'References', 'Offer'].map((step, i, arr) => (
+                        <React.Fragment key={i}>
+                          <span className="text-xs bg-gray-100 px-2 py-1 rounded">{step}</span>
+                          {i < arr.length - 1 && <ArrowRight className="w-3 h-3 text-gray-400" />}
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="bg-gray-50 border border-gray-200 rounded p-3 text-sm text-[#6B7280]">
+                    <strong>Onboarding includes:</strong> tools access, SOP orientation, first-week outcomes, and 30/60/90 plan
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                  <BarChart3 className="w-4 h-4 text-[#C5A059]" />
+                  Performance and Culture Cadence
+                </h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {[
+                    { freq: 'Weekly', activity: '1:1s' },
+                    { freq: 'Monthly', activity: 'Scorecard review' },
+                    { freq: 'Quarterly', activity: 'Performance + comp check-in' },
+                    { freq: 'Annual', activity: 'Calibration' },
+                  ].map((item, i) => (
+                    <div key={i} className="p-3 bg-white border border-gray-200 rounded text-center">
+                      <span className="text-xs bg-[#C5A059]/20 text-[#C5A059] px-2 py-1 rounded font-medium">{item.freq}</span>
+                      <p className="mt-2 text-sm text-[#374151]">{item.activity}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-3 text-sm text-[#6B7280]">
+                  Values are operationalized as behaviors with examples; violations are handled consistently and logged.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="SB-12-02" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-12-02 Canonical Artifact Set
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-gray-200 rounded">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Code</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Artifact</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Cadence</th>
+                    <th className="text-left p-3 font-semibold text-[#111827]">Output</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { code: 'SB-12-A01', name: 'Org chart + role scorecards', cadence: 'Weekly/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-12-A02', name: 'Hiring pipeline + interview kits', cadence: 'Weekly/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-12-A03', name: 'Onboarding/offboarding checklists', cadence: 'Weekly/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-12-A04', name: 'Performance review framework', cadence: 'Weekly/Quarterly', output: 'LOCKED (PDF)' },
+                    { code: 'SB-12-A05', name: 'Training & SOP library index', cadence: 'Weekly/Quarterly', output: 'LOCKED (PDF)' },
+                  ].map((row, i) => (
+                    <tr key={i} className="border-t border-gray-200">
+                      <td className="p-3 font-mono text-xs text-[#0B1C3E]">{row.code}</td>
+                      <td className="p-3 text-[#374151]">{row.name}</td>
+                      <td className="p-3 text-[#6B7280]">{row.cadence}</td>
+                      <td className="p-3"><span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">{row.output}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="SB-12-03" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-12-03 Core Workflows
+            </h3>
+            <div className="space-y-4">
+              {[
+                { code: 'SB-12-W01', name: 'Hiring → offer → onboard' },
+                { code: 'SB-12-W02', name: 'Weekly 1:1s + quarterly reviews' },
+                { code: 'SB-12-W03', name: 'Comp changes → approval → communicate' },
+                { code: 'SB-12-W04', name: 'Culture + values reinforcement cadence' },
+              ].map((wf, i) => (
+                <div key={i} className="p-4 bg-white border border-gray-200 rounded">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-xs bg-[#0B1C3E] text-white px-2 py-1 rounded font-mono">{wf.code}</span>
+                    <span className="font-medium text-[#111827]">{wf.name}</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {['Intake', 'Prepare', 'Review', 'Publish', 'Retrospective'].map((step, j, arr) => (
+                      <React.Fragment key={j}>
+                        <span className="text-xs bg-gray-100 px-2 py-1 rounded">{step}</span>
+                        {j < arr.length - 1 && <ArrowRight className="w-3 h-3 text-gray-400" />}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div id="SB-12-04" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-12-04 Roles (RACI) & Metrics
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3">Key Metrics</h4>
+                <div className="space-y-2">
+                  {[
+                    { metric: 'Freshness', target: '95%+ artifacts updated within cadence' },
+                    { metric: 'Accuracy', target: '<2% material errors' },
+                    { metric: 'Compliance', target: 'Zero external shares without NDA + log' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center justify-between p-3 bg-white border border-gray-200 rounded text-sm">
+                      <span className="font-medium text-[#111827]">{item.metric}</span>
+                      <span className="text-[#6B7280]">{item.target}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h4 className="font-semibold text-[#111827] mb-3">Templates</h4>
+                <div className="space-y-2">
+                  {['SB-12-T01 Intake form', 'SB-12-T02 Review checklist', 'SB-12-T03 Publish checklist', 'SB-12-T04 Quarterly review agenda'].map((t, i) => (
+                    <div key={i} className="text-xs bg-white border border-gray-200 px-3 py-2 rounded">{t}</div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
   };
 
   return (
