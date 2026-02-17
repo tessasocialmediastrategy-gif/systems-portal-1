@@ -174,17 +174,19 @@ const SyncMapPage = () => {
 
       {/* Tabs */}
       <div className="container-custom py-8">
-        <div className="flex gap-1 mb-8 bg-gray-100 p-1 rounded-lg w-fit">
+        <div className="flex flex-wrap gap-1 mb-8 bg-gray-100 p-1 rounded-lg w-fit">
           {[
             { id: 'overview', label: 'Overview', icon: Layers },
-            { id: 'cid-rules', label: 'CID Rules', icon: Code },
+            { id: 'cid-rules', label: 'Coding Standard', icon: Code },
+            { id: 'source-truth', label: 'Source of Truth', icon: Database },
             { id: 'sync-table', label: 'Sync Table', icon: Table },
-            { id: 'workflow', label: 'Workflow', icon: RefreshCw },
+            { id: 'cadence', label: 'Cadence', icon: RefreshCw },
+            { id: 'notion', label: 'Notion Tracker', icon: Database },
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded transition-colors ${
+              className={`flex items-center gap-2 px-3 py-2 text-sm font-medium rounded transition-colors ${
                 activeTab === tab.id 
                   ? 'bg-white text-[#111827] shadow-sm' 
                   : 'text-[#6B7280] hover:text-[#111827]'
