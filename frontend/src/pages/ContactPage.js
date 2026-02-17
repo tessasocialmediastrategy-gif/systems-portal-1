@@ -162,11 +162,13 @@ const ContactPage = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider font-medium hover:bg-[#d4af6a] transition-colors"
+                  disabled={loading}
+                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider font-medium hover:bg-[#d4af6a] transition-colors disabled:opacity-50"
                   data-testid="submit-contact"
                 >
-                  Send Message <Send className="w-4 h-4" />
+                  {loading ? 'Sending...' : 'Send Message'} <Send className="w-4 h-4" />
                 </button>
+                {error && <p className="text-red-500 text-sm text-center mt-2">{error}</p>}
               </form>
             </div>
           </div>
