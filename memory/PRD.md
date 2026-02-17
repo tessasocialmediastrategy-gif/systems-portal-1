@@ -24,215 +24,122 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## What's Been Implemented
 
-### 2026-02-18 (Full Website Build & Data Room Journey)
+### 2026-02-18 Session 2 (Backend Integration & Skeleton Pages)
+- [x] **NDA Request API** (`POST /api/investor/nda-request`)
+  - Stores buyer qualification data in MongoDB
+  - Duplicate detection by email
+  - Status tracking (pending, sent, signed, rejected)
+- [x] **Authority Review API** (`POST /api/authority-review`)
+  - Lead capture for governance assessments
+  - Status workflow (new, contacted, scheduled, completed)
+- [x] **Contact Form API** (`POST /api/contact`)
+  - General inquiries storage
+- [x] **NDA Status Check** (`GET /api/investor/nda-status?email=`)
+  - Public endpoint to verify NDA status
+- [x] **Admin Endpoints**:
+  - `GET /api/admin/nda-requests` - List all NDA requests
+  - `PUT /api/admin/nda-requests/{id}/status` - Update NDA status
+  - `GET /api/admin/authority-reviews` - List all reviews
+  - `GET /api/admin/contacts` - List all contact submissions
+  - `GET /api/admin/investor-stats` - Pipeline metrics
+- [x] **Skeleton Page Component** (`SkeletonPage.js`)
+  - Auto-renders pages from SyncMap data
+  - Displays registry code, status, sync direction
+  - Breadcrumb navigation
+  - "Content Pending" placeholder with quick links
+- [x] **Frontend Forms Connected**:
+  - NDARequestPage → `/api/investor/nda-request`
+  - AuthorityReviewPage → `/api/authority-review`
+  - ContactPage → `/api/contact`
+  - All have loading states and error handling
+
+### 2026-02-18 Session 1 (Full Website Build & Data Room Journey)
 - [x] **Systems Page** (`/systems`): Black/gold theme with clean book images
-  - Added four books grid (Institutional Authority, Certification Gap, Enforce or Erode, Governance Beyond Founders)
-  - Main OnPoint Authority book spread
-  - Certification section with seal
-- [x] **Governance Page** (`/governance`): Framework overview with active/planned systems
-- [x] **Certification Page** (`/certification`): Three-level certification pathway
+- [x] **Governance Page** (`/governance`): Framework overview
+- [x] **Certification Page** (`/certification`): Three-level pathway
 - [x] **Authority Review Page** (`/authority-review`): Lead capture form
-- [x] **Public Marketing Pages**:
-  - About (`/about`)
-  - Platform (`/platform`)
-  - Leadership (`/leadership`)
-  - Outcomes (`/outcomes`)
-  - Contact (`/contact`)
-- [x] **Data Room Journey** (Complete investor flow):
-  - Data Room Landing (`/investor/data-room`)
-  - Teaser Page (`/investor/teaser`)
-  - NDA Request Page (`/investor/nda-request`)
-  - CIM Download Page (`/investor/cim-download`) - with NDA gate
-  - Appendix Pack (`/investor/appendix`) - with NDA gate
-- [x] **Refactored**: Created `/app/frontend/src/data/syncMapData.js` to extract SyncMap data
-- [x] **Verified**: "Authority Killers" section confirmed removed from codebase
+- [x] **Public Marketing Pages**: About, Platform, Leadership, Outcomes, Contact
+- [x] **Data Room Journey**: Teaser → NDA Request → CIM Download → Appendix
+- [x] **Refactored**: Created `/app/frontend/src/data/syncMapData.js`
 
-### 2026-02-17 (Registry Lock & Control Panel)
-- [x] Version-locked all 204 registry items to ACTIVE status
-- [x] Built SB Control Panel page (`/sb-control-panel`) with:
-  - Overview tab: Book Master card, stats grid (12/36/168/217), quick links
-  - Chapters tab: Expandable chapter cards with pack parent details
-  - Registry tab: Full registry table with CSV export
-  - Distribution Log tab: Distribution tracking interface
-- [x] Generated canonical folder tree structure for OneDrive
-- [x] Created registry CSV export (218 rows)
-- [x] Created distribution log template
+### Previous Sessions
+- [x] Systems Book Registry (217 assets, 4-tier hierarchy)
+- [x] SB Control Panel dashboard
+- [x] Sync Map page
+- [x] User authentication (JWT)
+- [x] Document upload/download
 
-### 2026-02-17 (Pack Parent Rollup Completion)
-- [x] Added Pack Parent Rollup rows for Systems Book chapters SB-07 through SB-12:
-  - **SB-07**: Delivery & Operations - Appendix, Worksheet, Template packs
-  - **SB-08**: Sales Pipeline & Growth - Appendix, Worksheet, Template packs
-  - **SB-09**: Finance & Reporting - Appendix, Worksheet, Template packs
-  - **SB-10**: People & Org Design - Appendix, Worksheet, Template packs
-  - **SB-11**: Legal, Risk & Compliance - Appendix, Worksheet, Template packs
-  - **SB-12**: Exit Readiness & M&A Package - Appendix, Worksheet, Template packs
-- [x] All pack parents version-locked to v2026-02-17r3 with ACTIVE status
-- [x] Pack parents display as highlighted header rows in Expanded Registry tables
-- [x] Updated `systemsBookRegistry.js` with packParents arrays for SB-07 to SB-12
-- [x] Updated `SystemsBookPage.js` to render packParent props for all chapters
-
-### 2026-02-17 (Systems Book v2026-02-17r3 - 6 New Chapters)
-- [x] Added 6 full chapters to Systems Book:
-  - **SB-07**: Finance and Modeling System (close calendar, forecasting, buyer-ready package)
-  - **SB-08**: Legal and Compliance System (signature authority, compliance calendar, privacy/security)
-  - **SB-09**: Operations and Delivery System (delivery phases, QA, escalation, runbooks)
-  - **SB-10**: Product and IP System (roadmap governance, IP register, release standards)
-  - **SB-11**: Technology Stack and Integrations (stack layers, access/security, change management)
-  - **SB-12**: HR and Org Design System (role scorecards, hiring/onboarding, performance cadence)
-- [x] Each chapter includes:
-  - Version lock block (v2026-02-17r3)
-  - Artifact codes (SB-XX-A01 through A05)
-  - Workflow codes (SB-XX-W01 through W04)
-  - Template codes (SB-XX-T01 through T04)
-  - Website ↔ Notion ↔ Word sync table
-  - RACI matrix + metrics + control log requirements
-  - Implementation checklist + change control
-- [x] **Expanded Registry** for each chapter (SB-01 to SB-12):
-  - **Web Copy (W01-W03)** for SB-01 to SB-06: Landing Page Copy, Section Blocks, Downloads Hub
-  - **Appendix Pack (A01-A05)**: System Diagram, SOP Template, Scorecard, Example Pack, Standards & Definitions
-  - **Toolkit (T01-T06)**: Checklist, SOP Template, Tracker, Scripts Pack, Notion Template, Prompt Pack
-  - Each item has: Code, Name, Format (PDF/DOCX/XLSX/MD), Status, Output File, Notion Path, Notes
-  - Collapsible tables for better navigation
-- [x] Created `/app/frontend/src/data/systemsBookRegistry.js` data file for registry
-- [x] Updated version display to v2026-02-17r3 in header and footer
-
-### 2026-02-17 (Website Book Sync Map v3 - One System Build)
-- [x] Updated to v2026-02-17r3 with 57 mappings
-- [x] New tabs: Coding Standard, Source of Truth, Cadence, Notion Tracker
-- [x] Added planned chapters SB-07 through SB-12
-- [x] Added Data Room Journey (5 CIM flow pages)
-- [x] Added Public Site mappings (6 marketing pages)
-- [x] Publishing cadence: Weekly/Monthly/Quarterly
-- [x] Notion "OPS — Sync Tracker" database schema
-- [x] Source-of-Truth rules documentation
-- [x] Uploaded 6 files to Data Room:
-  - MD, DOCX, CSV, ZIP (complete kit)
-  - Notion Sync Tracker Setup
-  - OneDrive Folder Builder (PowerShell)
-
-### 2026-02-17 (Landing Page & Core Portal)
-- [x] Landing page with hero section and public downloads
-- [x] Admin authentication and dashboard
-- [x] Buyer invite system with temporary passwords
-- [x] Document upload with category support
-- [x] Public document section (Teaser, CIM Times, CIM Modern)
-- [x] Protected buyer portal with document access
-- [x] Download logging and activity tracking
-- [x] User management (activate/deactivate/delete)
-- [x] Document management with checksum verification
-- [x] Premium UI following design guidelines
-
-### 2026-02-17 (Systems Book Integration)
-- [x] Systems Book page at /systems-book
-- [x] Full content from OnPoint Systems Book Master v2026-02-17r3
-- [x] Interactive sidebar navigation (SB-00 to SB-12)
-- [x] Section switching with visual hierarchy
-- [x] Systems Book PDF/DOCX uploaded to Data Room
-- [x] Navigation link in header
-
-## Systems Book Sections (Complete - 13 Chapters)
-- **SB-00**: Master Control & Registry (folder architecture, naming, registries)
-- **SB-01**: Authority OS Overview (operating system architecture and layer model)
-- **SB-02**: Data Room & Access Control (file system taxonomy, permissions, security)
-- **SB-03**: CIM Program (Teaser → NDA → CIM → Buyer Deck → Appendix)
-- **SB-04**: Investor Readiness + Website Spec (complete website architecture)
-- **SB-05**: Buyer Pipeline (pipeline stages and communications library)
-- **SB-06**: KPI / Metrics (scorecards and reporting framework)
-- **SB-07**: Finance and Modeling System (close calendar, forecasting, buyer-ready package)
-- **SB-08**: Legal and Compliance System (signature authority, compliance calendar, privacy/security)
-- **SB-09**: Operations and Delivery System (delivery phases, QA, escalation, runbooks)
-- **SB-10**: Product and IP System (roadmap governance, IP register, release standards)
-- **SB-11**: Technology Stack and Integrations (stack layers, access/security, change management)
-- **SB-12**: HR and Org Design System (role scorecards, hiring/onboarding, performance cadence)
-
-## Document Categories
-- **Public**: teaser, cim_times, cim_modern
-- **Protected**: buyer_deck, appendix, data_room
-
-## Routes
-- `/` - Landing page with public documents
-- `/systems-book` - Interactive Systems Book (13 chapters)
-- `/sync-map` - Website ↔ Book Sync Map v3
-- `/login` - Buyer login
-- `/admin/login` - Admin login
-- `/portal` - Buyer deal room portal
-- `/admin/dashboard` - Admin management dashboard
+## Active Routes
+| Route | Page | Status |
+|-------|------|--------|
+| `/` | Landing Page | Active |
+| `/systems` | Systems Overview | Active |
+| `/systems-book` | Systems Book | Active |
+| `/governance` | Governance Framework | Active |
+| `/certification` | Certification Pathway | Active |
+| `/authority-review` | Lead Capture Form | Active |
+| `/about` | About OnPoint | Active |
+| `/platform` | Platform/Solutions | Active |
+| `/leadership` | Leadership Team | Active |
+| `/outcomes` | Case Studies | Active |
+| `/contact` | Contact Form | Active |
+| `/investor/data-room` | Data Room Landing | Active |
+| `/investor/teaser` | Teaser Download | Active |
+| `/investor/nda-request` | NDA Request Form | Active |
+| `/investor/cim-download` | CIM Download (NDA-gated) | Active |
+| `/investor/appendix` | Appendix Pack (NDA-gated) | Active |
+| `/governance/*` | Skeleton Pages | Active |
+| `/systems-book/*` | Skeleton Pages | Active |
+| `/website-architecture/*` | Skeleton Pages | Active |
 
 ## API Endpoints
 ### Public
-- GET `/api/documents/public` - List public documents
-- GET `/api/downloads/public/{doc_id}` - Download public document
-
-### Authentication
-- POST `/api/auth/login` - User login
-- GET `/api/auth/me` - Get current user
-
-### Admin
-- POST `/api/admin/invite` - Invite buyer (returns temp password)
-- GET `/api/admin/users` - List all buyers
-- PUT `/api/admin/users/{id}/toggle-active` - Activate/deactivate user
-- DELETE `/api/admin/users/{id}` - Delete user
-- POST `/api/documents/upload` - Upload document
-- GET `/api/documents/all` - List all documents
-- DELETE `/api/documents/{id}` - Delete document
-- GET `/api/stats` - Portal statistics
+- `POST /api/investor/nda-request` - Submit NDA request
+- `POST /api/authority-review` - Submit authority review request
+- `POST /api/contact` - Submit contact form
+- `GET /api/investor/nda-status?email=` - Check NDA status
+- `GET /api/documents/public` - List public documents
 
 ### Protected (Buyer)
-- GET `/api/documents/protected` - List protected documents
-- GET `/api/downloads/protected/{doc_id}` - Download protected document
+- `GET /api/documents` - List all accessible documents
+- `GET /api/documents/{id}/download` - Download document
 
-## Default Credentials
-- **Admin**: admin@test.com / password
-- **Test Buyer**: buyer@test.com / password
+### Admin
+- `GET /api/admin/nda-requests` - List NDA requests
+- `PUT /api/admin/nda-requests/{id}/status` - Update NDA status
+- `GET /api/admin/authority-reviews` - List reviews
+- `GET /api/admin/contacts` - List contacts
+- `GET /api/admin/investor-stats` - Pipeline stats
+- `POST /api/admin/users` - Create buyer account
+- `POST /api/documents/upload` - Upload document
+
+## Data Models (MongoDB)
+- **users**: `{id, email, hashed_password, name, role, is_active}`
+- **documents**: `{id, filename, file_path, category, access, upload_date}`
+- **nda_requests**: `{id, name, email, company, title, buyer_type, status, created_at}`
+- **authority_reviews**: `{id, name, email, company, company_size, interest, status}`
+- **contacts**: `{id, name, email, subject, message, status, created_at}`
 
 ## Prioritized Backlog
-### P0 (Critical) - COMPLETE
-- ✅ Core document portal functionality
-- ✅ Authentication system
-- ✅ Systems Book integration (13 chapters)
-- ✅ Sync Map v3 integration
+### P0 - Critical
+- [ ] Wire up actual PDF downloads (Teaser, CIM, Appendix files)
+- [ ] Admin panel view for NDA/Review submissions
 
-### P1 (High) - Upcoming
-- [ ] Build skeleton pages for WP slugs from Sync Map v3
-- [ ] Build public marketing site for onpointsystemsauthority.com
-- [ ] Build Data Room Journey (Teaser gate → NDA form → CIM download)
-- [ ] Email notification for buyer invites
-- [ ] Password reset functionality
+### P1 - High
+- [ ] Email notifications on form submissions
+- [ ] Deploy to tessaauthority.com production
 
-### P2 (Medium) - Future
-- [ ] Document versioning history
-- [ ] Bulk document upload
-- [ ] Export download reports
-- [ ] OneDrive integration for document sync
-- [ ] Integrate Copy Blocks from Appendix A
+### P2 - Medium
+- [ ] Build remaining governance chapters (SB-07 through SB-12)
+- [ ] Add analytics tracking
+- [ ] Buyer activity logging
 
-## File Structure
-```
-/app
-├── backend/
-│   ├── server.py
-│   ├── uploads/
-│   │   ├── public/
-│   │   └── protected/
-│   └── .env
-├── frontend/
-│   ├── src/
-│   │   ├── context/AuthContext.js
-│   │   ├── services/api.js
-│   │   ├── pages/
-│   │   │   ├── LandingPage.js
-│   │   │   ├── LoginPage.js
-│   │   │   ├── BuyerPortal.js
-│   │   │   ├── AdminDashboard.js
-│   │   │   ├── SystemsBookPage.js
-│   │   │   └── SyncMapPage.js
-│   │   └── App.js
-│   └── .env
-└── memory/PRD.md
-```
+## Test Credentials
+- **Admin**: `admin@test.com` / `password` (if created)
+- **Buyer**: `buyer@test.com` / `password` (if created)
 
-## Next Tasks
-1. Build skeleton pages for all WP slugs from Sync Map v3
-2. Build public marketing site for onpointsystemsauthority.com
-3. Build Data Room Journey flow
-4. Add email notifications for buyer invites
+## Files Reference
+- `/app/frontend/src/data/systemsBookRegistry.js` - Complete registry
+- `/app/frontend/src/data/syncMapData.js` - Website↔Book mapping
+- `/app/frontend/src/pages/SkeletonPage.js` - Dynamic skeleton renderer
+- `/app/backend/server.py` - All API routes
