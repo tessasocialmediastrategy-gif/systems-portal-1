@@ -736,6 +736,13 @@ const SystemsBookPage = () => {
             <span className="text-xs text-gray-400">
               Status: Working Master (Registry-Driven)
             </span>
+            <Link 
+              to="/sync-map" 
+              className="text-xs bg-white/10 text-white px-3 py-1 rounded-full hover:bg-white/20 transition-colors flex items-center gap-1"
+            >
+              <RefreshCw className="w-3 h-3" />
+              View Sync Map
+            </Link>
           </div>
         </div>
       </section>
