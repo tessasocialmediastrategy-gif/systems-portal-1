@@ -23,6 +23,17 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 6. Systems Book web integration
 
 ## What's Been Implemented
+### 2026-02-17 (Registry Lock & Control Panel)
+- [x] Version-locked all 204 registry items to ACTIVE status
+- [x] Built SB Control Panel page (`/sb-control-panel`) with:
+  - Overview tab: Book Master card, stats grid (12/36/168/217), quick links
+  - Chapters tab: Expandable chapter cards with pack parent details
+  - Registry tab: Full registry table with CSV export
+  - Distribution Log tab: Distribution tracking interface
+- [x] Generated canonical folder tree structure for OneDrive
+- [x] Created registry CSV export (218 rows)
+- [x] Created distribution log template
+
 ### 2026-02-17 (Pack Parent Rollup Completion)
 - [x] Added Pack Parent Rollup rows for Systems Book chapters SB-07 through SB-12:
   - **SB-07**: Delivery & Operations - Appendix, Worksheet, Template packs
