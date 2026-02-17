@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import BuyerPortal from "./pages/BuyerPortal";
 import AdminDashboard from "./pages/AdminDashboard";
 import SystemsBookPage from "./pages/SystemsBookPage";
+import SyncMapPage from "./pages/SyncMapPage";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole }) => {
@@ -38,6 +39,7 @@ const AppRoutes = () => {
       {/* Public Routes */}
       <Route path="/" element={<LandingPage />} />
       <Route path="/systems-book" element={<SystemsBookPage />} />
+      <Route path="/sync-map" element={<SyncMapPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/admin/login" element={<LoginPage isAdmin />} />
       
