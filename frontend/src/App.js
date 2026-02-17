@@ -41,6 +41,7 @@ const AppRoutes = () => {
       <Route path="/" element={<LandingPage />} />
       <Route path="/systems-book" element={<SystemsBookPage />} />
       <Route path="/sync-map" element={<SyncMapPage />} />
+      <Route path="/sb-control-panel" element={<SBControlPanelPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/admin/login" element={<LoginPage isAdmin />} />
       
