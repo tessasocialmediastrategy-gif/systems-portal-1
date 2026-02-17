@@ -1,33 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Award, Scale, Building2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const SystemsPage = () => {
-  const systems = [
+  const books = [
     {
-      id: 'authority-design',
-      title: 'Authority Architecture Blueprint',
-      description: 'Authority infrastructure that operates without founder dependency.',
-      icon: Building2,
+      id: 'institutional-authority',
+      title: 'Institutional Authority',
+      label: 'Authority design',
+      image: '/images/books/four-books-grid.png',
+      gridPosition: 'top-left',
     },
     {
-      id: 'operator-certification',
-      title: 'Operator Certification Engine',
-      description: 'Structured progression through doctrine that determines license eligibility.',
-      icon: Award,
+      id: 'certification-gap',
+      title: 'The Certification Gap',
+      label: 'Operator certification',
+      image: '/images/books/four-books-grid.png',
+      gridPosition: 'top-right',
     },
     {
-      id: 'internal-review',
-      title: 'Internal Review & Approval System',
-      description: 'Quality assurance and governance checkpoints for all deliverables.',
-      icon: Shield,
+      id: 'enforce-or-erode',
+      title: 'Enforce or Erode',
+      label: 'Enforcement systems',
+      image: '/images/books/four-books-grid.png',
+      gridPosition: 'bottom-left',
     },
     {
-      id: 'brand-ip',
-      title: 'Brand & IP Governance Layer',
-      description: 'Revocable access, audit compliance, and violation management.',
-      icon: Scale,
+      id: 'governance-beyond-founders',
+      title: 'Governance Beyond Founders',
+      label: 'Governance layer',
+      image: '/images/books/four-books-grid.png',
+      gridPosition: 'bottom-right',
     },
+  ];
+
+  const systemPillars = [
+    'Authority Architecture Blueprint',
+    'Operator Certification Engine',
+    'Internal Review & Approval System',
+    'Brand & IP Governance Layer',
   ];
 
   return (
@@ -64,7 +75,7 @@ const SystemsPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-16 px-6">
         <div className="max-w-7xl mx-auto">
           <p className="text-[#C5A059] text-sm tracking-widest mb-6">PRODUCT & IP</p>
           <h1 className="text-5xl md:text-7xl font-light leading-tight mb-8" style={{ fontFamily: 'Libre Baskerville, serif' }}>
@@ -78,10 +89,10 @@ const SystemsPage = () => {
           
           {/* System Pillars */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            {systems.map((system) => (
-              <div key={system.id} className="flex items-start gap-3">
+            {systemPillars.map((pillar, index) => (
+              <div key={index} className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-[#C5A059] mt-2 flex-shrink-0" />
-                <span className="text-gray-300">{system.title}</span>
+                <span className="text-gray-300">{pillar}</span>
               </div>
             ))}
           </div>
@@ -92,52 +103,151 @@ const SystemsPage = () => {
         </div>
       </section>
 
-      {/* Systems Grid */}
-      <section className="py-20 px-6 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {systems.map((system) => (
-              <div 
-                key={system.id}
-                className="p-8 border border-[#262626] bg-[#111111] hover:border-[#C5A059]/30 transition-colors group"
-                data-testid={`system-card-${system.id}`}
-              >
-                <system.icon className="w-8 h-8 text-[#C5A059] mb-6" />
-                <h3 className="text-2xl font-light mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-                  {system.title}
-                </h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">
-                  {system.description}
-                </p>
-                <Link 
-                  to={`/systems/${system.id}`}
-                  className="inline-flex items-center gap-2 text-[#C5A059] text-sm tracking-wider group-hover:gap-3 transition-all"
-                >
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
+      {/* Books Section - Clean Grid */}
+      <section className="py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 gap-8 md:gap-12">
+            {/* Institutional Authority */}
+            <div className="flex flex-col items-center group" data-testid="book-institutional-authority">
+              <div className="relative overflow-hidden mb-4">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/n3pcivav_book%20images.png"
+                  alt="Authority Books Collection"
+                  className="w-full max-w-md object-cover"
+                  style={{ 
+                    clipPath: 'inset(0 50% 50% 0)',
+                    transform: 'scale(2)',
+                    transformOrigin: 'top left'
+                  }}
+                />
               </div>
-            ))}
+              <p className="text-gray-400 text-sm tracking-wider">Authority design</p>
+            </div>
+
+            {/* The Certification Gap */}
+            <div className="flex flex-col items-center group" data-testid="book-certification-gap">
+              <div className="relative overflow-hidden mb-4">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/n3pcivav_book%20images.png"
+                  alt="Authority Books Collection"
+                  className="w-full max-w-md object-cover"
+                  style={{ 
+                    clipPath: 'inset(0 0 50% 50%)',
+                    transform: 'scale(2)',
+                    transformOrigin: 'top right'
+                  }}
+                />
+              </div>
+              <p className="text-gray-400 text-sm tracking-wider">Operator certification</p>
+            </div>
+
+            {/* Enforce or Erode */}
+            <div className="flex flex-col items-center group" data-testid="book-enforce-erode">
+              <div className="relative overflow-hidden mb-4">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/n3pcivav_book%20images.png"
+                  alt="Authority Books Collection"
+                  className="w-full max-w-md object-cover"
+                  style={{ 
+                    clipPath: 'inset(50% 50% 0 0)',
+                    transform: 'scale(2)',
+                    transformOrigin: 'bottom left'
+                  }}
+                />
+              </div>
+              <p className="text-gray-400 text-sm tracking-wider">Enforcement systems</p>
+            </div>
+
+            {/* Governance Beyond Founders */}
+            <div className="flex flex-col items-center group" data-testid="book-governance-founders">
+              <div className="relative overflow-hidden mb-4">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/n3pcivav_book%20images.png"
+                  alt="Authority Books Collection"
+                  className="w-full max-w-md object-cover"
+                  style={{ 
+                    clipPath: 'inset(50% 0 0 50%)',
+                    transform: 'scale(2)',
+                    transformOrigin: 'bottom right'
+                  }}
+                />
+              </div>
+              <p className="text-gray-400 text-sm tracking-wider">Governance layer</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Built for Transfer Section */}
       <section className="py-20 px-6 border-t border-[#1a1a1a]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-light mb-6" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-            Built for transfer.
-          </h2>
-          <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-            OnPoint Authority Systems are designed from day one to be licensable, 
-            transferable, and executable without the original founder.
-          </p>
-          <Link 
-            to="/authority-review"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider hover:bg-[#d4af6a] transition-colors"
-            data-testid="cta-authority-review"
-          >
-            Request Authority Review <ArrowRight className="w-4 h-4" />
-          </Link>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-light mb-6" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                Built for transfer.
+              </h2>
+              <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                OnPoint Authority Systems are designed from day one to be licensable, 
+                transferable, and executable without the original founder.
+              </p>
+              <p className="text-gray-400 mb-8 leading-relaxed">
+                Authority is not built through visibility, personality, or persuasion. 
+                It is engineered through systems, governance, and enforceable standards.
+              </p>
+              <Link 
+                to="/authority-review"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider hover:bg-[#d4af6a] transition-colors"
+                data-testid="cta-authority-review"
+              >
+                Request Authority Review <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/qypu4we9_BookPowerPointImage2.png"
+                alt="OnPoint Authority Book"
+                className="max-w-lg w-full"
+                data-testid="main-book-image"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certification Section */}
+      <section className="py-20 px-6 border-t border-[#1a1a1a]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="flex justify-center order-2 lg:order-1">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/g2m36blt_Certification%20Seal.png"
+                alt="OnPoint Authority Certification"
+                className="max-w-lg w-full"
+                data-testid="certification-image"
+              />
+            </div>
+            <div className="order-1 lg:order-2">
+              <p className="text-[#C5A059] text-sm tracking-widest mb-4">CERTIFICATION</p>
+              <h2 className="text-4xl md:text-5xl font-light mb-6" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                Certified Authority Operator
+              </h2>
+              <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                The standard in scalable, licensable authority design. OnPoint Authority 
+                outlines the architecture behind businesses that scale without founders, 
+                license without dilution, and exit without drama.
+              </p>
+              <p className="text-gray-400 mb-8 leading-relaxed">
+                Written for operators, boards, and buyers, this book documents how authority 
+                becomes infrastructure—transferable, enforceable, and durable beyond any individual.
+              </p>
+              <Link 
+                to="/certification"
+                className="inline-flex items-center gap-2 text-[#C5A059] text-sm tracking-wider hover:gap-3 transition-all"
+              >
+                Learn about certification <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
