@@ -71,6 +71,29 @@ const SyncMapPage = () => {
       { sb: 'A-01', wp: 'A-01', title: 'System Code Tag (copy/paste)', slug: '/resources/copy-blocks/system-code', db: 'Copy Blocks', sync: '1-way (Book→Website)', status: 'Active' },
       { sb: 'A-02', wp: 'A-02', title: 'Gated Download Page Banner', slug: '/resources/copy-blocks/gated-banner', db: 'Copy Blocks', sync: '1-way (Book→Website)', status: 'Active' },
     ],
+    'planned-chapters': [
+      { sb: 'SB-07', wp: 'WP-07', title: 'Sales Control System', slug: '/governance/sb-07-sales-control', db: 'Systems Book', sync: '1-way (Book→Notion)', status: 'Planned' },
+      { sb: 'SB-08', wp: 'WP-08', title: 'Marketing Control System', slug: '/governance/sb-08-marketing-control', db: 'Systems Book', sync: '1-way (Book→Notion)', status: 'Planned' },
+      { sb: 'SB-09', wp: 'WP-09', title: 'Customer Success Control System', slug: '/governance/sb-09-customer-success', db: 'Systems Book', sync: '1-way (Book→Notion)', status: 'Planned' },
+      { sb: 'SB-10', wp: 'WP-10', title: 'Finance & Controls System', slug: '/governance/sb-10-finance-controls', db: 'Systems Book', sync: '1-way (Book→Notion)', status: 'Planned' },
+      { sb: 'SB-11', wp: 'WP-11', title: 'HR & People Ops System', slug: '/governance/sb-11-hr-people-ops', db: 'Systems Book', sync: '1-way (Book→Notion)', status: 'Planned' },
+      { sb: 'SB-12', wp: 'WP-12', title: 'Tech & Product Control System', slug: '/governance/sb-12-tech-product', db: 'Systems Book', sync: '1-way (Book→Notion)', status: 'Planned' },
+    ],
+    'data-room-journey': [
+      { sb: 'WP-DR-01', wp: 'WP-DR-01', title: 'Data Room Landing', slug: '/investor/data-room', db: 'CIM Program', sync: '1-way (CIM→Web)', status: 'Active' },
+      { sb: 'WP-DR-02', wp: 'WP-DR-02', title: 'Teaser Gate Page', slug: '/investor/teaser', db: 'CIM Program', sync: '1-way (CIM→Web)', status: 'Active' },
+      { sb: 'WP-DR-03', wp: 'WP-DR-03', title: 'NDA Request Page', slug: '/investor/nda-request', db: 'CIM Program', sync: '1-way (CIM→Web)', status: 'Active' },
+      { sb: 'WP-DR-04', wp: 'WP-DR-04', title: 'CIM Download Page', slug: '/investor/cim-download', db: 'CIM Program', sync: '1-way (CIM→Web)', status: 'Active' },
+      { sb: 'WP-DR-05', wp: 'WP-DR-05', title: 'Appendix Pack Index', slug: '/investor/appendix', db: 'CIM Program', sync: '1-way (CIM→Web)', status: 'Active' },
+    ],
+    'public-site': [
+      { sb: 'WP-PUB-01', wp: 'WP-PUB-01', title: 'Home / Hero', slug: '/', db: 'Website', sync: '2-way (Web↔Notion)', status: 'Active' },
+      { sb: 'WP-PUB-02', wp: 'WP-PUB-02', title: 'About OnPoint', slug: '/about', db: 'Website', sync: '2-way (Web↔Notion)', status: 'Active' },
+      { sb: 'WP-PUB-03', wp: 'WP-PUB-03', title: 'Platform / Solutions', slug: '/platform', db: 'Website', sync: '2-way (Web↔Notion)', status: 'Active' },
+      { sb: 'WP-PUB-04', wp: 'WP-PUB-04', title: 'Leadership', slug: '/leadership', db: 'Website', sync: '2-way (Web↔Notion)', status: 'Active' },
+      { sb: 'WP-PUB-05', wp: 'WP-PUB-05', title: 'Outcomes / Case Studies', slug: '/outcomes', db: 'Website', sync: '2-way (Web↔Notion)', status: 'Active' },
+      { sb: 'WP-PUB-06', wp: 'WP-PUB-06', title: 'Contact', slug: '/contact', db: 'Website', sync: '2-way (Web↔Notion)', status: 'Active' },
+    ],
   };
 
   const areas = [
@@ -85,6 +108,9 @@ const SyncMapPage = () => {
     { id: 'kpi-reporting', label: 'KPI & Reporting', count: syncData['kpi-reporting'].length },
     { id: 'change-control', label: 'Change Control', count: syncData['change-control'].length },
     { id: 'copy-blocks', label: 'Copy Blocks', count: syncData['copy-blocks'].length },
+    { id: 'planned-chapters', label: 'Planned (SB-07–12)', count: syncData['planned-chapters'].length },
+    { id: 'data-room-journey', label: 'Data Room Journey', count: syncData['data-room-journey'].length },
+    { id: 'public-site', label: 'Public Site', count: syncData['public-site'].length },
   ];
 
   const getFilteredData = () => {
