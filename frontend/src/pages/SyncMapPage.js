@@ -1,0 +1,355 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { 
+  RefreshCw, Database, FileText, Globe, BookOpen, 
+  ChevronRight, CheckCircle, Lock, AlertTriangle,
+  ArrowRight, Download, Table, Code, Layers
+} from 'lucide-react';
+
+const SyncMapPage = () => {
+  const [activeTab, setActiveTab] = useState('overview');
+
+  const syncData = [
+    { cid: 'SB-03', heading: 'CIM Program', slug: '/cim', type: 'Program Hub', sot: 'CIM Registry → Notion → Book', lock: 'LOCKED' },
+    { cid: 'SB-03-01', heading: 'Canonical Deliverable Chain', slug: '/cim/deliverables', type: 'Doc Page', sot: 'CIM Registry → Notion → Book', lock: 'LOCKED' },
+    { cid: 'SB-03-02', heading: 'Lock Rules', slug: '/cim/lock-rules', type: 'Doc Page', sot: 'CIM Registry → Notion → Book', lock: 'LOCKED' },
+    { cid: 'SB-03-03', heading: 'Master vs. External Formats', slug: '/cim/formats', type: 'Doc Page', sot: 'CIM Registry → Notion → Book', lock: 'LOCKED' },
+    { cid: 'SB-04-02', heading: 'Website Architecture Spec', slug: '/architecture', type: 'Architecture Hub', sot: 'Notion → Book → Website', lock: 'LOCKED' },
+    { cid: 'SB-04-02-01', heading: 'Information Architecture & Sitemap', slug: '/architecture/sitemap', type: 'Doc Page', sot: 'Notion → Book → Website', lock: 'LOCKED' },
+    { cid: 'SB-04-02-02', heading: 'Page Templates & Components', slug: '/architecture/templates', type: 'Doc Page', sot: 'Notion → Book → Website', lock: 'LOCKED' },
+    { cid: 'SB-04-02-03', heading: 'Content Types & CMS Fields', slug: '/architecture/content-model', type: 'Doc Page', sot: 'Notion → Book → Website', lock: 'LOCKED' },
+    { cid: 'SB-04-02-04', heading: 'Navigation & UX Standards', slug: '/architecture/navigation', type: 'Doc Page', sot: 'Notion → Book → Website', lock: 'LOCKED' },
+    { cid: 'SB-04-02-05', heading: 'SEO, Analytics & Tracking', slug: '/architecture/seo-analytics', type: 'Doc Page', sot: 'Notion → Book → Website', lock: 'LOCKED' },
+    { cid: 'SB-04-02-06', heading: 'Publishing Workflow', slug: '/architecture/workflow', type: 'Doc Page', sot: 'Notion → Book → Website', lock: 'LOCKED' },
+    { cid: 'SB-04-02-07', heading: 'Version Tagging & Locking', slug: '/architecture/versioning', type: 'Doc Page', sot: 'Notion → Book → Website', lock: 'LOCKED' },
+    { cid: 'SB-04-02-08', heading: 'QA, Accessibility & Security', slug: '/architecture/qa', type: 'Doc Page', sot: 'Notion → Book → Website', lock: 'LOCKED' },
+    { cid: 'SB-04-03', heading: 'Website ↔ CIM Mapping', slug: '/architecture/cim-sync', type: 'Doc Page', sot: 'CIM Registry → Notion → Book', lock: 'LOCKED' },
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#F9FAFB]">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200/40">
+        <div className="container-custom">
+          <div className="flex items-center justify-between h-16">
+            <Link to="/" className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-[#0B1C3E] rounded flex items-center justify-center">
+                <span className="text-white font-bold text-lg" style={{ fontFamily: 'Libre Baskerville, serif' }}>TA</span>
+              </div>
+              <span className="font-semibold text-[#111827]">TessaAuthority</span>
+            </Link>
+            <div className="flex items-center gap-4">
+              <Link to="/" className="text-sm text-[#6B7280] hover:text-[#111827]">Home</Link>
+              <Link to="/systems-book" className="text-sm text-[#6B7280] hover:text-[#111827]">Systems Book</Link>
+              <Link to="/login" className="btn btn-ghost text-sm">Buyer Portal</Link>
+              <Link to="/admin/login" className="btn btn-primary text-sm">Admin</Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="pt-24 pb-12 bg-[#0B1C3E]">
+        <div className="container-custom">
+          <div className="flex items-center gap-2 text-[#C5A059] text-sm mb-4">
+            <Link to="/" className="hover:underline">Home</Link>
+            <ChevronRight className="w-4 h-4" />
+            <Link to="/systems-book" className="hover:underline">Systems Book</Link>
+            <ChevronRight className="w-4 h-4" />
+            <span>Sync Map</span>
+          </div>
+          <div className="flex items-center gap-4 mb-4">
+            <RefreshCw className="w-10 h-10 text-[#C5A059]" />
+            <h1 className="text-3xl md:text-4xl font-bold text-white" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              Website ↔ Book Sync Map
+            </h1>
+          </div>
+          <p className="text-gray-300 max-w-2xl">
+            A single crosswalk that keeps Website Architecture pages, Notion operating pages, and the Systems Book chapters synchronized using one shared Canonical ID (CID).
+          </p>
+          <div className="flex items-center gap-4 mt-6">
+            <span className="text-xs bg-[#C5A059]/20 text-[#C5A059] px-3 py-1 rounded-full font-medium">
+              v2026-02-17r1
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Tabs */}
+      <div className="container-custom py-8">
+        <div className="flex gap-1 mb-8 bg-gray-100 p-1 rounded-lg w-fit">
+          {[
+            { id: 'overview', label: 'Overview', icon: Layers },
+            { id: 'cid-rules', label: 'CID Rules', icon: Code },
+            { id: 'sync-table', label: 'Sync Table', icon: Table },
+            { id: 'workflow', label: 'Workflow', icon: RefreshCw },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded transition-colors ${
+                activeTab === tab.id 
+                  ? 'bg-white text-[#111827] shadow-sm' 
+                  : 'text-[#6B7280] hover:text-[#111827]'
+              }`}
+              data-testid={`tab-${tab.id}`}
+            >
+              <tab.icon className="w-4 h-4" />
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Overview Tab */}
+        {activeTab === 'overview' && (
+          <div className="space-y-8 animate-fade-in">
+            <div className="bg-white border border-gray-200 rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-[#111827] mb-6" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                What is the Sync Map?
+              </h2>
+              <p className="text-[#6B7280] mb-6 max-w-3xl">
+                The Sync Map ensures that every piece of content across <strong>Website</strong>, <strong>Notion</strong>, and <strong>Word/Book</strong> stays synchronized using a single <strong>Canonical ID (CID)</strong>. No more drift, no more version confusion.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                {[
+                  { icon: Globe, title: 'Website', desc: 'CID in front matter metadata', color: 'bg-blue-500' },
+                  { icon: Database, title: 'Notion', desc: 'CID as database property', color: 'bg-purple-500' },
+                  { icon: BookOpen, title: 'Systems Book', desc: 'CID in heading prefixes', color: 'bg-green-500' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-gray-50 border border-gray-200 rounded p-6 text-center">
+                    <div className={`w-12 h-12 ${item.color} bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4`}>
+                      <item.icon className={`w-6 h-6 ${item.color.replace('bg-', 'text-')}`} />
+                    </div>
+                    <h3 className="font-semibold text-[#111827] mb-2">{item.title}</h3>
+                    <p className="text-sm text-[#6B7280]">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-[#0B1C3E]/5 border border-[#0B1C3E]/10 rounded p-4">
+                <p className="text-sm text-[#374151]">
+                  <strong className="text-[#0B1C3E]">Key Principle:</strong> The CID is universal — the same string must appear in Notion, Word, and Website. No renumbering after external publication.
+                </p>
+              </div>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { value: '14', label: 'Mapped Pages' },
+                { value: '3', label: 'Source Systems' },
+                { value: '1', label: 'Shared CID' },
+                { value: 'v2026-02-17r1', label: 'Version' },
+              ].map((stat, i) => (
+                <div key={i} className="bg-white border border-gray-200 rounded p-4 text-center">
+                  <p className="text-2xl font-bold text-[#0B1C3E]">{stat.value}</p>
+                  <p className="text-sm text-[#6B7280]">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* CID Rules Tab */}
+        {activeTab === 'cid-rules' && (
+          <div className="space-y-8 animate-fade-in">
+            <div className="bg-white border border-gray-200 rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-[#111827] mb-6" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                Canonical ID (CID) Rules
+              </h2>
+              
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-[#111827] mb-3">Format</h3>
+                  <div className="bg-[#0B1C3E] text-white rounded p-4 font-mono">
+                    <code>SB-##-##</code> or <code>SB-##-##-##</code>
+                  </div>
+                  <p className="text-sm text-[#6B7280] mt-2">
+                    Matches Systems Book section codes (e.g., <code className="bg-gray-100 px-1 rounded">SB-04-02-01</code>)
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Website */}
+                  <div>
+                    <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                      <Globe className="w-4 h-4 text-blue-500" />
+                      Website (Front Matter)
+                    </h4>
+                    <div className="bg-gray-900 text-green-400 rounded p-4 font-mono text-sm">
+                      <pre>{`cid: SB-04-02-01
+version: v2026-02-17r1
+lock: locked | draft
+source_of_truth: notion`}</pre>
+                    </div>
+                  </div>
+
+                  {/* Notion */}
+                  <div>
+                    <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                      <Database className="w-4 h-4 text-purple-500" />
+                      Notion (Properties)
+                    </h4>
+                    <div className="bg-gray-50 border border-gray-200 rounded p-4 text-sm space-y-2">
+                      {['CID (text, required)', 'Status (Draft/Review/Locked)', 'Owner (person)', 'Last Synced (date)', 'Source of Truth (select)'].map((prop, i) => (
+                        <div key={i} className="flex items-center gap-2">
+                          <CheckCircle className="w-3 h-3 text-purple-500" />
+                          <span className="text-[#374151]">{prop}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Word */}
+                  <div>
+                    <h4 className="font-semibold text-[#111827] mb-3 flex items-center gap-2">
+                      <FileText className="w-4 h-4 text-green-500" />
+                      Word (Heading Format)
+                    </h4>
+                    <div className="bg-gray-50 border border-gray-200 rounded p-4 text-sm">
+                      <p className="text-[#374151] mb-2">Prefix every Heading 1/2 with the CID:</p>
+                      <code className="bg-white border px-2 py-1 rounded text-[#0B1C3E]">SB-04-02-01 Information Architecture</code>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-red-50 border border-red-200 rounded p-4">
+                  <p className="text-sm text-red-800">
+                    <AlertTriangle className="w-4 h-4 inline mr-2" />
+                    <strong>No renumbering</strong> after external publication. If structure changes, add a new CID and mark the old CID as <code className="bg-red-100 px-1 rounded">DEPRECATED</code>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Sync Table Tab */}
+        {activeTab === 'sync-table' && (
+          <div className="space-y-6 animate-fade-in">
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+              <div className="p-6 border-b border-gray-200">
+                <h2 className="text-2xl font-bold text-[#111827]" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                  Sync Map Table
+                </h2>
+                <p className="text-[#6B7280] mt-2">
+                  Complete mapping of CIDs to Website pages, Book sections, and lock states.
+                </p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-gray-50 border-b border-gray-200">
+                    <tr>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">CID</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Book Heading</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">URL Slug</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Type</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Source of Truth</th>
+                      <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Lock</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100">
+                    {syncData.map((row, i) => (
+                      <tr key={i} className="hover:bg-gray-50">
+                        <td className="px-6 py-4">
+                          <code className="text-sm bg-[#0B1C3E] text-white px-2 py-1 rounded font-mono">
+                            {row.cid}
+                          </code>
+                        </td>
+                        <td className="px-6 py-4 text-sm text-[#374151]">{row.heading}</td>
+                        <td className="px-6 py-4">
+                          <code className="text-xs bg-gray-100 px-2 py-1 rounded font-mono text-[#6B7280]">
+                            {row.slug}
+                          </code>
+                        </td>
+                        <td className="px-6 py-4">
+                          <span className={`text-xs px-2 py-1 rounded ${
+                            row.type === 'Program Hub' || row.type === 'Architecture Hub' 
+                              ? 'bg-[#C5A059]/10 text-[#C5A059]' 
+                              : 'bg-gray-100 text-[#6B7280]'
+                          }`}>
+                            {row.type}
+                          </span>
+                        </td>
+                        <td className="px-6 py-4 text-xs text-[#6B7280]">{row.sot}</td>
+                        <td className="px-6 py-4">
+                          <span className="flex items-center gap-1 text-xs text-green-700 bg-green-100 px-2 py-1 rounded">
+                            <Lock className="w-3 h-3" />
+                            {row.lock}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Workflow Tab */}
+        {activeTab === 'workflow' && (
+          <div className="space-y-8 animate-fade-in">
+            <div className="bg-white border border-gray-200 rounded-lg p-8">
+              <h2 className="text-2xl font-bold text-[#111827] mb-6" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                Sync Workflow (Version-Locked)
+              </h2>
+              
+              <div className="flex flex-wrap items-center gap-4 mb-8">
+                {[
+                  { step: '1', label: 'Draft/Revise in Notion', color: 'bg-purple-500' },
+                  { step: '2', label: 'Commit to Book (Word)', color: 'bg-green-500' },
+                  { step: '3', label: 'Publish to Website', color: 'bg-blue-500' },
+                  { step: '4', label: 'Log in Registry', color: 'bg-[#C5A059]' },
+                ].map((item, i, arr) => (
+                  <React.Fragment key={i}>
+                    <div className="flex items-center gap-3">
+                      <span className={`w-8 h-8 ${item.color} text-white rounded-full flex items-center justify-center font-bold text-sm`}>
+                        {item.step}
+                      </span>
+                      <span className="text-sm text-[#374151] font-medium">{item.label}</span>
+                    </div>
+                    {i < arr.length - 1 && <ArrowRight className="w-5 h-5 text-[#9CA3AF]" />}
+                  </React.Fragment>
+                ))}
+              </div>
+
+              <h3 className="text-lg font-semibold text-[#111827] mb-4">Quick Checks (Before Publishing)</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  'Every page/chapter has exactly one CID',
+                  'Website pages include cid + version + lock fields',
+                  'Notion row contains CID + Status + Owner + Last Synced',
+                  'Externally shared artifacts are marked LOCKED',
+                ].map((check, i) => (
+                  <div key={i} className="flex items-start gap-3 p-4 bg-gray-50 border border-gray-200 rounded">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-[#374151]">{check}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Footer */}
+      <footer className="py-8 bg-white border-t border-gray-200">
+        <div className="container-custom">
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-[#6B7280]">
+              © {new Date().getFullYear()} TessaAuthority. Sync Map v2026-02-17r1
+            </span>
+            <div className="flex items-center gap-4">
+              <Link to="/systems-book" className="text-sm text-[#6B7280] hover:text-[#111827]">Systems Book</Link>
+              <Link to="/login" className="text-sm text-[#6B7280] hover:text-[#111827]">Buyer Portal</Link>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default SyncMapPage;
