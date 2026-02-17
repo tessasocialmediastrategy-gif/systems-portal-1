@@ -475,6 +475,197 @@ async def seed_admin():
     
     return {"message": "Admin created", "email": admin.email, "password": "admin123"}
 
+# ============== NDA & INVESTOR TRACKING ROUTES ==============
+
+class NDARequest(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    name: str
+    email: EmailStr
+    company: str
+    title: str
+    phone: Optional[str] = None
+    buyer_type: str  # strategic, pe, family-office, individual, other
+    interest: str
+    timeline: Optional[str] = None
+
+class NDARequestInDB(NDARequest):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    status: str = "pending"  # pending, sent, signed, rejected
+    created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    nda_sent_at: Optional[str] = None
+    nda_signed_at: Optional[str] = None
+    notes: Optional[str] = None
+
+class NDARequestResponse(BaseModel):
+    id: str
+    name: str
+    email: str
+    company: str
+    title: str
+    buyer_type: str
+    status: str
+    created_at: str
+
+class AuthorityReviewRequest(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    name: str
+    email: EmailStr
+    company: str
+    phone: Optional[str] = None
+    company_size: str
+    interest: str
+    message: Optional[str] = None
+
+class AuthorityReviewInDB(AuthorityReviewRequest):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    status: str = "new"  # new, contacted, scheduled, completed
+    created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    notes: Optional[str] = None
+
+class ContactRequest(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    name: str
+    email: EmailStr
+    subject: str
+    message: str
+
+class ContactInDB(ContactRequest):
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    status: str = "new"  # new, read, replied
+    created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+
+# NDA Request Submission (Public)
+@api_router.post("/investor/nda-request")
+async def submit_nda_request(request: NDARequest):
+    # Check for existing request
+    existing = await db.nda_requests.find_one({"email": request.email, "status": {"$ne": "rejected"}})
+    if existing:
+        return {"message": "NDA request already submitted", "status": existing.get("status", "pending")}
+    
+    nda_req = NDARequestInDB(**request.model_dump())
+    await db.nda_requests.insert_one(nda_req.model_dump())
+    
+    logger.info(f"New NDA request from {request.email} ({request.company})")
+    
+    return {"message": "NDA request submitted successfully", "id": nda_req.id}
+
+# Get NDA Requests (Admin)
+@api_router.get("/admin/nda-requests", response_model=List[NDARequestResponse])
+async def list_nda_requests(admin: dict = Depends(get_admin_user)):
+    requests = await db.nda_requests.find({}, {"_id": 0}).sort("created_at", -1).to_list(500)
+    return [NDARequestResponse(**r) for r in requests]
+
+# Update NDA Request Status (Admin)
+@api_router.put("/admin/nda-requests/{request_id}/status")
+async def update_nda_status(
+    request_id: str,
+    status: str,
+    notes: Optional[str] = None,
+    admin: dict = Depends(get_admin_user)
+):
+    nda_req = await db.nda_requests.find_one({"id": request_id})
+    if not nda_req:
+        raise HTTPException(status_code=404, detail="NDA request not found")
+    
+    update_data = {"status": status}
+    if notes:
+        update_data["notes"] = notes
+    if status == "sent":
+        update_data["nda_sent_at"] = datetime.now(timezone.utc).isoformat()
+    elif status == "signed":
+        update_data["nda_signed_at"] = datetime.now(timezone.utc).isoformat()
+    
+    await db.nda_requests.update_one({"id": request_id}, {"$set": update_data})
+    return {"message": f"NDA request status updated to {status}"}
+
+# Check NDA Status (Public - by email)
+@api_router.get("/investor/nda-status")
+async def check_nda_status(email: str):
+    nda_req = await db.nda_requests.find_one({"email": email}, {"_id": 0, "interest": 0, "notes": 0})
+    if not nda_req:
+        return {"has_nda": False, "status": None}
+    return {"has_nda": True, "status": nda_req.get("status", "pending")}
+
+# Authority Review Submission (Public)
+@api_router.post("/authority-review")
+async def submit_authority_review(request: AuthorityReviewRequest):
+    review = AuthorityReviewInDB(**request.model_dump())
+    await db.authority_reviews.insert_one(review.model_dump())
+    
+    logger.info(f"New Authority Review request from {request.email} ({request.company})")
+    
+    return {"message": "Authority Review request submitted", "id": review.id}
+
+# Get Authority Reviews (Admin)
+@api_router.get("/admin/authority-reviews")
+async def list_authority_reviews(admin: dict = Depends(get_admin_user)):
+    reviews = await db.authority_reviews.find({}, {"_id": 0}).sort("created_at", -1).to_list(500)
+    return reviews
+
+# Update Authority Review Status (Admin)
+@api_router.put("/admin/authority-reviews/{review_id}/status")
+async def update_review_status(
+    review_id: str,
+    status: str,
+    notes: Optional[str] = None,
+    admin: dict = Depends(get_admin_user)
+):
+    review = await db.authority_reviews.find_one({"id": review_id})
+    if not review:
+        raise HTTPException(status_code=404, detail="Review not found")
+    
+    update_data = {"status": status}
+    if notes:
+        update_data["notes"] = notes
+    
+    await db.authority_reviews.update_one({"id": review_id}, {"$set": update_data})
+    return {"message": f"Review status updated to {status}"}
+
+# Contact Form Submission (Public)
+@api_router.post("/contact")
+async def submit_contact(request: ContactRequest):
+    contact = ContactInDB(**request.model_dump())
+    await db.contacts.insert_one(contact.model_dump())
+    
+    logger.info(f"New contact submission from {request.email}")
+    
+    return {"message": "Message sent successfully", "id": contact.id}
+
+# Get Contact Submissions (Admin)
+@api_router.get("/admin/contacts")
+async def list_contacts(admin: dict = Depends(get_admin_user)):
+    contacts = await db.contacts.find({}, {"_id": 0}).sort("created_at", -1).to_list(500)
+    return contacts
+
+# Investor Pipeline Stats (Admin)
+@api_router.get("/admin/investor-stats")
+async def get_investor_stats(admin: dict = Depends(get_admin_user)):
+    total_nda_requests = await db.nda_requests.count_documents({})
+    pending_nda = await db.nda_requests.count_documents({"status": "pending"})
+    sent_nda = await db.nda_requests.count_documents({"status": "sent"})
+    signed_nda = await db.nda_requests.count_documents({"status": "signed"})
+    
+    total_reviews = await db.authority_reviews.count_documents({})
+    new_reviews = await db.authority_reviews.count_documents({"status": "new"})
+    
+    total_contacts = await db.contacts.count_documents({})
+    
+    return {
+        "nda_requests": {
+            "total": total_nda_requests,
+            "pending": pending_nda,
+            "sent": sent_nda,
+            "signed": signed_nda
+        },
+        "authority_reviews": {
+            "total": total_reviews,
+            "new": new_reviews
+        },
+        "contacts": {
+            "total": total_contacts
+        }
+    }
+
 # ============== HEALTH CHECK ==============
 
 @api_router.get("/")
