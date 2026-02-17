@@ -43,17 +43,22 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 - [x] Systems Book PDF/DOCX uploaded to Data Room
 - [x] Navigation link in header
 
-### 2026-02-17 (Website Book Sync Map)
-- [x] New Sync Map page at /sync-map
-- [x] CID (Canonical ID) rules documentation
-- [x] Interactive sync table with 14 mapped pages
-- [x] Workflow documentation (Draft → Commit → Publish → Log)
-- [x] Tabs: Overview, CID Rules, Sync Table, Workflow
-- [x] Uploaded Sync Map files to Data Room:
-  - MD (Notion-ready)
-  - DOCX (Word version)
-  - CSV (Registry/CMS import)
-- [x] Link from Systems Book page to Sync Map
+### 2026-02-17 (Website Book Sync Map v3 - One System Build)
+- [x] Updated to v2026-02-17r3 with 57 mappings
+- [x] New tabs: Coding Standard, Source of Truth, Cadence, Notion Tracker
+- [x] Added planned chapters SB-07 through SB-12
+- [x] Added Data Room Journey (5 CIM flow pages)
+- [x] Added Public Site mappings (6 marketing pages)
+- [x] Publishing cadence: Weekly/Monthly/Quarterly
+- [x] Notion "OPS — Sync Tracker" database schema
+- [x] Source-of-Truth rules documentation
+- [x] Uploaded 6 files to Data Room:
+  - MD, DOCX, CSV, ZIP (complete kit)
+  - Notion Sync Tracker Setup
+  - OneDrive Folder Builder (PowerShell)
+
+### 2026-02-17 (Website Book Sync Map v2)
+- [x] Extended sync map with WP codes
 - [x] Complete SB-04 chapter with 10 subsections:
   - SB-04-01: Investor Readiness Core Proof Pack
   - SB-04-02-01: Information Architecture & Sitemap
