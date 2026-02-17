@@ -5,6 +5,11 @@ export const registryVersion = 'v2026-02-17r3';
 
 // SB-01 Foundation & Governance Registry
 export const SB01Registry = {
+  packParents: [
+    { code: 'SB-01-Wxx', name: 'Website Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-01_Web_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-01 Foundation & Governance/Web', notes: 'PACK PARENT: contains SB-01-W01…W99' },
+    { code: 'SB-01-Axx', name: 'Appendix Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-01_Appendix_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-01 Foundation & Governance/Appendix', notes: 'PACK PARENT: contains SB-01-A01…A99' },
+    { code: 'SB-01-Txx', name: 'Toolkit Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-01_Toolkit_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-01 Foundation & Governance/Toolkit', notes: 'PACK PARENT: contains SB-01-T01…T99' },
+  ],
   web: [
     { code: 'SB-01-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-01_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-01 Foundation & Governance/Web/W01 Landing Copy', notes: 'Website canonical copy' },
     { code: 'SB-01-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-01_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-01 Foundation & Governance/Web/W02 Blocks & Components', notes: 'Modular page sections' },
@@ -29,6 +34,11 @@ export const SB01Registry = {
 
 // SB-02 Strategy & Positioning Registry
 export const SB02Registry = {
+  packParents: [
+    { code: 'SB-02-Wxx', name: 'Website Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-02_Web_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-02 Strategy & Positioning/Web', notes: 'PACK PARENT: contains SB-02-W01…W99' },
+    { code: 'SB-02-Axx', name: 'Appendix Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-02_Appendix_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-02 Strategy & Positioning/Appendix', notes: 'PACK PARENT: contains SB-02-A01…A99' },
+    { code: 'SB-02-Txx', name: 'Toolkit Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-02_Toolkit_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-02 Strategy & Positioning/Toolkit', notes: 'PACK PARENT: contains SB-02-T01…T99' },
+  ],
   web: [
     { code: 'SB-02-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-02_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-02 Strategy & Positioning/Web/W01 Landing Copy', notes: 'Website canonical copy' },
     { code: 'SB-02-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-02_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-02 Strategy & Positioning/Web/W02 Blocks & Components', notes: 'Modular page sections' },
@@ -53,6 +63,11 @@ export const SB02Registry = {
 
 // SB-03 Brand & Marketing Registry
 export const SB03Registry = {
+  packParents: [
+    { code: 'SB-03-Wxx', name: 'Website Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-03_Web_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-03 Brand & Marketing/Web', notes: 'PACK PARENT: contains SB-03-W01…W99' },
+    { code: 'SB-03-Axx', name: 'Appendix Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-03_Appendix_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-03 Brand & Marketing/Appendix', notes: 'PACK PARENT: contains SB-03-A01…A99' },
+    { code: 'SB-03-Txx', name: 'Toolkit Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-03_Toolkit_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit', notes: 'PACK PARENT: contains SB-03-T01…T99' },
+  ],
   web: [
     { code: 'SB-03-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Brand & Marketing/Web/W01 Landing Copy', notes: 'Website canonical copy' },
     { code: 'SB-03-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Brand & Marketing/Web/W02 Blocks & Components', notes: 'Modular page sections' },
@@ -77,6 +92,11 @@ export const SB03Registry = {
 
 // SB-04 Offer & Product Systems Registry
 export const SB04Registry = {
+  packParents: [
+    { code: 'SB-04-Wxx', name: 'Website Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-04_Web_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-04 Offer & Product/Web', notes: 'PACK PARENT: contains SB-04-W01…W99' },
+    { code: 'SB-04-Axx', name: 'Appendix Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-04_Appendix_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-04 Offer & Product/Appendix', notes: 'PACK PARENT: contains SB-04-A01…A99' },
+    { code: 'SB-04-Txx', name: 'Toolkit Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-04_Toolkit_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-04 Offer & Product/Toolkit', notes: 'PACK PARENT: contains SB-04-T01…T99' },
+  ],
   web: [
     { code: 'SB-04-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-04_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-04 Offer & Product Systems/Web/W01 Landing Copy', notes: 'Website canonical copy' },
     { code: 'SB-04-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-04_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-04 Offer & Product Systems/Web/W02 Blocks & Components', notes: 'Modular page sections' },
@@ -101,6 +121,11 @@ export const SB04Registry = {
 
 // SB-05 Client Success Registry
 export const SB05Registry = {
+  packParents: [
+    { code: 'SB-05-Wxx', name: 'Website Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-05_Web_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-05 Client Success/Web', notes: 'PACK PARENT: contains SB-05-W01…W99' },
+    { code: 'SB-05-Axx', name: 'Appendix Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-05_Appendix_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-05 Client Success/Appendix', notes: 'PACK PARENT: contains SB-05-A01…A99' },
+    { code: 'SB-05-Txx', name: 'Toolkit Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-05_Toolkit_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-05 Client Success/Toolkit', notes: 'PACK PARENT: contains SB-05-T01…T99' },
+  ],
   web: [
     { code: 'SB-05-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-05_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-05 Client Success/Web/W01 Landing Copy', notes: 'Website canonical copy' },
     { code: 'SB-05-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-05_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-05 Client Success/Web/W02 Blocks & Components', notes: 'Modular page sections' },
@@ -125,6 +150,11 @@ export const SB05Registry = {
 
 // SB-06 Technology & Data Registry
 export const SB06Registry = {
+  packParents: [
+    { code: 'SB-06-Wxx', name: 'Website Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-06_Web_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-06 Technology & Data/Web', notes: 'PACK PARENT: contains SB-06-W01…W99' },
+    { code: 'SB-06-Axx', name: 'Appendix Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-06_Appendix_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-06 Technology & Data/Appendix', notes: 'PACK PARENT: contains SB-06-A01…A99' },
+    { code: 'SB-06-Txx', name: 'Toolkit Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-06_Toolkit_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-06 Technology & Data/Toolkit', notes: 'PACK PARENT: contains SB-06-T01…T99' },
+  ],
   web: [
     { code: 'SB-06-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Technology & Data/Web/W01 Landing Copy', notes: 'Website canonical copy' },
     { code: 'SB-06-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Technology & Data/Web/W02 Blocks & Components', notes: 'Modular page sections' },
