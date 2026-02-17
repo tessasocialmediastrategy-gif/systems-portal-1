@@ -183,8 +183,6 @@ export const SB05Registry = {
   ]
 };
 
-// SB-06 Technology & Data Registry
-export const SB06Registry = {
 // SB-06 Performance Management & KPI Cadence Registry
 export const SB06Registry = {
   packParents: [
