@@ -395,18 +395,21 @@ const SystemsBookPage = () => {
                 title="Web Copy (W01-W03)"
                 icon={Globe}
                 items={SB01Registry.web}
+                packParent={SB01Registry.packParents.find(p => p.code === 'SB-01-Wxx')}
                 defaultExpanded={false}
               />
               <ExpandedRegistrySection
                 title="Appendix Pack (A01-A05)"
                 icon={FolderOpen}
                 items={SB01Registry.appendix}
+                packParent={SB01Registry.packParents.find(p => p.code === 'SB-01-Axx')}
                 defaultExpanded={true}
               />
               <ExpandedRegistrySection
                 title="Toolkit (T01-T06)"
                 icon={Wrench}
                 items={SB01Registry.toolkit}
+                packParent={SB01Registry.packParents.find(p => p.code === 'SB-01-Txx')}
                 defaultExpanded={false}
               />
               <div className="p-3 bg-yellow-50 border border-yellow-200 rounded text-sm text-yellow-800">
