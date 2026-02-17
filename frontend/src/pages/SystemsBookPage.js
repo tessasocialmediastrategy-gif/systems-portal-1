@@ -17,7 +17,7 @@ import {
 } from '../data/systemsBookRegistry';
 
 // Inline Expanded Registry Component
-const ExpandedRegistrySection = ({ title, icon: Icon, items, defaultExpanded = false }) => {
+const ExpandedRegistrySection = ({ title, icon: Icon, items, packParent, defaultExpanded = false }) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
 
   return (
@@ -54,9 +54,29 @@ const ExpandedRegistrySection = ({ title, icon: Icon, items, defaultExpanded = f
               </tr>
             </thead>
             <tbody>
+              {/* Pack Parent Row */}
+              {packParent && (
+                <tr className="border-t border-gray-200 bg-[#C5A059]/10">
+                  <td className="p-3 font-mono text-xs text-[#0B1C3E] font-bold whitespace-nowrap">{packParent.code}</td>
+                  <td className="p-3 text-[#374151] font-semibold">{packParent.name}</td>
+                  <td className="p-3">
+                    <span className="text-xs px-2 py-1 rounded bg-[#0B1C3E] text-white">{packParent.format}</span>
+                  </td>
+                  <td className="p-3">
+                    <span className={`text-xs px-2 py-1 rounded ${getStatusBadgeColor(packParent.status)}`}>
+                      {packParent.status}
+                    </span>
+                  </td>
+                  <td className="p-3 text-xs text-[#6B7280] font-mono hidden lg:table-cell max-w-xs truncate" title={packParent.file}>
+                    {packParent.file}
+                  </td>
+                  <td className="p-3 text-xs text-[#C5A059] font-semibold hidden md:table-cell">{packParent.notes}</td>
+                </tr>
+              )}
+              {/* Child Items */}
               {items.map((item, i) => (
                 <tr key={i} className="border-t border-gray-100 hover:bg-gray-50">
-                  <td className="p-3 font-mono text-xs text-[#0B1C3E] whitespace-nowrap">{item.code}</td>
+                  <td className="p-3 font-mono text-xs text-[#0B1C3E] whitespace-nowrap pl-6">{item.code}</td>
                   <td className="p-3 text-[#374151]">{item.name}</td>
                   <td className="p-3">
                     <span className={`text-xs px-2 py-1 rounded ${getFormatBadgeColor(item.format)}`}>
