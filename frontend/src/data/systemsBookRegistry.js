@@ -177,8 +177,14 @@ export const SB06Registry = {
   ]
 };
 
-// SB-07 Finance & Modeling System Registry
+// SB-07 Finance & Modeling System Registry (Delivery & Operations per CSV)
 export const SB07Registry = {
+  packParents: [
+    { code: 'SB-07-Axx', name: 'SB-07 Appendix Pack Rollup — Delivery & Operations', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-07_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Appendix Pack', notes: 'PARENT PACK: contains SB-07-A01… (appendices, references, diagrams, artifacts).' },
+    { code: 'SB-07-Wxx', name: 'SB-07 Worksheet Pack Rollup — Delivery & Operations', format: 'Pack Rollup (Worksheets)', status: 'ACTIVE', file: 'OnPoint_SB-07_Worksheet_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Worksheet Pack', notes: 'PARENT PACK: contains SB-07-W01… (fillables, scorecards, trackers, planning sheets).' },
+    { code: 'SB-07-Txx', name: 'SB-07 Template Pack Rollup — Delivery & Operations', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-07_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Template Pack', notes: 'PARENT PACK: contains SB-07-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
+  ],
+  web: [],
   appendix: [
     { code: 'SB-07-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-07_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-07 Finance & Modeling/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
     { code: 'SB-07-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-07_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Finance & Modeling/Appendix/A02 SOP Template', notes: 'Version-locked template' },
@@ -196,8 +202,14 @@ export const SB07Registry = {
   ]
 };
 
-// SB-08 Operations & Delivery System Registry (Note: CSV shows this as Operations & Delivery)
+// SB-08 Operations & Delivery System Registry (Sales Pipeline & Growth per CSV)
 export const SB08Registry = {
+  packParents: [
+    { code: 'SB-08-Axx', name: 'SB-08 Appendix Pack Rollup — Sales Pipeline & Growth', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-08_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-08 Sales Pipeline & Growth/Appendix Pack', notes: 'PARENT PACK: contains SB-08-A01… (appendices, references, diagrams, artifacts).' },
+    { code: 'SB-08-Wxx', name: 'SB-08 Worksheet Pack Rollup — Sales Pipeline & Growth', format: 'Pack Rollup (Worksheets)', status: 'ACTIVE', file: 'OnPoint_SB-08_Worksheet_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-08 Sales Pipeline & Growth/Worksheet Pack', notes: 'PARENT PACK: contains SB-08-W01… (fillables, scorecards, trackers, planning sheets).' },
+    { code: 'SB-08-Txx', name: 'SB-08 Template Pack Rollup — Sales Pipeline & Growth', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-08_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-08 Sales Pipeline & Growth/Template Pack', notes: 'PARENT PACK: contains SB-08-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
+  ],
+  web: [],
   appendix: [
     { code: 'SB-08-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-08_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-08 Operations & Delivery/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
     { code: 'SB-08-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-08_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-08 Operations & Delivery/Appendix/A02 SOP Template', notes: 'Version-locked template' },
@@ -215,8 +227,14 @@ export const SB08Registry = {
   ]
 };
 
-// SB-09 Sales & Pipeline System Registry
+// SB-09 Sales & Pipeline System Registry (Finance & Reporting per CSV)
 export const SB09Registry = {
+  packParents: [
+    { code: 'SB-09-Axx', name: 'SB-09 Appendix Pack Rollup — Finance & Reporting', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-09_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-09 Finance & Reporting/Appendix Pack', notes: 'PARENT PACK: contains SB-09-A01… (appendices, references, diagrams, artifacts).' },
+    { code: 'SB-09-Wxx', name: 'SB-09 Worksheet Pack Rollup — Finance & Reporting', format: 'Pack Rollup (Worksheets)', status: 'ACTIVE', file: 'OnPoint_SB-09_Worksheet_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-09 Finance & Reporting/Worksheet Pack', notes: 'PARENT PACK: contains SB-09-W01… (fillables, scorecards, trackers, planning sheets).' },
+    { code: 'SB-09-Txx', name: 'SB-09 Template Pack Rollup — Finance & Reporting', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-09_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-09 Finance & Reporting/Template Pack', notes: 'PARENT PACK: contains SB-09-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
+  ],
+  web: [],
   appendix: [
     { code: 'SB-09-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-09_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-09 Sales & Pipeline/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
     { code: 'SB-09-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-09_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-09 Sales & Pipeline/Appendix/A02 SOP Template', notes: 'Version-locked template' },
@@ -234,8 +252,14 @@ export const SB09Registry = {
   ]
 };
 
-// SB-10 Legal & Compliance System Registry
+// SB-10 Legal & Compliance System Registry (People & Org Design per CSV)
 export const SB10Registry = {
+  packParents: [
+    { code: 'SB-10-Axx', name: 'SB-10 Appendix Pack Rollup — People & Org Design', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-10_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-10 People & Org Design/Appendix Pack', notes: 'PARENT PACK: contains SB-10-A01… (appendices, references, diagrams, artifacts).' },
+    { code: 'SB-10-Wxx', name: 'SB-10 Worksheet Pack Rollup — People & Org Design', format: 'Pack Rollup (Worksheets)', status: 'ACTIVE', file: 'OnPoint_SB-10_Worksheet_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-10 People & Org Design/Worksheet Pack', notes: 'PARENT PACK: contains SB-10-W01… (fillables, scorecards, trackers, planning sheets).' },
+    { code: 'SB-10-Txx', name: 'SB-10 Template Pack Rollup — People & Org Design', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-10_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-10 People & Org Design/Template Pack', notes: 'PARENT PACK: contains SB-10-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
+  ],
+  web: [],
   appendix: [
     { code: 'SB-10-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-10_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-10 Legal & Compliance/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
     { code: 'SB-10-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-10_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-10 Legal & Compliance/Appendix/A02 SOP Template', notes: 'Version-locked template' },
@@ -253,8 +277,14 @@ export const SB10Registry = {
   ]
 };
 
-// SB-11 People & Culture System Registry
+// SB-11 People & Culture System Registry (Legal, Risk & Compliance per CSV)
 export const SB11Registry = {
+  packParents: [
+    { code: 'SB-11-Axx', name: 'SB-11 Appendix Pack Rollup — Legal, Risk & Compliance', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-11_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-11 Legal Risk Compliance/Appendix Pack', notes: 'PARENT PACK: contains SB-11-A01… (appendices, references, diagrams, artifacts).' },
+    { code: 'SB-11-Wxx', name: 'SB-11 Worksheet Pack Rollup — Legal, Risk & Compliance', format: 'Pack Rollup (Worksheets)', status: 'ACTIVE', file: 'OnPoint_SB-11_Worksheet_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-11 Legal Risk Compliance/Worksheet Pack', notes: 'PARENT PACK: contains SB-11-W01… (fillables, scorecards, trackers, planning sheets).' },
+    { code: 'SB-11-Txx', name: 'SB-11 Template Pack Rollup — Legal, Risk & Compliance', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-11_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-11 Legal Risk Compliance/Template Pack', notes: 'PARENT PACK: contains SB-11-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
+  ],
+  web: [],
   appendix: [
     { code: 'SB-11-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-11_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-11 People & Culture/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
     { code: 'SB-11-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-11_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-11 People & Culture/Appendix/A02 SOP Template', notes: 'Version-locked template' },
@@ -272,8 +302,14 @@ export const SB11Registry = {
   ]
 };
 
-// SB-12 Scaling & Exit System Registry
+// SB-12 Scaling & Exit System Registry (Exit Readiness & M&A Package per CSV)
 export const SB12Registry = {
+  packParents: [
+    { code: 'SB-12-Axx', name: 'SB-12 Appendix Pack Rollup — Exit Readiness & M&A Package', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-12_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-12 Exit Readiness M&A/Appendix Pack', notes: 'PARENT PACK: contains SB-12-A01… (appendices, references, diagrams, artifacts).' },
+    { code: 'SB-12-Wxx', name: 'SB-12 Worksheet Pack Rollup — Exit Readiness & M&A Package', format: 'Pack Rollup (Worksheets)', status: 'ACTIVE', file: 'OnPoint_SB-12_Worksheet_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-12 Exit Readiness M&A/Worksheet Pack', notes: 'PARENT PACK: contains SB-12-W01… (fillables, scorecards, trackers, planning sheets).' },
+    { code: 'SB-12-Txx', name: 'SB-12 Template Pack Rollup — Exit Readiness & M&A Package', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-12_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-12 Exit Readiness M&A/Template Pack', notes: 'PARENT PACK: contains SB-12-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
+  ],
+  web: [],
   appendix: [
     { code: 'SB-12-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-12_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-12 Scaling & Exit/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
     { code: 'SB-12-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-12_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-12 Scaling & Exit/Appendix/A02 SOP Template', notes: 'Version-locked template' },
