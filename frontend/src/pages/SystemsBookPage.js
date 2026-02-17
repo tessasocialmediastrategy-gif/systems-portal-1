@@ -992,6 +992,37 @@ const SystemsBookPage = () => {
               </div>
             ))}
           </div>
+
+          {/* Expanded Registry Section */}
+          <div id="SB-06-01" className="scroll-mt-24 pt-6 border-t border-gray-200">
+            <h3 className="text-xl font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              SB-06-01 Expanded Registry
+            </h3>
+            <div className="space-y-4">
+              <ExpandedRegistrySection
+                title="Web Copy (W01-W03)"
+                icon={Globe}
+                items={SB06Registry.web}
+                defaultExpanded={false}
+              />
+              <ExpandedRegistrySection
+                title="Appendix Pack (A01-A05)"
+                icon={FolderOpen}
+                items={SB06Registry.appendix}
+                defaultExpanded={true}
+              />
+              <ExpandedRegistrySection
+                title="Toolkit (T01-T06)"
+                icon={Wrench}
+                items={SB06Registry.toolkit}
+                defaultExpanded={false}
+              />
+              <div className="p-3 bg-yellow-50 border border-yellow-200 rounded text-sm text-yellow-800">
+                <strong>Note:</strong> All items version-locked to <code className="bg-yellow-100 px-1 rounded">v2026-02-17r3</code>. 
+                Output files follow: <code className="bg-yellow-100 px-1 rounded">OnPoint_[Code]_[Name]_v2026-02-17r3.[ext]</code>
+              </div>
+            </div>
+          </div>
         </div>
       )
     },
