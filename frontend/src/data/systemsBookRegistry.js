@@ -96,32 +96,32 @@ export const SB02Registry = {
   ]
 };
 
-// SB-03 Brand & Marketing Registry
+// SB-03 Lead Gen & Marketing Engine Registry
 export const SB03Registry = {
   packParents: [
-    { code: 'SB-03-Wxx', name: 'Website Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-03_Web_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-03 Brand & Marketing/Web', notes: 'PACK PARENT: contains SB-03-W01…W99' },
-    { code: 'SB-03-Axx', name: 'Appendix Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-03_Appendix_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-03 Brand & Marketing/Appendix', notes: 'PACK PARENT: contains SB-03-A01…A99' },
-    { code: 'SB-03-Txx', name: 'Toolkit Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-03_Toolkit_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit', notes: 'PACK PARENT: contains SB-03-T01…T99' },
+    { code: 'SB-03-Axx', name: 'SB-03 Appendix Assets Pack Rollup', format: 'Pack Rollup (Appendix Assets)', status: 'ACTIVE', file: 'OnPoint_SB-03_Appendix_Assets_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Appendix Assets Pack', notes: 'PARENT PACK: contains SB-03-A01…A05.' },
+    { code: 'SB-03-Wxx', name: 'SB-03 Web Copy Pack Rollup', format: 'Pack Rollup (Web Copy)', status: 'ACTIVE', file: 'OnPoint_SB-03_Web_Copy_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Web Copy Pack', notes: 'PARENT PACK: contains SB-03-W01…W03.' },
+    { code: 'SB-03-Txx', name: 'SB-03 Templates Pack Rollup', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-03_Templates_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Templates Pack', notes: 'PARENT PACK: contains SB-03-T01…T06.' },
   ],
   web: [
-    { code: 'SB-03-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Brand & Marketing/Web/W01 Landing Copy', notes: 'Website canonical copy' },
-    { code: 'SB-03-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Brand & Marketing/Web/W02 Blocks & Components', notes: 'Modular page sections' },
-    { code: 'SB-03-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Brand & Marketing/Web/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
+    { code: 'SB-03-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Web Copy Pack/W01 Landing Copy', notes: 'Website canonical copy' },
+    { code: 'SB-03-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Web Copy Pack/W02 Blocks & Components', notes: 'Modular page sections' },
+    { code: 'SB-03-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Web Copy Pack/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
   ],
   appendix: [
-    { code: 'SB-03-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-03_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-03 Brand & Marketing/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
-    { code: 'SB-03-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Brand & Marketing/Appendix/A02 SOP Template', notes: 'Version-locked template' },
-    { code: 'SB-03-A03', name: 'Scorecard', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-03_A03_Scorecard_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-03 Brand & Marketing/Appendix/A03 Scorecard', notes: 'KPI/scorecard worksheet' },
-    { code: 'SB-03-A04', name: 'Example Pack', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-03_A04_Examples_v2026-02-17r3.pdf', notion: '/Systems Book/SB-03 Brand & Marketing/Appendix/A04 Examples', notes: 'Filled examples/screens' },
-    { code: 'SB-03-A05', name: 'Standards & Definitions', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_A05_Standards_Definitions_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Brand & Marketing/Appendix/A05 Standards & Definitions', notes: 'Glossary + rules' },
+    { code: 'SB-03-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-03_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Appendix Assets Pack/A01 System Diagram', notes: 'Include in Appendix Pack index' },
+    { code: 'SB-03-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Appendix Assets Pack/A02 SOP Template', notes: 'Version-locked template' },
+    { code: 'SB-03-A03', name: 'Scorecard', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-03_A03_Scorecard_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Appendix Assets Pack/A03 Scorecard', notes: 'KPI/scorecard worksheet' },
+    { code: 'SB-03-A04', name: 'Example Pack', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-03_A04_Examples_v2026-02-17r3.pdf', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Appendix Assets Pack/A04 Examples', notes: 'Filled examples/screens' },
+    { code: 'SB-03-A05', name: 'Standards & Definitions', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_A05_Standards_Definitions_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Appendix Assets Pack/A05 Standards & Definitions', notes: 'Glossary + rules' },
   ],
   toolkit: [
-    { code: 'SB-03-T01', name: 'Checklist', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-03_T01_Checklist_v2026-02-17r3.pdf', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit/T01 Checklist', notes: 'Printable checklist' },
-    { code: 'SB-03-T02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_T02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit/T02 SOP Template', notes: 'Execution SOP' },
-    { code: 'SB-03-T03', name: 'Tracker', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-03_T03_Tracker_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit/T03 Tracker', notes: 'Operating tracker' },
-    { code: 'SB-03-T04', name: 'Scripts Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_T04_Scripts_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit/T04 Scripts Pack', notes: 'Stakeholder comms scripts' },
-    { code: 'SB-03-T05', name: 'Notion Template', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_T05_Notion_Template_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit/T05 Notion Template', notes: 'Database/page template' },
-    { code: 'SB-03-T06', name: 'Prompt Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_T06_Prompt_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit/T06 Prompt Pack', notes: 'AI prompts' },
+    { code: 'SB-03-T01', name: 'Checklist', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-03_T01_Checklist_v2026-02-17r3.pdf', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Templates Pack/T01 Checklist', notes: 'Printable checklist' },
+    { code: 'SB-03-T02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_T02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Templates Pack/T02 SOP Template', notes: 'Execution SOP' },
+    { code: 'SB-03-T03', name: 'Tracker', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-03_T03_Tracker_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Templates Pack/T03 Tracker', notes: 'Operating tracker' },
+    { code: 'SB-03-T04', name: 'Scripts Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_T04_Scripts_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Templates Pack/T04 Scripts Pack', notes: 'Stakeholder comms scripts' },
+    { code: 'SB-03-T05', name: 'Notion Template', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_T05_Notion_Template_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Templates Pack/T05 Notion Template', notes: 'Database/page template' },
+    { code: 'SB-03-T06', name: 'Prompt Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_T06_Prompt_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine/Templates Pack/T06 Prompt Pack', notes: 'AI prompts' },
   ]
 };
 
