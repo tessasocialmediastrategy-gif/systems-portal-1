@@ -285,6 +285,12 @@ export const getStatusBadgeColor = (status) => {
 
 // Export all registries as a single object for easy lookup
 export const allRegistries = {
+  'SB-01': SB01Registry,
+  'SB-02': SB02Registry,
+  'SB-03': SB03Registry,
+  'SB-04': SB04Registry,
+  'SB-05': SB05Registry,
+  'SB-06': SB06Registry,
   'SB-07': SB07Registry,
   'SB-08': SB08Registry,
   'SB-09': SB09Registry,
