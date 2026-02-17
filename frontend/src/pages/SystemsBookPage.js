@@ -7,9 +7,10 @@ import {
   Layout, FileCode, Navigation, Search, GitBranch, AlertTriangle,
   Layers, Target, Mail, TrendingUp, DollarSign, Scale, Cpu,
   Building, RefreshCw, Calculator, FileCheck, Cog, Lightbulb,
-  Server, UserCog, FolderOpen, Wrench
+  Server, UserCog, FolderOpen, Wrench, Code
 } from 'lucide-react';
 import { 
+  SB01Registry, SB02Registry, SB03Registry, SB04Registry, SB05Registry, SB06Registry,
   SB07Registry, SB08Registry, SB09Registry, 
   SB10Registry, SB11Registry, SB12Registry,
   getFormatBadgeColor, getStatusBadgeColor 
