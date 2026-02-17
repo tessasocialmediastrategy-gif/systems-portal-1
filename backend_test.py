@@ -182,36 +182,39 @@ class CIMPortalAPITester:
             return False
             
         self.log("=== Testing Document Upload ===")
-        headers = {"Authorization": f"Bearer {self.admin_token}"}
         
         # Create a test PDF file
         test_content = b"%PDF-1.4\n1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n2 0 obj\n<< /Type /Pages /Kids [3 0 R] /Count 1 >>\nendobj\n3 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R >>\nendobj\n4 0 obj\n<< /Length 44 >>\nstream\nBT\n/F1 24 Tf\n100 700 Td\n(Test Document) Tj\nET\nendstream\nendobj\nxref\n0 5\n0000000000 65535 f \n0000000009 00000 n \n0000000058 00000 n \n0000000115 00000 n \n0000000206 00000 n \ntrailer\n<< /Size 5 /Root 1 0 R >>\nstartxref\n299\n%%EOF"
         test_file = io.BytesIO(test_content)
         
+        # Upload with query parameters and file
+        upload_url = f"{self.api_url}/documents/upload?name=Test CIM Document&category=cim_modern&is_public=true&description=Test document for API testing&version=v2026-02-16r1"
+        headers = {"Authorization": f"Bearer {self.admin_token}"}
         files = {'file': ('test_document.pdf', test_file, 'application/pdf')}
-        data = {
-            'name': 'Test CIM Document',
-            'category': 'cim_modern',
-            'is_public': 'true',
-            'description': 'Test document for API testing',
-            'version': 'v2026-02-16r1'
-        }
         
-        success, response = self.run_test(
-            "Upload Document",
-            "POST",
-            "documents/upload",
-            200,
-            data=data,
-            files=files,
-            headers=headers
-        )
+        self.tests_run += 1
+        self.log(f"Testing Upload Document...")
         
-        if success and 'id' in response:
-            self.test_doc_id = response['id']
-            self.log(f"Document uploaded successfully. ID: {self.test_doc_id}")
-            return True
-        return False
+        try:
+            response = requests.post(upload_url, files=files, headers=headers, timeout=10)
+            success = response.status_code == 200
+            
+            if success:
+                self.tests_passed += 1
+                self.log(f"✅ PASSED - Status: {response.status_code}", "PASS")
+                response_data = response.json()
+                if 'id' in response_data:
+                    self.test_doc_id = response_data['id']
+                    self.log(f"Document uploaded successfully. ID: {self.test_doc_id}")
+                    return True
+            else:
+                self.log(f"❌ FAILED - Expected 200, got {response.status_code}", "FAIL")
+                self.log(f"Response: {response.text[:200]}", "ERROR")
+                return False
+                
+        except Exception as e:
+            self.log(f"❌ FAILED - Error: {str(e)}", "ERROR")
+            return False
 
     def test_public_documents(self):
         """Test public document listing"""
