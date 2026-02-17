@@ -152,7 +152,7 @@ const NDARequestPage = () => {
                 </div>
                 <div>
                   <label className="block text-sm text-gray-400 mb-2">Buyer Type *</label>
-                  <select required value={formData.background} onChange={(e) => setFormData({...formData, background: e.target.value})}
+                  <select required value={formData.buyer_type} onChange={(e) => setFormData({...formData, buyer_type: e.target.value})}
                     className="w-full bg-[#111111] border border-[#262626] text-white px-4 py-3 focus:border-[#C5A059] focus:outline-none">
                     <option value="">Select buyer type</option>
                     <option value="strategic">Strategic Buyer</option>
