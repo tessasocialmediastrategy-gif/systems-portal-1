@@ -301,11 +301,11 @@ async def get_download_logs(admin: dict = Depends(get_admin_user)):
 
 @api_router.post("/documents/upload", response_model=DocumentResponse)
 async def upload_document(
-    name: str,
-    category: str,
-    is_public: bool = False,
-    description: Optional[str] = None,
-    version: str = "v2026-02-16r1",
+    name: str = Form(...),
+    category: str = Form(...),
+    is_public: bool = Form(False),
+    description: Optional[str] = Form(None),
+    version: str = Form("v2026-02-16r1"),
     file: UploadFile = File(...),
     admin: dict = Depends(get_admin_user)
 ):
