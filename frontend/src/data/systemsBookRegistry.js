@@ -1,7 +1,151 @@
 // Systems Book Expanded Registry Data - v2026-02-17r3
-// Contains Appendix (A01-A05) and Toolkit (T01-T06) items for SB-07 through SB-12
+// Contains Web (W01-W03), Appendix (A01-A05) and Toolkit (T01-T06) items for all chapters
 
 export const registryVersion = 'v2026-02-17r3';
+
+// SB-01 Foundation & Governance Registry
+export const SB01Registry = {
+  web: [
+    { code: 'SB-01-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-01_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-01 Foundation & Governance/Web/W01 Landing Copy', notes: 'Website canonical copy' },
+    { code: 'SB-01-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-01_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-01 Foundation & Governance/Web/W02 Blocks & Components', notes: 'Modular page sections' },
+    { code: 'SB-01-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-01_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-01 Foundation & Governance/Web/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
+  ],
+  appendix: [
+    { code: 'SB-01-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-01_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-01 Foundation & Governance/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
+    { code: 'SB-01-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-01_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-01 Foundation & Governance/Appendix/A02 SOP Template', notes: 'Version-locked template' },
+    { code: 'SB-01-A03', name: 'Scorecard', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-01_A03_Scorecard_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-01 Foundation & Governance/Appendix/A03 Scorecard', notes: 'KPI/scorecard worksheet' },
+    { code: 'SB-01-A04', name: 'Example Pack', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-01_A04_Examples_v2026-02-17r3.pdf', notion: '/Systems Book/SB-01 Foundation & Governance/Appendix/A04 Examples', notes: 'Filled examples/screens' },
+    { code: 'SB-01-A05', name: 'Standards & Definitions', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-01_A05_Standards_Definitions_v2026-02-17r3.docx', notion: '/Systems Book/SB-01 Foundation & Governance/Appendix/A05 Standards & Definitions', notes: 'Glossary + rules' },
+  ],
+  toolkit: [
+    { code: 'SB-01-T01', name: 'Checklist', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-01_T01_Checklist_v2026-02-17r3.pdf', notion: '/Systems Book/SB-01 Foundation & Governance/Toolkit/T01 Checklist', notes: 'Printable checklist' },
+    { code: 'SB-01-T02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-01_T02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-01 Foundation & Governance/Toolkit/T02 SOP Template', notes: 'Execution SOP' },
+    { code: 'SB-01-T03', name: 'Tracker', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-01_T03_Tracker_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-01 Foundation & Governance/Toolkit/T03 Tracker', notes: 'Operating tracker' },
+    { code: 'SB-01-T04', name: 'Scripts Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-01_T04_Scripts_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-01 Foundation & Governance/Toolkit/T04 Scripts Pack', notes: 'Stakeholder comms scripts' },
+    { code: 'SB-01-T05', name: 'Notion Template', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-01_T05_Notion_Template_v2026-02-17r3.md', notion: '/Systems Book/SB-01 Foundation & Governance/Toolkit/T05 Notion Template', notes: 'Database/page template' },
+    { code: 'SB-01-T06', name: 'Prompt Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-01_T06_Prompt_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-01 Foundation & Governance/Toolkit/T06 Prompt Pack', notes: 'AI prompts' },
+  ]
+};
+
+// SB-02 Strategy & Positioning Registry
+export const SB02Registry = {
+  web: [
+    { code: 'SB-02-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-02_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-02 Strategy & Positioning/Web/W01 Landing Copy', notes: 'Website canonical copy' },
+    { code: 'SB-02-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-02_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-02 Strategy & Positioning/Web/W02 Blocks & Components', notes: 'Modular page sections' },
+    { code: 'SB-02-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-02_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-02 Strategy & Positioning/Web/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
+  ],
+  appendix: [
+    { code: 'SB-02-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-02_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-02 Strategy & Positioning/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
+    { code: 'SB-02-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-02_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-02 Strategy & Positioning/Appendix/A02 SOP Template', notes: 'Version-locked template' },
+    { code: 'SB-02-A03', name: 'Scorecard', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-02_A03_Scorecard_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-02 Strategy & Positioning/Appendix/A03 Scorecard', notes: 'KPI/scorecard worksheet' },
+    { code: 'SB-02-A04', name: 'Example Pack', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-02_A04_Examples_v2026-02-17r3.pdf', notion: '/Systems Book/SB-02 Strategy & Positioning/Appendix/A04 Examples', notes: 'Filled examples/screens' },
+    { code: 'SB-02-A05', name: 'Standards & Definitions', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-02_A05_Standards_Definitions_v2026-02-17r3.docx', notion: '/Systems Book/SB-02 Strategy & Positioning/Appendix/A05 Standards & Definitions', notes: 'Glossary + rules' },
+  ],
+  toolkit: [
+    { code: 'SB-02-T01', name: 'Checklist', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-02_T01_Checklist_v2026-02-17r3.pdf', notion: '/Systems Book/SB-02 Strategy & Positioning/Toolkit/T01 Checklist', notes: 'Printable checklist' },
+    { code: 'SB-02-T02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-02_T02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-02 Strategy & Positioning/Toolkit/T02 SOP Template', notes: 'Execution SOP' },
+    { code: 'SB-02-T03', name: 'Tracker', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-02_T03_Tracker_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-02 Strategy & Positioning/Toolkit/T03 Tracker', notes: 'Operating tracker' },
+    { code: 'SB-02-T04', name: 'Scripts Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-02_T04_Scripts_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-02 Strategy & Positioning/Toolkit/T04 Scripts Pack', notes: 'Stakeholder comms scripts' },
+    { code: 'SB-02-T05', name: 'Notion Template', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-02_T05_Notion_Template_v2026-02-17r3.md', notion: '/Systems Book/SB-02 Strategy & Positioning/Toolkit/T05 Notion Template', notes: 'Database/page template' },
+    { code: 'SB-02-T06', name: 'Prompt Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-02_T06_Prompt_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-02 Strategy & Positioning/Toolkit/T06 Prompt Pack', notes: 'AI prompts' },
+  ]
+};
+
+// SB-03 Brand & Marketing Registry
+export const SB03Registry = {
+  web: [
+    { code: 'SB-03-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Brand & Marketing/Web/W01 Landing Copy', notes: 'Website canonical copy' },
+    { code: 'SB-03-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Brand & Marketing/Web/W02 Blocks & Components', notes: 'Modular page sections' },
+    { code: 'SB-03-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Brand & Marketing/Web/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
+  ],
+  appendix: [
+    { code: 'SB-03-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-03_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-03 Brand & Marketing/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
+    { code: 'SB-03-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Brand & Marketing/Appendix/A02 SOP Template', notes: 'Version-locked template' },
+    { code: 'SB-03-A03', name: 'Scorecard', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-03_A03_Scorecard_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-03 Brand & Marketing/Appendix/A03 Scorecard', notes: 'KPI/scorecard worksheet' },
+    { code: 'SB-03-A04', name: 'Example Pack', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-03_A04_Examples_v2026-02-17r3.pdf', notion: '/Systems Book/SB-03 Brand & Marketing/Appendix/A04 Examples', notes: 'Filled examples/screens' },
+    { code: 'SB-03-A05', name: 'Standards & Definitions', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_A05_Standards_Definitions_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Brand & Marketing/Appendix/A05 Standards & Definitions', notes: 'Glossary + rules' },
+  ],
+  toolkit: [
+    { code: 'SB-03-T01', name: 'Checklist', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-03_T01_Checklist_v2026-02-17r3.pdf', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit/T01 Checklist', notes: 'Printable checklist' },
+    { code: 'SB-03-T02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_T02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit/T02 SOP Template', notes: 'Execution SOP' },
+    { code: 'SB-03-T03', name: 'Tracker', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-03_T03_Tracker_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit/T03 Tracker', notes: 'Operating tracker' },
+    { code: 'SB-03-T04', name: 'Scripts Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_T04_Scripts_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit/T04 Scripts Pack', notes: 'Stakeholder comms scripts' },
+    { code: 'SB-03-T05', name: 'Notion Template', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-03_T05_Notion_Template_v2026-02-17r3.md', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit/T05 Notion Template', notes: 'Database/page template' },
+    { code: 'SB-03-T06', name: 'Prompt Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-03_T06_Prompt_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-03 Brand & Marketing/Toolkit/T06 Prompt Pack', notes: 'AI prompts' },
+  ]
+};
+
+// SB-04 Offer & Product Systems Registry
+export const SB04Registry = {
+  web: [
+    { code: 'SB-04-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-04_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-04 Offer & Product Systems/Web/W01 Landing Copy', notes: 'Website canonical copy' },
+    { code: 'SB-04-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-04_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-04 Offer & Product Systems/Web/W02 Blocks & Components', notes: 'Modular page sections' },
+    { code: 'SB-04-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-04_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-04 Offer & Product Systems/Web/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
+  ],
+  appendix: [
+    { code: 'SB-04-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-04_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-04 Offer & Product/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
+    { code: 'SB-04-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-04_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-04 Offer & Product/Appendix/A02 SOP Template', notes: 'Version-locked template' },
+    { code: 'SB-04-A03', name: 'Scorecard', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-04_A03_Scorecard_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-04 Offer & Product/Appendix/A03 Scorecard', notes: 'KPI/scorecard worksheet' },
+    { code: 'SB-04-A04', name: 'Example Pack', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-04_A04_Examples_v2026-02-17r3.pdf', notion: '/Systems Book/SB-04 Offer & Product/Appendix/A04 Examples', notes: 'Filled examples/screens' },
+    { code: 'SB-04-A05', name: 'Standards & Definitions', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-04_A05_Standards_Definitions_v2026-02-17r3.docx', notion: '/Systems Book/SB-04 Offer & Product/Appendix/A05 Standards & Definitions', notes: 'Glossary + rules' },
+  ],
+  toolkit: [
+    { code: 'SB-04-T01', name: 'Checklist', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-04_T01_Checklist_v2026-02-17r3.pdf', notion: '/Systems Book/SB-04 Offer & Product/Toolkit/T01 Checklist', notes: 'Printable checklist' },
+    { code: 'SB-04-T02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-04_T02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-04 Offer & Product/Toolkit/T02 SOP Template', notes: 'Execution SOP' },
+    { code: 'SB-04-T03', name: 'Tracker', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-04_T03_Tracker_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-04 Offer & Product/Toolkit/T03 Tracker', notes: 'Operating tracker' },
+    { code: 'SB-04-T04', name: 'Scripts Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-04_T04_Scripts_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-04 Offer & Product/Toolkit/T04 Scripts Pack', notes: 'Stakeholder comms scripts' },
+    { code: 'SB-04-T05', name: 'Notion Template', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-04_T05_Notion_Template_v2026-02-17r3.md', notion: '/Systems Book/SB-04 Offer & Product/Toolkit/T05 Notion Template', notes: 'Database/page template' },
+    { code: 'SB-04-T06', name: 'Prompt Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-04_T06_Prompt_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-04 Offer & Product/Toolkit/T06 Prompt Pack', notes: 'AI prompts' },
+  ]
+};
+
+// SB-05 Client Success Registry
+export const SB05Registry = {
+  web: [
+    { code: 'SB-05-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-05_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-05 Client Success/Web/W01 Landing Copy', notes: 'Website canonical copy' },
+    { code: 'SB-05-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-05_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-05 Client Success/Web/W02 Blocks & Components', notes: 'Modular page sections' },
+    { code: 'SB-05-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-05_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-05 Client Success/Web/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
+  ],
+  appendix: [
+    { code: 'SB-05-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-05_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-05 Client Success/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
+    { code: 'SB-05-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-05_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-05 Client Success/Appendix/A02 SOP Template', notes: 'Version-locked template' },
+    { code: 'SB-05-A03', name: 'Scorecard', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-05_A03_Scorecard_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-05 Client Success/Appendix/A03 Scorecard', notes: 'KPI/scorecard worksheet' },
+    { code: 'SB-05-A04', name: 'Example Pack', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-05_A04_Examples_v2026-02-17r3.pdf', notion: '/Systems Book/SB-05 Client Success/Appendix/A04 Examples', notes: 'Filled examples/screens' },
+    { code: 'SB-05-A05', name: 'Standards & Definitions', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-05_A05_Standards_Definitions_v2026-02-17r3.docx', notion: '/Systems Book/SB-05 Client Success/Appendix/A05 Standards & Definitions', notes: 'Glossary + rules' },
+  ],
+  toolkit: [
+    { code: 'SB-05-T01', name: 'Checklist', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-05_T01_Checklist_v2026-02-17r3.pdf', notion: '/Systems Book/SB-05 Client Success/Toolkit/T01 Checklist', notes: 'Printable checklist' },
+    { code: 'SB-05-T02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-05_T02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-05 Client Success/Toolkit/T02 SOP Template', notes: 'Execution SOP' },
+    { code: 'SB-05-T03', name: 'Tracker', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-05_T03_Tracker_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-05 Client Success/Toolkit/T03 Tracker', notes: 'Operating tracker' },
+    { code: 'SB-05-T04', name: 'Scripts Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-05_T04_Scripts_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-05 Client Success/Toolkit/T04 Scripts Pack', notes: 'Stakeholder comms scripts' },
+    { code: 'SB-05-T05', name: 'Notion Template', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-05_T05_Notion_Template_v2026-02-17r3.md', notion: '/Systems Book/SB-05 Client Success/Toolkit/T05 Notion Template', notes: 'Database/page template' },
+    { code: 'SB-05-T06', name: 'Prompt Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-05_T06_Prompt_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-05 Client Success/Toolkit/T06 Prompt Pack', notes: 'AI prompts' },
+  ]
+};
+
+// SB-06 Technology & Data Registry
+export const SB06Registry = {
+  web: [
+    { code: 'SB-06-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Technology & Data/Web/W01 Landing Copy', notes: 'Website canonical copy' },
+    { code: 'SB-06-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Technology & Data/Web/W02 Blocks & Components', notes: 'Modular page sections' },
+    { code: 'SB-06-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Technology & Data/Web/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
+  ],
+  appendix: [
+    { code: 'SB-06-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-06_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-06 Technology & Data/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
+    { code: 'SB-06-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Technology & Data/Appendix/A02 SOP Template', notes: 'Version-locked template' },
+    { code: 'SB-06-A03', name: 'Scorecard', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-06_A03_Scorecard_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-06 Technology & Data/Appendix/A03 Scorecard', notes: 'KPI/scorecard worksheet' },
+    { code: 'SB-06-A04', name: 'Example Pack', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-06_A04_Examples_v2026-02-17r3.pdf', notion: '/Systems Book/SB-06 Technology & Data/Appendix/A04 Examples', notes: 'Filled examples/screens' },
+    { code: 'SB-06-A05', name: 'Standards & Definitions', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_A05_Standards_Definitions_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Technology & Data/Appendix/A05 Standards & Definitions', notes: 'Glossary + rules' },
+  ],
+  toolkit: [
+    { code: 'SB-06-T01', name: 'Checklist', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-06_T01_Checklist_v2026-02-17r3.pdf', notion: '/Systems Book/SB-06 Technology & Data/Toolkit/T01 Checklist', notes: 'Printable checklist' },
+    { code: 'SB-06-T02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_T02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Technology & Data/Toolkit/T02 SOP Template', notes: 'Execution SOP' },
+    { code: 'SB-06-T03', name: 'Tracker', format: 'XLSX', status: 'PLANNED', file: 'OnPoint_SB-06_T03_Tracker_v2026-02-17r3.xlsx', notion: '/Systems Book/SB-06 Technology & Data/Toolkit/T03 Tracker', notes: 'Operating tracker' },
+    { code: 'SB-06-T04', name: 'Scripts Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_T04_Scripts_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Technology & Data/Toolkit/T04 Scripts Pack', notes: 'Stakeholder comms scripts' },
+    { code: 'SB-06-T05', name: 'Notion Template', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-06_T05_Notion_Template_v2026-02-17r3.md', notion: '/Systems Book/SB-06 Technology & Data/Toolkit/T05 Notion Template', notes: 'Database/page template' },
+    { code: 'SB-06-T06', name: 'Prompt Pack', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-06_T06_Prompt_Pack_v2026-02-17r3.docx', notion: '/Systems Book/SB-06 Technology & Data/Toolkit/T06 Prompt Pack', notes: 'AI prompts' },
+  ]
+};
 
 // SB-07 Finance & Modeling System Registry
 export const SB07Registry = {
