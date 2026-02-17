@@ -94,7 +94,17 @@ const AppRoutes = () => {
         } 
       />
       
-      {/* Fallback */}
+      {/* Fallback - Skeleton pages for any unmapped routes from Sync Map */}
+      <Route path="/governance/*" element={<SkeletonPage />} />
+      <Route path="/systems-book/*" element={<SkeletonPage />} />
+      <Route path="/authority-os" element={<SkeletonPage />} />
+      <Route path="/authority-os/*" element={<SkeletonPage />} />
+      <Route path="/investor/*" element={<SkeletonPage />} />
+      <Route path="/website-architecture" element={<SkeletonPage />} />
+      <Route path="/website-architecture/*" element={<SkeletonPage />} />
+      <Route path="/resources/*" element={<SkeletonPage />} />
+      
+      {/* 404 Fallback */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
