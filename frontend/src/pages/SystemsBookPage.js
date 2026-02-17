@@ -1492,12 +1492,14 @@ const SystemsBookPage = () => {
                 title="Appendix Pack (A01-A05)"
                 icon={FolderOpen}
                 items={SB08Registry.appendix}
+                packParent={SB08Registry.packParents?.find(p => p.code === 'SB-08-Axx')}
                 defaultExpanded={true}
               />
               <ExpandedRegistrySection
                 title="Toolkit (T01-T06)"
                 icon={Wrench}
                 items={SB08Registry.toolkit}
+                packParent={SB08Registry.packParents?.find(p => p.code === 'SB-08-Txx')}
                 defaultExpanded={false}
               />
               <div className="p-3 bg-yellow-50 border border-yellow-200 rounded text-sm text-yellow-800">
