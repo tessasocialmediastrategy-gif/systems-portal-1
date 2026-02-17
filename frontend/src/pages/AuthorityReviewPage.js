@@ -206,8 +206,8 @@ const AuthorityReviewPage = () => {
                 <div>
                   <label className="block text-sm text-gray-400 mb-2">Company Size *</label>
                   <select
-                    name="companySize"
-                    value={formData.companySize}
+                    name="company_size"
+                    value={formData.company_size}
                     onChange={handleChange}
                     required
                     className="w-full bg-[#111111] border border-[#262626] text-white px-4 py-3 focus:border-[#C5A059] focus:outline-none transition-colors"
