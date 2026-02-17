@@ -1288,6 +1288,13 @@ const SystemsBookPage = () => {
             </h3>
             <div className="space-y-4">
               <ExpandedRegistrySection
+                title="Web Copy (W01-W03)"
+                icon={Globe}
+                items={SB07Registry.web}
+                packParent={SB07Registry.packParents?.find(p => p.code === 'SB-07-Wxx')}
+                defaultExpanded={false}
+              />
+              <ExpandedRegistrySection
                 title="Appendix Pack (A01-A05)"
                 icon={FolderOpen}
                 items={SB07Registry.appendix}
@@ -1488,6 +1495,13 @@ const SystemsBookPage = () => {
               SB-08-05 Expanded Registry
             </h3>
             <div className="space-y-4">
+              <ExpandedRegistrySection
+                title="Web Copy (W01-W03)"
+                icon={Globe}
+                items={SB08Registry.web}
+                packParent={SB08Registry.packParents?.find(p => p.code === 'SB-08-Wxx')}
+                defaultExpanded={false}
+              />
               <ExpandedRegistrySection
                 title="Appendix Pack (A01-A05)"
                 icon={FolderOpen}
@@ -1692,6 +1706,13 @@ const SystemsBookPage = () => {
             </h3>
             <div className="space-y-4">
               <ExpandedRegistrySection
+                title="Web Copy (W01-W03)"
+                icon={Globe}
+                items={SB09Registry.web}
+                packParent={SB09Registry.packParents?.find(p => p.code === 'SB-09-Wxx')}
+                defaultExpanded={false}
+              />
+              <ExpandedRegistrySection
                 title="Appendix Pack (A01-A05)"
                 icon={FolderOpen}
                 items={SB09Registry.appendix}
@@ -1892,6 +1913,13 @@ const SystemsBookPage = () => {
             </h3>
             <div className="space-y-4">
               <ExpandedRegistrySection
+                title="Web Copy (W01-W03)"
+                icon={Globe}
+                items={SB10Registry.web}
+                packParent={SB10Registry.packParents?.find(p => p.code === 'SB-10-Wxx')}
+                defaultExpanded={false}
+              />
+              <ExpandedRegistrySection
                 title="Appendix Pack (A01-A05)"
                 icon={FolderOpen}
                 items={SB10Registry.appendix}
@@ -2087,6 +2115,13 @@ const SystemsBookPage = () => {
               SB-11-05 Expanded Registry
             </h3>
             <div className="space-y-4">
+              <ExpandedRegistrySection
+                title="Web Copy (W01-W03)"
+                icon={Globe}
+                items={SB11Registry.web}
+                packParent={SB11Registry.packParents?.find(p => p.code === 'SB-11-Wxx')}
+                defaultExpanded={false}
+              />
               <ExpandedRegistrySection
                 title="Appendix Pack (A01-A05)"
                 icon={FolderOpen}
@@ -2295,6 +2330,13 @@ const SystemsBookPage = () => {
               SB-12-05 Expanded Registry
             </h3>
             <div className="space-y-4">
+              <ExpandedRegistrySection
+                title="Web Copy (W01-W03)"
+                icon={Globe}
+                items={SB12Registry.web}
+                packParent={SB12Registry.packParents?.find(p => p.code === 'SB-12-Wxx')}
+                defaultExpanded={false}
+              />
               <ExpandedRegistrySection
                 title="Appendix Pack (A01-A05)"
                 icon={FolderOpen}
