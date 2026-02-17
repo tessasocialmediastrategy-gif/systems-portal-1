@@ -181,10 +181,14 @@ export const SB06Registry = {
 export const SB07Registry = {
   packParents: [
     { code: 'SB-07-Axx', name: 'SB-07 Appendix Pack Rollup — Delivery & Operations', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-07_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Appendix Pack', notes: 'PARENT PACK: contains SB-07-A01… (appendices, references, diagrams, artifacts).' },
-    { code: 'SB-07-Wxx', name: 'SB-07 Worksheet Pack Rollup — Delivery & Operations', format: 'Pack Rollup (Worksheets)', status: 'ACTIVE', file: 'OnPoint_SB-07_Worksheet_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Worksheet Pack', notes: 'PARENT PACK: contains SB-07-W01… (fillables, scorecards, trackers, planning sheets).' },
+    { code: 'SB-07-Wxx', name: 'SB-07 Web Copy Pack Rollup — Delivery & Operations', format: 'Pack Rollup (Web Copy)', status: 'ACTIVE', file: 'OnPoint_SB-07_Web_Copy_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Web Copy Pack', notes: 'PARENT PACK: contains SB-07-W01…W03 (landing, blocks/components, downloads hub).' },
     { code: 'SB-07-Txx', name: 'SB-07 Template Pack Rollup — Delivery & Operations', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-07_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations/Template Pack', notes: 'PARENT PACK: contains SB-07-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
   ],
-  web: [],
+  web: [
+    { code: 'SB-07-W01', name: 'Chapter Landing Page Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-07_W01_Landing_Page_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Delivery & Operations/Web Copy Pack/W01 Landing Page Copy', notes: 'SB-07 main page hero/intro, outcomes, navigation, CTA' },
+    { code: 'SB-07-W02', name: 'Section Blocks & Component Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-07_W02_Section_Blocks_Component_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Delivery & Operations/Web Copy Pack/W02 Blocks & Components', notes: 'Reusable section blocks (problem/solution, steps, proof, FAQ, CTAs)' },
+    { code: 'SB-07-W03', name: 'Downloads Hub Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-07_W03_Downloads_Hub_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Delivery & Operations/Web Copy Pack/W03 Downloads Hub', notes: 'Downloads index text, access notes, disclaimers, what\'s included' },
+  ],
   appendix: [
     { code: 'SB-07-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-07_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-07 Finance & Modeling/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
     { code: 'SB-07-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-07_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-07 Finance & Modeling/Appendix/A02 SOP Template', notes: 'Version-locked template' },
@@ -206,10 +210,14 @@ export const SB07Registry = {
 export const SB08Registry = {
   packParents: [
     { code: 'SB-08-Axx', name: 'SB-08 Appendix Pack Rollup — Sales Pipeline & Growth', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-08_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-08 Sales Pipeline & Growth/Appendix Pack', notes: 'PARENT PACK: contains SB-08-A01… (appendices, references, diagrams, artifacts).' },
-    { code: 'SB-08-Wxx', name: 'SB-08 Worksheet Pack Rollup — Sales Pipeline & Growth', format: 'Pack Rollup (Worksheets)', status: 'ACTIVE', file: 'OnPoint_SB-08_Worksheet_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-08 Sales Pipeline & Growth/Worksheet Pack', notes: 'PARENT PACK: contains SB-08-W01… (fillables, scorecards, trackers, planning sheets).' },
+    { code: 'SB-08-Wxx', name: 'SB-08 Web Copy Pack Rollup — Sales Pipeline & Growth', format: 'Pack Rollup (Web Copy)', status: 'ACTIVE', file: 'OnPoint_SB-08_Web_Copy_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-08 Sales Pipeline & Growth/Web Copy Pack', notes: 'PARENT PACK: contains SB-08-W01…W03 (landing, blocks/components, downloads hub).' },
     { code: 'SB-08-Txx', name: 'SB-08 Template Pack Rollup — Sales Pipeline & Growth', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-08_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-08 Sales Pipeline & Growth/Template Pack', notes: 'PARENT PACK: contains SB-08-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
   ],
-  web: [],
+  web: [
+    { code: 'SB-08-W01', name: 'Chapter Landing Page Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-08_W01_Landing_Page_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-08 Sales Pipeline & Growth/Web Copy Pack/W01 Landing Page Copy', notes: 'SB-08 main page hero/intro, outcomes, navigation, CTA' },
+    { code: 'SB-08-W02', name: 'Section Blocks & Component Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-08_W02_Section_Blocks_Component_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-08 Sales Pipeline & Growth/Web Copy Pack/W02 Blocks & Components', notes: 'Reusable section blocks (problem/solution, steps, proof, FAQ, CTAs)' },
+    { code: 'SB-08-W03', name: 'Downloads Hub Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-08_W03_Downloads_Hub_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-08 Sales Pipeline & Growth/Web Copy Pack/W03 Downloads Hub', notes: 'Downloads index text, access notes, disclaimers, what\'s included' },
+  ],
   appendix: [
     { code: 'SB-08-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-08_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-08 Operations & Delivery/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
     { code: 'SB-08-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-08_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-08 Operations & Delivery/Appendix/A02 SOP Template', notes: 'Version-locked template' },
@@ -231,10 +239,14 @@ export const SB08Registry = {
 export const SB09Registry = {
   packParents: [
     { code: 'SB-09-Axx', name: 'SB-09 Appendix Pack Rollup — Finance & Reporting', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-09_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-09 Finance & Reporting/Appendix Pack', notes: 'PARENT PACK: contains SB-09-A01… (appendices, references, diagrams, artifacts).' },
-    { code: 'SB-09-Wxx', name: 'SB-09 Worksheet Pack Rollup — Finance & Reporting', format: 'Pack Rollup (Worksheets)', status: 'ACTIVE', file: 'OnPoint_SB-09_Worksheet_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-09 Finance & Reporting/Worksheet Pack', notes: 'PARENT PACK: contains SB-09-W01… (fillables, scorecards, trackers, planning sheets).' },
+    { code: 'SB-09-Wxx', name: 'SB-09 Web Copy Pack Rollup — Finance & Reporting', format: 'Pack Rollup (Web Copy)', status: 'ACTIVE', file: 'OnPoint_SB-09_Web_Copy_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-09 Finance & Reporting/Web Copy Pack', notes: 'PARENT PACK: contains SB-09-W01…W03 (landing, blocks/components, downloads hub).' },
     { code: 'SB-09-Txx', name: 'SB-09 Template Pack Rollup — Finance & Reporting', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-09_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-09 Finance & Reporting/Template Pack', notes: 'PARENT PACK: contains SB-09-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
   ],
-  web: [],
+  web: [
+    { code: 'SB-09-W01', name: 'Chapter Landing Page Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-09_W01_Landing_Page_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-09 Finance & Reporting/Web Copy Pack/W01 Landing Page Copy', notes: 'SB-09 main page hero/intro, outcomes, navigation, CTA' },
+    { code: 'SB-09-W02', name: 'Section Blocks & Component Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-09_W02_Section_Blocks_Component_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-09 Finance & Reporting/Web Copy Pack/W02 Blocks & Components', notes: 'Reusable section blocks (problem/solution, steps, proof, FAQ, CTAs)' },
+    { code: 'SB-09-W03', name: 'Downloads Hub Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-09_W03_Downloads_Hub_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-09 Finance & Reporting/Web Copy Pack/W03 Downloads Hub', notes: 'Downloads index text, access notes, disclaimers, what\'s included' },
+  ],
   appendix: [
     { code: 'SB-09-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-09_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-09 Sales & Pipeline/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
     { code: 'SB-09-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-09_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-09 Sales & Pipeline/Appendix/A02 SOP Template', notes: 'Version-locked template' },
@@ -256,10 +268,14 @@ export const SB09Registry = {
 export const SB10Registry = {
   packParents: [
     { code: 'SB-10-Axx', name: 'SB-10 Appendix Pack Rollup — People & Org Design', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-10_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-10 People & Org Design/Appendix Pack', notes: 'PARENT PACK: contains SB-10-A01… (appendices, references, diagrams, artifacts).' },
-    { code: 'SB-10-Wxx', name: 'SB-10 Worksheet Pack Rollup — People & Org Design', format: 'Pack Rollup (Worksheets)', status: 'ACTIVE', file: 'OnPoint_SB-10_Worksheet_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-10 People & Org Design/Worksheet Pack', notes: 'PARENT PACK: contains SB-10-W01… (fillables, scorecards, trackers, planning sheets).' },
+    { code: 'SB-10-Wxx', name: 'SB-10 Web Copy Pack Rollup — People & Org Design', format: 'Pack Rollup (Web Copy)', status: 'ACTIVE', file: 'OnPoint_SB-10_Web_Copy_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-10 People & Org Design/Web Copy Pack', notes: 'PARENT PACK: contains SB-10-W01…W03 (landing, blocks/components, downloads hub).' },
     { code: 'SB-10-Txx', name: 'SB-10 Template Pack Rollup — People & Org Design', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-10_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-10 People & Org Design/Template Pack', notes: 'PARENT PACK: contains SB-10-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
   ],
-  web: [],
+  web: [
+    { code: 'SB-10-W01', name: 'Chapter Landing Page Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-10_W01_Landing_Page_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-10 People & Org Design/Web Copy Pack/W01 Landing Page Copy', notes: 'SB-10 main page hero/intro, outcomes, navigation, CTA' },
+    { code: 'SB-10-W02', name: 'Section Blocks & Component Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-10_W02_Section_Blocks_Component_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-10 People & Org Design/Web Copy Pack/W02 Blocks & Components', notes: 'Reusable section blocks (problem/solution, steps, proof, FAQ, CTAs)' },
+    { code: 'SB-10-W03', name: 'Downloads Hub Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-10_W03_Downloads_Hub_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-10 People & Org Design/Web Copy Pack/W03 Downloads Hub', notes: 'Downloads index text, access notes, disclaimers, what\'s included' },
+  ],
   appendix: [
     { code: 'SB-10-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-10_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-10 Legal & Compliance/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
     { code: 'SB-10-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-10_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-10 Legal & Compliance/Appendix/A02 SOP Template', notes: 'Version-locked template' },
@@ -281,10 +297,14 @@ export const SB10Registry = {
 export const SB11Registry = {
   packParents: [
     { code: 'SB-11-Axx', name: 'SB-11 Appendix Pack Rollup — Legal, Risk & Compliance', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-11_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-11 Legal Risk Compliance/Appendix Pack', notes: 'PARENT PACK: contains SB-11-A01… (appendices, references, diagrams, artifacts).' },
-    { code: 'SB-11-Wxx', name: 'SB-11 Worksheet Pack Rollup — Legal, Risk & Compliance', format: 'Pack Rollup (Worksheets)', status: 'ACTIVE', file: 'OnPoint_SB-11_Worksheet_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-11 Legal Risk Compliance/Worksheet Pack', notes: 'PARENT PACK: contains SB-11-W01… (fillables, scorecards, trackers, planning sheets).' },
+    { code: 'SB-11-Wxx', name: 'SB-11 Web Copy Pack Rollup — Legal, Risk & Compliance', format: 'Pack Rollup (Web Copy)', status: 'ACTIVE', file: 'OnPoint_SB-11_Web_Copy_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-11 Legal Risk Compliance/Web Copy Pack', notes: 'PARENT PACK: contains SB-11-W01…W03 (landing, blocks/components, downloads hub).' },
     { code: 'SB-11-Txx', name: 'SB-11 Template Pack Rollup — Legal, Risk & Compliance', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-11_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-11 Legal Risk Compliance/Template Pack', notes: 'PARENT PACK: contains SB-11-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
   ],
-  web: [],
+  web: [
+    { code: 'SB-11-W01', name: 'Chapter Landing Page Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-11_W01_Landing_Page_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-11 Legal Risk Compliance/Web Copy Pack/W01 Landing Page Copy', notes: 'SB-11 main page hero/intro, outcomes, navigation, CTA' },
+    { code: 'SB-11-W02', name: 'Section Blocks & Component Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-11_W02_Section_Blocks_Component_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-11 Legal Risk Compliance/Web Copy Pack/W02 Blocks & Components', notes: 'Reusable section blocks (problem/solution, steps, proof, FAQ, CTAs)' },
+    { code: 'SB-11-W03', name: 'Downloads Hub Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-11_W03_Downloads_Hub_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-11 Legal Risk Compliance/Web Copy Pack/W03 Downloads Hub', notes: 'Downloads index text, access notes, disclaimers, what\'s included' },
+  ],
   appendix: [
     { code: 'SB-11-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-11_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-11 People & Culture/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
     { code: 'SB-11-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-11_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-11 People & Culture/Appendix/A02 SOP Template', notes: 'Version-locked template' },
@@ -306,10 +326,14 @@ export const SB11Registry = {
 export const SB12Registry = {
   packParents: [
     { code: 'SB-12-Axx', name: 'SB-12 Appendix Pack Rollup — Exit Readiness & M&A Package', format: 'Pack Rollup (Appendix)', status: 'ACTIVE', file: 'OnPoint_SB-12_Appendix_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-12 Exit Readiness M&A/Appendix Pack', notes: 'PARENT PACK: contains SB-12-A01… (appendices, references, diagrams, artifacts).' },
-    { code: 'SB-12-Wxx', name: 'SB-12 Worksheet Pack Rollup — Exit Readiness & M&A Package', format: 'Pack Rollup (Worksheets)', status: 'ACTIVE', file: 'OnPoint_SB-12_Worksheet_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-12 Exit Readiness M&A/Worksheet Pack', notes: 'PARENT PACK: contains SB-12-W01… (fillables, scorecards, trackers, planning sheets).' },
+    { code: 'SB-12-Wxx', name: 'SB-12 Web Copy Pack Rollup — Exit Readiness & M&A Package', format: 'Pack Rollup (Web Copy)', status: 'ACTIVE', file: 'OnPoint_SB-12_Web_Copy_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-12 Exit Readiness M&A/Web Copy Pack', notes: 'PARENT PACK: contains SB-12-W01…W03 (landing, blocks/components, downloads hub).' },
     { code: 'SB-12-Txx', name: 'SB-12 Template Pack Rollup — Exit Readiness & M&A Package', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-12_Template_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-12 Exit Readiness M&A/Template Pack', notes: 'PARENT PACK: contains SB-12-T01… (SOPs, scripts, email templates, policies, reusable assets).' },
   ],
-  web: [],
+  web: [
+    { code: 'SB-12-W01', name: 'Chapter Landing Page Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-12_W01_Landing_Page_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-12 Exit Readiness M&A/Web Copy Pack/W01 Landing Page Copy', notes: 'SB-12 main page hero/intro, outcomes, navigation, CTA' },
+    { code: 'SB-12-W02', name: 'Section Blocks & Component Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-12_W02_Section_Blocks_Component_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-12 Exit Readiness M&A/Web Copy Pack/W02 Blocks & Components', notes: 'Reusable section blocks (problem/solution, steps, proof, FAQ, CTAs)' },
+    { code: 'SB-12-W03', name: 'Downloads Hub Copy', format: 'DOCX', status: 'ACTIVE', file: 'OnPoint_SB-12_W03_Downloads_Hub_Copy_v2026-02-17r3.docx', notion: '/Systems Book/SB-12 Exit Readiness M&A/Web Copy Pack/W03 Downloads Hub', notes: 'Downloads index text, access notes, disclaimers, what\'s included' },
+  ],
   appendix: [
     { code: 'SB-12-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-12_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-12 Scaling & Exit/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
     { code: 'SB-12-A02', name: 'SOP Template', format: 'DOCX', status: 'PLANNED', file: 'OnPoint_SB-12_A02_SOP_Template_v2026-02-17r3.docx', notion: '/Systems Book/SB-12 Scaling & Exit/Appendix/A02 SOP Template', notes: 'Version-locked template' },
