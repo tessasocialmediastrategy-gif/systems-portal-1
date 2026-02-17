@@ -260,11 +260,14 @@ const AuthorityReviewPage = () => {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider font-medium hover:bg-[#d4af6a] transition-colors"
+                  disabled={loading}
+                  className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider font-medium hover:bg-[#d4af6a] transition-colors disabled:opacity-50"
                   data-testid="submit-review-request"
                 >
-                  Submit Review Request <Send className="w-4 h-4" />
+                  {loading ? 'Submitting...' : 'Submit Review Request'} <Send className="w-4 h-4" />
                 </button>
+
+                {error && <p className="text-red-500 text-sm text-center">{error}</p>}
 
                 <p className="text-xs text-gray-500 text-center">
                   By submitting, you agree to our privacy policy and terms of service.
