@@ -99,12 +99,14 @@ const TeaserPage = () => {
                 </p>
 
                 <div className="space-y-4">
-                  <button
+                  <a
+                    href="/documents/OnPoint_Teaser_v2026-02-16.pdf"
+                    download="OnPoint_Teaser_v2026-02-16.pdf"
                     className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider font-medium hover:bg-[#d4af6a] transition-colors"
                     data-testid="download-teaser"
                   >
                     <Download className="w-4 h-4" /> Download Teaser
-                  </button>
+                  </a>
                   <Link
                     to="/investor/nda-request"
                     className="w-full flex items-center justify-center gap-2 px-6 py-4 border border-[#C5A059] text-[#C5A059] text-sm tracking-wider hover:bg-[#C5A059]/10 transition-colors"
