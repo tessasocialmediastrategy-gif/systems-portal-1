@@ -1,0 +1,99 @@
+OnPoint_Systems_Book_v2026-02-17r3/
+├── SB-00_Book_Master/
+│   └── OnPoint_Systems_Book_Master_v2026-02-17r3.zip
+│
+├── SB-01_Foundation_Positioning/
+│   ├── OnPoint_SB-01_Chapter_Rollup_v2026-02-17r3.zip
+│   ├── Axx_Appendix_Assets_Pack/
+│   │   ├── OnPoint_SB-01_Appendix_Assets_Pack_Rollup_v2026-02-17r3.zip
+│   │   ├── OnPoint_SB_01_A01_v2026-02-17r3.docx
+│   │   ├── OnPoint_SB_01_A02_v2026-02-17r3.docx
+│   │   ├── OnPoint_SB_01_A03_v2026-02-17r3.docx
+│   │   ├── OnPoint_SB_01_A04_v2026-02-17r3.docx
+│   │   └── OnPoint_SB_01_A05_v2026-02-17r3.docx
+│   ├── Wxx_Web_Copy_Pack/
+│   │   ├── OnPoint_SB-01_Web_Copy_Pack_Rollup_v2026-02-17r3.zip
+│   │   ├── OnPoint_SB_01_W01_v2026-02-17r3.md
+│   │   ├── OnPoint_SB_01_W02_v2026-02-17r3.md
+│   │   └── OnPoint_SB_01_W03_v2026-02-17r3.md
+│   └── Txx_Templates_Pack/
+│       ├── OnPoint_SB-01_Templates_Pack_Rollup_v2026-02-17r3.zip
+│       ├── OnPoint_SB_01_T01_v2026-02-17r3.docx
+│       ├── OnPoint_SB_01_T02_v2026-02-17r3.docx
+│       ├── OnPoint_SB_01_T03_v2026-02-17r3.docx
+│       ├── OnPoint_SB_01_T04_v2026-02-17r3.docx
+│       ├── OnPoint_SB_01_T05_v2026-02-17r3.docx
+│       └── OnPoint_SB_01_T06_v2026-02-17r3.docx
+│
+├── SB-02_Offer_Pricing_Packaging/
+│   ├── OnPoint_SB-02_Chapter_Rollup_v2026-02-17r3.zip
+│   ├── Axx_Appendix_Assets_Pack/
+│   ├── Wxx_Web_Copy_Pack/
+│   └── Txx_Templates_Pack/
+│
+├── SB-03_Lead_Gen_Marketing_Engine/
+│   ├── OnPoint_SB-03_Chapter_Rollup_v2026-02-17r3.zip
+│   ├── Axx_Appendix_Assets_Pack/
+│   ├── Wxx_Web_Copy_Pack/
+│   └── Txx_Templates_Pack/
+│
+├── SB-04_Client_Experience_Delivery/
+│   ├── OnPoint_SB-04_Chapter_Rollup_v2026-02-17r3.zip
+│   ├── Axx_Appendix_Assets_Pack/
+│   ├── Wxx_Web_Copy_Pack/
+│   └── Txx_Templates_Pack/
+│
+├── SB-05_Systems_Tools_Automation/
+│   ├── OnPoint_SB-05_Chapter_Rollup_v2026-02-17r3.zip
+│   ├── Axx_Appendix_Assets_Pack/
+│   ├── Wxx_Web_Copy_Pack/
+│   └── Txx_Templates_Pack/
+│
+├── SB-06_Performance_Management_KPI/
+│   ├── OnPoint_SB-06_Chapter_Rollup_v2026-02-17r3.zip
+│   ├── Axx_Appendix_Assets_Pack/
+│   ├── Wxx_Web_Copy_Pack/
+│   └── Txx_Templates_Pack/
+│
+├── SB-07_Delivery_Operations/
+│   ├── OnPoint_SB-07_Chapter_Rollup_v2026-02-17r3.zip
+│   ├── Axx_Appendix_Assets_Pack/
+│   ├── Wxx_Web_Copy_Pack/
+│   └── Txx_Templates_Pack/
+│
+├── SB-08_Sales_Pipeline_Growth/
+│   ├── OnPoint_SB-08_Chapter_Rollup_v2026-02-17r3.zip
+│   ├── Axx_Appendix_Assets_Pack/
+│   ├── Wxx_Web_Copy_Pack/
+│   └── Txx_Templates_Pack/
+│
+├── SB-09_Finance_Reporting/
+│   ├── OnPoint_SB-09_Chapter_Rollup_v2026-02-17r3.zip
+│   ├── Axx_Appendix_Assets_Pack/
+│   ├── Wxx_Web_Copy_Pack/
+│   └── Txx_Templates_Pack/
+│
+├── SB-10_People_Org_Design/
+│   ├── OnPoint_SB-10_Chapter_Rollup_v2026-02-17r3.zip
+│   ├── Axx_Appendix_Assets_Pack/
+│   ├── Wxx_Web_Copy_Pack/
+│   └── Txx_Templates_Pack/
+│
+├── SB-11_Legal_Risk_Compliance/
+│   ├── OnPoint_SB-11_Chapter_Rollup_v2026-02-17r3.zip
+│   ├── Axx_Appendix_Assets_Pack/
+│   ├── Wxx_Web_Copy_Pack/
+│   └── Txx_Templates_Pack/
+│
+├── SB-12_Exit_Readiness_MA/
+│   ├── OnPoint_SB-12_Chapter_Rollup_v2026-02-17r3.zip
+│   ├── Axx_Appendix_Assets_Pack/
+│   ├── Wxx_Web_Copy_Pack/
+│   └── Txx_Templates_Pack/
+│
+├── _Registry/
+│   └── OnPoint_Systems_Book_Registry_v2026-02-17r3.csv
+│
+└── _Distribution_Log/
+    └── OnPoint_SB_Distribution_Log_v2026-02-17r3.xlsx
+
