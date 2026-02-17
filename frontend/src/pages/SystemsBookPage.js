@@ -6,7 +6,8 @@ import {
   Shield, Clock, Users, Database, Lock, ExternalLink, Map,
   Layout, FileCode, Navigation, Search, GitBranch, AlertTriangle,
   Layers, Target, Mail, TrendingUp, DollarSign, Scale, Cpu,
-  Building, RefreshCw
+  Building, RefreshCw, Calculator, FileCheck, Cog, Lightbulb,
+  Server, UserCog
 } from 'lucide-react';
 
 const SystemsBookPage = () => {
