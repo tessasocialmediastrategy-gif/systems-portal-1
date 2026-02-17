@@ -23,6 +23,19 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 6. Systems Book web integration
 
 ## What's Been Implemented
+### 2026-02-17 (Pack Parent Rollup Completion)
+- [x] Added Pack Parent Rollup rows for Systems Book chapters SB-07 through SB-12:
+  - **SB-07**: Delivery & Operations - Appendix, Worksheet, Template packs
+  - **SB-08**: Sales Pipeline & Growth - Appendix, Worksheet, Template packs
+  - **SB-09**: Finance & Reporting - Appendix, Worksheet, Template packs
+  - **SB-10**: People & Org Design - Appendix, Worksheet, Template packs
+  - **SB-11**: Legal, Risk & Compliance - Appendix, Worksheet, Template packs
+  - **SB-12**: Exit Readiness & M&A Package - Appendix, Worksheet, Template packs
+- [x] All pack parents version-locked to v2026-02-17r3 with ACTIVE status
+- [x] Pack parents display as highlighted header rows in Expanded Registry tables
+- [x] Updated `systemsBookRegistry.js` with packParents arrays for SB-07 to SB-12
+- [x] Updated `SystemsBookPage.js` to render packParent props for all chapters
+
 ### 2026-02-17 (Systems Book v2026-02-17r3 - 6 New Chapters)
 - [x] Added 6 full chapters to Systems Book:
   - **SB-07**: Finance and Modeling System (close calendar, forecasting, buyer-ready package)
