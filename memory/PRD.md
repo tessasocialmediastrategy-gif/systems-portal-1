@@ -23,25 +23,23 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 6. Systems Book web integration
 
 ## What's Been Implemented
-### 2026-02-17
-- [x] Landing page with hero section and public downloads
-- [x] Admin authentication and dashboard
-- [x] Buyer invite system with temporary passwords
-- [x] Document upload with category support
-- [x] Public document section (Teaser, CIM Times, CIM Modern)
-- [x] Protected buyer portal with document access
-- [x] Download logging and activity tracking
-- [x] User management (activate/deactivate/delete)
-- [x] Document management with checksum verification
-- [x] Premium UI following design guidelines
-
-### 2026-02-17 (Systems Book Integration)
-- [x] Systems Book page at /systems-book
-- [x] Full content from OnPoint Systems Book Master v2026-02-17r2
-- [x] Interactive sidebar navigation (SB-00 to SB-06)
-- [x] Section switching with visual hierarchy
-- [x] Systems Book PDF/DOCX uploaded to Data Room
-- [x] Navigation link in header
+### 2026-02-17 (Systems Book v2026-02-17r3 - 6 New Chapters)
+- [x] Added 6 full chapters to Systems Book:
+  - **SB-07**: Finance and Modeling System (close calendar, forecasting, buyer-ready package)
+  - **SB-08**: Legal and Compliance System (signature authority, compliance calendar, privacy/security)
+  - **SB-09**: Operations and Delivery System (delivery phases, QA, escalation, runbooks)
+  - **SB-10**: Product and IP System (roadmap governance, IP register, release standards)
+  - **SB-11**: Technology Stack and Integrations (stack layers, access/security, change management)
+  - **SB-12**: HR and Org Design System (role scorecards, hiring/onboarding, performance cadence)
+- [x] Each chapter includes:
+  - Version lock block (v2026-02-17r3)
+  - Artifact codes (SB-XX-A01 through A05)
+  - Workflow codes (SB-XX-W01 through W04)
+  - Template codes (SB-XX-T01 through T04)
+  - Website ↔ Notion ↔ Word sync table
+  - RACI matrix + metrics + control log requirements
+  - Implementation checklist + change control
+- [x] Updated version display to v2026-02-17r3 in header and footer
 
 ### 2026-02-17 (Website Book Sync Map v3 - One System Build)
 - [x] Updated to v2026-02-17r3 with 57 mappings
@@ -57,28 +55,40 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
   - Notion Sync Tracker Setup
   - OneDrive Folder Builder (PowerShell)
 
-### 2026-02-17 (Website Book Sync Map v2)
-- [x] Extended sync map with WP codes
-- [x] Complete SB-04 chapter with 10 subsections:
-  - SB-04-01: Investor Readiness Core Proof Pack
-  - SB-04-02-01: Information Architecture & Sitemap
-  - SB-04-02-02: Page Templates & Components
-  - SB-04-02-03: Content Types & CMS Fields
-  - SB-04-02-04: Navigation & UX Standards
-  - SB-04-02-05: SEO, Analytics & Tracking
-  - SB-04-02-06: Publishing Workflow & Governance
-  - SB-04-02-07: Version Tagging & Locking
-  - SB-04-02-08: QA, Accessibility & Security
-  - SB-04-03: Website ↔ CIM Mapping
-- [x] Updated Systems Book v2 PDF/DOCX uploaded to Data Room
-- [x] Added SB-05 Buyer Pipeline and SB-06 KPI/Metrics scaffolds
+### 2026-02-17 (Landing Page & Core Portal)
+- [x] Landing page with hero section and public downloads
+- [x] Admin authentication and dashboard
+- [x] Buyer invite system with temporary passwords
+- [x] Document upload with category support
+- [x] Public document section (Teaser, CIM Times, CIM Modern)
+- [x] Protected buyer portal with document access
+- [x] Download logging and activity tracking
+- [x] User management (activate/deactivate/delete)
+- [x] Document management with checksum verification
+- [x] Premium UI following design guidelines
 
-## Systems Book Sections
-- **SB-00**: Master Control (folder architecture, naming, registries)
-- **SB-01**: CEO Control Layer (dashboards, financial models)
-- **SB-02**: Deal Room (CIM workflow, gating, release checklist)
-- **SB-03**: Authority OS (operating rhythm, governance)
-- **SB-04**: Website & Content Ops (source of truth, publishing)
+### 2026-02-17 (Systems Book Integration)
+- [x] Systems Book page at /systems-book
+- [x] Full content from OnPoint Systems Book Master v2026-02-17r3
+- [x] Interactive sidebar navigation (SB-00 to SB-12)
+- [x] Section switching with visual hierarchy
+- [x] Systems Book PDF/DOCX uploaded to Data Room
+- [x] Navigation link in header
+
+## Systems Book Sections (Complete - 13 Chapters)
+- **SB-00**: Master Control & Registry (folder architecture, naming, registries)
+- **SB-01**: Authority OS Overview (operating system architecture and layer model)
+- **SB-02**: Data Room & Access Control (file system taxonomy, permissions, security)
+- **SB-03**: CIM Program (Teaser → NDA → CIM → Buyer Deck → Appendix)
+- **SB-04**: Investor Readiness + Website Spec (complete website architecture)
+- **SB-05**: Buyer Pipeline (pipeline stages and communications library)
+- **SB-06**: KPI / Metrics (scorecards and reporting framework)
+- **SB-07**: Finance and Modeling System (close calendar, forecasting, buyer-ready package)
+- **SB-08**: Legal and Compliance System (signature authority, compliance calendar, privacy/security)
+- **SB-09**: Operations and Delivery System (delivery phases, QA, escalation, runbooks)
+- **SB-10**: Product and IP System (roadmap governance, IP register, release standards)
+- **SB-11**: Technology Stack and Integrations (stack layers, access/security, change management)
+- **SB-12**: HR and Org Design System (role scorecards, hiring/onboarding, performance cadence)
 
 ## Document Categories
 - **Public**: teaser, cim_times, cim_modern
@@ -86,7 +96,8 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## Routes
 - `/` - Landing page with public documents
-- `/systems-book` - Interactive Systems Book
+- `/systems-book` - Interactive Systems Book (13 chapters)
+- `/sync-map` - Website ↔ Book Sync Map v3
 - `/login` - Buyer login
 - `/admin/login` - Admin login
 - `/portal` - Buyer deal room portal
@@ -116,27 +127,29 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 - GET `/api/downloads/protected/{doc_id}` - Download protected document
 
 ## Default Credentials
-- **Admin**: admin@tessaauthority.com / admin123
-- **Test Buyer**: buyer@example.com / 6oefDCfsjt_aussu
+- **Admin**: admin@test.com / password
+- **Test Buyer**: buyer@test.com / password
 
 ## Prioritized Backlog
 ### P0 (Critical) - COMPLETE
 - ✅ Core document portal functionality
 - ✅ Authentication system
-- ✅ Systems Book integration
+- ✅ Systems Book integration (13 chapters)
+- ✅ Sync Map v3 integration
 
-### P1 (High)
+### P1 (High) - Upcoming
+- [ ] Build skeleton pages for WP slugs from Sync Map v3
+- [ ] Build public marketing site for onpointsystemsauthority.com
+- [ ] Build Data Room Journey (Teaser gate → NDA form → CIM download)
 - [ ] Email notification for buyer invites
 - [ ] Password reset functionality
-- [ ] OneDrive integration for document sync
-- [ ] Expand SB-01 into CEO playbook (dashboards, templates)
-- [ ] Expand SB-02 into deal room SOP (email scripts, Q&A workflow)
 
-### P2 (Medium)
+### P2 (Medium) - Future
 - [ ] Document versioning history
 - [ ] Bulk document upload
 - [ ] Export download reports
-- [ ] Expand SB-04 into website architecture spec
+- [ ] OneDrive integration for document sync
+- [ ] Integrate Copy Blocks from Appendix A
 
 ## File Structure
 ```
@@ -156,14 +169,15 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 │   │   │   ├── LoginPage.js
 │   │   │   ├── BuyerPortal.js
 │   │   │   ├── AdminDashboard.js
-│   │   │   └── SystemsBookPage.js
+│   │   │   ├── SystemsBookPage.js
+│   │   │   └── SyncMapPage.js
 │   │   └── App.js
 │   └── .env
 └── memory/PRD.md
 ```
 
 ## Next Tasks
-1. Add email notifications for buyer invites
-2. Implement OneDrive sync for document uploads
-3. Expand SB-01 CEO Control Layer into interactive dashboard templates
-4. Add password reset flow for buyers
+1. Build skeleton pages for all WP slugs from Sync Map v3
+2. Build public marketing site for onpointsystemsauthority.com
+3. Build Data Room Journey flow
+4. Add email notifications for buyer invites
