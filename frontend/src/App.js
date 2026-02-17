@@ -10,6 +10,19 @@ import SystemsBookPage from "./pages/SystemsBookPage";
 import SyncMapPage from "./pages/SyncMapPage";
 import SBControlPanelPage from "./pages/SBControlPanelPage";
 import SystemsPage from "./pages/SystemsPage";
+import GovernancePage from "./pages/GovernancePage";
+import CertificationPage from "./pages/CertificationPage";
+import AuthorityReviewPage from "./pages/AuthorityReviewPage";
+import AboutPage from "./pages/AboutPage";
+import PlatformPage from "./pages/PlatformPage";
+import LeadershipPage from "./pages/LeadershipPage";
+import OutcomesPage from "./pages/OutcomesPage";
+import ContactPage from "./pages/ContactPage";
+import InvestorDataRoomPage from "./pages/InvestorDataRoomPage";
+import TeaserPage from "./pages/TeaserPage";
+import NDARequestPage from "./pages/NDARequestPage";
+import CIMDownloadPage from "./pages/CIMDownloadPage";
+import AppendixPage from "./pages/AppendixPage";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole }) => {
