@@ -9,6 +9,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import SystemsBookPage from "./pages/SystemsBookPage";
 import SyncMapPage from "./pages/SyncMapPage";
 import SBControlPanelPage from "./pages/SBControlPanelPage";
+import SystemsPage from "./pages/SystemsPage";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole }) => {
