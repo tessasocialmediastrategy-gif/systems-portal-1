@@ -116,10 +116,13 @@ const AppendixPage = () => {
 
           {/* Download All */}
           <div className="mt-8">
-            <button className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider font-medium hover:bg-[#d4af6a] transition-colors"
+            <a 
+              href="/documents/OnPoint_Appendix_Pack_v2026-02-16.pdf"
+              download="OnPoint_Appendix_Pack_v2026-02-16.pdf"
+              className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider font-medium hover:bg-[#d4af6a] transition-colors"
               data-testid="download-all-appendix">
-              <Download className="w-4 h-4" /> Download All (ZIP)
-            </button>
+              <Download className="w-4 h-4" /> Download Appendix Pack (PDF)
+            </a>
           </div>
         </div>
       </section>
