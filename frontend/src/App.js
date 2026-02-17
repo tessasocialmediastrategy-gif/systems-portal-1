@@ -8,6 +8,7 @@ import BuyerPortal from "./pages/BuyerPortal";
 import AdminDashboard from "./pages/AdminDashboard";
 import SystemsBookPage from "./pages/SystemsBookPage";
 import SyncMapPage from "./pages/SyncMapPage";
+import SBControlPanelPage from "./pages/SBControlPanelPage";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole }) => {
