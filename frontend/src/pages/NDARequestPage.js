@@ -2,16 +2,40 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, FileSignature, CheckCircle, User, Mail, Building2, Phone } from 'lucide-react';
 
+const API_URL = process.env.REACT_APP_BACKEND_URL;
+
 const NDARequestPage = () => {
   const [formData, setFormData] = useState({
-    name: '', email: '', company: '', title: '', phone: '', background: '', interest: '', timeline: ''
+    name: '', email: '', company: '', title: '', phone: '', buyer_type: '', interest: '', timeline: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('NDA Request:', formData);
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    
+    try {
+      const response = await fetch(`${API_URL}/api/investor/nda-request`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setError(data.detail || 'Failed to submit request');
+      }
+    } catch (err) {
+      setError('Network error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
