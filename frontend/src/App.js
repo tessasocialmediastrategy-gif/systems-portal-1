@@ -6,6 +6,7 @@ import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import BuyerPortal from "./pages/BuyerPortal";
 import AdminDashboard from "./pages/AdminDashboard";
+import SystemsBookPage from "./pages/SystemsBookPage";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole }) => {
@@ -36,6 +37,7 @@ const AppRoutes = () => {
     <Routes>
       {/* Public Routes */}
       <Route path="/" element={<LandingPage />} />
+      <Route path="/systems-book" element={<SystemsBookPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/admin/login" element={<LoginPage isAdmin />} />
       
