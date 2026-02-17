@@ -181,6 +181,7 @@ const SystemsBookPage = () => {
         { id: 'SB-07-02', title: 'Canonical Artifact Set' },
         { id: 'SB-07-03', title: 'Core Workflows' },
         { id: 'SB-07-04', title: 'RACI & Metrics' },
+        { id: 'SB-07-05', title: 'Expanded Registry' },
       ]
     },
     {
@@ -193,6 +194,7 @@ const SystemsBookPage = () => {
         { id: 'SB-08-02', title: 'Canonical Artifact Set' },
         { id: 'SB-08-03', title: 'Core Workflows' },
         { id: 'SB-08-04', title: 'RACI & Metrics' },
+        { id: 'SB-08-05', title: 'Expanded Registry' },
       ]
     },
     {
@@ -205,6 +207,7 @@ const SystemsBookPage = () => {
         { id: 'SB-09-02', title: 'Canonical Artifact Set' },
         { id: 'SB-09-03', title: 'Core Workflows' },
         { id: 'SB-09-04', title: 'RACI & Metrics' },
+        { id: 'SB-09-05', title: 'Expanded Registry' },
       ]
     },
     {
@@ -217,6 +220,7 @@ const SystemsBookPage = () => {
         { id: 'SB-10-02', title: 'Canonical Artifact Set' },
         { id: 'SB-10-03', title: 'Core Workflows' },
         { id: 'SB-10-04', title: 'RACI & Metrics' },
+        { id: 'SB-10-05', title: 'Expanded Registry' },
       ]
     },
     {
@@ -229,6 +233,7 @@ const SystemsBookPage = () => {
         { id: 'SB-11-02', title: 'Canonical Artifact Set' },
         { id: 'SB-11-03', title: 'Core Workflows' },
         { id: 'SB-11-04', title: 'RACI & Metrics' },
+        { id: 'SB-11-05', title: 'Expanded Registry' },
       ]
     },
     {
@@ -241,6 +246,7 @@ const SystemsBookPage = () => {
         { id: 'SB-12-02', title: 'Canonical Artifact Set' },
         { id: 'SB-12-03', title: 'Core Workflows' },
         { id: 'SB-12-04', title: 'RACI & Metrics' },
+        { id: 'SB-12-05', title: 'Expanded Registry' },
       ]
     },
   ];
