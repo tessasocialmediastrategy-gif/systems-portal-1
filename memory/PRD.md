@@ -38,10 +38,25 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 ### 2026-02-17 (Systems Book Integration)
 - [x] Systems Book page at /systems-book
 - [x] Full content from OnPoint Systems Book Master v2026-02-17r2
-- [x] Interactive sidebar navigation (SB-00 to SB-04)
+- [x] Interactive sidebar navigation (SB-00 to SB-06)
 - [x] Section switching with visual hierarchy
 - [x] Systems Book PDF/DOCX uploaded to Data Room
 - [x] Navigation link in header
+
+### 2026-02-17 (SB-04 Expansion - Website Architecture Spec)
+- [x] Complete SB-04 chapter with 10 subsections:
+  - SB-04-01: Investor Readiness Core Proof Pack
+  - SB-04-02-01: Information Architecture & Sitemap
+  - SB-04-02-02: Page Templates & Components
+  - SB-04-02-03: Content Types & CMS Fields
+  - SB-04-02-04: Navigation & UX Standards
+  - SB-04-02-05: SEO, Analytics & Tracking
+  - SB-04-02-06: Publishing Workflow & Governance
+  - SB-04-02-07: Version Tagging & Locking
+  - SB-04-02-08: QA, Accessibility & Security
+  - SB-04-03: Website ↔ CIM Mapping
+- [x] Updated Systems Book v2 PDF/DOCX uploaded to Data Room
+- [x] Added SB-05 Buyer Pipeline and SB-06 KPI/Metrics scaffolds
 
 ## Systems Book Sections
 - **SB-00**: Master Control (folder architecture, naming, registries)
