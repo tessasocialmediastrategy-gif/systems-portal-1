@@ -163,10 +163,10 @@ const SyncMapPage = () => {
           </p>
           <div className="flex items-center gap-4 mt-6">
             <span className="text-xs bg-[#C5A059]/20 text-[#C5A059] px-3 py-1 rounded-full font-medium">
-              v2026-02-17r2
+              v2026-02-17r3
             </span>
             <span className="text-xs text-gray-400">
-              {Object.values(syncData).flat().length} mappings across 10 website areas
+              {Object.values(syncData).flat().length} mappings • One System Build
             </span>
           </div>
         </div>
