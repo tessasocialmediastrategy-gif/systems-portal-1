@@ -1,19 +1,54 @@
 // Systems Book Expanded Registry Data - v2026-02-17r3
-// Contains Web (W01-W03), Appendix (A01-A05) and Toolkit (T01-T06) items for all chapters
+// Contains Book Master, Chapter Rollups, Pack Rollups (Axx/Wxx/Txx), and Child Items
 
 export const registryVersion = 'v2026-02-17r3';
 
-// SB-01 Foundation & Governance Registry
+// ============================================================
+// BOOK MASTER ROLLUP
+// ============================================================
+export const BookMaster = {
+  code: 'SB-00',
+  name: 'OnPoint Systems Book — Master Rollup',
+  format: 'Book Rollup (Master)',
+  status: 'ACTIVE',
+  file: 'OnPoint_Systems_Book_Master_v2026-02-17r3.zip',
+  notion: '/Systems Book (Master)',
+  notes: 'PARENT BOOK: contains SB-01…SB-12 chapter rollups.'
+};
+
+// ============================================================
+// CHAPTER ROLLUPS
+// ============================================================
+export const ChapterRollups = {
+  'SB-01': { code: 'SB-01', name: 'SB-01 Chapter Rollup — Foundation & Positioning', format: 'Chapter Rollup', status: 'ACTIVE', file: 'OnPoint_SB-01_Chapter_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-01 Foundation & Positioning', notes: 'PARENT CHAPTER: contains SB-01-Axx, SB-01-Wxx, SB-01-Txx.' },
+  'SB-02': { code: 'SB-02', name: 'SB-02 Chapter Rollup — Offer, Pricing & Packaging', format: 'Chapter Rollup', status: 'ACTIVE', file: 'OnPoint_SB-02_Chapter_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-02 Offer Pricing Packaging', notes: 'PARENT CHAPTER: contains SB-02-Axx, SB-02-Wxx, SB-02-Txx.' },
+  'SB-03': { code: 'SB-03', name: 'SB-03 Chapter Rollup — Lead Gen & Marketing Engine', format: 'Chapter Rollup', status: 'ACTIVE', file: 'OnPoint_SB-03_Chapter_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-03 Lead Gen Marketing Engine', notes: 'PARENT CHAPTER: contains SB-03-Axx, SB-03-Wxx, SB-03-Txx.' },
+  'SB-04': { code: 'SB-04', name: 'SB-04 Chapter Rollup — Client Experience & Delivery Standards', format: 'Chapter Rollup', status: 'ACTIVE', file: 'OnPoint_SB-04_Chapter_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-04 Client Experience Delivery Standards', notes: 'PARENT CHAPTER: contains SB-04-Axx, SB-04-Wxx, SB-04-Txx.' },
+  'SB-05': { code: 'SB-05', name: 'SB-05 Chapter Rollup — Systems, Tools & Automation', format: 'Chapter Rollup', status: 'ACTIVE', file: 'OnPoint_SB-05_Chapter_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-05 Systems Tools Automation', notes: 'PARENT CHAPTER: contains SB-05-Axx, SB-05-Wxx, SB-05-Txx.' },
+  'SB-06': { code: 'SB-06', name: 'SB-06 Chapter Rollup — Performance Management & KPI Cadence', format: 'Chapter Rollup', status: 'ACTIVE', file: 'OnPoint_SB-06_Chapter_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-06 Performance Management KPI Cadence', notes: 'PARENT CHAPTER: contains SB-06-Axx, SB-06-Wxx, SB-06-Txx.' },
+  'SB-07': { code: 'SB-07', name: 'SB-07 Chapter Rollup — Delivery & Operations', format: 'Chapter Rollup', status: 'ACTIVE', file: 'OnPoint_SB-07_Chapter_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-07 Delivery & Operations', notes: 'PARENT CHAPTER: contains SB-07-Axx, SB-07-Wxx, SB-07-Txx.' },
+  'SB-08': { code: 'SB-08', name: 'SB-08 Chapter Rollup — Sales Pipeline & Growth', format: 'Chapter Rollup', status: 'ACTIVE', file: 'OnPoint_SB-08_Chapter_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-08 Sales Pipeline & Growth', notes: 'PARENT CHAPTER: contains SB-08-Axx, SB-08-Wxx, SB-08-Txx.' },
+  'SB-09': { code: 'SB-09', name: 'SB-09 Chapter Rollup — Finance & Reporting', format: 'Chapter Rollup', status: 'ACTIVE', file: 'OnPoint_SB-09_Chapter_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-09 Finance & Reporting', notes: 'PARENT CHAPTER: contains SB-09-Axx, SB-09-Wxx, SB-09-Txx.' },
+  'SB-10': { code: 'SB-10', name: 'SB-10 Chapter Rollup — People & Org Design', format: 'Chapter Rollup', status: 'ACTIVE', file: 'OnPoint_SB-10_Chapter_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-10 People & Org Design', notes: 'PARENT CHAPTER: contains SB-10-Axx, SB-10-Wxx, SB-10-Txx.' },
+  'SB-11': { code: 'SB-11', name: 'SB-11 Chapter Rollup — Legal, Risk & Compliance', format: 'Chapter Rollup', status: 'ACTIVE', file: 'OnPoint_SB-11_Chapter_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-11 Legal Risk Compliance', notes: 'PARENT CHAPTER: contains SB-11-Axx, SB-11-Wxx, SB-11-Txx.' },
+  'SB-12': { code: 'SB-12', name: 'SB-12 Chapter Rollup — Exit Readiness & M&A Package', format: 'Chapter Rollup', status: 'ACTIVE', file: 'OnPoint_SB-12_Chapter_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-12 Exit Readiness M&A', notes: 'PARENT CHAPTER: contains SB-12-Axx, SB-12-Wxx, SB-12-Txx.' },
+};
+
+// ============================================================
+// PACK REGISTRIES (per chapter)
+// ============================================================
+
+// SB-01 Foundation & Positioning Registry
 export const SB01Registry = {
   packParents: [
-    { code: 'SB-01-Wxx', name: 'Website Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-01_Web_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-01 Foundation & Governance/Web', notes: 'PACK PARENT: contains SB-01-W01…W99' },
-    { code: 'SB-01-Axx', name: 'Appendix Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-01_Appendix_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-01 Foundation & Governance/Appendix', notes: 'PACK PARENT: contains SB-01-A01…A99' },
-    { code: 'SB-01-Txx', name: 'Toolkit Pack (Rollup)', format: 'ZIP', status: 'PLANNED', file: 'OnPoint_SB-01_Toolkit_Pack_v2026-02-17r3.zip', notion: '/Systems Book/SB-01 Foundation & Governance/Toolkit', notes: 'PACK PARENT: contains SB-01-T01…T99' },
+    { code: 'SB-01-Axx', name: 'SB-01 Appendix Assets Pack Rollup', format: 'Pack Rollup (Appendix Assets)', status: 'ACTIVE', file: 'OnPoint_SB-01_Appendix_Assets_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-01 Foundation & Positioning/Appendix Assets Pack', notes: 'PARENT PACK: contains SB-01-A01…A05.' },
+    { code: 'SB-01-Wxx', name: 'SB-01 Web Copy Pack Rollup', format: 'Pack Rollup (Web Copy)', status: 'ACTIVE', file: 'OnPoint_SB-01_Web_Copy_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-01 Foundation & Positioning/Web Copy Pack', notes: 'PARENT PACK: contains SB-01-W01…W03.' },
+    { code: 'SB-01-Txx', name: 'SB-01 Templates Pack Rollup', format: 'Pack Rollup (Templates)', status: 'ACTIVE', file: 'OnPoint_SB-01_Templates_Pack_Rollup_v2026-02-17r3.zip', notion: '/Systems Book/SB-01 Foundation & Positioning/Templates Pack', notes: 'PARENT PACK: contains SB-01-T01…T06.' },
   ],
   web: [
-    { code: 'SB-01-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-01_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-01 Foundation & Governance/Web/W01 Landing Copy', notes: 'Website canonical copy' },
-    { code: 'SB-01-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-01_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-01 Foundation & Governance/Web/W02 Blocks & Components', notes: 'Modular page sections' },
-    { code: 'SB-01-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-01_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-01 Foundation & Governance/Web/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
+    { code: 'SB-01-W01', name: 'Chapter Landing Page Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-01_W01_Landing_Copy_v2026-02-17r3.md', notion: '/Systems Book/SB-01 Foundation & Positioning/Web Copy Pack/W01 Landing Copy', notes: 'Website canonical copy' },
+    { code: 'SB-01-W02', name: 'Section Blocks & Component Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-01_W02_Blocks_Components_v2026-02-17r3.md', notion: '/Systems Book/SB-01 Foundation & Positioning/Web Copy Pack/W02 Blocks & Components', notes: 'Modular page sections' },
+    { code: 'SB-01-W03', name: 'Downloads Hub Copy', format: 'MD', status: 'PLANNED', file: 'OnPoint_SB-01_W03_Downloads_Hub_v2026-02-17r3.md', notion: '/Systems Book/SB-01 Foundation & Positioning/Web Copy Pack/W03 Downloads Hub', notes: 'Download descriptions for A/T assets' },
   ],
   appendix: [
     { code: 'SB-01-A01', name: 'System Diagram', format: 'PDF', status: 'PLANNED', file: 'OnPoint_SB-01_A01_System_Diagram_v2026-02-17r3.pdf', notion: '/Systems Book/SB-01 Foundation & Governance/Appendix/A01 System Diagram', notes: 'Include in Appendix Pack index' },
