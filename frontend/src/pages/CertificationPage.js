@@ -1,136 +1,128 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Award, CheckCircle, BookOpen, Users, Shield } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const CertificationPage = () => {
-  const certificationLevels = [
-    {
-      level: 'Foundation',
-      title: 'Authority Foundations',
-      description: 'Core principles of authority design and governance infrastructure',
-      duration: '4 weeks',
-      modules: ['Authority OS Overview', 'Governance Principles', 'Documentation Standards', 'Registry Management'],
-      color: 'bg-gray-700'
-    },
-    {
-      level: 'Practitioner',
-      title: 'Authority Practitioner',
-      description: 'Implementation and operation of authority systems within organizations',
-      duration: '8 weeks',
-      modules: ['System Implementation', 'Change Control', 'Audit Procedures', 'Team Training'],
-      color: 'bg-[#C5A059]/80'
-    },
-    {
-      level: 'Expert',
-      title: 'Certified Authority Operator',
-      description: 'Full certification for operating and transferring authority systems',
-      duration: '12 weeks',
-      modules: ['Advanced Governance', 'M&A Readiness', 'Licensing Framework', 'Exit Preparation'],
-      color: 'bg-[#C5A059]'
-    },
-  ];
-
-  const benefits = [
-    { icon: Shield, title: 'Credibility', description: 'Recognized standard in authority design' },
-    { icon: Users, title: 'Network', description: 'Access to certified operator community' },
-    { icon: BookOpen, title: 'Resources', description: 'Full Systems Book and toolkit access' },
-    { icon: Award, title: 'License', description: 'Authority to implement and transfer systems' },
-  ];
-
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/90 backdrop-blur-sm border-b border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between h-16">
-            <Link to="/" className="text-xl tracking-widest font-light" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              ONPOINT.
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <Link to="/" className="text-xl tracking-widest font-light">ONPOINT.</Link>
+          <div className="flex items-center gap-8">
+            <Link to="/systems" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">SYSTEMS</Link>
+            <Link to="/book" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">BOOK</Link>
+            <Link to="/governance" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">GOVERNANCE</Link>
+            <Link to="/certification" className="text-sm tracking-wider text-[#C5A059]">CERTIFICATION</Link>
+            <Link 
+              to="/authority-review"
+              className="px-4 py-2 border border-[#C5A059] text-[#C5A059] text-sm hover:bg-[#C5A059] hover:text-[#0A0A0A] transition-colors"
+            >
+              AUTHORITY REVIEW
             </Link>
-            <div className="flex items-center gap-8">
-              <a href="https://tessaauthority.com" target="_blank" rel="noopener noreferrer" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">MAIN SITE</a>
-              <Link to="/systems" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">SYSTEMS</Link>
-              <Link to="/systems-book" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">BOOK</Link>
-              <Link to="/investor/data-room" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">INVESTOR</Link>
-              <Link to="/certification" className="text-sm tracking-wider text-[#C5A059] border-b border-[#C5A059]">CERTIFICATION</Link>
-              <Link to="/authority-review" className="px-4 py-2 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider hover:bg-[#d4af6a] transition-colors">
-                AUTHORITY REVIEW
-              </Link>
-            </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-[#C5A059] text-sm tracking-widest mb-6">OPERATOR CERTIFICATION</p>
-          <h1 className="text-5xl md:text-6xl font-light leading-tight mb-8" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-            The Certification<br />
-            <span className="text-[#C5A059] italic">Gap</span>
+      <section className="pt-32 pb-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-[#C5A059] text-sm tracking-widest mb-6">AUTHORITY CERTIFICATION</p>
+          <h1 className="text-5xl md:text-7xl font-light leading-tight mb-8" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+            Certification<br />
+            <span className="text-[#C5A059] italic">Standards</span>
           </h1>
-          <p className="text-xl text-gray-400 mb-8 leading-relaxed max-w-3xl">
-            Structured progression through doctrine that determines license eligibility. 
-            Become a Certified Authority Operator and gain the credentials to implement, 
-            operate, and transfer authority systems.
+          <p className="text-xl text-gray-400 leading-relaxed">
+            Certification is not education.<br />
+            It is a gate to licensed authority.
           </p>
-          <Link 
-            to="/authority-review"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider hover:bg-[#d4af6a] transition-colors"
-            data-testid="cta-start-certification"
-          >
-            Start Certification <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
       </section>
 
-      {/* Certification Levels */}
+      {/* Certification Structure */}
       <section className="py-16 px-6 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-light mb-12 text-center" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-            Certification Pathway
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {certificationLevels.map((cert, index) => (
-              <div 
-                key={cert.level}
-                className="relative p-8 border border-[#262626] bg-[#111111]"
-                data-testid={`cert-level-${cert.level.toLowerCase()}`}
-              >
-                <div className={`absolute top-0 left-0 right-0 h-1 ${cert.color}`} />
-                <span className="text-xs text-gray-500 tracking-wider">LEVEL {index + 1}</span>
-                <h3 className="text-xl font-light mt-2 mb-2" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-                  {cert.title}
-                </h3>
-                <p className="text-[#C5A059] text-sm mb-4">{cert.duration}</p>
-                <p className="text-gray-400 text-sm mb-6">{cert.description}</p>
-                <ul className="space-y-2">
-                  {cert.modules.map((module, i) => (
-                    <li key={i} className="flex items-center gap-2 text-gray-500 text-sm">
-                      <CheckCircle className="w-4 h-4 text-[#C5A059]" />
-                      {module}
-                    </li>
-                  ))}
-                </ul>
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs text-gray-500 tracking-widest mb-8">CERTIFICATION STRUCTURE</p>
+          <ul className="space-y-6">
+            <li className="flex items-center gap-4">
+              <span className="w-2 h-2 bg-[#C5A059] rounded-full"></span>
+              <span className="text-xl text-gray-300">Doctrine (what authority is)</span>
+            </li>
+            <li className="flex items-center gap-4">
+              <span className="w-2 h-2 bg-[#C5A059] rounded-full"></span>
+              <span className="text-xl text-gray-300">Procedure (how authority is exercised)</span>
+            </li>
+            <li className="flex items-center gap-4">
+              <span className="w-2 h-2 bg-[#C5A059] rounded-full"></span>
+              <span className="text-xl text-gray-300">Enforcement (what happens when it breaks)</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Progression */}
+      <section className="py-16 px-6 border-t border-[#1a1a1a]">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs text-gray-500 tracking-widest mb-8">PROGRESSION</p>
+          <div className="space-y-8">
+            <div className="flex items-start gap-6">
+              <span className="text-4xl font-light text-[#262626]">01</span>
+              <div>
+                <h3 className="text-xl font-light text-white mb-2">Foundation Module</h3>
+                <p className="text-gray-400">Core principles of authority design. Governance infrastructure basics. Documentation standards.</p>
               </div>
-            ))}
+            </div>
+            <div className="flex items-start gap-6">
+              <span className="text-4xl font-light text-[#262626]">02</span>
+              <div>
+                <h3 className="text-xl font-light text-white mb-2">Practitioner Module</h3>
+                <p className="text-gray-400">Implementation methodology. Change control procedures. Audit preparation.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-6">
+              <span className="text-4xl font-light text-[#262626]">03</span>
+              <div>
+                <h3 className="text-xl font-light text-white mb-2">Operator Certification</h3>
+                <p className="text-gray-400">Full license eligibility. M&A readiness. Transfer authority.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* What Certification Grants */}
       <section className="py-16 px-6 border-t border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-light mb-12 text-center" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-            Certification Benefits
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {benefits.map((benefit) => (
-              <div key={benefit.title} className="text-center">
-                <benefit.icon className="w-10 h-10 text-[#C5A059] mx-auto mb-4" />
-                <h3 className="text-lg font-light mb-2">{benefit.title}</h3>
-                <p className="text-gray-500 text-sm">{benefit.description}</p>
-              </div>
-            ))}
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs text-gray-500 tracking-widest mb-8">WHAT CERTIFICATION GRANTS</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-lg font-light text-[#C5A059] mb-3">License to Operate</h3>
+              <p className="text-gray-400 text-sm">Authority to implement OnPoint systems within your organization or for clients.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-light text-[#C5A059] mb-3">Audit Rights</h3>
+              <p className="text-gray-400 text-sm">Access to compliance frameworks and enforcement documentation.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-light text-[#C5A059] mb-3">Network Access</h3>
+              <p className="text-gray-400 text-sm">Connection to other certified operators and institutional buyers.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-light text-[#C5A059] mb-3">Transfer Authority</h3>
+              <p className="text-gray-400 text-sm">Credentials recognized in M&A due diligence and investor review.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Certification Is Not */}
+      <section className="py-16 px-6 border-t border-[#1a1a1a]">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs text-gray-500 tracking-widest mb-8">WHAT CERTIFICATION IS NOT</p>
+          <div className="space-y-4">
+            <p className="text-gray-400">It is not a course completion badge.</p>
+            <p className="text-gray-400">It is not self-paced content consumption.</p>
+            <p className="text-gray-400">It is not optional if you want licensed authority.</p>
           </div>
         </div>
       </section>
@@ -139,25 +131,17 @@ const CertificationPage = () => {
       <section className="py-20 px-6 border-t border-[#1a1a1a]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-light mb-6" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-            Ready to become certified?
+            Begin with an <span className="text-[#C5A059] italic">Authority Review</span>
           </h2>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-            Start with an Authority Review to assess your current state and determine the best certification path for your organization.
+          <p className="text-gray-400 mb-8">
+            Certification eligibility is determined by current state assessment.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/authority-review"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider hover:bg-[#d4af6a] transition-colors"
-            >
-              Request Authority Review <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link 
-              to="/systems-book"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#C5A059] text-[#C5A059] text-sm tracking-wider hover:bg-[#C5A059]/10 transition-colors"
-            >
-              View Systems Book <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <Link 
+            to="/authority-review"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider hover:bg-[#d4af6a] transition-colors"
+          >
+            Request Authority Review <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 
@@ -166,9 +150,9 @@ const CertificationPage = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <span className="text-sm text-gray-500">© {new Date().getFullYear()} OnPoint Authority Systems, Inc.</span>
           <div className="flex items-center gap-6">
-            <a href="https://tessaauthority.com" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">tessaauthority.com</a>
-            <Link to="/systems-book" className="text-sm text-gray-500 hover:text-white transition-colors">Systems Book</Link>
-            <Link to="/sync-map" className="text-sm text-gray-500 hover:text-white transition-colors">Sync Map</Link>
+            <Link to="/systems" className="text-sm text-gray-500 hover:text-white transition-colors">Systems</Link>
+            <Link to="/governance" className="text-sm text-gray-500 hover:text-white transition-colors">Governance</Link>
+            <Link to="/read-book" className="text-sm text-gray-500 hover:text-white transition-colors">Read Book</Link>
           </div>
         </div>
       </footer>
