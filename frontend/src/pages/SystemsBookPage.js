@@ -229,6 +229,20 @@ const SystemsBookPage = () => {
       src: '/images/diagrams/16_Revocation_Trigger_Flow.png',
       description: 'Authority that cannot be revoked is not authority. It is a permanent entitlement.'
     },
+    {
+      id: 13,
+      title: 'Authority Enforcement Logic',
+      chapter: 'Chapter 6 — Diagram 11',
+      src: '/images/diagrams/17_Authority_Enforcement_Logic.png',
+      description: 'Enforcement logic converts detected violations into defined, non-negotiable outcomes.'
+    },
+    {
+      id: 14,
+      title: 'Audit Escalation Ladder',
+      chapter: 'Chapter 6 — Diagram 12',
+      src: '/images/diagrams/18_Audit_Escalation_Ladder.png',
+      description: 'Every unresolved audit finding escalates to a higher authority level until resolved or revocation is initiated.'
+    },
   ];
 
   const toggleSection = (sectionId) => {
