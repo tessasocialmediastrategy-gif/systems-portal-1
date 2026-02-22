@@ -20,17 +20,17 @@ const SystemsPage = () => {
               ONPOINT.
             </Link>
             <div className="flex items-center gap-8">
+              <a href="https://tessaauthority.com" target="_blank" rel="noopener noreferrer" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">
+                MAIN SITE
+              </a>
               <Link to="/systems" className="text-sm tracking-wider text-[#C5A059] border-b border-[#C5A059]">
                 SYSTEMS
               </Link>
               <Link to="/systems-book" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">
                 BOOK
               </Link>
-              <Link to="/governance" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">
-                GOVERNANCE
-              </Link>
-              <Link to="/certification" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">
-                CERTIFICATION
+              <Link to="/investor/data-room" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">
+                INVESTOR
               </Link>
               <Link 
                 to="/authority-review" 
