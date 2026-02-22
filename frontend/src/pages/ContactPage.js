@@ -182,6 +182,7 @@ const ContactPage = () => {
           <span className="text-sm text-gray-500">© {new Date().getFullYear()} OnPoint Authority Systems, Inc.</span>
           <div className="flex items-center gap-6">
             <Link to="/about" className="text-sm text-gray-500 hover:text-white transition-colors">About</Link>
+            <a href="https://tessaauthority.com" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">tessaauthority.com</a>
             <Link to="/systems-book" className="text-sm text-gray-500 hover:text-white transition-colors">Systems Book</Link>
           </div>
         </div>

@@ -177,6 +177,7 @@ const CertificationPage = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <span className="text-sm text-gray-500">© {new Date().getFullYear()} OnPoint Authority Systems, Inc.</span>
           <div className="flex items-center gap-6">
+            <a href="https://tessaauthority.com" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">tessaauthority.com</a>
             <Link to="/systems-book" className="text-sm text-gray-500 hover:text-white transition-colors">Systems Book</Link>
             <Link to="/sync-map" className="text-sm text-gray-500 hover:text-white transition-colors">Sync Map</Link>
           </div>
