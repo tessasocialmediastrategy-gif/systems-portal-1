@@ -383,6 +383,58 @@ const SystemsBookPage = () => {
   ];
 
   const sectionContent = {
+    'DIAGRAMS': {
+      title: 'Key Diagrams',
+      content: (
+        <div className="space-y-8">
+          <div className="bg-[#0B1C3E]/5 border border-[#0B1C3E]/10 rounded p-4 mb-6">
+            <p className="text-sm text-[#374151]">
+              <Image className="w-4 h-4 inline mr-2 text-[#C5A059]" />
+              Visual frameworks and conceptual models from the <strong>OnPoint Authority Systems Book</strong>. Click any diagram to view in full size.
+            </p>
+          </div>
+
+          {/* Diagram Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {bookDiagrams.map((diagram) => (
+              <div 
+                key={diagram.id}
+                className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-[#C5A059] transition-all cursor-pointer"
+                onClick={() => setSelectedDiagram(diagram)}
+                data-testid={`diagram-card-${diagram.id}`}
+              >
+                <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
+                  <img 
+                    src={diagram.src} 
+                    alt={diagram.title}
+                    className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-[#0B1C3E]/0 group-hover:bg-[#0B1C3E]/10 transition-colors flex items-center justify-center">
+                    <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+                <div className="p-4 border-t border-gray-100">
+                  <p className="text-xs text-[#C5A059] font-medium mb-1">{diagram.chapter}</p>
+                  <h4 className="font-semibold text-[#111827] mb-2" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                    {diagram.title}
+                  </h4>
+                  <p className="text-sm text-[#6B7280] line-clamp-2">{diagram.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Diagram Usage Note */}
+          <div className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded">
+            <p className="text-sm text-yellow-800">
+              <strong>Usage:</strong> These diagrams are version-locked to the current Systems Book release. 
+              They may be referenced in presentations and internal materials. For external distribution, 
+              use only locked PDF exports.
+            </p>
+          </div>
+        </div>
+      )
+    },
     'SB-00': {
       title: 'Master Control & Registry System',
       content: (
