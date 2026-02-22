@@ -98,7 +98,7 @@ const SystemsPage = () => {
             </div>
             <div className="flex justify-center">
               <img 
-                src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/qypu4we9_BookPowerPointImage2.png"
+                src="https://static.prod-images.emergentagent.com/jobs/969f2fb3-c243-4f47-99ee-f2de10f2d2ad/images/68f58a637abbf03622b488825199ffe2ec337402affbfc4ca5b6468a6cca6fd1.png"
                 alt="OnPoint Authority Book - Front and Back Cover"
                 className="max-w-lg w-full"
                 data-testid="main-book-spread"
