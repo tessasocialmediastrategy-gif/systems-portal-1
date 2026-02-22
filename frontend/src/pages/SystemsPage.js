@@ -72,6 +72,51 @@ const SystemsPage = () => {
         </div>
       </section>
 
+      {/* System Architecture Layers Section */}
+      <section className="py-20 px-6 border-t border-[#1a1a1a]">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-[#C5A059] text-sm tracking-widest mb-8 text-center">SYSTEM ARCHITECTURE LAYERS</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <img 
+                src="https://static.prod-images.emergentagent.com/jobs/eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/images/959def4a2709c7d5d09c5ec9b35309b35d2e7ad555808c5bad3c67d77b40d7fe.png"
+                alt="Institutional Authority"
+                className="w-full h-auto mb-4"
+                data-testid="chapter-img-authority"
+              />
+              <p className="text-gray-400 text-sm">Authority design</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="https://static.prod-images.emergentagent.com/jobs/eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/images/ce8467205a65f261a519d69be33e3750fa5c524047aa9e8d020d16f0a80a271b.png"
+                alt="The Certification Gap"
+                className="w-full h-auto mb-4"
+                data-testid="chapter-img-certification"
+              />
+              <p className="text-gray-400 text-sm">Operator certification</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="https://static.prod-images.emergentagent.com/jobs/eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/images/e38ad10ce5a7ac07f9ec908770084cf36460f42c055cf6ab4f6f3ed380e1baaa.png"
+                alt="Enforce or Erode"
+                className="w-full h-auto mb-4"
+                data-testid="chapter-img-enforce"
+              />
+              <p className="text-gray-400 text-sm">Enforcement mechanics</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="https://static.prod-images.emergentagent.com/jobs/eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/images/e8b38217e9f84b5951f2cf659de671fd5bd45cb29f068cd416e2b327f87ebaf5.png"
+                alt="Governance Beyond the Founder"
+                className="w-full h-auto mb-4"
+                data-testid="chapter-img-governance"
+              />
+              <p className="text-gray-400 text-sm">Post-founder governance</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Built for Transfer Section */}
       <section className="py-20 px-6 border-t border-[#1a1a1a]">
         <div className="max-w-7xl mx-auto">
