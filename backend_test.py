@@ -11,7 +11,7 @@ import io
 from datetime import datetime
 
 class CIMPortalAPITester:
-    def __init__(self, base_url="https://onpoint-systems-hub.preview.emergentagent.com"):
+    def __init__(self, base_url="https://onpoint-buyer.preview.emergentagent.com"):
         self.base_url = base_url
         self.api_url = f"{base_url}/api"
         self.admin_token = None
