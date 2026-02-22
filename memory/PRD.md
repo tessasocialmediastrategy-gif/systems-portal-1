@@ -139,17 +139,23 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## Prioritized Backlog
 ### P0 - Critical
-- [ ] Wire up actual PDF downloads (Teaser, CIM, Appendix files)
-- [ ] Admin panel view for NDA/Review submissions
+- [ ] Complete deployment of `OnPointAuthoritySystems.com` (blocked on DNS propagation)
 
 ### P1 - High
-- [ ] Email notifications on form submissions
-- [ ] Deploy to tessaauthority.com production
+- [ ] Build Admin Panel for NDA/Review/Contact submissions
+- [ ] Add cross-link from tessaauthority.com once deployment is live
+- [ ] Wire up actual PDF downloads (Teaser, CIM, Appendix files)
 
 ### P2 - Medium
+- [ ] Populate skeleton pages with content
+- [ ] Email notifications on form submissions
 - [ ] Build remaining governance chapters (SB-07 through SB-12)
 - [ ] Add analytics tracking
 - [ ] Buyer activity logging
+
+### P3 - Refactoring
+- [ ] Consolidate navigation components into reusable `<Navbar />`
+- [ ] Define global CSS variables for black/gold theme consistency
 
 ## Test Credentials
 - **Admin**: `admin@test.com` / `password` (if created)
