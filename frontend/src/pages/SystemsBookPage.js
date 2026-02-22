@@ -2520,6 +2520,14 @@ const SystemsBookPage = () => {
 
   return (
     <div className="min-h-screen bg-[#F9FAFB]">
+      {/* Diagram Lightbox */}
+      {selectedDiagram && (
+        <DiagramLightbox 
+          diagram={selectedDiagram} 
+          onClose={() => setSelectedDiagram(null)} 
+        />
+      )}
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200/40">
         <div className="container-custom">
