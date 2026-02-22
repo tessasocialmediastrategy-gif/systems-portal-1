@@ -24,6 +24,23 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## What's Been Implemented
 
+### 2026-02-22 Session (Key Diagrams Integration)
+- [x] **Key Diagrams Section** added to Systems Book page (`/systems-book`)
+  - 8 diagrams integrated with full metadata (title, chapter, description)
+  - Interactive diagram grid with hover effects
+  - Lightbox modal for full-size viewing
+  - Responsive 2-column layout
+- [x] **Diagrams Stored**:
+  - `01_Founder_Dependency_Loop.png` - Chapter 2, Diagram 3
+  - `02_Transferability_Gap_Chart.png` - Chapter 3, Diagram 5
+  - `03_Authority_Governance_Stack.png` - Chapter 4, Diagram 7
+  - `04_Charter_Certification_License_Flow.png` - Chapter 5, Diagram 8
+  - `09_License_Scope_Hierarchy.png` - Chapter 6, Diagram 9
+  - `10_Recurring_Enforcement_Cycle.png` - Chapter 5, Diagram 10
+  - `11_Transfer_Survival_Map.png` - Chapter 10, Diagram 18
+  - `12_Board_Oversight_Model.png` - Chapter 7, Diagram 14
+- [x] **UI Components**: DiagramLightbox component with close button
+
 ### 2026-02-18 Session 2 (Backend Integration & Skeleton Pages)
 - [x] **NDA Request API** (`POST /api/investor/nda-request`)
   - Stores buyer qualification data in MongoDB
