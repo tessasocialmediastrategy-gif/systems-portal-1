@@ -461,6 +461,163 @@ const BookDocsPage = () => {
             </div>
           </div>
         )}
+
+        {/* Resources Tab */}
+        {activeTab === 'resources' && (
+          <div className="space-y-8">
+            {/* Quick Start */}
+            <div className="bg-[#C5A059]/10 border border-[#C5A059]/20 rounded-lg p-6">
+              <h3 className="font-semibold text-[#0B1C3E] mb-2 flex items-center gap-2">
+                <Zap className="w-5 h-5 text-[#C5A059]" />
+                Quick Start
+              </h3>
+              <p className="text-[#0B1C3E]/70 text-sm mb-4">
+                New to this project? Start with the Quick Reference document for a complete overview.
+              </p>
+              <a 
+                href="/docs/book/QUICK_REFERENCE.md" 
+                target="_blank"
+                className="inline-flex items-center gap-2 bg-[#0B1C3E] text-white px-4 py-2 rounded hover:bg-[#0B1C3E]/80 transition-colors text-sm"
+              >
+                <ExternalLink className="w-4 h-4" />
+                Open Quick Reference
+              </a>
+            </div>
+
+            {/* Documentation Files Grid */}
+            <div className="grid md:grid-cols-2 gap-4">
+              {docFiles.map((doc, i) => (
+                <a 
+                  key={i}
+                  href={`/docs/book/${doc.file}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white p-4 rounded-lg border border-gray-200 hover:border-[#C5A059] hover:shadow-md transition-all group"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="p-2 bg-[#C5A059]/10 rounded-lg group-hover:bg-[#C5A059]/20 transition-colors">
+                      <doc.icon className="w-6 h-6 text-[#C5A059]" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-[#111827] group-hover:text-[#C5A059] transition-colors flex items-center gap-2">
+                        {doc.name}
+                        <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </h3>
+                      <p className="text-sm text-gray-500 mt-1">{doc.desc}</p>
+                      <p className="text-xs text-gray-400 mt-2 font-mono">{doc.file}</p>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            {/* Project Status */}
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+              <div className="p-4 bg-[#0B1C3E] text-white">
+                <h2 className="font-semibold">Project Status</h2>
+              </div>
+              <div className="p-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="font-medium text-[#111827] mb-3 flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                      Completed
+                    </h3>
+                    <ul className="space-y-2 text-sm text-gray-600">
+                      <li className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                        10 chapters written
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                        40 diagrams created
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                        8 file formats exported
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                        IP registration documented
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                        Online book reader live
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-[#111827] mb-3 flex items-center gap-2">
+                      <ClipboardList className="w-5 h-5 text-[#C5A059]" />
+                      Ready for Publishing
+                    </h3>
+                    <ul className="space-y-2 text-sm text-gray-600">
+                      <li className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-[#C5A059] rounded-full"></span>
+                        InDesign layout
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-[#C5A059] rounded-full"></span>
+                        Cover design
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-[#C5A059] rounded-full"></span>
+                        Final proofreading
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-[#C5A059] rounded-full"></span>
+                        Upload to KDP/IngramSpark
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Book Specs Summary */}
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+              <div className="p-4 bg-gray-50 border-b border-gray-200">
+                <h2 className="font-semibold text-[#111827]">Book Specifications</h2>
+              </div>
+              <div className="p-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                  <div>
+                    <p className="text-gray-500">Title</p>
+                    <p className="font-medium text-[#111827]">OnPoint Authority</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-500">Author</p>
+                    <p className="font-medium text-[#111827]">Tessa Shepard</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-500">Format</p>
+                    <p className="font-medium text-[#111827]">6×9 Hardcover</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-500">Est. Pages</p>
+                    <p className="font-medium text-[#111827]">280 pages</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-500">Chapters</p>
+                    <p className="font-medium text-[#111827]">10 + Intro</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-500">Diagrams</p>
+                    <p className="font-medium text-[#111827]">40 total</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-500">Price Point</p>
+                    <p className="font-medium text-[#111827]">$27-47</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-500">Publisher</p>
+                    <p className="font-medium text-[#111827]">OnPoint Authority Systems</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       {/* Footer */}
