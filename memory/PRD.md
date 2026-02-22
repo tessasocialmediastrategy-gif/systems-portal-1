@@ -150,6 +150,7 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## Prioritized Backlog
 ### P0 - Critical
+- [ ] Deploy to `tessaauthority.com` (applies /systems and /governance page fixes)
 - [ ] Complete deployment of `OnPointAuthoritySystems.com` (blocked on DNS propagation)
 
 ### P1 - High
