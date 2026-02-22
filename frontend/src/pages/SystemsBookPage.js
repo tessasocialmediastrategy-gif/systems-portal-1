@@ -213,6 +213,13 @@ const SystemsBookPage = () => {
 
   const sections = [
     {
+      id: 'DIAGRAMS',
+      title: 'Key Diagrams',
+      icon: Image,
+      description: 'Visual frameworks and models from the Authority Systems Book',
+      subsections: []
+    },
+    {
       id: 'SB-00',
       title: 'Master Control & Registry',
       icon: Database,
