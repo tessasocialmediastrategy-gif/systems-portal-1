@@ -24,6 +24,16 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## What's Been Implemented
 
+### 2026-02-23 Session (Systems Page Image Refresh)
+- [x] **New Chapter Icons** - Generated 4 clean professional gold-on-black icons:
+  - Institutional Authority (Greek columns)
+  - Certification Gap (gold certificate)
+  - Enforce or Erode (shield & gavel)
+  - Governance Beyond (crown & org chart)
+- [x] **New Hero Book Cover** - 3D book mockup "OnPoint Authority" by Tessa Shepard
+- [x] **System Architecture Layers section** added to `/systems` page with new images
+- [x] All images: No borders, no outlines, clean black backgrounds
+
 ### 2026-02-22 Session (Book Content & Reader Page)
 - [x] **Book Reader Page** (`/read-book`) - Dedicated reading experience for the OnPoint Authority book
   - Clean sidebar navigation with all 10 chapters + Introduction + About Author
