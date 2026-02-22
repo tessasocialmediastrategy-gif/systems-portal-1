@@ -201,6 +201,34 @@ const SystemsBookPage = () => {
       src: '/images/diagrams/12_Board_Oversight_Model.png',
       description: 'The governance board does not manage operations. It governs authority, certifies roles, and revokes when required.'
     },
+    {
+      id: 9,
+      title: 'Post-Founder Continuity Flow',
+      chapter: 'Chapter 10 — Diagram 20',
+      src: '/images/diagrams/13_Post-Founder_Continuity_Flow.png',
+      description: 'When the founder exits, the authority system activates. The enterprise does not pause. It continues.'
+    },
+    {
+      id: 10,
+      title: 'Authority Enterprise OS',
+      chapter: 'Chapter 9 — Diagram 17',
+      src: '/images/diagrams/14_Authority_Enterprise_OS.png',
+      description: 'The complete operating system — all layers integrated into a single institutional architecture.'
+    },
+    {
+      id: 11,
+      title: 'Certification Gate Architecture',
+      chapter: 'Chapter 4 — Diagram 7',
+      src: '/images/diagrams/15_Certification_Gate_Architecture.png',
+      description: 'Authority is not assumed. It is proven at every gate before it is granted.'
+    },
+    {
+      id: 12,
+      title: 'Revocation Trigger Flow',
+      chapter: 'Chapter 4 — Diagram 8',
+      src: '/images/diagrams/16_Revocation_Trigger_Flow.png',
+      description: 'Authority that cannot be revoked is not authority. It is a permanent entitlement.'
+    },
   ];
 
   const toggleSection = (sectionId) => {
