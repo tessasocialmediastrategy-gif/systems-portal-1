@@ -56,6 +56,7 @@ const AppRoutes = () => {
       {/* Public Routes */}
       <Route path="/" element={<LandingPage />} />
       <Route path="/systems-book" element={<SystemsBookPage />} />
+      <Route path="/read-book" element={<BookReaderPage />} />
       <Route path="/sync-map" element={<SyncMapPage />} />
       <Route path="/sb-control-panel" element={<SBControlPanelPage />} />
       <Route path="/systems" element={<SystemsPage />} />
