@@ -2,9 +2,18 @@
 ## OnPoint Authority System
 
 **Registration Date:** February 18, 2026  
-**IP Serial Number:** 99653409  
+**IP Serial Number:** 9965349  
 **Owner:** Tessa Shepard  
 **Entity:** OnPoint Authority Systems, Inc.  
+
+---
+
+## REGISTERED DOMAINS
+
+| Domain | Purpose | Status |
+|--------|---------|--------|
+| **TessaAuthority.com** | Public Marketing Site | Active |
+| **OnPointAuthoritySystems.com** | Investor Portal / Data Room | Deploying |
 
 ---
 
@@ -15,7 +24,7 @@
 **Type:** Literary Work / Business Methodology  
 **Author:** Tessa Shepard  
 **Copyright:** © 2026 Tessa Shepard. All rights reserved.  
-**IP S/N:** 99653409  
+**IP S/N:** 9965349  
 
 ---
 
