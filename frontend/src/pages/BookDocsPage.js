@@ -616,6 +616,70 @@ const BookDocsPage = () => {
                 </div>
               </div>
             </div>
+
+            {/* IP & Domains */}
+            <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+              <div className="p-4 bg-[#0B1C3E] text-white">
+                <h2 className="font-semibold flex items-center gap-2">
+                  <Shield className="w-5 h-5" />
+                  Intellectual Property & Domains
+                </h2>
+              </div>
+              <div className="p-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h3 className="font-medium text-[#111827] mb-3">IP Registration</h3>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-gray-500">IP Serial Number:</span>
+                        <span className="font-mono font-medium text-[#0B1C3E]">9965349</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-500">Registration Date:</span>
+                        <span className="text-[#111827]">February 18, 2026</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-500">Owner:</span>
+                        <span className="text-[#111827]">Tessa Shepard</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-500">Entity:</span>
+                        <span className="text-[#111827]">OnPoint Authority Systems, Inc.</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-[#111827] mb-3">Registered Domains</h3>
+                    <div className="space-y-3">
+                      <a 
+                        href="https://tessaauthority.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-[#C5A059]/10 transition-colors group"
+                      >
+                        <div className="flex items-center gap-2">
+                          <Globe className="w-4 h-4 text-[#C5A059]" />
+                          <span className="font-medium text-[#111827]">TessaAuthority.com</span>
+                        </div>
+                        <span className="text-xs text-gray-500 group-hover:text-[#C5A059]">Public Marketing Site</span>
+                      </a>
+                      <a 
+                        href="https://onpointauthoritysystems.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-[#C5A059]/10 transition-colors group"
+                      >
+                        <div className="flex items-center gap-2">
+                          <Globe className="w-4 h-4 text-[#C5A059]" />
+                          <span className="font-medium text-[#111827]">OnPointAuthoritySystems.com</span>
+                        </div>
+                        <span className="text-xs text-gray-500 group-hover:text-[#C5A059]">Investor Portal</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         )}
       </main>
