@@ -7,7 +7,7 @@ import {
   Layout, FileCode, Navigation, Search, GitBranch, AlertTriangle,
   Layers, Target, Mail, TrendingUp, DollarSign, Scale, Cpu,
   Building, RefreshCw, Calculator, FileCheck, Cog, Lightbulb,
-  Server, UserCog, FolderOpen, Wrench, Code
+  Server, UserCog, FolderOpen, Wrench, Code, Image, ZoomIn
 } from 'lucide-react';
 import { 
   SB01Registry, SB02Registry, SB03Registry, SB04Registry, SB05Registry, SB06Registry,
