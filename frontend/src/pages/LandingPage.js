@@ -57,6 +57,15 @@ const LandingPage = () => {
               <span className="font-semibold text-[#111827]">TessaAuthority</span>
             </Link>
             <div className="flex items-center gap-4">
+              <a 
+                href="https://tessaauthority.com" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-[#6B7280] hover:text-[#111827] transition-colors"
+                data-testid="nav-main-site"
+              >
+                Main Site
+              </a>
               <Link 
                 to="/systems-book" 
                 className="text-sm text-[#6B7280] hover:text-[#111827] transition-colors"
