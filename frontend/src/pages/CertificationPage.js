@@ -62,35 +62,24 @@ const CertificationPage = () => {
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-[#C5A059] text-sm tracking-widest mb-6">OPERATOR CERTIFICATION</p>
-              <h1 className="text-5xl md:text-6xl font-light leading-tight mb-8" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-                The Certification<br />
-                <span className="text-[#C5A059] italic">Gap</span>
-              </h1>
-              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                Structured progression through doctrine that determines license eligibility. 
-                Become a Certified Authority Operator and gain the credentials to implement, 
-                operate, and transfer authority systems.
-              </p>
-              <Link 
-                to="/authority-review"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider hover:bg-[#d4af6a] transition-colors"
-                data-testid="cta-start-certification"
-              >
-                Start Certification <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <div className="flex justify-center">
-              <img 
-                src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/g2m36blt_Certification%20Seal.png"
-                alt="OnPoint Authority Certification"
-                className="max-w-md w-full"
-              />
-            </div>
-          </div>
+        <div className="max-w-5xl mx-auto">
+          <p className="text-[#C5A059] text-sm tracking-widest mb-6">OPERATOR CERTIFICATION</p>
+          <h1 className="text-5xl md:text-6xl font-light leading-tight mb-8" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+            The Certification<br />
+            <span className="text-[#C5A059] italic">Gap</span>
+          </h1>
+          <p className="text-xl text-gray-400 mb-8 leading-relaxed max-w-3xl">
+            Structured progression through doctrine that determines license eligibility. 
+            Become a Certified Authority Operator and gain the credentials to implement, 
+            operate, and transfer authority systems.
+          </p>
+          <Link 
+            to="/authority-review"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider hover:bg-[#d4af6a] transition-colors"
+            data-testid="cta-start-certification"
+          >
+            Start Certification <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 
