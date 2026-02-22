@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { 
   BookOpen, FileText, Image, Package, Download, CheckCircle,
   Home, ChevronRight, Layers, Printer, Globe, Code,
-  Tablet, FileCode, File, Monitor
+  Tablet, FileCode, File, Monitor, Shield, ClipboardList,
+  Zap, FolderOpen, ExternalLink
 } from 'lucide-react';
 
 const BookDocsPage = () => {
@@ -13,6 +14,59 @@ const BookDocsPage = () => {
     { id: 'assembly', label: 'Assembly Guide', icon: Package },
     { id: 'diagrams', label: 'Diagrams', icon: Image },
     { id: 'formats', label: 'File Formats', icon: FileText },
+    { id: 'resources', label: 'Resources', icon: FolderOpen },
+  ];
+
+  // Documentation files
+  const docFiles = [
+    { 
+      name: 'Quick Reference', 
+      file: 'QUICK_REFERENCE.md', 
+      icon: Zap,
+      desc: 'One-page overview of the entire project - start here if lost'
+    },
+    { 
+      name: 'Final Completion Report', 
+      file: 'FINAL_COMPLETION_REPORT.md', 
+      icon: CheckCircle,
+      desc: 'Complete status of all deliverables and project milestones'
+    },
+    { 
+      name: 'Final Assembly Complete', 
+      file: 'FINAL_ASSEMBLY_COMPLETE.md', 
+      icon: Package,
+      desc: 'Confirmation that all book components are assembled'
+    },
+    { 
+      name: 'IP Registration', 
+      file: 'IP_REGISTRATION.md', 
+      icon: Shield,
+      desc: 'Intellectual property registration and copyright details'
+    },
+    { 
+      name: 'Diagram Content Action Plan', 
+      file: 'DIAGRAM_CONTENT_ACTION_PLAN.md', 
+      icon: ClipboardList,
+      desc: 'Detailed plan for diagram creation and placement'
+    },
+    { 
+      name: 'Book Assembly README', 
+      file: 'BOOK_ASSEMBLY_README.md', 
+      icon: FileText,
+      desc: 'Step-by-step assembly instructions'
+    },
+    { 
+      name: 'Diagrams Complete Summary', 
+      file: 'DIAGRAMS_COMPLETE_SUMMARY.md', 
+      icon: Image,
+      desc: 'Summary of all 40 diagrams created'
+    },
+    { 
+      name: 'Master Format Index', 
+      file: 'MASTER_FORMAT_INDEX.md', 
+      icon: FolderOpen,
+      desc: 'Complete inventory of all file formats'
+    },
   ];
 
   // Chapter breakdown data
