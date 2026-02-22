@@ -102,9 +102,106 @@ const ExpandedRegistrySection = ({ title, icon: Icon, items, packParent, default
   );
 };
 
+// Diagram lightbox component
+const DiagramLightbox = ({ diagram, onClose }) => {
+  if (!diagram) return null;
+  
+  return (
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+      onClick={onClose}
+    >
+      <div className="relative max-w-6xl max-h-[90vh] bg-white rounded-lg overflow-hidden" onClick={e => e.stopPropagation()}>
+        <button 
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 p-2 bg-[#0B1C3E] text-white rounded-full hover:bg-[#C5A059] transition-colors"
+          data-testid="close-lightbox"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div className="p-6">
+          <h3 className="text-xl font-bold text-[#111827] mb-2" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+            {diagram.title}
+          </h3>
+          <p className="text-sm text-[#6B7280] mb-4">{diagram.chapter}</p>
+          <img 
+            src={diagram.src} 
+            alt={diagram.title}
+            className="max-h-[70vh] w-auto mx-auto rounded border border-gray-200"
+          />
+          <p className="mt-4 text-sm text-[#374151] text-center">{diagram.description}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const SystemsBookPage = () => {
-  const [activeSection, setActiveSection] = useState('SB-00');
-  const [expandedSections, setExpandedSections] = useState(['SB-00']);
+  const [activeSection, setActiveSection] = useState('DIAGRAMS');
+  const [expandedSections, setExpandedSections] = useState(['DIAGRAMS']);
+  const [selectedDiagram, setSelectedDiagram] = useState(null);
+  
+  // All book diagrams
+  const bookDiagrams = [
+    {
+      id: 1,
+      title: 'Founder Dependency Loop',
+      chapter: 'Chapter 2 — Diagram 3',
+      src: '/images/diagrams/01_Founder_Dependency_Loop.png',
+      description: 'Informal authority creates a closed loop. No decision resolves permanently without the founder\'s involvement.'
+    },
+    {
+      id: 2,
+      title: 'Transferability Gap Chart',
+      chapter: 'Chapter 3 — Diagram 5',
+      src: '/images/diagrams/02_Transferability_Gap_Chart.png',
+      description: 'The gap between current operations and buyer-ready transferability.'
+    },
+    {
+      id: 3,
+      title: 'Authority Governance Stack',
+      chapter: 'Chapter 4 — Diagram 7',
+      src: '/images/diagrams/03_Authority_Governance_Stack.png',
+      description: 'The layered architecture of formal authority governance.'
+    },
+    {
+      id: 4,
+      title: 'Charter / Certification / License Flow',
+      chapter: 'Chapter 5 — Diagram 8',
+      src: '/images/diagrams/04_Charter_Certification_License_Flow.png',
+      description: 'The process flow from charter establishment through certification to operational licensing.'
+    },
+    {
+      id: 5,
+      title: 'License Scope Hierarchy',
+      chapter: 'Chapter 6 — Diagram 9',
+      src: '/images/diagrams/09_License_Scope_Hierarchy.png',
+      description: 'Every license operates within a defined hierarchy of scope. No license exceeds its parent.'
+    },
+    {
+      id: 6,
+      title: 'Recurring Enforcement Cycle',
+      chapter: 'Chapter 5 — Diagram 10',
+      src: '/images/diagrams/10_Recurring_Enforcement_Cycle.png',
+      description: 'Enforcement is not an event. It is a continuous operating cycle with defined intervals and outputs.'
+    },
+    {
+      id: 7,
+      title: 'Transfer Survival Map',
+      chapter: 'Chapter 10 — Diagram 18',
+      src: '/images/diagrams/11_Transfer_Survival_Map.png',
+      description: 'Two paths. One enterprise transfers cleanly. The other does not survive its founder.'
+    },
+    {
+      id: 8,
+      title: 'Board Oversight Model',
+      chapter: 'Chapter 7 — Diagram 14',
+      src: '/images/diagrams/12_Board_Oversight_Model.png',
+      description: 'The governance board does not manage operations. It governs authority, certifies roles, and revokes when required.'
+    },
+  ];
 
   const toggleSection = (sectionId) => {
     setExpandedSections(prev => 
