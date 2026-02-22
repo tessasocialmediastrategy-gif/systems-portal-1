@@ -9,6 +9,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import SystemsBookPage from "./pages/SystemsBookPage";
 import BookReaderPage from "./pages/BookReaderPage";
 import BookDocsPage from "./pages/BookDocsPage";
+import BookPage from "./pages/BookPage";
 import SyncMapPage from "./pages/SyncMapPage";
 import SBControlPanelPage from "./pages/SBControlPanelPage";
 import SystemsPage from "./pages/SystemsPage";
