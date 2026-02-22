@@ -143,8 +143,8 @@ const SystemsPage = () => {
             </div>
             <div className="flex justify-center">
               <img 
-                src="https://static.prod-images.emergentagent.com/jobs/969f2fb3-c243-4f47-99ee-f2de10f2d2ad/images/68f58a637abbf03622b488825199ffe2ec337402affbfc4ca5b6468a6cca6fd1.png"
-                alt="OnPoint Authority Book - Front and Back Cover"
+                src="https://static.prod-images.emergentagent.com/jobs/eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/images/197fbc4af3b985c58196838da9a16969ad8da3e80eb3c0ed2dea3d4de6b6eb68.png"
+                alt="OnPoint Authority Book"
                 className="max-w-lg w-full"
                 data-testid="main-book-spread"
               />
