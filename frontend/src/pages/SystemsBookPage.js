@@ -175,6 +175,34 @@ const SystemsBookPage = () => {
     },
     {
       id: 5,
+      title: 'Authority Revenue Engine',
+      chapter: 'Chapter 8 — Diagram 15',
+      src: '/images/diagrams/05_Authority_Revenue_Engine.png',
+      description: 'Certified authority is not only a governance asset. It is a revenue-generating system with compounding returns.'
+    },
+    {
+      id: 6,
+      title: 'Cohort Retention Structure',
+      chapter: 'Chapter 8 — Diagram 16',
+      src: '/images/diagrams/06_Cohort_Retention_Structure.png',
+      description: 'Certified licensees renew at higher rates because their authority is conditional, not permanent.'
+    },
+    {
+      id: 7,
+      title: 'Platform Permission Model',
+      chapter: 'Chapter 8 — Diagram 15',
+      src: '/images/diagrams/07_Platform_Permission_Model.png',
+      description: 'Every platform access tier is governed by the authority level of the entity requesting permission.'
+    },
+    {
+      id: 8,
+      title: 'Governance Control Matrix',
+      chapter: 'Chapter 7 — Diagram 13',
+      src: '/images/diagrams/08_Governance_Control_Matrix.png',
+      description: 'Maps every governance function to its decision authority, enforcement mechanism, and review cycle.'
+    },
+    {
+      id: 9,
       title: 'License Scope Hierarchy',
       chapter: 'Chapter 6 — Diagram 9',
       src: '/images/diagrams/09_License_Scope_Hierarchy.png',
