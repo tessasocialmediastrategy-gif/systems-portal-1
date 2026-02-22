@@ -636,7 +636,7 @@ const BookDocsPage = () => {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-500">Registration Date:</span>
-                        <span className="text-[#111827]">February 18, 2026</span>
+                        <span className="text-[#111827]">February 14, 2026</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-500">Owner:</span>
