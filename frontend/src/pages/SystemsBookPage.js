@@ -2648,6 +2648,14 @@ const SystemsBookPage = () => {
               <RefreshCw className="w-3 h-3" />
               View Sync Map
             </Link>
+            <Link 
+              to="/read-book" 
+              className="text-xs bg-[#C5A059] text-[#0B1C3E] px-3 py-1 rounded-full hover:bg-[#C5A059]/80 transition-colors flex items-center gap-1 font-medium"
+              data-testid="read-book-link"
+            >
+              <BookOpen className="w-3 h-3" />
+              Read the Book
+            </Link>
           </div>
         </div>
       </section>
