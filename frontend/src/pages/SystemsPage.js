@@ -72,24 +72,6 @@ const SystemsPage = () => {
         </div>
       </section>
 
-      {/* Books Section - Clean 2x2 Grid */}
-      <section className="py-16 px-6">
-        <div className="max-w-5xl mx-auto">
-          <img 
-            src="https://customer-assets.emergentagent.com/job_167f0f2f-e4d4-4518-8cd8-ec0b74232bce/artifacts/n3pcivav_book%20images.png"
-            alt="OnPoint Authority Books - Institutional Authority, The Certification Gap, Enforce or Erode, Governance Beyond Founders"
-            className="w-full"
-            data-testid="four-books-grid"
-          />
-          <div className="grid grid-cols-2 gap-8 mt-6">
-            <p className="text-gray-400 text-sm tracking-wider text-center">Authority design</p>
-            <p className="text-gray-400 text-sm tracking-wider text-center">Operator certification</p>
-            <p className="text-gray-400 text-sm tracking-wider text-center">Enforcement systems</p>
-            <p className="text-gray-400 text-sm tracking-wider text-center">Governance layer</p>
-          </div>
-        </div>
-      </section>
-
       {/* Built for Transfer Section */}
       <section className="py-20 px-6 border-t border-[#1a1a1a]">
         <div className="max-w-7xl mx-auto">
