@@ -160,8 +160,10 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## Prioritized Backlog
 ### P0 - Critical
-- [ ] Deploy to `tessaauthority.com` (applies /systems and /governance page fixes)
-- [ ] Complete deployment of `OnPointAuthoritySystems.com` (blocked on DNS propagation)
+- [ ] Fix tessaauthority.com deployment - new images ready in code but production not updating
+  - Check Emergent Home tab for deployment status
+  - May need to re-link domain via Entri in GoDaddy DNS
+- [ ] Complete deployment of `OnPointAuthoritySystems.com` - Cloudflare active (gray cloud), needs Emergent deploy setup
 
 ### P1 - High
 - [ ] Build Admin Panel for NDA/Review/Contact submissions
