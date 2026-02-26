@@ -26,9 +26,6 @@ const SystemsPage = () => {
               <Link to="/systems" className="text-sm tracking-wider text-[#C5A059] border-b border-[#C5A059]">
                 SYSTEMS
               </Link>
-              <Link to="/systems-book" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">
-                BOOK
-              </Link>
               <Link to="/investor/data-room" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">
                 INVESTOR
               </Link>
