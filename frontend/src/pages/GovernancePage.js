@@ -87,7 +87,6 @@ const GovernancePage = () => {
           <Link to="/" className="text-xl tracking-widest font-light">ONPOINT.</Link>
           <div className="flex items-center gap-8">
             <Link to="/systems" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">SYSTEMS</Link>
-            <Link to="/book" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">BOOK</Link>
             <Link to="/governance" className="text-sm tracking-wider text-[#C5A059]">GOVERNANCE</Link>
             <Link to="/certification" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">CERTIFICATION</Link>
             <Link 
