@@ -27,7 +27,7 @@ const SystemsPage = () => {
                 SYSTEMS
               </Link>
               <Link to="/investor/data-room" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">
-                INVESTOR
+                BUYER
               </Link>
               <Link 
                 to="/authority-review" 
