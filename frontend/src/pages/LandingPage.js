@@ -290,11 +290,8 @@ const LandingPage = () => {
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-[#0B1C3E] rounded flex items-center justify-center">
-                <span className="text-white font-bold text-sm" style={{ fontFamily: 'Libre Baskerville, serif' }}>TA</span>
-              </div>
               <span className="text-sm text-[#6B7280]">
-                © {new Date().getFullYear()} OnPoint Authority Systems, Inc.. All rights reserved.
+                © {new Date().getFullYear()} OnPoint Authority Systems, Inc. All rights reserved.
               </span>
             </div>
             <div className="flex items-center gap-6">
