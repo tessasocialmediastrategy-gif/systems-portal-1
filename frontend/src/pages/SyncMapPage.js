@@ -130,7 +130,7 @@ const SyncMapPage = () => {
               <div className="w-10 h-10 bg-[#0B1C3E] rounded flex items-center justify-center">
                 <span className="text-white font-bold text-lg" style={{ fontFamily: 'Libre Baskerville, serif' }}>TA</span>
               </div>
-              <span className="font-semibold text-[#111827]">TessaAuthority</span>
+              <span className="font-semibold text-[#111827]">OnPoint Authority Systems, Inc.</span>
             </Link>
             <div className="flex items-center gap-4">
               <Link to="/" className="text-sm text-[#6B7280] hover:text-[#111827]">Home</Link>
@@ -634,7 +634,7 @@ source_of_truth: notion`}</pre>
         <div className="container-custom">
           <div className="flex items-center justify-between">
             <span className="text-sm text-[#6B7280]">
-              © {new Date().getFullYear()} TessaAuthority. Sync Map v2026-02-17r3
+              © {new Date().getFullYear()} OnPoint Authority Systems, Inc.. Sync Map v2026-02-17r3
             </span>
             <div className="flex items-center gap-4">
               <Link to="/systems-book" className="text-sm text-[#6B7280] hover:text-[#111827]">Systems Book</Link>

@@ -75,7 +75,7 @@ const BuyerPortal = () => {
               </div>
               <div>
                 <span className="font-semibold text-white block">Deal Room</span>
-                <span className="text-xs text-gray-500">TessaAuthority</span>
+                <span className="text-xs text-gray-500">OnPoint Authority Systems, Inc.</span>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -219,7 +219,7 @@ const BuyerPortal = () => {
         <div className="container-custom">
           <div className="flex items-center justify-between">
             <span className="text-sm text-gray-500">
-              © {new Date().getFullYear()} TessaAuthority. Confidential.
+              © {new Date().getFullYear()} OnPoint Authority Systems, Inc.. Confidential.
             </span>
             <span className="text-xs text-gray-600">
               Logged in as {user?.email}

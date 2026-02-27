@@ -190,7 +190,7 @@ const AdminDashboard = () => {
               </div>
               <div>
                 <span className="font-semibold text-[#111827] block">Admin Portal</span>
-                <span className="text-xs text-[#6B7280]">TessaAuthority</span>
+                <span className="text-xs text-[#6B7280]">OnPoint Authority Systems, Inc.</span>
               </div>
             </div>
             <div className="flex items-center gap-4">

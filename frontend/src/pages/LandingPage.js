@@ -54,7 +54,7 @@ const LandingPage = () => {
               <div className="w-10 h-10 bg-[#0B1C3E] rounded flex items-center justify-center">
                 <span className="text-white font-bold text-lg" style={{ fontFamily: 'Libre Baskerville, serif' }}>TA</span>
               </div>
-              <span className="font-semibold text-[#111827]">TessaAuthority</span>
+              <span className="font-semibold text-[#111827]">OnPoint Authority Systems, Inc.</span>
             </Link>
             <div className="flex items-center gap-4">
               <a 
@@ -297,7 +297,7 @@ const LandingPage = () => {
                 <span className="text-white font-bold text-sm" style={{ fontFamily: 'Libre Baskerville, serif' }}>TA</span>
               </div>
               <span className="text-sm text-[#6B7280]">
-                © {new Date().getFullYear()} TessaAuthority. All rights reserved.
+                © {new Date().getFullYear()} OnPoint Authority Systems, Inc.. All rights reserved.
               </span>
             </div>
             <div className="flex items-center gap-6">
