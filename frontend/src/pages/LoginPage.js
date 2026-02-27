@@ -75,9 +75,6 @@ const LoginPage = ({ isAdmin = false }) => {
 
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-[#0B1C3E] rounded flex items-center justify-center">
-                <span className="text-white font-bold text-xl" style={{ fontFamily: 'Libre Baskerville, serif' }}>TA</span>
-              </div>
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-[#111827] mb-2" style={{ fontFamily: 'Libre Baskerville, serif' }}>
               {isAdmin ? 'Admin Sign In' : 'Welcome Back'}

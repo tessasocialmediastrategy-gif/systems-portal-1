@@ -127,9 +127,6 @@ const SyncMapPage = () => {
         <div className="container-custom">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#0B1C3E] rounded flex items-center justify-center">
-                <span className="text-white font-bold text-lg" style={{ fontFamily: 'Libre Baskerville, serif' }}>TA</span>
-              </div>
               <span className="font-semibold text-[#111827]">OnPoint Authority Systems, Inc.</span>
             </Link>
             <div className="flex items-center gap-4">

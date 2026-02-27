@@ -70,9 +70,6 @@ const BuyerPortal = () => {
         <div className="container-custom">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#C5A059] rounded flex items-center justify-center">
-                <span className="text-[#0A0A0A] font-bold text-lg" style={{ fontFamily: 'Libre Baskerville, serif' }}>TA</span>
-              </div>
               <div>
                 <span className="font-semibold text-white block">Deal Room</span>
                 <span className="text-xs text-gray-500">OnPoint Authority Systems, Inc.</span>
@@ -163,9 +160,6 @@ const BuyerPortal = () => {
                           data-testid={`protected-doc-${doc.id}`}
                         >
                           <div className="flex items-start justify-between mb-3">
-                            <div className="w-10 h-10 bg-[#262626] rounded flex items-center justify-center">
-                              <FileText className="w-5 h-5 text-[#C5A059]" />
-                            </div>
                             <span className="text-xs text-gray-500">{doc.version}</span>
                           </div>
                           <h3 className="text-white font-medium mb-1">{doc.name}</h3>
