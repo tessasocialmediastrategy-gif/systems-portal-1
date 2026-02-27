@@ -659,7 +659,7 @@ const BookDocsPage = () => {
                       >
                         <div className="flex items-center gap-2">
                           <Globe className="w-4 h-4 text-[#C5A059]" />
-                          <span className="font-medium text-[#111827]">TessaAuthority.com</span>
+                          <span className="font-medium text-[#111827]">OnPointAuthoritySystems.com</span>
                         </div>
                         <span className="text-xs text-gray-500 group-hover:text-[#C5A059]">Public Marketing Site</span>
                       </a>
