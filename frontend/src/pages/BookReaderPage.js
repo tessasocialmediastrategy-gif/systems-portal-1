@@ -9,8 +9,8 @@ import {
 const bookInfo = {
   title: 'OnPoint Authority',
   subtitle: 'Building Sellable Business Systems Through Engineered Authority',
-  author: 'Tessa Shepard',
-  copyright: '© 2026 Tessa Shepard. All rights reserved.',
+  author: 'OnPoint Authority Systems, Inc.',
+  copyright: '© 2026 OnPoint Authority Systems, Inc.. All rights reserved.',
   publisher: 'OnPoint Authority Systems, Inc.'
 };
 
@@ -1014,7 +1014,7 @@ Now it's your turn to build yours.`,
   {
     id: 'about',
     number: 99,
-    title: 'About Tessa Shepard',
+    title: 'About OnPoint Authority Systems, Inc.',
     content: `I build businesses that function without the founder.
 
 For over a decade, I've worked at the intersection of strategy, infrastructure, and authority, helping experts and operators transform founder-dependent businesses into structured, scalable, and transferable assets.

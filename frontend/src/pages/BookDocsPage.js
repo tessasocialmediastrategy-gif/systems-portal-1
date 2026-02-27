@@ -587,7 +587,7 @@ const BookDocsPage = () => {
                   </div>
                   <div>
                     <p className="text-gray-500">Author</p>
-                    <p className="font-medium text-[#111827]">Tessa Shepard</p>
+                    <p className="font-medium text-[#111827]">OnPoint Authority Systems, Inc.</p>
                   </div>
                   <div>
                     <p className="text-gray-500">Format</p>
@@ -640,7 +640,7 @@ const BookDocsPage = () => {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-500">Owner:</span>
-                        <span className="text-[#111827]">Tessa Shepard</span>
+                        <span className="text-[#111827]">OnPoint Authority Systems, Inc.</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-500">Entity:</span>

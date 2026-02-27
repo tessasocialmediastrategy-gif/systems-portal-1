@@ -5,7 +5,7 @@ import { ArrowRight, Linkedin } from 'lucide-react';
 const LeadershipPage = () => {
   const team = [
     {
-      name: 'Tessa Shepard',
+      name: 'OnPoint Authority Systems, Inc.',
       role: 'Founder & CEO',
       bio: 'Creator of the OnPoint Authority framework. 20+ years building governance systems for scalable, transferable businesses.',
       linkedin: '#'
