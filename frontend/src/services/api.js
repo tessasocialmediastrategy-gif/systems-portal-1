@@ -67,6 +67,24 @@ export const api = {
   getStats: () => 
     axios.get(`${API}/stats`, { headers: getAuthHeader() }),
 
+  // Authority Reviews
+  getAuthorityReviews: () => 
+    axios.get(`${API}/admin/authority-reviews`, { headers: getAuthHeader() }),
+  
+  updateReviewStatus: (reviewId, status, notes) => 
+    axios.put(`${API}/admin/authority-reviews/${reviewId}/status`, null, { 
+      params: { status, notes },
+      headers: getAuthHeader() 
+    }),
+
+  // NDA Requests
+  getNdaRequests: () => 
+    axios.get(`${API}/admin/nda-requests`, { headers: getAuthHeader() }),
+
+  // Contacts
+  getContacts: () => 
+    axios.get(`${API}/admin/contacts`, { headers: getAuthHeader() }),
+
   // Seed
   seedAdmin: () => 
     axios.post(`${API}/seed-admin`),

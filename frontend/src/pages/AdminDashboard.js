@@ -20,6 +20,10 @@ const AdminDashboard = () => {
   const [downloadLogs, setDownloadLogs] = useState([]);
   const [loading, setLoading] = useState(true);
   
+  const [authorityReviews, setAuthorityReviews] = useState([]);
+  const [ndaRequests, setNdaRequests] = useState([]);
+  const [contacts, setContacts] = useState([]);
+  
   // Modals
   const [showInviteModal, setShowInviteModal] = useState(false);
   const [showUploadModal, setShowUploadModal] = useState(false);
@@ -39,18 +43,24 @@ const AdminDashboard = () => {
 
   const fetchData = async () => {
     try {
-      const [statsRes, docsRes, usersRes, invitesRes, logsRes] = await Promise.all([
+      const [statsRes, docsRes, usersRes, invitesRes, logsRes, reviewsRes, ndaRes, contactsRes] = await Promise.all([
         api.getStats(),
         api.getAllDocuments(),
         api.getUsers(),
         api.getInvites(),
-        api.getDownloadLogs()
+        api.getDownloadLogs(),
+        api.getAuthorityReviews().catch(() => ({ data: [] })),
+        api.getNdaRequests().catch(() => ({ data: [] })),
+        api.getContacts().catch(() => ({ data: [] }))
       ]);
       setStats(statsRes.data);
       setDocuments(docsRes.data);
       setUsers(usersRes.data);
       setInvites(invitesRes.data);
       setDownloadLogs(logsRes.data);
+      setAuthorityReviews(reviewsRes.data || []);
+      setNdaRequests(ndaRes.data || []);
+      setContacts(contactsRes.data || []);
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
@@ -165,6 +175,7 @@ const AdminDashboard = () => {
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: BarChart3 },
+    { id: 'submissions', label: 'Submissions', icon: Mail },
     { id: 'documents', label: 'Documents', icon: FileText },
     { id: 'buyers', label: 'Buyers', icon: Users },
     { id: 'activity', label: 'Activity', icon: Clock },
@@ -495,6 +506,166 @@ const AdminDashboard = () => {
                   </div>
                 </div>
               )}
+            </div>
+          )}
+
+          {/* Submissions Tab */}
+          {activeTab === 'submissions' && (
+            <div className="space-y-8 animate-fade-in">
+              {/* Authority Reviews */}
+              <div>
+                <h3 className="text-lg font-semibold text-[#111827] mb-4 flex items-center gap-2">
+                  <Shield className="w-5 h-5 text-[#C5A059]" />
+                  Authority Review Requests ({authorityReviews.length})
+                </h3>
+                {authorityReviews.length === 0 ? (
+                  <div className="card p-8 text-center">
+                    <Mail className="w-12 h-12 text-gray-300 mx-auto mb-4" />
+                    <p className="text-[#6B7280]">No authority review requests yet</p>
+                  </div>
+                ) : (
+                  <div className="card overflow-hidden">
+                    <table className="w-full">
+                      <thead className="bg-gray-50 border-b border-gray-200">
+                        <tr>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Name</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Email</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Company</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Interest</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Date</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100">
+                        {authorityReviews.map((review, i) => (
+                          <tr key={i} className="hover:bg-gray-50">
+                            <td className="px-6 py-4">
+                              <span className="text-sm font-medium text-[#111827]">{review.name}</span>
+                            </td>
+                            <td className="px-6 py-4">
+                              <a href={`mailto:${review.email}`} className="text-sm text-[#C5A059] hover:underline">{review.email}</a>
+                            </td>
+                            <td className="px-6 py-4">
+                              <span className="text-sm text-[#6B7280]">{review.company}</span>
+                            </td>
+                            <td className="px-6 py-4">
+                              <span className="text-sm text-[#6B7280] capitalize">{review.interest?.replace('_', ' ')}</span>
+                            </td>
+                            <td className="px-6 py-4">
+                              <span className="text-sm text-[#9CA3AF]">{formatDate(review.created_at)}</span>
+                            </td>
+                            <td className="px-6 py-4">
+                              <span className={`badge ${review.status === 'pending' ? 'badge-warning' : review.status === 'contacted' ? 'badge-info' : 'badge-success'}`}>
+                                {review.status || 'pending'}
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+
+              {/* NDA Requests */}
+              <div>
+                <h3 className="text-lg font-semibold text-[#111827] mb-4 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-[#0B1C3E]" />
+                  NDA Requests ({ndaRequests.length})
+                </h3>
+                {ndaRequests.length === 0 ? (
+                  <div className="card p-8 text-center">
+                    <FileText className="w-12 h-12 text-gray-300 mx-auto mb-4" />
+                    <p className="text-[#6B7280]">No NDA requests yet</p>
+                  </div>
+                ) : (
+                  <div className="card overflow-hidden">
+                    <table className="w-full">
+                      <thead className="bg-gray-50 border-b border-gray-200">
+                        <tr>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Name</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Email</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Company</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Title</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Date</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100">
+                        {ndaRequests.map((req, i) => (
+                          <tr key={i} className="hover:bg-gray-50">
+                            <td className="px-6 py-4">
+                              <span className="text-sm font-medium text-[#111827]">{req.full_name}</span>
+                            </td>
+                            <td className="px-6 py-4">
+                              <a href={`mailto:${req.email}`} className="text-sm text-[#C5A059] hover:underline">{req.email}</a>
+                            </td>
+                            <td className="px-6 py-4">
+                              <span className="text-sm text-[#6B7280]">{req.company}</span>
+                            </td>
+                            <td className="px-6 py-4">
+                              <span className="text-sm text-[#6B7280]">{req.title}</span>
+                            </td>
+                            <td className="px-6 py-4">
+                              <span className="text-sm text-[#9CA3AF]">{formatDate(req.timestamp)}</span>
+                            </td>
+                            <td className="px-6 py-4">
+                              <span className={`badge ${req.status === 'pending' ? 'badge-warning' : 'badge-success'}`}>
+                                {req.status || 'pending'}
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+
+              {/* Contact Submissions */}
+              <div>
+                <h3 className="text-lg font-semibold text-[#111827] mb-4 flex items-center gap-2">
+                  <Mail className="w-5 h-5 text-green-600" />
+                  Contact Form Submissions ({contacts.length})
+                </h3>
+                {contacts.length === 0 ? (
+                  <div className="card p-8 text-center">
+                    <Mail className="w-12 h-12 text-gray-300 mx-auto mb-4" />
+                    <p className="text-[#6B7280]">No contact submissions yet</p>
+                  </div>
+                ) : (
+                  <div className="card overflow-hidden">
+                    <table className="w-full">
+                      <thead className="bg-gray-50 border-b border-gray-200">
+                        <tr>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Name</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Email</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Message</th>
+                          <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Date</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100">
+                        {contacts.map((contact, i) => (
+                          <tr key={i} className="hover:bg-gray-50">
+                            <td className="px-6 py-4">
+                              <span className="text-sm font-medium text-[#111827]">{contact.full_name}</span>
+                            </td>
+                            <td className="px-6 py-4">
+                              <a href={`mailto:${contact.email}`} className="text-sm text-[#C5A059] hover:underline">{contact.email}</a>
+                            </td>
+                            <td className="px-6 py-4">
+                              <span className="text-sm text-[#6B7280] truncate max-w-xs block">{contact.message}</span>
+                            </td>
+                            <td className="px-6 py-4">
+                              <span className="text-sm text-[#9CA3AF]">{formatDate(contact.timestamp)}</span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
             </div>
           )}
 
