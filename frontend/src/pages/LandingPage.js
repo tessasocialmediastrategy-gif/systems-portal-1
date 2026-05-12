@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FileText, Download, Shield, Users, ArrowRight, Lock, CheckCircle, Cloud, Cpu, Zap, Server, Database, GitBranch, Activity, Globe, BarChart3 } from 'lucide-react';
+import { FileText, Download, Shield, ArrowRight, Lock, CheckCircle, Layers, Brain, Globe, Key, Fingerprint, Network, Building2, ChevronRight, X } from 'lucide-react';
 import api from '../services/api';
 
 const LandingPage = () => {
   const [publicDocs, setPublicDocs] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
+  const [showPortalModal, setShowPortalModal] = useState(false);
 
   React.useEffect(() => {
     const fetchDocs = async () => {
@@ -41,73 +42,110 @@ const LandingPage = () => {
     return labels[category] || category;
   };
 
-  const infrastructureFeatures = [
+  const governanceLayers = [
     {
-      icon: Cloud,
-      title: 'Google Cloud Orchestrator',
-      description: 'Dedicated compute region us-central1-a with enterprise-grade reliability and compliance.',
-      badge: 'Active'
+      layer: '01',
+      title: 'The Sovereign Perimeter',
+      subtitle: 'Non-Custodial Identity Architecture',
+      icon: Key,
+      focus: 'Non-custodial identity. Eliminating IdP dependency.',
+      feature: 'Zero-Knowledge Proof (ZKP) verification to remove "Golden Ticket" vulnerabilities.',
+      color: 'from-amber-500/20 to-amber-600/5'
     },
     {
-      icon: GitBranch,
-      title: 'Autonomous n8n Environment',
-      description: 'Self-managing workflow automation for continuous integration and deployment.',
-      badge: 'Running'
+      layer: '02',
+      title: 'Agentic Governance',
+      subtitle: 'AI "Brain" Safeguards',
+      icon: Brain,
+      focus: 'AI "Brain" Safeguards for institutional agents.',
+      feature: 'Integrating cryptographic guardrails into bank-native AI agents (e.g., Ally\'s Jules) to achieve "State 0" security.',
+      color: 'from-blue-500/20 to-blue-600/5'
     },
     {
-      icon: Cpu,
-      title: 'Jules-Driven Discovery',
-      description: 'AI-powered technical debt scanning and modernization opportunity identification.',
-      badge: 'Scanning'
-    },
-    {
-      icon: Database,
-      title: 'Decentralized Architecture',
-      description: 'Distributed systems design for maximum resilience and scalability.',
-      badge: 'Distributed'
+      layer: '03',
+      title: 'Institutional Liquidity Bridge',
+      subtitle: 'Cross-Institutional Decentralization',
+      icon: Network,
+      focus: 'Cross-institutional decentralization.',
+      feature: 'ZKP-verified settlement gateways for JPMC Onyx and institutional blockchains.',
+      color: 'from-emerald-500/20 to-emerald-600/5'
     }
   ];
 
-  const metrics = [
-    { value: '5:1', label: 'AI-to-Human Efficiency Ratio', icon: Zap },
-    { value: '$750M', label: 'Google Partner Fund Logic', icon: BarChart3 },
-    { value: '99.9%', label: 'Infrastructure Uptime', icon: Activity },
-    { value: '24/7', label: 'Autonomous Operations', icon: Globe }
-  ];
-
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
+    <div className="min-h-screen bg-[#030303]">
+      {/* ZKP Portal Modal */}
+      {showPortalModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm">
+          <div className="bg-[#0a0a0a] border border-gray-800 rounded-lg p-8 max-w-md w-full mx-4 relative">
+            <button 
+              onClick={() => setShowPortalModal(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-white"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            <div className="text-center mb-6">
+              <div className="w-16 h-16 bg-[#C5A059]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Fingerprint className="w-8 h-8 text-[#C5A059]" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                Institutional Portal
+              </h3>
+              <p className="text-sm text-gray-500">Layer 1 Authentication Required</p>
+            </div>
+
+            <div className="bg-[#0f1419] border border-[#C5A059]/20 rounded p-4 mb-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Key className="w-4 h-4 text-[#C5A059]" />
+                <span className="text-[#C5A059] text-sm font-medium">Non-Custodial ZKP Access Only</span>
+              </div>
+              <p className="text-xs text-gray-400">
+                This portal requires Zero-Knowledge Proof verification through your institution's sovereign identity provider. No centralized credentials are stored or transmitted.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <button className="w-full py-3 bg-[#C5A059] text-[#030303] font-semibold rounded hover:bg-[#d4af6a] transition-colors flex items-center justify-center gap-2">
+                <Fingerprint className="w-5 h-5" />
+                Verify with ZKP
+              </button>
+              <button 
+                onClick={() => setShowPortalModal(false)}
+                className="w-full py-3 bg-white/5 text-white border border-white/10 rounded hover:bg-white/10 transition-colors"
+              >
+                Request Institutional Access
+              </button>
+            </div>
+
+            <p className="text-xs text-gray-600 text-center mt-4">
+              Contact your institution's governance administrator for access provisioning.
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-gray-800">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#030303]/95 backdrop-blur-lg border-b border-gray-900">
         <div className="container-custom">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-3" data-testid="nav-logo">
-              <span className="font-semibold text-white">OnPoint Authority Systems, Inc.</span>
+              <span className="font-semibold text-white tracking-tight">OnPoint Authority Systems</span>
             </Link>
-            <div className="flex items-center gap-4">
-              <a 
-                href="https://tessaauthority.com" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-gray-400 hover:text-white transition-colors"
-                data-testid="nav-main-site"
-              >
-                Main Site
+            <div className="flex items-center gap-6">
+              <a href="#governance" className="text-sm text-gray-500 hover:text-white transition-colors">
+                Governance Model
               </a>
-              <Link 
-                to="/login" 
-                className="text-sm text-gray-400 hover:text-white transition-colors"
-                data-testid="nav-buyer-login"
+              <a href="#thesis" className="text-sm text-gray-500 hover:text-white transition-colors">
+                Strategic Thesis
+              </a>
+              <button 
+                onClick={() => setShowPortalModal(true)}
+                className="px-4 py-2 bg-[#C5A059] text-[#030303] text-sm font-medium rounded hover:bg-[#d4af6a] transition-colors"
+                data-testid="nav-portal"
               >
-                Buyer Portal
-              </Link>
-              <Link 
-                to="/admin/login" 
-                className="px-4 py-2 bg-[#C5A059] text-[#0a0a0a] text-sm font-medium rounded hover:bg-[#d4af6a] transition-colors"
-                data-testid="nav-admin-login"
-              >
-                Admin Access
-              </Link>
+                Institutional Portal
+              </button>
             </div>
           </div>
         </div>
@@ -115,269 +153,256 @@ const LandingPage = () => {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 overflow-hidden">
-        {/* Gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0f1419] to-[#0a0a0a]" />
-        
-        {/* Grid pattern overlay */}
+        {/* Subtle grid pattern */}
         <div 
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)`,
-            backgroundSize: '50px 50px'
+            backgroundSize: '80px 80px'
           }}
         />
         
         <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center animate-slide-up">
-            {/* Operational Provenance Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C5A059]/10 border border-[#C5A059]/30 rounded-full mb-8" data-testid="provenance-badge">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-[#C5A059] text-sm font-medium">Infrastructure verified under onpointauthoritysystems.com Organization Identity</span>
+          <div className="max-w-4xl mx-auto">
+            {/* Badge */}
+            <div className="flex justify-center mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C5A059]/5 border border-[#C5A059]/20 rounded-full">
+                <Shield className="w-4 h-4 text-[#C5A059]" />
+                <span className="text-[#C5A059] text-sm font-medium tracking-wide">Project Authority Zero</span>
+              </div>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              The Agentic Enterprise:<br />
-              <span className="text-[#C5A059]">Technical Debt Modernization at Scale</span>
+            {/* Headline */}
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white text-center mb-6 leading-tight" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              We don't just secure the bank;<br />
+              <span className="text-[#C5A059]">we define the rules by which the bank's AI is allowed to think.</span>
             </h1>
             
-            <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-8 leading-relaxed">
-              OnPoint is powered by a dedicated Google Cloud Orchestrator, managing an autonomous n8n environment and Jules-driven Discovery scans. We convert technical debt into high-margin recurring revenue.
+            {/* Sub-headline */}
+            <p className="text-gray-400 text-lg md:text-xl text-center max-w-3xl mx-auto mb-10 leading-relaxed">
+              The world's first 3-Layer Governance OS for Institutional Finance.<br />
+              <span className="text-gray-500">Transition from defensive security to architectural sovereignty.</span>
             </p>
             
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            {/* CTAs */}
+            <div className="flex flex-wrap justify-center gap-4">
               <Link 
                 to="/authority-review" 
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#C5A059] text-[#0a0a0a] font-semibold rounded hover:bg-[#d4af6a] transition-colors"
-                data-testid="hero-deploy-cta"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#C5A059] text-[#030303] font-semibold rounded hover:bg-[#d4af6a] transition-colors"
+                data-testid="hero-primary-cta"
               >
-                Deploy Your Agentic Roadmap
+                Request the 3-Layer Blueprint
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <a 
-                href="#infrastructure" 
+                href="#thesis" 
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 text-white border border-white/10 rounded hover:bg-white/10 transition-colors"
-                data-testid="hero-explore-infra"
+                data-testid="hero-secondary-cta"
               >
-                <Server className="w-5 h-5" />
-                Explore Infrastructure
+                View the JPMC/Onyx Strategic Thesis
+                <ChevronRight className="w-5 h-5" />
               </a>
-            </div>
-
-            {/* Metrics Row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {metrics.map((metric, i) => (
-                <div 
-                  key={i}
-                  className="bg-white/5 border border-white/10 rounded p-4"
-                  data-testid={`metric-${i}`}
-                >
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <metric.icon className="w-5 h-5 text-[#C5A059]" />
-                    <span className="text-2xl font-bold text-white">{metric.value}</span>
-                  </div>
-                  <p className="text-xs text-gray-500">{metric.label}</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Infrastructure Section */}
-      <section id="infrastructure" className="py-24 bg-[#0f1419]">
+      {/* 3-Layer Governance Model Section */}
+      <section id="governance" className="py-24 bg-[#050505]">
         <div className="container-custom">
-          <div className="text-center mb-16 animate-slide-up">
+          <div className="text-center mb-16">
             <p className="text-[#C5A059] text-sm font-semibold tracking-wider uppercase mb-4">
-              Infrastructure Status
+              The Architecture
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              Google Cloud Modernization Stack
+              The 3-Layer Governance Model
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Enterprise-grade infrastructure powering autonomous technical debt conversion and AI-driven optimization.
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              A comprehensive framework for institutional sovereignty in the age of autonomous finance.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-            {infrastructureFeatures.map((feature, i) => (
+          <div className="space-y-6 max-w-4xl mx-auto">
+            {governanceLayers.map((layer, i) => (
               <div 
                 key={i}
-                className="bg-[#0a0a0a] border border-gray-800 rounded-lg p-6 hover:border-[#C5A059]/30 transition-colors"
-                data-testid={`infra-feature-${i}`}
+                className={`bg-gradient-to-r ${layer.color} border border-gray-800 rounded-lg p-8 hover:border-[#C5A059]/30 transition-all`}
+                data-testid={`governance-layer-${i}`}
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 bg-[#C5A059]/10 rounded flex items-center justify-center">
-                    <feature.icon className="w-6 h-6 text-[#C5A059]" />
+                <div className="flex flex-col md:flex-row md:items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-[#030303] rounded-lg flex items-center justify-center">
+                      <layer.icon className="w-8 h-8 text-[#C5A059]" />
+                    </div>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-green-500/10 text-green-400 text-xs font-medium rounded-full">
-                    <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-                    {feature.badge}
-                  </span>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-[#C5A059] text-sm font-mono">LAYER {layer.layer}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-1" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                      {layer.title}
+                    </h3>
+                    <p className="text-[#C5A059]/80 text-sm mb-4">{layer.subtitle}</p>
+                    <div className="space-y-3">
+                      <div>
+                        <span className="text-gray-600 text-xs uppercase tracking-wider">Focus</span>
+                        <p className="text-gray-400 text-sm">{layer.focus}</p>
+                      </div>
+                      <div>
+                        <span className="text-gray-600 text-xs uppercase tracking-wider">Key Feature</span>
+                        <p className="text-gray-300 text-sm">{layer.feature}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-gray-400">
-                  {feature.description}
-                </p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Value Proposition Box */}
-          <div className="max-w-3xl mx-auto bg-gradient-to-r from-[#C5A059]/10 to-[#C5A059]/5 border border-[#C5A059]/20 rounded-lg p-8">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 bg-[#C5A059] rounded flex items-center justify-center">
-                <Zap className="w-6 h-6 text-[#0a0a0a]" />
+      {/* Founder's Statement Section */}
+      <section className="py-24 bg-[#030303]">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="mb-8">
+              <span className="text-[#C5A059] text-6xl" style={{ fontFamily: 'Libre Baskerville, serif' }}>"</span>
+            </div>
+            <blockquote className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              In the old world, the elite owned the vaults. In the new world, the elite own the rules of engagement. Project Authority Zero isn't a vendor; it's the standard for how the world's largest banks interact with the future.
+            </blockquote>
+            <div className="flex items-center justify-center gap-4">
+              <div className="w-12 h-12 bg-[#C5A059]/10 rounded-full flex items-center justify-center">
+                <span className="text-[#C5A059] font-semibold">T</span>
               </div>
-              <div>
-                <h4 className="text-xl font-semibold text-white">Value Proposition</h4>
-                <p className="text-sm text-gray-400">Google Partner Ecosystem</p>
+              <div className="text-left">
+                <p className="text-white font-medium">Tessa</p>
+                <p className="text-gray-600 text-sm">CEO, OnPoint Authority Systems</p>
               </div>
             </div>
-            <p className="text-gray-300 leading-relaxed">
-              Our capability converts technical debt into high-margin recurring revenue using the <span className="text-[#C5A059] font-semibold">$750M Google Partner Fund</span> logic. With a <span className="text-[#C5A059] font-semibold">5:1 AI-to-Human efficiency ratio</span>, we deliver modernization outcomes that traditional consulting cannot match.
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Thesis Section */}
+      <section id="thesis" className="py-24 bg-[#050505]">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <p className="text-[#C5A059] text-sm font-semibold tracking-wider uppercase mb-4">
+              Strategic Positioning
             </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              JPMC/Onyx Strategic Thesis
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              The convergence of institutional finance and decentralized infrastructure creates unprecedented governance requirements.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {[
+              {
+                icon: Building2,
+                title: 'Institutional Integration',
+                desc: 'Native compatibility with JPMC Onyx, institutional blockchains, and regulated DeFi protocols.'
+              },
+              {
+                icon: Fingerprint,
+                title: 'ZKP Verification',
+                desc: 'Zero-knowledge proof architecture for identity verification without centralized credential exposure.'
+              },
+              {
+                icon: Layers,
+                title: 'Sovereign Architecture',
+                desc: 'Complete elimination of third-party identity provider dependencies and golden ticket vulnerabilities.'
+              }
+            ].map((item, i) => (
+              <div 
+                key={i}
+                className="bg-[#030303] border border-gray-800 rounded-lg p-6 hover:border-[#C5A059]/20 transition-colors"
+              >
+                <div className="w-12 h-12 bg-[#C5A059]/10 rounded-lg flex items-center justify-center mb-4">
+                  <item.icon className="w-6 h-6 text-[#C5A059]" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-500">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Public Documents Section */}
-      <section id="documents" className="py-24 bg-[#0a0a0a]">
-        <div className="container-custom">
-          <div className="text-center mb-16 animate-slide-up">
-            <p className="text-[#C5A059] text-sm font-semibold tracking-wider uppercase mb-4">
-              Available Downloads
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              Public Investment Materials
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Download our teaser and CIM documents. These materials provide an overview of the investment opportunity.
-            </p>
-          </div>
+      {publicDocs.length > 0 && (
+        <section id="documents" className="py-24 bg-[#030303]">
+          <div className="container-custom">
+            <div className="text-center mb-16">
+              <p className="text-[#C5A059] text-sm font-semibold tracking-wider uppercase mb-4">
+                Documentation
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                Public Investment Materials
+              </h2>
+              <p className="text-gray-500 max-w-2xl mx-auto">
+                Review our strategic documentation and investment thesis.
+              </p>
+            </div>
 
-          {loading ? (
-            <div className="flex items-center justify-center py-12">
-              <div className="w-8 h-8 border-2 border-[#C5A059] border-t-transparent rounded-full animate-spin" />
-            </div>
-          ) : publicDocs.length === 0 ? (
-            <div className="text-center py-12">
-              <FileText className="w-12 h-12 text-gray-600 mx-auto mb-4" />
-              <p className="text-gray-400">No public documents available at this time.</p>
-              <p className="text-sm text-gray-500 mt-2">Please contact us for more information.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {publicDocs.map((doc, index) => (
                 <div 
                   key={doc.id || index}
-                  className="bg-[#0f1419] border border-gray-800 rounded-lg p-6 hover:border-[#C5A059]/30 transition-all group"
+                  className="bg-[#050505] border border-gray-800 rounded-lg p-6 hover:border-[#C5A059]/20 transition-all group"
                   data-testid={`document-card-${index}`}
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 bg-[#C5A059]/10 rounded flex items-center justify-center group-hover:bg-[#C5A059]/20 transition-colors">
-                      <FileText className="w-6 h-6 text-[#C5A059]" />
+                    <div className="w-10 h-10 bg-[#C5A059]/10 rounded flex items-center justify-center">
+                      <FileText className="w-5 h-5 text-[#C5A059]" />
                     </div>
-                    <span className="px-2.5 py-1 bg-white/5 text-gray-400 text-xs font-medium rounded">
+                    <span className="px-2 py-1 bg-white/5 text-gray-500 text-xs font-medium rounded">
                       {getCategoryLabel(doc.category)}
                     </span>
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#C5A059] transition-colors" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                  <h3 className="text-base font-semibold text-white mb-2 group-hover:text-[#C5A059] transition-colors">
                     {doc.title}
                   </h3>
-                  <p className="text-sm text-gray-400 mb-4 line-clamp-2">
-                    {doc.description || 'Investment documentation for qualified buyers.'}
+                  <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                    {doc.description || 'Strategic documentation for qualified institutions.'}
                   </p>
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-800">
-                    <span className="text-xs text-gray-500">
-                      {doc.file_size ? formatFileSize(doc.file_size) : 'PDF'}
-                    </span>
-                    <a
-                      href={doc.file_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[#C5A059] text-sm font-medium hover:underline"
-                      data-testid={`download-doc-${index}`}
-                    >
-                      <Download className="w-4 h-4" />
-                      Download
-                    </a>
-                  </div>
+                  <a
+                    href={doc.file_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[#C5A059] text-sm font-medium hover:underline"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download
+                  </a>
                 </div>
               ))}
             </div>
-          )}
-        </div>
-      </section>
-
-      {/* Access Journey Section */}
-      <section className="py-24 bg-[#0f1419]">
-        <div className="container-custom">
-          <div className="text-center mb-16 animate-slide-up">
-            <p className="text-[#C5A059] text-sm font-semibold tracking-wider uppercase mb-4">
-              Buyer Journey
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              Secure Access Protocol
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Our structured process ensures qualified buyers receive appropriate access to confidential materials.
-            </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {[
-              { step: '01', title: 'Review Teaser', desc: 'Access public investment overview', icon: FileText },
-              { step: '02', title: 'Submit NDA', desc: 'Request confidential access', icon: Shield },
-              { step: '03', title: 'Access CIM', desc: 'Download full documentation', icon: Lock }
-            ].map((item, i) => (
-              <div 
-                key={i}
-                className="text-center"
-                data-testid={`journey-step-${i}`}
-              >
-                <div className="w-16 h-16 bg-[#C5A059]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-8 h-8 text-[#C5A059]" />
-                </div>
-                <span className="text-[#C5A059] text-sm font-mono">{item.step}</span>
-                <h3 className="text-lg font-semibold text-white mt-2 mb-1" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-                  {item.title}
-                </h3>
-                <p className="text-sm text-gray-400">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link 
-              to="/investor/data-room" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#C5A059] text-[#0a0a0a] font-semibold rounded hover:bg-[#d4af6a] transition-colors"
-              data-testid="start-journey-cta"
-            >
-              Start Your Journey
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* CTA Section */}
-      <section className="py-24 bg-[#0a0a0a]">
+      <section className="py-24 bg-[#050505] border-t border-gray-900">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-              Ready to Transform Your Technical Debt?
+              Ready for Architectural Sovereignty?
             </h2>
-            <p className="text-gray-400 text-lg mb-8">
-              Deploy your agentic roadmap today and start converting legacy systems into strategic assets.
+            <p className="text-gray-500 text-lg mb-8">
+              Request your custom 3-Layer Blueprint and begin the transition from defensive security to institutional governance.
             </p>
             <Link 
               to="/authority-review" 
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#C5A059] text-[#0a0a0a] text-lg font-semibold rounded hover:bg-[#d4af6a] transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#C5A059] text-[#030303] text-lg font-semibold rounded hover:bg-[#d4af6a] transition-colors"
               data-testid="final-cta"
             >
-              Deploy Your Agentic Roadmap
+              Request the 3-Layer Blueprint
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
@@ -385,22 +410,31 @@ const LandingPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-[#0f1419] border-t border-gray-800">
+      <footer className="py-12 bg-[#030303] border-t border-gray-900">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-3">
-              <span className="text-sm text-gray-500">
-                © {new Date().getFullYear()} OnPoint Authority Systems, Inc. All rights reserved.
-              </span>
+            <div>
+              <p className="text-white font-medium mb-1">OnPoint Authority Systems, Inc.</p>
+              <p className="text-sm text-gray-600">
+                Global Operations: Charlotte | New York | London
+              </p>
             </div>
             <div className="flex items-center gap-6">
-              <Link to="/login" className="text-sm text-gray-500 hover:text-white transition-colors">
-                Buyer Portal
-              </Link>
+              <button 
+                onClick={() => setShowPortalModal(true)}
+                className="text-sm text-gray-500 hover:text-white transition-colors"
+              >
+                Institutional Portal
+              </button>
               <Link to="/admin/login" className="text-sm text-gray-500 hover:text-white transition-colors">
                 Admin
               </Link>
             </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-gray-900 text-center">
+            <p className="text-xs text-gray-700">
+              © {new Date().getFullYear()} OnPoint Authority Systems, Inc. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>
