@@ -136,6 +136,9 @@ const LandingPage = () => {
               <a href="#governance" className="text-sm text-gray-500 hover:text-white transition-colors">
                 Governance Model
               </a>
+              <a href="#pricing" className="text-sm text-gray-500 hover:text-white transition-colors">
+                Pricing
+              </a>
               <a href="#thesis" className="text-sm text-gray-500 hover:text-white transition-colors">
                 Strategic Thesis
               </a>
@@ -261,8 +264,153 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Pricing & Tiers Section */}
+      <section id="pricing" className="py-24 bg-[#030303]">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <p className="text-[#C5A059] text-sm font-semibold tracking-wider uppercase mb-4">
+              Institutional Pricing
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              Strategic Investment in Architectural Sovereignty
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              We don't sell software; we provide the substrate for the future of finance.
+            </p>
+          </div>
+
+          {/* Pricing Tiers */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+            {/* Tier I */}
+            <div className="bg-[#050505] border border-gray-800 rounded-lg p-8 hover:border-amber-500/30 transition-all">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-amber-500 text-xs font-mono tracking-wider">TIER I</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                Sovereign Core
+              </h3>
+              <p className="text-gray-600 text-sm mb-6">Layer 1 Integration</p>
+              
+              <div className="mb-6">
+                <span className="text-3xl font-bold text-white">$2.5M</span>
+                <span className="text-gray-500"> - $5M</span>
+                <p className="text-gray-600 text-xs mt-1">Annual Investment</p>
+              </div>
+              
+              <p className="text-gray-400 text-sm mb-6">
+                Non-custodial identity substrate + ZKP wrapper for legacy systems.
+              </p>
+              
+              <div className="pt-4 border-t border-gray-800">
+                <p className="text-gray-600 text-xs uppercase tracking-wider mb-2">Ideal For</p>
+                <p className="text-gray-400 text-sm">Regional Banks / Fintech Unicorns</p>
+              </div>
+            </div>
+
+            {/* Tier II - Featured */}
+            <div className="bg-gradient-to-b from-[#C5A059]/10 to-[#050505] border border-[#C5A059]/30 rounded-lg p-8 relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="px-3 py-1 bg-[#C5A059] text-[#030303] text-xs font-semibold rounded-full">
+                  Most Selected
+                </span>
+              </div>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-[#C5A059] text-xs font-mono tracking-wider">TIER II</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                Agentic Governor
+              </h3>
+              <p className="text-gray-600 text-sm mb-6">Layer 1 + 2 Integration</p>
+              
+              <div className="mb-6">
+                <span className="text-3xl font-bold text-white">$7.5M</span>
+                <span className="text-gray-500"> - $12M</span>
+                <p className="text-gray-600 text-xs mt-1">Annual Investment</p>
+              </div>
+              
+              <p className="text-gray-400 text-sm mb-6">
+                Full AI "Brain" governance (The Jules Protocol) + State 0 security.
+              </p>
+              
+              <div className="pt-4 border-t border-[#C5A059]/20">
+                <p className="text-gray-600 text-xs uppercase tracking-wider mb-2">Ideal For</p>
+                <p className="text-gray-400 text-sm">Tier-1 Institutions (Ally, Capital One)</p>
+              </div>
+            </div>
+
+            {/* Tier III */}
+            <div className="bg-[#050505] border border-gray-800 rounded-lg p-8 hover:border-emerald-500/30 transition-all">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-emerald-500 text-xs font-mono tracking-wider">TIER III</span>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                Global Liquidity
+              </h3>
+              <p className="text-gray-600 text-sm mb-6">Layer 1, 2, & 3 Integration</p>
+              
+              <div className="mb-6">
+                <span className="text-3xl font-bold text-white">$20M</span>
+                <span className="text-gray-500">+</span>
+                <p className="text-gray-600 text-xs mt-1">Annual Investment</p>
+              </div>
+              
+              <p className="text-gray-400 text-sm mb-6">
+                Full Cross-Bank Bridge + Onyx/Institutional Ledger Handshakes.
+              </p>
+              
+              <div className="pt-4 border-t border-gray-800">
+                <p className="text-gray-600 text-xs uppercase tracking-wider mb-2">Ideal For</p>
+                <p className="text-gray-400 text-sm">Global Systemically Important Banks (JPMC)</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Breakdown */}
+          <div className="max-w-4xl mx-auto">
+            <h4 className="text-lg font-semibold text-white mb-6 text-center" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+              The Strategic Breakdown
+            </h4>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <div className="bg-[#050505] border border-gray-800 rounded p-5">
+                <p className="text-[#C5A059] text-xs uppercase tracking-wider mb-2">Implementation Fee</p>
+                <p className="text-white font-semibold mb-2">$500K - $1M</p>
+                <p className="text-gray-500 text-xs">One-time architectural setup fee for custom "Brain" alignment.</p>
+              </div>
+              
+              <div className="bg-[#050505] border border-gray-800 rounded p-5">
+                <p className="text-[#C5A059] text-xs uppercase tracking-wider mb-2">Performance Incentive</p>
+                <p className="text-white font-semibold mb-2">0.001% Fee</p>
+                <p className="text-gray-500 text-xs">Layer 3 "Liquidity Integrity Fee" on all inter-bank settlements processed through the bridge.</p>
+              </div>
+              
+              <div className="bg-[#050505] border border-gray-800 rounded p-5">
+                <p className="text-[#C5A059] text-xs uppercase tracking-wider mb-2">Liability Offset</p>
+                <p className="text-white font-semibold mb-2">$15M - $40M Saved</p>
+                <p className="text-gray-500 text-xs">Average annual savings in cybersecurity insurance and compliance overhead.</p>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center">
+              <Link 
+                to="/authority-review" 
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#C5A059] text-[#030303] font-semibold rounded hover:bg-[#d4af6a] transition-colors"
+                data-testid="pricing-cta"
+              >
+                Request a Strategic Valuation
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <p className="text-gray-600 text-xs mt-4">
+                The price reflects the risk we neutralize.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Founder's Statement Section */}
-      <section className="py-24 bg-[#030303]">
+      <section className="py-24 bg-[#050505]">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             <div className="mb-8">
