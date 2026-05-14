@@ -25,10 +25,14 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 ## What's Been Implemented
 
 ### 2026-05-14 Session (Heritage Page, Trust Teaser, Quantum Video Showcase & Componentization)
-- [x] **Quantum Financial Deployment video showcase** activated on landing page (with viewport-triggered lazy loading)
-  - Real `onpoint_quantum_financial_deployment.mp4` (8s loop) downloaded + remuxed with `+faststart`
-  - WebM/VP9 + Opus fallback encoded for universal browser compatibility (`onpoint_quantum_financial_deployment.webm`)
-  - **Lazy loading**: `IntersectionObserver` with 400px rootMargin defers all video bytes until the user scrolls near the section. Initial hero paint is free of the ~4.5MB payload. Sources mount + `.load()`/`.play()` fire on intersection.
+- [x] **Quantum Financial Deployment showcase** — final iteration uses high-fidelity static architectural map
+  - Asset swapped from animated video → high-res `1920×1080` architectural map (`eblm5ag9_image.png`) per user "1:1 pixel fidelity" directive
+  - Image streamed directly from secure customer-assets storage — zero local transcoding/compression
+  - All callouts sharp & legible: Legacy Cores (JPMC PHOENIX, MSFT O, IBM Z), SHA-256 Agent Identity Signatures, OPAS Authority OS JPMC Pilot, 5.4× Operational Multiplier, Verified Project Metrics, Agent Identity Registry
+  - **Badge collision fix**: section padding `pt-28 pb-40` + caption strip `md:pr-48` so the "Made with Emergent" platform badge never overlaps the "ZKP-Verified · State 0 Protocol · Onyx Bridge" caption
+  - Contrast filter removed — source image already calibrated between neon-green bars and gold 5.4× text
+  - Orphaned local `.mp4`/`.webm` files deleted
+  - **Preserved outer chrome** (does not touch image pixels): glassmorphism neon-green border, dark slate `#121212` backdrop, fixed 40×40 CSS grid parallax overlay, soft radial neon glow @ 8%
   - Full visual treatment per spec:
     1. Glassmorphism wrapper — 1px `#39FF14` @ 30% border, 135° glass refraction accent, inner edge vignette
     2. Dark slate `#121212` section backdrop
