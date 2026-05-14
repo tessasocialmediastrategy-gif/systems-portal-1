@@ -24,6 +24,21 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## What's Been Implemented
 
+### 2026-05-14 Session (Heritage Page & Trust Teaser Restoration)
+- [x] **New `/heritage` (alias `/our-authority`) standalone page** — academic/executive dark-slate aesthetic
+  - Prominent digital signature ("Tessa Shepard") at the top with structured Person microdata (`itemprop="author"`, `itemprop="name"`, `itemprop="jobTitle"`)
+  - Expanded 4-era Timeline of Innovation: 1991 Devry COBOL → 1995 MCSE/MCP → 2000s-2010s Enterprise Modernization → 2026 OPAS Authority OS™
+  - Each timeline era rendered with iconic node (Server / Network / Award / Cpu), per-era accent color, and full narrative paragraph
+  - Founder's Letter section in Libre Baskerville serif with 1.85 leading for an academic read
+  - USPTO S/N 99653409 + OPAS Authority OS™ S/N 99748939 IP callout
+  - Unique meta-title (`The Architectural Pedigree of OnPoint Authority Systems | Heritage`) + meta description + meta keywords injected via useEffect; restored on unmount
+- [x] **Landing page restored to GOLD conversion flow**
+  - Removed the full Founder's Note section (~130 lines) from `/`
+  - Inserted compact "Trust Teaser" band right after the Hero metrics: *"Built on 35 Years of Architectural Integrity."* with `[Read the Founder's Note →]` CTA linking to `/heritage`
+  - 3-Layer Governance OS pillars and 5.4x multiplier metrics now re-prioritized above the fold
+- [x] **Navigation**: Added "Our Path" link in main nav (LandingPage) → `/heritage`
+- [x] Both `/heritage` and `/our-authority` registered as routes in `App.js`
+
 ### 2026-02-23 Session (Systems Page Image Refresh)
 - [x] **New Chapter Icons** - Generated 4 clean professional gold-on-black icons:
   - Institutional Authority (Greek columns)

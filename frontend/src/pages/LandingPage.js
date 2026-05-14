@@ -242,6 +242,9 @@ const LandingPage = () => {
               <a href="#quantum" className="text-sm text-gray-500 hover:text-white transition-colors">
                 The Agentic Shift
               </a>
+              <Link to="/heritage" className="text-sm text-gray-500 hover:text-white transition-colors" data-testid="nav-heritage">
+                Our Path
+              </Link>
               <button 
                 onClick={() => setShowPriorityForm(true)}
                 className="px-4 py-2 bg-gradient-to-r from-[#C5A059] to-[#D4AF6A] text-[#030303] text-sm font-semibold rounded hover:opacity-90 transition-opacity"
@@ -373,6 +376,49 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Trust Teaser → links to /heritage */}
+      <section className="relative py-14 md:py-20 bg-[#050505] border-y border-white/5 overflow-hidden">
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-[0.05] pointer-events-none"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 15% 50%, rgba(197,160,89,0.4) 0%, transparent 35%), radial-gradient(circle at 85% 50%, rgba(0,255,136,0.15) 0%, transparent 40%)'
+          }}
+        />
+        <div className="container-custom relative z-10">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+              <div className="flex-1 max-w-2xl">
+                <p className="text-[10px] text-[#C5A059] font-semibold tracking-[0.3em] uppercase mb-3">
+                  Architectural Integrity
+                </p>
+                <h3
+                  className="text-2xl md:text-3xl font-bold text-white tracking-tight leading-tight"
+                  style={{ fontFamily: 'Libre Baskerville, serif' }}
+                >
+                  Built on 35 Years of Architectural Integrity.
+                </h3>
+                <p className="text-gray-500 mt-3 text-sm md:text-base">
+                  From the 1991 COBOL mainframe to the 2026 Authority OS — four eras, one
+                  unbroken thread.
+                </p>
+              </div>
+              <Link
+                to="/heritage"
+                className="group inline-flex items-center gap-3 px-6 py-4 border border-[#C5A059]/40 rounded hover:border-[#C5A059] hover:bg-[#C5A059]/5 transition-all whitespace-nowrap"
+                data-testid="trust-teaser-heritage-cta"
+              >
+                <span className="text-[#C5A059] text-sm font-semibold tracking-wide">
+                  Read the Founder's Note
+                </span>
+                <ArrowRight className="w-4 h-4 text-[#C5A059] group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quantum Pillars Section */}
       <section id="quantum" className="py-24 bg-[#050505]">
         <div className="container-custom">
@@ -469,137 +515,6 @@ const LandingPage = () => {
                 </div>
                 <span className="text-gray-700">|</span>
                 <span className="text-green-400 text-sm font-medium">Verified</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Founder's Note Section */}
-      <section className="py-24 bg-[#050505]">
-        <div className="container-custom">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              
-              {/* Timeline Sidebar */}
-              <div className="lg:col-span-3 order-2 lg:order-1">
-                <div className="sticky top-24">
-                  <p className="text-[#C5A059] text-xs font-semibold tracking-wider uppercase mb-6">
-                    Legacy-to-Modern Timeline
-                  </p>
-                  
-                  <div className="relative">
-                    {/* Timeline Line */}
-                    <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-gradient-to-b from-gray-700 via-[#C5A059] to-[#00ff88]" />
-                    
-                    {/* 1991 */}
-                    <div className="flex items-start gap-4 mb-8">
-                      <div className="relative z-10 w-4 h-4 bg-gray-700 border-2 border-gray-600 rounded-full flex-shrink-0 mt-1" />
-                      <div>
-                        <div className="text-[#C5A059] text-sm font-bold">1991</div>
-                        <div className="text-white text-xs font-medium">COBOL Mainframe Mastery</div>
-                        <div className="text-gray-600 text-[10px] uppercase tracking-wider">The Core</div>
-                      </div>
-                    </div>
-                    
-                    {/* 1995-2000 */}
-                    <div className="flex items-start gap-4 mb-8">
-                      <div className="relative z-10 w-4 h-4 bg-[#C5A059] border-2 border-[#C5A059]/50 rounded-full flex-shrink-0 mt-1" />
-                      <div>
-                        <div className="text-[#C5A059] text-sm font-bold">1995-2000</div>
-                        <div className="text-white text-xs font-medium">MCSE/MCP Network Infrastructure</div>
-                        <div className="text-gray-600 text-[10px] uppercase tracking-wider">The Bridge</div>
-                      </div>
-                    </div>
-                    
-                    {/* 2026 */}
-                    <div className="flex items-start gap-4">
-                      <div className="relative z-10 w-4 h-4 bg-[#00ff88] border-2 border-[#00ff88]/50 rounded-full flex-shrink-0 mt-1 animate-pulse" />
-                      <div>
-                        <div className="text-[#00ff88] text-sm font-bold">2026</div>
-                        <div className="text-white text-xs font-medium">Agentic Orchestration & ZKP</div>
-                        <div className="text-gray-600 text-[10px] uppercase tracking-wider">The Future</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Founder's Letter */}
-              <div className="lg:col-span-9 order-1 lg:order-2">
-                <div className="bg-[#030303] border border-gray-800 rounded-lg p-8 md:p-12 relative overflow-hidden">
-                  {/* Decorative Corner */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#C5A059]/10 to-transparent" />
-                  
-                  {/* Header */}
-                  <div className="mb-8">
-                    <p className="text-[#C5A059] text-sm font-semibold tracking-wider uppercase mb-2">
-                      A Note from the Founder
-                    </p>
-                    <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-                      From COBOL to Quantum
-                    </h2>
-                  </div>
-                  
-                  {/* Letter Content */}
-                  <div className="prose prose-invert max-w-none">
-                    <p className="text-gray-300 leading-relaxed mb-6">
-                      In 1991, at the Devry Institute, I learned the logic of the mainframe—the COBOL foundations that still quietly power the world's largest financial institutions today. Through the 1990s, as a Microsoft Certified Systems Engineer, I saw the birth of the networked enterprise.
-                    </p>
-                    
-                    <p className="text-gray-300 leading-relaxed mb-6">
-                      For 35 years, I have watched the gap widen between these indestructible legacy cores and the speed of modern innovation. I founded OnPoint Authority Systems to bridge that gap.
-                    </p>
-                    
-                    <p className="text-gray-300 leading-relaxed mb-6">
-                      We don't just "build AI." We deploy <span className="text-[#C5A059] font-semibold">OPAS Authority OS™</span>—a proprietary orchestration engine designed to wrap three decades of institutional technical debt into a non-custodial, Quantum-ready future. We aren't replacing the foundation; <span className="text-white font-medium">we are giving it a brain.</span>
-                    </p>
-                    
-                    <p className="text-white text-lg font-medium mb-8" style={{ fontFamily: 'Libre Baskerville, serif' }}>
-                      Welcome to the Agentic Shift.
-                    </p>
-                  </div>
-                  
-                  {/* Signature Block */}
-                  <div className="border-t border-gray-800 pt-8 mt-8">
-                    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-                      <div>
-                        {/* Signature */}
-                        <div className="mb-4">
-                          <span 
-                            className="text-3xl text-[#C5A059] italic"
-                            style={{ fontFamily: 'Brush Script MT, cursive' }}
-                          >
-                            Tessa Shepard
-                          </span>
-                        </div>
-                        
-                        {/* Title */}
-                        <div className="space-y-1">
-                          <p className="text-white font-semibold">Tessa Shepard</p>
-                          <p className="text-gray-400 text-sm">Founder & CEO, OnPoint Authority Systems, Inc.</p>
-                          <p className="text-gray-600 text-xs">B.S. Business Administration | MCSE | Legacy Architect</p>
-                        </div>
-                      </div>
-                      
-                      {/* Credentials Badge */}
-                      <div className="flex gap-3">
-                        <div className="px-3 py-2 bg-[#050505] border border-gray-800 rounded text-center">
-                          <div className="text-[#C5A059] text-xs font-bold">35+</div>
-                          <div className="text-gray-600 text-[10px]">Years</div>
-                        </div>
-                        <div className="px-3 py-2 bg-[#050505] border border-gray-800 rounded text-center">
-                          <div className="text-[#C5A059] text-xs font-bold">MCSE</div>
-                          <div className="text-gray-600 text-[10px]">Certified</div>
-                        </div>
-                        <div className="px-3 py-2 bg-[#050505] border border-gray-800 rounded text-center">
-                          <div className="text-[#C5A059] text-xs font-bold">COBOL</div>
-                          <div className="text-gray-600 text-[10px]">Legacy</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

@@ -27,6 +27,7 @@ import NDARequestPage from "./pages/NDARequestPage";
 import CIMDownloadPage from "./pages/CIMDownloadPage";
 import AppendixPage from "./pages/AppendixPage";
 import SkeletonPage from "./pages/SkeletonPage";
+import HeritagePage from "./pages/HeritagePage";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole }) => {
@@ -61,6 +62,8 @@ const AppRoutes = () => {
       <Route path="/governance" element={<GovernancePage />} />
       <Route path="/certification" element={<CertificationPage />} />
       <Route path="/authority-review" element={<AuthorityReviewPage />} />
+      <Route path="/heritage" element={<HeritagePage />} />
+      <Route path="/our-authority" element={<HeritagePage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/platform" element={<PlatformPage />} />
       <Route path="/leadership" element={<LeadershipPage />} />
