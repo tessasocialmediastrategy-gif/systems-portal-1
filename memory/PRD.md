@@ -25,6 +25,23 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 ## What's Been Implemented
 
 ### 2026-05-14 Session (Heritage Page, Trust Teaser, Quantum Video Showcase & Componentization)
+- [x] **Resend transactional email integration** (backend)
+  - `email_service.py` with branded dark-theme HTML templates (Priority Access ack/internal, NDA ack/internal, Contact ack/internal) — institutional dark background, gold accents, IP marks in footer
+  - Wired into `POST /api/authority-review`, `POST /api/investor/nda-request`, `POST /api/contact` — each endpoint now fires both an auto-acknowledgement to the submitter AND an internal notification to `ops@onpointauthoritysystems.com` (with `reply_to` set to the submitter for one-click reply)
+  - Gracefully no-ops when `RESEND_API_KEY` env var is unset — submissions still succeed, log says "Resend not configured — skipping email"
+  - Non-blocking: uses `asyncio.to_thread(resend.Emails.send, ...)` so FastAPI event loop stays responsive
+  - Env placeholders in `/app/backend/.env`: `RESEND_API_KEY=""`, `RESEND_FROM_EMAIL="ops@onpointauthoritysystems.com"`, `RESEND_MONITORING_EMAIL="ops@onpointauthoritysystems.com"`
+  - **User Action Required**: Add the actual Resend API key via Emergent Secret Manager → restart backend → emails go live
+- [x] **Buyer Portal polish**
+  - Personalized "Welcome back, {first_name}" heading
+  - 3-stat banner: Documents Available · Downloaded · New for You — each with distinct icon + accent color (gold / neon green / blue)
+  - Per-document "NEW" badge on cards the buyer hasn't accessed yet
+  - Per-document "Downloaded {date}" caption after first access
+  - Recent Activity widget at bottom showing last 8 downloads with document name, category, version, date
+  - Auto-refresh of activity after a fresh download
+  - New backend endpoint `GET /api/buyer/my-downloads` (auth-protected) returns hydrated download history scoped to the logged-in buyer
+- [x] **Investor flow cleanup**
+  - Removed hardcoded `tessaauthority.com` external link in Data Room nav (replaced with internal `/heritage` link)
 - [x] **Engagement Analytics (full stack)**
   - Backend: `POST /api/analytics/event` (whitelist of 7 events: `landing_view`, `video_showcase_impression`, `architectural_map_zoom`, `priority_access_open`, `priority_access_submit`, `heritage_view`, `trust_teaser_click`)
   - Backend: `GET /api/admin/analytics` (admin-only — returns aggregated counts, recent 50 events, unique sessions in last 7 days)

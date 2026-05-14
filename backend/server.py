@@ -16,6 +16,8 @@ import secrets
 import jwt
 import shutil
 
+import email_service
+
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
@@ -297,6 +299,23 @@ async def get_download_logs(admin: dict = Depends(get_admin_user)):
     logs = await db.download_logs.find({}, {"_id": 0}).sort("downloaded_at", -1).to_list(1000)
     return logs
 
+# Buyer's own download history (for portal activity widget)
+@api_router.get("/buyer/my-downloads")
+async def get_my_downloads(current_user: dict = Depends(get_current_user)):
+    logs = await db.download_logs.find(
+        {"user_id": current_user["id"]}, {"_id": 0}
+    ).sort("downloaded_at", -1).to_list(50)
+
+    # Hydrate with document metadata
+    enriched = []
+    for log in logs:
+        doc = await db.documents.find_one({"id": log.get("document_id")}, {"_id": 0, "name": 1, "category": 1, "version": 1})
+        enriched.append({
+            **log,
+            "document": doc or None,
+        })
+    return enriched
+
 # ============== DOCUMENT ROUTES ==============
 
 @api_router.post("/documents/upload", response_model=DocumentResponse)
@@ -546,7 +565,30 @@ async def submit_nda_request(request: NDARequest):
     await db.nda_requests.insert_one(nda_req.model_dump())
     
     logger.info(f"New NDA request from {request.email} ({request.company})")
-    
+
+    # Fire-and-forget acknowledgement + internal notification (never blocks response)
+    await email_service.send_email(
+        to=request.email,
+        subject="NDA Request Received — OnPoint Authority Systems",
+        html=email_service.render_nda_ack(request.name),
+    )
+    if email_service.RESEND_MONITORING_EMAIL:
+        await email_service.send_email(
+            to=email_service.RESEND_MONITORING_EMAIL,
+            subject=f"[NDA] New request from {request.company}",
+            html=email_service.render_nda_internal({
+                "Name": request.name,
+                "Email": request.email,
+                "Company": request.company,
+                "Title": request.title,
+                "Phone": request.phone,
+                "Buyer Type": request.buyer_type,
+                "Interest": request.interest,
+                "Timeline": request.timeline,
+            }),
+            reply_to=request.email,
+        )
+
     return {"message": "NDA request submitted successfully", "id": nda_req.id}
 
 # Get NDA Requests (Admin)
@@ -591,9 +633,32 @@ async def check_nda_status(email: str):
 async def submit_authority_review(request: AuthorityReviewRequest):
     review = AuthorityReviewInDB(**request.model_dump())
     await db.authority_reviews.insert_one(review.model_dump())
-    
+
     logger.info(f"New Authority Review request from {request.email} ({request.company})")
-    
+
+    await email_service.send_email(
+        to=request.email,
+        subject="Priority Access Confirmed — OnPoint Authority Systems",
+        html=email_service.render_priority_access_ack(request.name, request.company),
+    )
+    if email_service.RESEND_MONITORING_EMAIL:
+        await email_service.send_email(
+            to=email_service.RESEND_MONITORING_EMAIL,
+            subject=f"[Priority Access] New submission from {request.company}",
+            html=email_service.render_priority_access_internal({
+                "Name": request.name,
+                "Title": getattr(request, "title", "") or "",
+                "Email": request.email,
+                "Company": request.company,
+                "Phone": getattr(request, "phone", "") or "",
+                "Institution Type": getattr(request, "institution_type", "") or "",
+                "Annual Revenue": getattr(request, "annual_revenue", "") or "",
+                "Tier Interest": getattr(request, "tier_interest", "") or "",
+                "Source": getattr(request, "source", "") or "",
+            }),
+            reply_to=request.email,
+        )
+
     return {"message": "Authority Review request submitted", "id": review.id}
 
 # Get Authority Reviews (Admin)
@@ -626,9 +691,26 @@ async def update_review_status(
 async def submit_contact(request: ContactRequest):
     contact = ContactInDB(**request.model_dump())
     await db.contacts.insert_one(contact.model_dump())
-    
+
     logger.info(f"New contact submission from {request.email}")
-    
+
+    await email_service.send_email(
+        to=request.email,
+        subject="We received your message — OnPoint Authority Systems",
+        html=email_service.render_contact_ack(getattr(request, "full_name", "") or getattr(request, "name", "")),
+    )
+    if email_service.RESEND_MONITORING_EMAIL:
+        await email_service.send_email(
+            to=email_service.RESEND_MONITORING_EMAIL,
+            subject=f"[Contact] New submission from {request.email}",
+            html=email_service.render_contact_internal({
+                "Name": getattr(request, "full_name", "") or getattr(request, "name", "") or "",
+                "Email": request.email,
+                "Message": getattr(request, "message", "") or "",
+            }),
+            reply_to=request.email,
+        )
+
     return {"message": "Message sent successfully", "id": contact.id}
 
 # Get Contact Submissions (Admin)

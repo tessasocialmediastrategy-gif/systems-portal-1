@@ -18,7 +18,7 @@ const InvestorDataRoomPage = () => {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="text-xl tracking-widest font-light" style={{ fontFamily: 'Libre Baskerville, serif' }}>ONPOINT.</Link>
             <div className="flex items-center gap-8">
-              <a href="https://tessaauthority.com" target="_blank" rel="noopener noreferrer" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">MAIN SITE</a>
+              <Link to="/heritage" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">HERITAGE</Link>
               <Link to="/systems" className="text-sm tracking-wider text-gray-400 hover:text-white transition-colors">SYSTEMS</Link>
               <Link to="/login" className="px-4 py-2 bg-[#C5A059] text-[#0A0A0A] text-sm tracking-wider hover:bg-[#d4af6a] transition-colors">BUYER LOGIN</Link>
             </div>

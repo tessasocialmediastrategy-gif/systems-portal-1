@@ -89,6 +89,10 @@ export const api = {
   getAdminAnalytics: () =>
     axios.get(`${API}/admin/analytics`, { headers: getAuthHeader() }),
 
+  // Buyer's own download history
+  getMyDownloads: () =>
+    axios.get(`${API}/buyer/my-downloads`, { headers: getAuthHeader() }),
+
   // Seed
   seedAdmin: () => 
     axios.post(`${API}/seed-admin`),
