@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { track } from '../../services/analytics';
 
 export const TrustTeaser = () => (
   <section
@@ -34,6 +35,7 @@ export const TrustTeaser = () => (
           </div>
           <Link
             to="/heritage"
+            onClick={() => track('trust_teaser_click')}
             className="group inline-flex items-center gap-3 px-6 py-4 border border-[#C5A059]/40 rounded hover:border-[#C5A059] hover:bg-[#C5A059]/5 transition-all whitespace-nowrap"
             data-testid="trust-teaser-heritage-cta"
           >

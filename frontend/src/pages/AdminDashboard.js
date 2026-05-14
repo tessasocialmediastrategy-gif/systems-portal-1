@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { 
   FileText, Upload, Users, Download, LogOut, Plus, 
   Trash2, UserCheck, UserX, Copy, Eye, ChevronRight,
-  BarChart3, Clock, Shield, Settings, Mail
+  BarChart3, Clock, Shield, Settings, Mail, Activity
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
@@ -43,7 +43,7 @@ const AdminDashboard = () => {
 
   const fetchData = async () => {
     try {
-      const [statsRes, docsRes, usersRes, invitesRes, logsRes, reviewsRes, ndaRes, contactsRes] = await Promise.all([
+      const [statsRes, docsRes, usersRes, invitesRes, logsRes, reviewsRes, ndaRes, contactsRes, analyticsRes] = await Promise.all([
         api.getStats(),
         api.getAllDocuments(),
         api.getUsers(),
@@ -51,7 +51,8 @@ const AdminDashboard = () => {
         api.getDownloadLogs(),
         api.getAuthorityReviews().catch(() => ({ data: [] })),
         api.getNdaRequests().catch(() => ({ data: [] })),
-        api.getContacts().catch(() => ({ data: [] }))
+        api.getContacts().catch(() => ({ data: [] })),
+        api.getAdminAnalytics().catch(() => ({ data: { counts: {}, recent: [], unique_sessions_7d: 0, total_events: 0 } }))
       ]);
       setStats(statsRes.data);
       setDocuments(docsRes.data);
@@ -61,6 +62,7 @@ const AdminDashboard = () => {
       setAuthorityReviews(reviewsRes.data || []);
       setNdaRequests(ndaRes.data || []);
       setContacts(contactsRes.data || []);
+      setAnalytics(analyticsRes.data || { counts: {}, recent: [], unique_sessions_7d: 0, total_events: 0 });
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
@@ -175,6 +177,7 @@ const AdminDashboard = () => {
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: BarChart3 },
+    { id: 'engagement', label: 'Engagement', icon: Activity },
     { id: 'submissions', label: 'Submissions', icon: Mail },
     { id: 'documents', label: 'Documents', icon: FileText },
     { id: 'buyers', label: 'Buyers', icon: Users },
@@ -313,6 +316,103 @@ const AdminDashboard = () => {
                       </div>
                     ))}
                   </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Engagement Tab */}
+          {activeTab === 'engagement' && (
+            <div className="space-y-8 animate-fade-in">
+              {/* Top stats */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {[
+                  { label: 'Total Events', value: analytics.total_events || 0, icon: Activity, color: 'bg-emerald-500' },
+                  { label: 'Unique Sessions (7d)', value: analytics.unique_sessions_7d || 0, icon: Users, color: 'bg-blue-500' },
+                  { label: 'Map Zoom Clicks', value: analytics.counts?.architectural_map_zoom || 0, icon: Eye, color: 'bg-amber-500' },
+                  { label: 'Priority Access Submits', value: analytics.counts?.priority_access_submit || 0, icon: UserCheck, color: 'bg-purple-500' },
+                ].map((stat, i) => (
+                  <div key={i} className="card p-6" data-testid={`engagement-stat-${i}`}>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`w-10 h-10 ${stat.color} bg-opacity-10 rounded flex items-center justify-center`}>
+                        <stat.icon className={`w-5 h-5 ${stat.color.replace('bg-', 'text-')}`} />
+                      </div>
+                    </div>
+                    <p className="text-3xl font-bold text-[#111827]">{stat.value}</p>
+                    <p className="text-sm text-[#6B7280]">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Event breakdown */}
+              <div className="card p-6">
+                <h3 className="text-lg font-semibold text-[#111827] mb-4" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                  Event Breakdown
+                </h3>
+                {Object.keys(analytics.counts || {}).length === 0 ? (
+                  <p className="text-[#6B7280] text-center py-6">No engagement events recorded yet</p>
+                ) : (
+                  <div className="space-y-3">
+                    {Object.entries(analytics.counts).map(([event, count]) => {
+                      const total = analytics.total_events || 1;
+                      const pct = Math.round((count / total) * 100);
+                      return (
+                        <div key={event}>
+                          <div className="flex items-center justify-between text-sm mb-1">
+                            <span className="text-[#111827] font-medium">{event.replace(/_/g, ' ')}</span>
+                            <span className="text-[#6B7280]">{count} · {pct}%</span>
+                          </div>
+                          <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                            <div
+                              className="h-full bg-gradient-to-r from-[#C5A059] to-[#D4AF6A]"
+                              style={{ width: `${pct}%` }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              {/* Recent events table */}
+              <div className="card overflow-hidden">
+                <div className="p-6 border-b border-gray-100">
+                  <h3 className="text-lg font-semibold text-[#111827]" style={{ fontFamily: 'Libre Baskerville, serif' }}>
+                    Recent Events
+                  </h3>
+                </div>
+                {(analytics.recent || []).length === 0 ? (
+                  <p className="text-[#6B7280] text-center py-8">No recent events</p>
+                ) : (
+                  <table className="w-full">
+                    <thead className="bg-gray-50 border-b border-gray-200">
+                      <tr>
+                        <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Event</th>
+                        <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Path</th>
+                        <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Session</th>
+                        <th className="text-left text-xs font-semibold text-[#6B7280] uppercase tracking-wider px-6 py-3">Time</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100">
+                      {analytics.recent.map((evt, i) => (
+                        <tr key={i} className="hover:bg-gray-50">
+                          <td className="px-6 py-3">
+                            <span className="text-sm font-medium text-[#111827]">{evt.event}</span>
+                          </td>
+                          <td className="px-6 py-3">
+                            <span className="text-sm text-[#6B7280]">{evt.path || '-'}</span>
+                          </td>
+                          <td className="px-6 py-3">
+                            <code className="text-xs text-[#9CA3AF]">{evt.session_id ? evt.session_id.slice(0, 14) : '-'}</code>
+                          </td>
+                          <td className="px-6 py-3">
+                            <span className="text-sm text-[#9CA3AF]">{formatDate(evt.created_at)}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 )}
               </div>
             </div>

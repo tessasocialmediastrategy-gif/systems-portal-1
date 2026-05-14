@@ -1,42 +1,21 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Server, Network, Cpu, Award, Shield, Fingerprint } from 'lucide-react';
+import { useSEO } from '../hooks/useSEO';
+import { track } from '../services/analytics';
 
 const HeritagePage = () => {
-  // SEO: unique meta-title and description for /heritage
+  useSEO({
+    title: 'The Architectural Pedigree of OnPoint Authority Systems | Heritage',
+    description:
+      'The 35-year architectural pedigree behind OnPoint Authority Systems — from 1991 Devry COBOL mainframes and 1995 MCSE network infrastructure to the 2026 Authority OS for agentic, quantum-ready institutional finance.',
+    ogImage:
+      'https://customer-assets.emergentagent.com/job_eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/artifacts/eblm5ag9_image.png',
+    canonical: 'https://onpointauthoritysystems.com/heritage'
+  });
+
   useEffect(() => {
-    const prevTitle = document.title;
-    document.title = 'The Architectural Pedigree of OnPoint Authority Systems | Heritage';
-
-    const ensureMeta = (name, content) => {
-      let tag = document.querySelector(`meta[name="${name}"]`);
-      if (!tag) {
-        tag = document.createElement('meta');
-        tag.setAttribute('name', name);
-        document.head.appendChild(tag);
-      }
-      const prev = tag.getAttribute('content');
-      tag.setAttribute('content', content);
-      return () => {
-        if (prev !== null) tag.setAttribute('content', prev);
-        else tag.parentNode && tag.parentNode.removeChild(tag);
-      };
-    };
-
-    const restoreDesc = ensureMeta(
-      'description',
-      'The 35-year architectural pedigree behind OnPoint Authority Systems — from 1991 Devry COBOL mainframes and 1995 MCSE network infrastructure to the 2026 Authority OS for agentic, quantum-ready institutional finance.'
-    );
-    const restoreKeywords = ensureMeta(
-      'keywords',
-      'OnPoint Authority Systems, OPAS Authority OS, COBOL, MCSE, mainframe, quantum, agentic AI, Tessa Shepard, founder heritage, institutional finance'
-    );
-
-    return () => {
-      document.title = prevTitle;
-      restoreDesc();
-      restoreKeywords();
-    };
+    track('heritage_view');
   }, []);
 
   const timeline = [

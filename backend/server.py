@@ -676,6 +676,69 @@ async def root():
 async def health():
     return {"status": "healthy"}
 
+# ============== ENGAGEMENT ANALYTICS ==============
+
+ALLOWED_ANALYTICS_EVENTS = {
+    "landing_view",
+    "video_showcase_impression",
+    "architectural_map_zoom",
+    "priority_access_open",
+    "priority_access_submit",
+    "heritage_view",
+    "trust_teaser_click",
+}
+
+class AnalyticsEventRequest(BaseModel):
+    event: str
+    path: Optional[str] = None
+    referrer: Optional[str] = None
+    session_id: Optional[str] = None
+    metadata: Optional[dict] = None
+
+@api_router.post("/analytics/event")
+async def record_analytics_event(request: AnalyticsEventRequest):
+    if request.event not in ALLOWED_ANALYTICS_EVENTS:
+        raise HTTPException(status_code=400, detail="Unsupported event")
+    doc = {
+        "id": str(uuid.uuid4()),
+        "event": request.event,
+        "path": request.path,
+        "referrer": request.referrer,
+        "session_id": request.session_id,
+        "metadata": request.metadata or {},
+        "created_at": datetime.now(timezone.utc).isoformat(),
+    }
+    await db.analytics_events.insert_one(doc)
+    return {"ok": True}
+
+@api_router.get("/admin/analytics")
+async def get_admin_analytics(admin: dict = Depends(get_admin_user)):
+    # Aggregate counts per event
+    pipeline = [
+        {"$group": {"_id": "$event", "count": {"$sum": 1}}},
+        {"$sort": {"count": -1}},
+    ]
+    agg = await db.analytics_events.aggregate(pipeline).to_list(100)
+    counts = {row["_id"]: row["count"] for row in agg}
+
+    # Recent 50 events
+    recent_cursor = db.analytics_events.find({}, {"_id": 0}).sort("created_at", -1)
+    recent = await recent_cursor.to_list(50)
+
+    # Unique sessions in last 7 days
+    seven_days_ago = (datetime.now(timezone.utc) - timedelta(days=7)).isoformat()
+    distinct_sessions = await db.analytics_events.distinct(
+        "session_id", {"created_at": {"$gte": seven_days_ago}}
+    )
+    unique_sessions_7d = len([s for s in distinct_sessions if s])
+
+    return {
+        "counts": counts,
+        "recent": recent,
+        "unique_sessions_7d": unique_sessions_7d,
+        "total_events": sum(counts.values()),
+    }
+
 # Include router
 app.include_router(api_router)
 

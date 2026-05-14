@@ -85,6 +85,10 @@ export const api = {
   getContacts: () => 
     axios.get(`${API}/admin/contacts`, { headers: getAuthHeader() }),
 
+  // Engagement Analytics
+  getAdminAnalytics: () =>
+    axios.get(`${API}/admin/analytics`, { headers: getAuthHeader() }),
+
   // Seed
   seedAdmin: () => 
     axios.post(`${API}/seed-admin`),

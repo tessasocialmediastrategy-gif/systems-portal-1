@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CheckCircle, Fingerprint, X } from 'lucide-react';
+import { track } from '../../services/analytics';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL;
 
@@ -36,6 +37,7 @@ export const PriorityAccessModal = ({ open, onClose }) => {
           current_challenges: 'enterprise-inquiry'
         })
       });
+      track('priority_access_submit', { institution_type: formData.institution_type });
       setSubmitted(true);
     } catch (err) {
       console.error('Submission error:', err);

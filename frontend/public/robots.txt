@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /portal/
+Disallow: /investor/data-room
+Disallow: /investor/cim-download
+
+Sitemap: https://onpointauthoritysystems.com/sitemap.xml

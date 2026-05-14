@@ -25,6 +25,25 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 ## What's Been Implemented
 
 ### 2026-05-14 Session (Heritage Page, Trust Teaser, Quantum Video Showcase & Componentization)
+- [x] **Engagement Analytics (full stack)**
+  - Backend: `POST /api/analytics/event` (whitelist of 7 events: `landing_view`, `video_showcase_impression`, `architectural_map_zoom`, `priority_access_open`, `priority_access_submit`, `heritage_view`, `trust_teaser_click`)
+  - Backend: `GET /api/admin/analytics` (admin-only — returns aggregated counts, recent 50 events, unique sessions in last 7 days)
+  - Frontend: `/app/frontend/src/services/analytics.js` fire-and-forget tracker using `navigator.sendBeacon` (survives page unloads), auto-generated `opas_session_id` stored in sessionStorage
+  - Frontend: wired into LandingPage, HeritagePage, VideoShowcase (impression on 35% viewport intersection), TrustTeaser, PriorityAccessModal (open + submit)
+  - Admin Dashboard: new **Engagement** tab with 4 stat cards (Total Events, Unique Sessions 7d, Map Zoom Clicks, Priority Access Submits), event-breakdown progress bars, recent events table
+- [x] **Click-to-zoom lightbox** on the Architectural Map
+  - `ImageLightbox` component, ESC-to-close, click-backdrop-to-close, body scroll locked while open
+  - Hover hint pill ("Click to Zoom") on the showcase, cursor-zoom-in, keyboard-accessible (Enter/Space)
+  - Lightbox open also fires `architectural_map_zoom` analytics event
+- [x] **Per-page SEO + OG/Twitter cards**
+  - New `useSEO` hook at `/app/frontend/src/hooks/useSEO.js` — injects title, description, OG image, OG URL, Twitter card, canonical link; restores previous values on unmount
+  - LandingPage: full OG/Twitter card pointing at the Architectural Map image
+  - HeritagePage: unique title + description + OG image (replaces previous ad-hoc useEffect)
+  - **Fixed critical SEO bug**: removed duplicate `<title>Emergent | Fullstack App</title>` in `index.html` that was clobbering the SEO title at line 9
+- [x] **sitemap.xml + robots.txt** at `/app/frontend/public/`
+  - 11-URL sitemap with priority weights (/ at 1.0, /heritage and /authority-review at 0.9)
+  - robots.txt disallows /admin/, /portal/, and investor private routes
+  - NOTE: Preview proxy injects Cloudflare's bot-management robots.txt over the file; on actual production domains, your CF page rules determine this
 - [x] **Quantum Financial Deployment showcase** — final iteration uses high-fidelity static architectural map
   - Asset swapped from animated video → high-res `1920×1080` architectural map (`eblm5ag9_image.png`) per user "1:1 pixel fidelity" directive
   - Image streamed directly from secure customer-assets storage — zero local transcoding/compression
