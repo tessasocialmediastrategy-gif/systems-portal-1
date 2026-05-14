@@ -24,7 +24,22 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## What's Been Implemented
 
-### 2026-05-14 Session (Heritage Page & Trust Teaser Restoration)
+### 2026-05-14 Session (Heritage Page, Trust Teaser, Quantum Video Showcase & Componentization)
+- [x] **Quantum Financial Deployment video showcase** activated on landing page
+  - Real `onpoint_quantum_financial_deployment.mp4` (8s loop) downloaded + remuxed with `+faststart`
+  - WebM/VP9 + Opus fallback encoded for universal browser compatibility (`onpoint_quantum_financial_deployment.webm`)
+  - Full visual treatment per spec:
+    1. Glassmorphism wrapper — 1px `#39FF14` @ 30% border, 135° glass refraction accent, inner edge vignette
+    2. Dark slate `#121212` section backdrop
+    3. Fixed 40×40px CSS grid pattern overlay (white @ 4%) — parallax (`position: fixed`)
+    4. Soft radial neon glow `#39FF14` @ 8% behind the video
+  - Video plays autoplay/muted/loop/playsInline; verified `readyState: 4`, `videoWidth: 1280`
+- [x] **`LandingPage.js` componentized** (762 lines → 42 lines) under `/app/frontend/src/components/landing/`:
+  - `LandingNav.js`, `PriorityAccessModal.js`, `Hero.js`, `VideoShowcase.js`, `TrustTeaser.js`, `QuantumPillars.js`, `LegacyToQuantum.js`, `PriorityCTA.js`, `SiteFooter.js`
+  - Self-contained data tables (pillars, legacy-to-quantum rows) moved into their respective components
+  - Modal owns its own form state (no prop drilling)
+  - Footer adds new `/heritage` link in nav row
+  - Visual & behavioral parity verified via 4 post-refactor screenshots (hero, video playing, pillars/trust, modal open)
 - [x] **New `/heritage` (alias `/our-authority`) standalone page** — academic/executive dark-slate aesthetic
   - Prominent digital signature ("Tessa Shepard") at the top with structured Person microdata (`itemprop="author"`, `itemprop="name"`, `itemprop="jobTitle"`)
   - Expanded 4-era Timeline of Innovation: 1991 Devry COBOL → 1995 MCSE/MCP → 2000s-2010s Enterprise Modernization → 2026 OPAS Authority OS™
