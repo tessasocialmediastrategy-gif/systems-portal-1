@@ -6,6 +6,7 @@ import { VideoShowcase } from '../components/landing/VideoShowcase';
 import { TrustTeaser } from '../components/landing/TrustTeaser';
 import { QuantumPillars } from '../components/landing/QuantumPillars';
 import { LegacyToQuantum } from '../components/landing/LegacyToQuantum';
+import { ServicesAndSolutions } from '../components/landing/ServicesAndSolutions';
 import { PriorityCTA } from '../components/landing/PriorityCTA';
 import { SiteFooter } from '../components/landing/SiteFooter';
 import { useSEO } from '../hooks/useSEO';
@@ -41,6 +42,7 @@ const LandingPage = () => {
       <VideoShowcase />
       <TrustTeaser />
       <QuantumPillars />
+      <ServicesAndSolutions />
       <LegacyToQuantum />
       <PriorityCTA onPriorityAccess={openModal} />
       <SiteFooter />

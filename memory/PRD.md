@@ -25,6 +25,13 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 ## What's Been Implemented
 
 ### 2026-05-14 Session (Heritage Page, Trust Teaser, Quantum Video Showcase & Componentization)
+- [x] **Services & Solutions section** (`ServicesAndSolutions.js`) inserted between Quantum Pillars and Legacy-to-Quantum
+  - Three-card grid w/ transparent glassmorphism over dark slate + grid (1px neon `#39FF14` @ 30% border, `backdrop-blur(18px)`)
+  - Minimalist Lucide line icons (Server / Cloud / Brain, strokeWidth 1.25) in neon green w/ subtle glow ring
+  - Card 1: Legacy Core Modernization (COBOL · MAINFRAME)
+  - Card 2: Multi-Cloud Authority Architecture (MCSE · DIAMOND TIER)
+  - Card 3: Agentic Orchestration (JULES · QUANTUM SHIFT)
+  - Each "Learn More" link routes to `/heritage#timeline` (Founder's Heritage timeline anchor added) — reinforces architect credentials
 - [x] **Resend transactional email integration** (backend)
   - `email_service.py` with branded dark-theme HTML templates (Priority Access ack/internal, NDA ack/internal, Contact ack/internal) — institutional dark background, gold accents, IP marks in footer
   - Wired into `POST /api/authority-review`, `POST /api/investor/nda-request`, `POST /api/contact` — each endpoint now fires both an auto-acknowledgement to the submitter AND an internal notification to `ops@onpointauthoritysystems.com` (with `reply_to` set to the submitter for one-click reply)

@@ -211,7 +211,7 @@ const HeritagePage = () => {
       </section>
 
       {/* Timeline of Innovation */}
-      <section className="relative z-10 py-16 md:py-24 border-t border-white/5">
+      <section id="timeline" className="relative z-10 py-16 md:py-24 border-t border-white/5">
         <div className="container-custom">
           <div className="max-w-3xl mb-14">
             <p className="text-[10px] text-[#C5A059] uppercase tracking-[0.3em] mb-4">
