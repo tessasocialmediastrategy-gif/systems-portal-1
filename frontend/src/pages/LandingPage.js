@@ -253,16 +253,24 @@ const LandingPage = () => {
         </div>
       </nav>
 
-      {/* Hero Section with Animated Background */}
+      {/* Hero Section with Campaign Visual Background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Video Placeholder Effect */}
+        {/* Campaign Hero Background Image */}
         <div className="absolute inset-0">
-          {/* Gradient Animation */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#030303] via-[#0a0a0a] to-[#030303]" />
-          
-          {/* Animated Grid */}
+          {/* Desktop Hero Image */}
           <div 
-            className="absolute inset-0 opacity-[0.03]"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
+            style={{
+              backgroundImage: `url('/assets/campaign/gold-desktop-hero.png')`
+            }}
+          />
+          
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#030303]/70 via-[#030303]/50 to-[#030303]" />
+          
+          {/* Animated Grid Overlay */}
+          <div 
+            className="absolute inset-0 opacity-[0.02]"
             style={{
               backgroundImage: `linear-gradient(rgba(197,160,89,.3) 1px, transparent 1px), linear-gradient(90deg, rgba(197,160,89,.3) 1px, transparent 1px)`,
               backgroundSize: '60px 60px',
@@ -275,7 +283,7 @@ const LandingPage = () => {
             {[...Array(20)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-1 h-1 bg-[#C5A059]/30 rounded-full"
+                className="absolute w-1 h-1 bg-[#00ff88]/30 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -287,7 +295,7 @@ const LandingPage = () => {
           </div>
           
           {/* Radial Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#C5A059]/5 rounded-full blur-[150px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00ff88]/5 rounded-full blur-[150px]" />
         </div>
         
         <div className="container-custom relative z-10 pt-24">
