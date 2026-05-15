@@ -6,7 +6,7 @@ import { track } from '../../services/analytics';
 const GATEWAY_INFOGRAPHIC_URL =
   'https://customer-assets.emergentagent.com/job_eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/artifacts/eblm5ag9_image.png';
 
-const PORTAL_URL = 'https://portal.onpointauthoritysystems.com';
+const PORTAL_URL = '/briefing/tina-wilkinson';
 
 export const InstitutionalSeedingGateway = () => (
   <section
@@ -91,7 +91,7 @@ export const InstitutionalSeedingGateway = () => (
           data-testid="seeding-gateway-qr"
         >
           <QRCode
-            value={PORTAL_URL}
+            value={typeof window !== 'undefined' ? `${window.location.origin}${PORTAL_URL}` : `https://onpointauthoritysystems.com${PORTAL_URL}`}
             size={112}
             level="M"
             bgColor="#FFFFFF"
@@ -118,13 +118,11 @@ export const InstitutionalSeedingGateway = () => (
           </p>
           <a
             href={PORTAL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             onClick={() => track('priority_access_open', { source: 'seeding_gateway' })}
             className="inline-flex items-center gap-2 mt-4 text-sm font-bold uppercase tracking-widest text-white underline decoration-[#39FF14] decoration-2 underline-offset-4 hover:decoration-[#C5A059] transition-colors"
             data-testid="seeding-gateway-portal-link"
           >
-            Enter Admin Portal
+            Enter Briefing Substrate
             <ArrowRight className="w-4 h-4" style={{ color: '#39FF14' }} />
           </a>
         </div>

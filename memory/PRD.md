@@ -25,6 +25,17 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 ## What's Been Implemented
 
 ### 2026-05-14 Session (Heritage Page, Trust Teaser, Quantum Video Showcase & Componentization)
+- [x] **Institutional Briefing Deck for Tina Wilkinson** at `/briefing/tina-wilkinson` (Ref: AIS-BLR-0091Q)
+  - Diamond Tier aesthetic: dark navy `#0a192f` + slate `#8892b0` + emerald-cyan `#64ffda`
+  - Animated SVG circuit-pattern + scan-line backdrop
+  - 6 slides: (1) Title, (2) Problem · $7.8B Technical Debt rising area chart through 2028, (3) Pilot · Sarah Emerson/Aladdin anchor, (4) Friction · GCP 11% target vs Azure 24% absorption bar chart, (5) Solution · 4-layer Authority OS™ substrate (Sovereign Identity / Agentic Governance / Quantum Bridge / React 19 + Next.js 16), (6) Roadmap · 4.5-month Alpha Bridge timeline
+  - Charts via Recharts (Area + Bar) styled to Diamond Tier palette
+  - Deck chrome: progress bar, slide counter, footer dot navigation w/ slide labels, Prev/Next buttons, fade-up slide transitions
+  - Keyboard nav: Arrows / PageUp-Down / Space advance / number keys 1-6 jump
+  - "Execute Engagement" CTA on roadmap slide → `mailto:ops@onpointauthoritysystems.com` with pre-filled subject
+  - QR code on landing page repointed from `portal.onpointauthoritysystems.com` → absolute URL of `/briefing/tina-wilkinson` (scans straight into deck)
+  - Seeding Gateway CTA repointed + relabeled "Enter Briefing Substrate"
+  - Per-slide analytics tracking via new `briefing_view` event (whitelisted in backend)
 - [x] **Legacy Architect / Executive Profile section** (`LegacyArchitect.js`) inserted between Seeding Gateway and Priority CTA
   - Pull quote: "The bridge between legacy debt and agentic scaling isn't built by generalists; it's forged by those who speak the original code." (Libre Baskerville italic, gold quotation marks)
   - Brush-script Tessa Shepard signature in gold

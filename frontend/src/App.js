@@ -28,6 +28,7 @@ import CIMDownloadPage from "./pages/CIMDownloadPage";
 import AppendixPage from "./pages/AppendixPage";
 import SkeletonPage from "./pages/SkeletonPage";
 import HeritagePage from "./pages/HeritagePage";
+import BriefingTinaWilkinson from "./pages/BriefingTinaWilkinson";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole }) => {
@@ -64,6 +65,7 @@ const AppRoutes = () => {
       <Route path="/authority-review" element={<AuthorityReviewPage />} />
       <Route path="/heritage" element={<HeritagePage />} />
       <Route path="/our-authority" element={<HeritagePage />} />
+      <Route path="/briefing/tina-wilkinson" element={<BriefingTinaWilkinson />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/platform" element={<PlatformPage />} />
       <Route path="/leadership" element={<LeadershipPage />} />

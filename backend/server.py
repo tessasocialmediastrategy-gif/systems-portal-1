@@ -768,6 +768,7 @@ ALLOWED_ANALYTICS_EVENTS = {
     "priority_access_submit",
     "heritage_view",
     "trust_teaser_click",
+    "briefing_view",
 }
 
 class AnalyticsEventRequest(BaseModel):
