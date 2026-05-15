@@ -25,6 +25,14 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 ## What's Been Implemented
 
 ### 2026-05-14 Session (Heritage Page, Trust Teaser, Quantum Video Showcase & Componentization)
+- [x] **Institutional Seeding Gateway™ section** (`InstitutionalSeedingGateway.js`) inserted between Legacy-to-Quantum and Priority CTA
+  - Converted from Next.js spec → React/CRA (replaced `next/image` with native `<img>`, dropped `priority` prop)
+  - Heading "The Institutional Seeding Gateway™" with gold TM mark + Libre Baskerville serif
+  - Subtitle: "Bridging the $7.8B technical debt gap with non-custodial sovereignty. Validated under GCP Case #71129532." with gold + white emphasis tokens
+  - Architectural Map infographic in neon-green glassmorphism container (1px `#39FF14` @ 30% border + radial shadow glow)
+  - **Live SVG QR Code** via `react-qr-code` library (yarn-installed) encoding `https://portal.onpointauthoritysystems.com/` — scannable, rendered client-side
+  - CTA card (slate-800 glass): "Scan for Priority Access" (neon green) · "Diamond Tier" briefing reference (gold) · "Auth ID: AIS-BLR-0091Q" (white)
+  - "Enter Admin Portal →" external link with target="_blank" + `track('priority_access_open', { source: 'seeding_gateway' })` analytics event
 - [x] **Services & Solutions section** (`ServicesAndSolutions.js`) inserted between Quantum Pillars and Legacy-to-Quantum
   - Three-card grid w/ transparent glassmorphism over dark slate + grid (1px neon `#39FF14` @ 30% border, `backdrop-blur(18px)`)
   - Minimalist Lucide line icons (Server / Cloud / Brain, strokeWidth 1.25) in neon green w/ subtle glow ring
