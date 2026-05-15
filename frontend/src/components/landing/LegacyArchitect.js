@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Quote, ShieldCheck } from 'lucide-react';
 
 // Set this to the actual headshot URL when provided by Tessa
-const HEADSHOT_URL = null; // e.g., 'https://customer-assets.emergentagent.com/...'
+const HEADSHOT_URL = 'https://customer-assets.emergentagent.com/job_eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/artifacts/8mfuq5zl_C1A3F13D-7B62-4EAD-937D-8D0812C01973_1_105_c.jpeg';
 
 const InitialsMedallion = () => (
   <div
