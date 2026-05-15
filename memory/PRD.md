@@ -25,6 +25,13 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 ## What's Been Implemented
 
 ### 2026-05-14 Session (Heritage Page, Trust Teaser, Quantum Video Showcase & Componentization)
+- [x] **Legacy Architect / Executive Profile section** (`LegacyArchitect.js`) inserted between Seeding Gateway and Priority CTA
+  - Pull quote: "The bridge between legacy debt and agentic scaling isn't built by generalists; it's forged by those who speak the original code." (Libre Baskerville italic, gold quotation marks)
+  - Brush-script Tessa Shepard signature in gold
+  - 3-paragraph bio with weighted typography: gold tokens for value props ("multi-billion dollar anchor of technical debt", "BlackRock"), neon green for "Zero-Blast-Radius", white for credential anchors ("1991 MCSE/COBOL era", "React 19", "Non-Custodial Substrates", "Google Cloud Partner Case #71129532")
+  - 4 signal pills: 1991 · MCSE/COBOL · Zero-Blast-Radius · GCP Case #71129532 · Architect of Record BlackRock
+  - Schema.org `Person` microdata wrapper for SEO
+  - CTA: "Read the Full Architectural Pedigree →" routes to `/heritage`
 - [x] **Institutional Seeding Gateway™ section** (`InstitutionalSeedingGateway.js`) inserted between Legacy-to-Quantum and Priority CTA
   - Converted from Next.js spec → React/CRA (replaced `next/image` with native `<img>`, dropped `priority` prop)
   - Heading "The Institutional Seeding Gateway™" with gold TM mark + Libre Baskerville serif

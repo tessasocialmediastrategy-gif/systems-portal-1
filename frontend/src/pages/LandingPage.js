@@ -8,6 +8,7 @@ import { QuantumPillars } from '../components/landing/QuantumPillars';
 import { LegacyToQuantum } from '../components/landing/LegacyToQuantum';
 import { ServicesAndSolutions } from '../components/landing/ServicesAndSolutions';
 import { InstitutionalSeedingGateway } from '../components/landing/InstitutionalSeedingGateway';
+import { LegacyArchitect } from '../components/landing/LegacyArchitect';
 import { PriorityCTA } from '../components/landing/PriorityCTA';
 import { SiteFooter } from '../components/landing/SiteFooter';
 import { useSEO } from '../hooks/useSEO';
@@ -46,6 +47,7 @@ const LandingPage = () => {
       <ServicesAndSolutions />
       <LegacyToQuantum />
       <InstitutionalSeedingGateway />
+      <LegacyArchitect />
       <PriorityCTA onPriorityAccess={openModal} />
       <SiteFooter />
 
