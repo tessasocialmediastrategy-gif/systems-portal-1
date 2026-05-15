@@ -4,7 +4,7 @@ import { ArrowRight, ScanLine } from 'lucide-react';
 import { track } from '../../services/analytics';
 
 const GATEWAY_INFOGRAPHIC_URL =
-  'https://customer-assets.emergentagent.com/job_eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/artifacts/eblm5ag9_image.png';
+  'https://customer-assets.emergentagent.com/job_eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/artifacts/fgmt7p9y_OPAS%20-%20The%20Institutional%20Seeding%20Gateway%20Infographic.jpg';
 
 const PORTAL_URL = '/briefing/tina-wilkinson';
 

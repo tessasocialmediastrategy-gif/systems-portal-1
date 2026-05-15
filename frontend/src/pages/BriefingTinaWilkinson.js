@@ -9,6 +9,7 @@ import {
   ChevronRight,
   Cpu,
   Crown,
+  Download,
   Flag,
   Network,
   ShieldCheck,
@@ -699,15 +700,27 @@ const SlideDirective = () => (
             Finalize the &ldquo;All In&rdquo; Google Commitment.
           </div>
         </div>
-        <a
-          href="mailto:ops@onpointauthoritysystems.com?subject=AIS-BLR-0091Q · All-In Commitment · Tina Wilkinson"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold tracking-wider uppercase text-sm transition-opacity hover:opacity-90"
-          style={{ background: CYAN, color: NAVY }}
-          data-testid="briefing-directive-cta"
-        >
-          Open Direct Line
-          <ArrowRight className="w-4 h-4" />
-        </a>
+        <div className="flex flex-wrap items-center gap-3">
+          <a
+            href="/assets/OnPoint_x_Google_Briefing.pptx"
+            download="OnPoint_x_Google_Briefing.pptx"
+            className="inline-flex items-center gap-2 px-5 py-3 rounded font-semibold tracking-wider uppercase text-xs transition-opacity hover:opacity-90"
+            style={{ background: 'transparent', color: CYAN, border: `1px solid ${CYAN}60` }}
+            data-testid="briefing-download-pptx"
+          >
+            <Download className="w-4 h-4" />
+            Download .pptx
+          </a>
+          <a
+            href="mailto:ops@onpointauthoritysystems.com?subject=AIS-BLR-0091Q · All-In Commitment · Tina Wilkinson"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold tracking-wider uppercase text-sm transition-opacity hover:opacity-90"
+            style={{ background: CYAN, color: NAVY }}
+            data-testid="briefing-directive-cta"
+          >
+            Open Direct Line
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
       </div>
     </div>
   </SlideShell>
