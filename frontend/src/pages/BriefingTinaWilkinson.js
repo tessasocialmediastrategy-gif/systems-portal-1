@@ -577,11 +577,11 @@ const SlideSolution = () => (
 // SLIDE 6 — Roadmap · 4.5-month Alpha Bridge
 // =========================================================================
 const ROADMAP = [
-  { month: 'Month 1', label: 'Telemetry Drop', body: 'Observer mode on Aladdin staging. Zero-write contract.', accent: CYAN },
-  { month: 'Month 2', label: 'Identity Bridge', body: 'AD-federated ZKP envelope. Compliance sign-off.', accent: CYAN },
-  { month: 'Month 3', label: 'Agentic Pilot', body: '3 governance agents under State 0 guardrails.', accent: CYAN },
-  { month: 'Month 4', label: 'Co-Signed Whitepaper', body: 'OnPoint × BlackRock × Google joint reference architecture.', accent: '#ffb86b' },
-  { month: 'Month 4.5', label: 'Public Anchor', body: 'Sarah Emerson keynote. Institutional pipeline opens.', accent: CYAN },
+  { month: 'Month 1', label: 'Wrap', body: 'Initial legacy-core encapsulation + read-only audit on Aladdin staging. Zero-write contract.', accent: CYAN },
+  { month: 'Month 2', label: 'Handshake', body: 'Verified ZKP-Wrapper deployment on GCP. AD-federated identity bridge. Compliance sign-off.', accent: CYAN },
+  { month: 'Month 3', label: 'Scaling', body: 'Pilot node expansion to Blackstone / OpenAI under State 0 guardrails.', accent: CYAN },
+  { month: 'Month 4', label: 'Co-Signed Whitepaper', body: 'OnPoint × BlackRock × Google joint reference architecture published.', accent: '#ffb86b' },
+  { month: 'Month 4.5', label: 'Authority', body: 'Full institutional seeding transition complete. Sarah Emerson public anchor.', accent: CYAN },
 ];
 
 const SlideRoadmap = () => (
@@ -653,6 +653,67 @@ const SlideRoadmap = () => (
 );
 
 // =========================================================================
+// SLIDE 7 — Founder's Directive (closing)
+// =========================================================================
+const SlideDirective = () => (
+  <SlideShell eyebrow="The Founder's Directive" testid="briefing-slide-directive">
+    <div className="max-w-4xl">
+      <figure className="relative mb-12">
+        <div
+          aria-hidden
+          className="absolute -top-4 -left-2 text-7xl leading-none opacity-30 select-none"
+          style={{ color: CYAN, fontFamily: 'Libre Baskerville, serif' }}
+        >
+          &ldquo;
+        </div>
+        <blockquote
+          className="text-3xl md:text-4xl lg:text-5xl leading-[1.25] italic pl-12 pt-2"
+          style={{ color: '#e6f1ff', fontFamily: 'Libre Baskerville, serif' }}
+        >
+          Tenacity is the only differentiator at the{' '}
+          <span style={{ color: CYAN, fontStyle: 'normal' }}>Diamond Tier.</span> Every move I make
+          is designed to force the market&rsquo;s hand.
+        </blockquote>
+        <figcaption className="mt-8 pl-12">
+          <span
+            className="block text-3xl"
+            style={{ color: CYAN, fontFamily: 'Brush Script MT, cursive', fontStyle: 'italic' }}
+          >
+            Tessa Shepard
+          </span>
+          <span className="block mt-1 text-[10px] uppercase tracking-[0.3em]" style={{ color: SLATE }}>
+            Legacy Architect · Founder, OnPoint Authority Systems
+          </span>
+        </figcaption>
+      </figure>
+
+      <div
+        className="p-6 rounded flex flex-col md:flex-row items-start md:items-center justify-between gap-5"
+        style={{ background: NAVY_2, border: `1px solid ${CYAN}40` }}
+      >
+        <div>
+          <div className="text-[10px] uppercase tracking-[0.3em] mb-1" style={{ color: CYAN }}>
+            Next Action
+          </div>
+          <div className="text-xl font-bold" style={{ color: '#e6f1ff', fontFamily: 'Libre Baskerville, serif' }}>
+            Finalize the &ldquo;All In&rdquo; Google Commitment.
+          </div>
+        </div>
+        <a
+          href="mailto:ops@onpointauthoritysystems.com?subject=AIS-BLR-0091Q · All-In Commitment · Tina Wilkinson"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold tracking-wider uppercase text-sm transition-opacity hover:opacity-90"
+          style={{ background: CYAN, color: NAVY }}
+          data-testid="briefing-directive-cta"
+        >
+          Open Direct Line
+          <ArrowRight className="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+  </SlideShell>
+);
+
+// =========================================================================
 // Deck shell — keyboard nav, dots, progress, slide router
 // =========================================================================
 const SLIDES = [
@@ -662,6 +723,7 @@ const SLIDES = [
   { id: 'friction', label: 'Friction', render: <SlideFriction /> },
   { id: 'solution', label: 'Solution', render: <SlideSolution /> },
   { id: 'roadmap', label: 'Roadmap', render: <SlideRoadmap /> },
+  { id: 'directive', label: 'Directive', render: <SlideDirective /> },
 ];
 
 const BriefingTinaWilkinson = () => {
@@ -692,7 +754,7 @@ const BriefingTinaWilkinson = () => {
       } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
         e.preventDefault();
         prev();
-      } else if (/^[1-6]$/.test(e.key)) {
+      } else if (/^[1-7]$/.test(e.key)) {
         setIdx(Number(e.key) - 1);
       }
     };
@@ -743,56 +805,68 @@ const BriefingTinaWilkinson = () => {
 
       {/* Nav controls */}
       <footer
-        className="relative z-20 flex items-center justify-between gap-4 px-6 md:px-12 py-4 border-t"
+        className="relative z-20 flex flex-col gap-3 px-6 md:px-12 py-4 border-t"
         style={{ borderColor: `${SLATE}1f` }}
       >
-        <button
-          onClick={prev}
-          disabled={idx === 0}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded text-xs uppercase tracking-[0.2em] disabled:opacity-30 disabled:cursor-not-allowed hover:opacity-80 transition-opacity"
-          style={{ color: SLATE, border: `1px solid ${SLATE}33` }}
-          data-testid="briefing-prev"
-        >
-          <ChevronLeft className="w-3.5 h-3.5" /> Prev
-        </button>
+        <div className="flex items-center justify-between gap-4">
+          <button
+            onClick={prev}
+            disabled={idx === 0}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded text-xs uppercase tracking-[0.2em] disabled:opacity-30 disabled:cursor-not-allowed hover:opacity-80 transition-opacity"
+            style={{ color: SLATE, border: `1px solid ${SLATE}33` }}
+            data-testid="briefing-prev"
+          >
+            <ChevronLeft className="w-3.5 h-3.5" /> Prev
+          </button>
 
-        <div className="flex items-center gap-2">
-          {SLIDES.map((s, i) => (
-            <button
-              key={s.id}
-              onClick={() => setIdx(i)}
-              aria-label={`Go to slide ${i + 1}: ${s.label}`}
-              className="group flex items-center gap-2"
-              data-testid={`briefing-dot-${i}`}
-            >
-              <span
-                className="w-2 h-2 rounded-full transition-all"
-                style={{
-                  background: i === idx ? CYAN : `${SLATE}55`,
-                  boxShadow: i === idx ? `0 0 12px ${CYAN}80` : 'none',
-                  width: i === idx ? 24 : 8,
-                  borderRadius: i === idx ? 4 : 999,
-                }}
-              />
-              <span
-                className="hidden md:inline text-[10px] uppercase tracking-[0.2em] transition-colors"
-                style={{ color: i === idx ? CYAN : `${SLATE}aa` }}
+          <div className="flex items-center gap-2 flex-wrap justify-center">
+            {SLIDES.map((s, i) => (
+              <button
+                key={s.id}
+                onClick={() => setIdx(i)}
+                aria-label={`Go to slide ${i + 1}: ${s.label}`}
+                className="group flex items-center gap-2"
+                data-testid={`briefing-dot-${i}`}
               >
-                {s.label}
-              </span>
-            </button>
-          ))}
+                <span
+                  className="rounded-full transition-all"
+                  style={{
+                    background: i === idx ? CYAN : `${SLATE}55`,
+                    boxShadow: i === idx ? `0 0 12px ${CYAN}80` : 'none',
+                    height: 8,
+                    width: i === idx ? 24 : 8,
+                    borderRadius: i === idx ? 4 : 999,
+                  }}
+                />
+                <span
+                  className="hidden md:inline text-[10px] uppercase tracking-[0.2em] transition-colors"
+                  style={{ color: i === idx ? CYAN : `${SLATE}aa` }}
+                >
+                  {s.label}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={next}
+            disabled={idx === last}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded text-xs uppercase tracking-[0.2em] disabled:opacity-30 disabled:cursor-not-allowed hover:opacity-90 transition-opacity"
+            style={{ background: CYAN, color: NAVY }}
+            data-testid="briefing-next"
+          >
+            Next <ChevronRight className="w-3.5 h-3.5" />
+          </button>
         </div>
 
-        <button
-          onClick={next}
-          disabled={idx === last}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded text-xs uppercase tracking-[0.2em] disabled:opacity-30 disabled:cursor-not-allowed hover:opacity-90 transition-opacity"
-          style={{ background: CYAN, color: NAVY }}
-          data-testid="briefing-next"
-        >
-          Next <ChevronRight className="w-3.5 h-3.5" />
-        </button>
+        {/* Contact strip */}
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[10px] uppercase tracking-[0.25em] pt-2 border-t" style={{ color: SLATE, borderColor: `${SLATE}14` }}>
+          <span>ops@onpointauthoritysystems.com</span>
+          <span className="opacity-30">·</span>
+          <span>P.O. Box 710485 · Santee, CA 92072</span>
+          <span className="opacity-30">·</span>
+          <span>GCP Partner Case #71129532</span>
+        </div>
       </footer>
 
       <style>{`

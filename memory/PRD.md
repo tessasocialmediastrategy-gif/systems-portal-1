@@ -28,10 +28,11 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 - [x] **Institutional Briefing Deck for Tina Wilkinson** at `/briefing/tina-wilkinson` (Ref: AIS-BLR-0091Q)
   - Diamond Tier aesthetic: dark navy `#0a192f` + slate `#8892b0` + emerald-cyan `#64ffda`
   - Animated SVG circuit-pattern + scan-line backdrop
-  - 6 slides: (1) Title, (2) Problem · $7.8B Technical Debt rising area chart through 2028, (3) Pilot · Sarah Emerson/Aladdin anchor, (4) Friction · GCP 11% target vs Azure 24% absorption bar chart, (5) Solution · 4-layer Authority OS™ substrate (Sovereign Identity / Agentic Governance / Quantum Bridge / React 19 + Next.js 16), (6) Roadmap · 4.5-month Alpha Bridge timeline
+  - 7 slides: (1) Title, (2) Problem · $7.8B Technical Debt rising area chart through 2028, (3) Pilot · Sarah Emerson/Aladdin anchor, (4) Friction · GCP 11% target vs Azure 24% absorption bar chart, (5) Solution · 4-layer Authority OS™ substrate (Sovereign Identity / Agentic Governance / Quantum Bridge / React 19 + Next.js 16), (6) Roadmap · 4.5-month Alpha Bridge timeline w/ Wrap → Handshake → Scaling (Blackstone/OpenAI) → Co-Signed Whitepaper → Authority phases, (7) Founder's Directive closing slide with Tessa's "Tenacity is the only differentiator at the Diamond Tier" quote + "Finalize the All-In Google Commitment" mailto CTA
   - Charts via Recharts (Area + Bar) styled to Diamond Tier palette
   - Deck chrome: progress bar, slide counter, footer dot navigation w/ slide labels, Prev/Next buttons, fade-up slide transitions
-  - Keyboard nav: Arrows / PageUp-Down / Space advance / number keys 1-6 jump
+  - Keyboard nav: Arrows / PageUp-Down / Space advance / number keys 1-7 jump
+  - Persistent footer contact strip: ops@onpointauthoritysystems.com · P.O. Box 710485 · Santee, CA 92072 · GCP Partner Case #71129532
   - "Execute Engagement" CTA on roadmap slide → `mailto:ops@onpointauthoritysystems.com` with pre-filled subject
   - QR code on landing page repointed from `portal.onpointauthoritysystems.com` → absolute URL of `/briefing/tina-wilkinson` (scans straight into deck)
   - Seeding Gateway CTA repointed + relabeled "Enter Briefing Substrate"
