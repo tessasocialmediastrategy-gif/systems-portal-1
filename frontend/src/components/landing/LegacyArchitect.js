@@ -2,6 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Quote, ShieldCheck } from 'lucide-react';
 
+// Set this to the actual headshot URL when provided by Tessa
+const HEADSHOT_URL = null; // e.g., 'https://customer-assets.emergentagent.com/...'
+
+const InitialsMedallion = () => (
+  <div
+    className="w-full aspect-square rounded-full flex items-center justify-center relative"
+    style={{
+      background:
+        'radial-gradient(circle at 30% 30%, rgba(197,160,89,0.18) 0%, rgba(20,15,8,0.95) 70%)',
+      border: '1px solid rgba(197,160,89,0.35)'
+    }}
+    aria-label="Portrait placeholder — pending official headshot"
+  >
+    <span
+      className="text-6xl md:text-7xl text-[#C5A059] tracking-wide"
+      style={{ fontFamily: 'Libre Baskerville, serif', fontStyle: 'italic' }}
+    >
+      T<span className="opacity-70">S</span>
+    </span>
+    {/* Tiny status pill */}
+    <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 text-[9px] uppercase tracking-[0.25em] px-2.5 py-1 rounded-full bg-[#0a0a0a] border border-[#C5A059]/30 text-[#C5A059] whitespace-nowrap">
+      Official Photo Pending
+    </span>
+  </div>
+);
+
 export const LegacyArchitect = () => (
   <section
     id="legacy-architect"
@@ -20,9 +46,9 @@ export const LegacyArchitect = () => (
     />
 
     <div className="container-custom relative z-10">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Eyebrow */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-[#C5A059]/30 rounded-full">
             <span className="w-1.5 h-1.5 bg-[#C5A059] rounded-full" />
             <span className="text-[#C5A059] text-[11px] font-semibold tracking-[0.3em] uppercase">
@@ -31,74 +57,122 @@ export const LegacyArchitect = () => (
           </div>
         </div>
 
-        {/* Pull Quote */}
-        <figure className="relative mb-14 md:mb-16">
-          <Quote
-            aria-hidden
-            className="absolute -top-2 left-1/2 -translate-x-1/2 w-10 h-10 opacity-20"
-            style={{ color: '#C5A059' }}
-            strokeWidth={1.25}
-          />
-          <blockquote
-            className="text-center text-2xl md:text-3xl lg:text-[2.25rem] leading-[1.35] text-white pt-12 max-w-3xl mx-auto"
-            style={{ fontFamily: 'Libre Baskerville, serif', fontStyle: 'italic' }}
-          >
-            <span className="text-[#C5A059]">&ldquo;</span>
-            The bridge between legacy debt and agentic scaling isn&rsquo;t built by generalists;
-            it&rsquo;s forged by those who speak the original code.
-            <span className="text-[#C5A059]">&rdquo;</span>
-          </blockquote>
-          <figcaption className="mt-6 text-center">
-            <span
-              className="block text-3xl md:text-4xl text-[#C5A059] italic leading-none"
-              style={{ fontFamily: 'Brush Script MT, cursive' }}
-            >
-              Tessa Shepard
-            </span>
-            <span className="block mt-2 text-[10px] text-gray-500 uppercase tracking-[0.3em]">
-              Founder &middot; Architect &middot; OPAS Authority OS™
-            </span>
-          </figcaption>
-        </figure>
+        {/* Two-column layout: portrait left, bio right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center mb-14">
+          {/* Portrait column */}
+          <div className="lg:col-span-4 flex justify-center">
+            <div className="relative w-56 md:w-64 lg:w-full max-w-xs">
+              {/* Gold halo glow */}
+              <div
+                aria-hidden
+                className="absolute -inset-6 rounded-full pointer-events-none"
+                style={{
+                  background:
+                    'radial-gradient(circle, rgba(197,160,89,0.18) 0%, rgba(197,160,89,0.05) 45%, transparent 70%)',
+                  filter: 'blur(20px)'
+                }}
+              />
+              <div
+                className="relative rounded-full overflow-hidden"
+                style={{
+                  border: '1px solid rgba(197,160,89,0.4)',
+                  boxShadow:
+                    '0 0 0 1px rgba(197,160,89,0.1), 0 30px 60px -20px rgba(197,160,89,0.25)'
+                }}
+              >
+                {HEADSHOT_URL ? (
+                  <img
+                    src={HEADSHOT_URL}
+                    alt="Tessa Shepard — Founder & Architect of OnPoint Authority Systems"
+                    className="w-full h-full object-cover aspect-square"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <InitialsMedallion />
+                )}
+              </div>
+              <div className="mt-7 text-center">
+                <span
+                  className="block text-3xl md:text-4xl text-[#C5A059] italic leading-none"
+                  style={{ fontFamily: 'Brush Script MT, cursive' }}
+                >
+                  Tessa Shepard
+                </span>
+                <span className="block mt-2 text-[10px] text-gray-500 uppercase tracking-[0.3em]">
+                  Founder &middot; Architect
+                </span>
+                <span className="block mt-1 text-[10px] text-gray-600 uppercase tracking-[0.3em]">
+                  OPAS Authority OS™
+                </span>
+              </div>
+            </div>
+          </div>
 
-        {/* Bio body */}
-        <div
-          className="space-y-5 text-gray-300 text-[15px] md:text-[16px] leading-[1.85] max-w-3xl mx-auto mb-12"
-          itemScope
-          itemType="https://schema.org/Person"
-        >
-          <p>
-            <strong className="text-white" itemProp="name">
-              Tessa Shepard
-            </strong>{' '}
-            founded <strong className="text-white">OnPoint Authority Systems, Inc.</strong> to solve
-            the ultimate friction in global finance: the{' '}
-            <span className="text-[#C5A059] font-semibold">
-              multi-billion dollar anchor of technical debt
-            </span>
-            .
-          </p>
-          <p>
-            With a career spanning from the <span className="text-white">1991 MCSE/COBOL era</span>{' '}
-            to the frontier of <span className="text-white">React 19</span> and{' '}
-            <span className="text-white">Non-Custodial Substrates</span>, Tessa provides the{' '}
-            <em className="text-[#39FF14] not-italic font-semibold">Zero-Blast-Radius</em>{' '}
-            transition that institutional risk committees demand.
-          </p>
-          <p>
-            Backed by{' '}
-            <span className="text-white font-medium">Google Cloud Partner Case #71129532</span>,
-            OnPoint is the primary architect for firms like{' '}
-            <span className="text-[#C5A059] font-semibold">BlackRock</span> seeking to reclaim
-            sovereignty over their infrastructure.
-          </p>
-          <p hidden itemProp="jobTitle">
-            Founder &amp; CEO, OnPoint Authority Systems, Inc.
-          </p>
+          {/* Bio column */}
+          <div className="lg:col-span-8">
+            {/* Pull Quote */}
+            <figure className="relative mb-10">
+              <Quote
+                aria-hidden
+                className="absolute -top-4 -left-2 w-10 h-10 opacity-20"
+                style={{ color: '#C5A059' }}
+                strokeWidth={1.25}
+              />
+              <blockquote
+                className="text-xl md:text-2xl lg:text-[1.65rem] leading-[1.4] text-white pt-4 pl-10"
+                style={{ fontFamily: 'Libre Baskerville, serif', fontStyle: 'italic' }}
+              >
+                <span className="text-[#C5A059]">&ldquo;</span>
+                The bridge between legacy debt and agentic scaling isn&rsquo;t built by generalists;
+                it&rsquo;s forged by those who speak the original code.
+                <span className="text-[#C5A059]">&rdquo;</span>
+              </blockquote>
+            </figure>
+
+            {/* Bio body */}
+            <div
+              className="space-y-4 text-gray-300 text-[15px] md:text-[16px] leading-[1.85]"
+              itemScope
+              itemType="https://schema.org/Person"
+            >
+              <p>
+                <strong className="text-white" itemProp="name">
+                  Tessa Shepard
+                </strong>{' '}
+                founded <strong className="text-white">OnPoint Authority Systems, Inc.</strong> to
+                solve the ultimate friction in global finance: the{' '}
+                <span className="text-[#C5A059] font-semibold">
+                  multi-billion dollar anchor of technical debt
+                </span>
+                .
+              </p>
+              <p>
+                With a career spanning from the{' '}
+                <span className="text-white">1991 MCSE/COBOL era</span> to the frontier of{' '}
+                <span className="text-white">React 19</span> and{' '}
+                <span className="text-white">Non-Custodial Substrates</span>, Tessa provides the{' '}
+                <em className="text-[#39FF14] not-italic font-semibold">Zero-Blast-Radius</em>{' '}
+                transition that institutional risk committees demand.
+              </p>
+              <p>
+                Backed by{' '}
+                <span className="text-white font-medium">
+                  Google Cloud Partner Case #71129532
+                </span>
+                , OnPoint is the primary architect for firms like{' '}
+                <span className="text-[#C5A059] font-semibold">BlackRock</span> seeking to reclaim
+                sovereignty over their infrastructure.
+              </p>
+              <p hidden itemProp="jobTitle">
+                Founder &amp; CEO, OnPoint Authority Systems, Inc.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Signal pills */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
           {[
             { label: '1991 · MCSE / COBOL', color: '#C5A059' },
             { label: 'Zero-Blast-Radius', color: '#39FF14' },
