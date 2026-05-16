@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { LandingNav } from '../components/landing/LandingNav';
 import { PriorityAccessModal } from '../components/landing/PriorityAccessModal';
 import { Hero } from '../components/landing/Hero';
+import { GoogleCloudPartnerBanner } from '../components/landing/GoogleCloudPartnerBanner';
 import { VideoShowcase } from '../components/landing/VideoShowcase';
 import { TrustTeaser } from '../components/landing/TrustTeaser';
 import { QuantumPillars } from '../components/landing/QuantumPillars';
@@ -41,6 +42,7 @@ const LandingPage = () => {
       <PriorityAccessModal open={showPriorityForm} onClose={closeModal} />
       <LandingNav onPriorityAccess={openModal} />
       <Hero onPriorityAccess={openModal} />
+      <GoogleCloudPartnerBanner />
       <VideoShowcase />
       <TrustTeaser />
       <QuantumPillars />
