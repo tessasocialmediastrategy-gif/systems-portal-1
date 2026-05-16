@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowRight, BadgeCheck, Sparkles } from 'lucide-react';
 import { track } from '../../services/analytics';
 
 const PARTNER_COMPOSITE_URL =
   'https://customer-assets.emergentagent.com/job_eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/artifacts/zcgn9xgl_GooglePartner.jpeg';
 
-// Internal destination — `portal.onpointauthoritysystems.com` is the conceptual target;
-// rerouted to the institutional briefing substrate while the subdomain is being provisioned.
-const PORTAL_DESTINATION = '/briefing/tina-wilkinson';
+// External institutional portal (subdomain now provisioned)
+const PORTAL_DESTINATION = 'https://portal.onpointauthoritysystems.com';
 
 export const GoogleCloudPartnerBanner = () => (
   <section
@@ -53,8 +51,10 @@ export const GoogleCloudPartnerBanner = () => (
         </div>
 
         {/* Clickable composite — routes to the briefing substrate */}
-        <Link
-          to={PORTAL_DESTINATION}
+        <a
+          href={PORTAL_DESTINATION}
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={() => track('priority_access_open', { source: 'gcp_partner_banner' })}
           className="group relative block rounded-xl overflow-hidden mx-auto transition-transform duration-500 hover:-translate-y-1"
           style={{
@@ -63,7 +63,7 @@ export const GoogleCloudPartnerBanner = () => (
               '0 0 0 1px rgba(197,160,89,0.08), 0 30px 80px -20px rgba(197,160,89,0.2), 0 10px 40px -10px rgba(0,0,0,0.6)'
           }}
           data-testid="gcp-partner-banner-link"
-          aria-label="Open OnPoint × Google Cloud institutional briefing"
+          aria-label="Open OnPoint × Google Cloud institutional portal"
         >
           <img
             src={PARTNER_COMPOSITE_URL}
@@ -98,12 +98,12 @@ export const GoogleCloudPartnerBanner = () => (
               }}
             >
               <span className="text-sm font-semibold tracking-wider uppercase text-white">
-                Enter Briefing Substrate
+                Enter Institutional Portal
               </span>
               <ArrowRight className="w-4 h-4 text-[#C5A059]" />
             </div>
           </div>
-        </Link>
+        </a>
 
         {/* Stat strip */}
         <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
