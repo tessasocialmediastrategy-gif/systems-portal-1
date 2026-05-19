@@ -162,7 +162,11 @@ export const PriorityAccessModal = ({ open, onClose }) => {
               </button>
 
               <p className="text-[10px] text-gray-600 text-center">
-                Protected under institutional NDA. SOC-2 compliant data handling.
+                Protected under institutional NDA. SOC-2 compliant data handling. See our{' '}
+                <a href="/privacy" target="_blank" rel="noreferrer" className="text-[#C5A059] hover:underline">
+                  Privacy Policy
+                </a>
+                .
               </p>
             </form>
           </>

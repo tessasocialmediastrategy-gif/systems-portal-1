@@ -44,6 +44,9 @@ export const SiteFooter = () => (
           <Link to="/heritage" className="text-sm text-gray-500 hover:text-white transition-colors">
             Heritage
           </Link>
+          <Link to="/privacy" className="text-sm text-gray-500 hover:text-white transition-colors" data-testid="footer-privacy">
+            Privacy
+          </Link>
           <Link to="/admin/login" className="text-sm text-gray-500 hover:text-white transition-colors">
             Admin
           </Link>
