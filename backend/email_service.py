@@ -212,3 +212,74 @@ def render_contact_internal(submission: dict) -> str:
     </table>
     """
     return _shell("New Contact Submission", body)
+
+
+
+# ============== Technical Debt Audit Templates ==============
+
+_TIER_STYLES = {
+    "acceptable": {"label": "Acceptable Risk", "color": "#39FF14"},
+    "systemic": {"label": "Systemic Risk Exposure", "color": "#C5A059"},
+    "critical": {"label": "Immediate Architecture Restructuring Required", "color": "#FF4D4D"},
+}
+
+
+def render_audit_ack(name: str, tier_key: str, indicator_count: int, booking_url: str) -> str:
+    tier = _TIER_STYLES.get(tier_key, _TIER_STYLES["acceptable"])
+    body = f"""
+    <p style="margin:0 0 16px;color:#cfcfcf;font-size:15px;line-height:1.7;">Dear {name or 'Architect'},</p>
+    <p style="margin:0 0 16px;color:#cfcfcf;font-size:15px;line-height:1.7;">
+      Your <strong style="color:#C5A059;">Enterprise Technical Debt Audit</strong> (Framework v2.0) has been
+      received and scored. Your structural risk profile is recorded below.
+    </p>
+
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin:18px 0 22px;border:1px solid #1f1f1f;background:#080808;">
+      <tr><td style="padding:18px 22px;">
+        <p style="margin:0;font-family:Georgia,serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#666;">Structural Risk Profile</p>
+        <p style="margin:6px 0 0;font-family:Georgia,serif;font-size:18px;color:{tier['color']};">{tier['label']}</p>
+        <p style="margin:8px 0 0;font-family:Georgia,serif;font-size:13px;color:#888;">
+          Critical / High indicators recorded: <strong style="color:#ffffff;">{indicator_count}</strong>
+        </p>
+      </td></tr>
+    </table>
+
+    <p style="margin:0 0 16px;color:#cfcfcf;font-size:15px;line-height:1.7;">
+      As the next step, our engineering leadership desk has reserved a private Architecture Review window
+      for you. Use the link below to confirm a time that aligns with your operational calendar.
+    </p>
+
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:18px 0 22px;">
+      <tr><td style="padding:14px 22px;background:linear-gradient(90deg,#C5A059,#D4AF6A);">
+        <a href="{booking_url}" style="font-family:Arial,sans-serif;font-size:12px;color:#050505;letter-spacing:2px;text-transform:uppercase;font-weight:600;text-decoration:none;">
+          Book Architecture Review &rsaquo;
+        </a>
+      </td></tr>
+    </table>
+
+    <p style="margin:0;color:#777;font-size:12px;line-height:1.6;">
+      Your submission and computed risk score have been cryptographically logged against your work-email identity
+      within the OPAS Authority OS&trade; substrate. SOC-2 compliant data handling.
+    </p>
+    """
+    return _shell("Your Technical Debt Audit Results", body)
+
+
+def render_audit_internal(submission: dict) -> str:
+    rows = "".join(
+        f'<tr><td style="padding:6px 0;color:#777;font-size:12px;width:200px;text-transform:uppercase;letter-spacing:1px;vertical-align:top;">{k}</td>'
+        f'<td style="padding:6px 0;color:#e5e5e5;font-size:14px;">{v if (v or v == 0) else "—"}</td></tr>'
+        for k, v in submission.items()
+    )
+    body = f"""
+    <p style="margin:0 0 16px;color:#cfcfcf;font-size:14px;line-height:1.7;">
+      A new Enterprise Technical Debt Audit submission has been recorded. Review the response set and routed
+      booking action below.
+    </p>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;border:1px solid #1f1f1f;">
+      <tr><td style="padding:16px 20px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%;">{rows}</table>
+      </td></tr>
+    </table>
+    <p style="margin:20px 0 0;color:#777;font-size:12px;">Review in the Admin Dashboard &rsaquo; Audit Submissions.</p>
+    """
+    return _shell("New Audit Submission", body)

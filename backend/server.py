@@ -822,6 +822,186 @@ async def get_admin_analytics(admin: dict = Depends(get_admin_user)):
         "total_events": sum(counts.values()),
     }
 
+# ============== TECHNICAL DEBT AUDIT (Public Lead-Magnet) ==============
+
+CALENDLY_BOOKING_URL = "https://calendly.com/ops-onpointauthoritysystems"
+
+
+class AuditSubmitRequest(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    # Identity gate
+    full_name: str
+    title: str
+    company: str
+    work_email: EmailStr
+    # Section 1: Centralized Control Layer
+    s1_q1_gateway_percent: float = Field(..., ge=0, le=100)
+    s1_q2_api_latency_ms: float = Field(..., ge=0)
+    s1_q3_broker_outage: str  # "cascade" | "degrade"
+    # Section 2: Shadow AI / Autonomous Oversight
+    s2_q1_unsigned_agent_mutations: str  # "yes" | "no"
+    s2_q2_audit_context_hours: float = Field(..., ge=0)
+    s2_q3_agent_identity_registry: str  # "yes" | "no"
+    # Section 3: Legacy Debt
+    s3_q1_heritage_wrapper_percent: float = Field(..., ge=0, le=100)
+    s3_q2_cross_region_joins: int = Field(..., ge=0)
+
+
+def _score_audit(p: "AuditSubmitRequest") -> dict:
+    """Apply scoring rules straight from the worksheet spec.
+    Returns critical indicators per section + computed tier.
+    """
+    findings = []
+
+    # Section 1
+    if p.s1_q1_gateway_percent > 40:
+        findings.append({"section": 1, "code": "S1Q1", "level": "HIGH",
+                         "note": f"Gateway concentration {p.s1_q1_gateway_percent:.0f}% exceeds 40% threshold."})
+    if p.s1_q2_api_latency_ms > 200:
+        findings.append({"section": 1, "code": "S1Q2", "level": "CRITICAL",
+                         "note": f"API gateway latency {p.s1_q2_api_latency_ms:.0f}ms exceeds 200ms ceiling."})
+    if p.s1_q3_broker_outage.lower() == "cascade":
+        findings.append({"section": 1, "code": "S1Q3", "level": "HIGH",
+                         "note": "Identity broker outages cascade to downstream microservices."})
+
+    # Section 2
+    if p.s2_q1_unsigned_agent_mutations.lower() == "yes":
+        findings.append({"section": 2, "code": "S2Q1", "level": "CRITICAL",
+                         "note": "Autonomous agents mutate state without cryptographic signing."})
+    if p.s2_q2_audit_context_hours > 1:
+        findings.append({"section": 2, "code": "S2Q2", "level": "HIGH",
+                         "note": f"Audit context retrieval takes {p.s2_q2_audit_context_hours:.1f}h (>1h)."})
+    if p.s2_q3_agent_identity_registry.lower() == "no":
+        findings.append({"section": 2, "code": "S2Q3", "level": "MEDIUM",
+                         "note": "No sandboxed Agent Identity Registry isolating automated scripts."})
+
+    # Section 3
+    if p.s3_q1_heritage_wrapper_percent > 25:
+        findings.append({"section": 3, "code": "S3Q1", "level": "HIGH",
+                         "note": f"{p.s3_q1_heritage_wrapper_percent:.0f}% of sprint velocity sunk into heritage wrappers."})
+    if p.s3_q2_cross_region_joins > 3:
+        findings.append({"section": 3, "code": "S3Q2", "level": "SEVERE",
+                         "note": f"{p.s3_q2_cross_region_joins} cross-regional joins required per state verification."})
+
+    # Per scoring spec: count HIGH / CRITICAL / SEVERE indicators (MEDIUM excluded)
+    indicator_count = sum(1 for f in findings if f["level"] in ("HIGH", "CRITICAL", "SEVERE"))
+
+    if indicator_count >= 5:
+        tier_key = "critical"
+        tier_label = "Immediate Architecture Restructuring Required"
+        recommendation = (
+            "Active schema drift and unmitigated single points of failure threaten operational uptime. "
+            "Transitioning toward a distributed, non-custodial software layer like Authority OS\u2122 is critical "
+            "to ensure data sovereignty and eliminate runtime degradation."
+        )
+    elif indicator_count >= 3:
+        tier_key = "systemic"
+        tier_label = "Systemic Risk Exposure"
+        recommendation = (
+            "Your infrastructure is heavily reliant on a Centralized Trapdoor. Monolithic components are throttling "
+            "sprint velocity. Isolation of heritage logic using containerized wrappers is strongly recommended."
+        )
+    else:
+        tier_key = "acceptable"
+        tier_label = "Acceptable Risk"
+        recommendation = (
+            "Monitor latency metrics via Google Search Console and cloud telemetry dashboards. Begin planning "
+            "data-layer decoupling for high-throughput app routers."
+        )
+
+    return {
+        "tier_key": tier_key,
+        "tier_label": tier_label,
+        "recommendation": recommendation,
+        "indicator_count": indicator_count,
+        "findings": findings,
+    }
+
+
+@api_router.post("/audit/submit")
+async def submit_audit(request: AuditSubmitRequest):
+    score = _score_audit(request)
+
+    record = {
+        "id": str(uuid.uuid4()),
+        "full_name": request.full_name,
+        "title": request.title,
+        "company": request.company,
+        "work_email": request.work_email,
+        "responses": {
+            "s1_q1_gateway_percent": request.s1_q1_gateway_percent,
+            "s1_q2_api_latency_ms": request.s1_q2_api_latency_ms,
+            "s1_q3_broker_outage": request.s1_q3_broker_outage,
+            "s2_q1_unsigned_agent_mutations": request.s2_q1_unsigned_agent_mutations,
+            "s2_q2_audit_context_hours": request.s2_q2_audit_context_hours,
+            "s2_q3_agent_identity_registry": request.s2_q3_agent_identity_registry,
+            "s3_q1_heritage_wrapper_percent": request.s3_q1_heritage_wrapper_percent,
+            "s3_q2_cross_region_joins": request.s3_q2_cross_region_joins,
+        },
+        "score": score,
+        "booking_url": CALENDLY_BOOKING_URL,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "status": "new",
+    }
+    await db.audit_submissions.insert_one(dict(record))
+
+    logger.info(
+        "New Audit submission from %s (%s) — tier=%s indicators=%s",
+        request.work_email, request.company, score["tier_key"], score["indicator_count"],
+    )
+
+    # User confirmation email
+    await email_service.send_email(
+        to=request.work_email,
+        subject=f"Your Technical Debt Audit Results — {score['tier_label']}",
+        html=email_service.render_audit_ack(
+            request.full_name, score["tier_key"], score["indicator_count"], CALENDLY_BOOKING_URL
+        ),
+    )
+
+    # Internal ops notification
+    if email_service.RESEND_MONITORING_EMAIL:
+        await email_service.send_email(
+            to=email_service.RESEND_MONITORING_EMAIL,
+            subject=f"[Audit] {score['tier_label']} — {request.company} ({request.work_email})",
+            html=email_service.render_audit_internal({
+                "Name": request.full_name,
+                "Title": request.title,
+                "Company": request.company,
+                "Work Email": request.work_email,
+                "Tier": score["tier_label"],
+                "Indicators": score["indicator_count"],
+                "S1 Gateway %": f"{request.s1_q1_gateway_percent:.0f}%",
+                "S1 API Latency": f"{request.s1_q2_api_latency_ms:.0f}ms",
+                "S1 Broker Outage": request.s1_q3_broker_outage,
+                "S2 Unsigned Mutations": request.s2_q1_unsigned_agent_mutations,
+                "S2 Audit Context": f"{request.s2_q2_audit_context_hours:.1f}h",
+                "S2 Agent Registry": request.s2_q3_agent_identity_registry,
+                "S3 Heritage Wrappers": f"{request.s3_q1_heritage_wrapper_percent:.0f}%",
+                "S3 Cross-Region Joins": request.s3_q2_cross_region_joins,
+                "Findings": "; ".join(f"{f['code']}={f['level']}" for f in score["findings"]) or "None",
+            }),
+            reply_to=request.work_email,
+        )
+
+    return {
+        "id": record["id"],
+        "tier_key": score["tier_key"],
+        "tier_label": score["tier_label"],
+        "indicator_count": score["indicator_count"],
+        "recommendation": score["recommendation"],
+        "findings": score["findings"],
+        "booking_url": CALENDLY_BOOKING_URL,
+    }
+
+
+@api_router.get("/admin/audit-submissions")
+async def list_audit_submissions(admin: dict = Depends(get_admin_user)):
+    rows = await db.audit_submissions.find({}, {"_id": 0}).sort("created_at", -1).to_list(500)
+    return rows
+
+
+
 # Include router
 app.include_router(api_router)
 
