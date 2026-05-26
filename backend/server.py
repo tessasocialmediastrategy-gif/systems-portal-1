@@ -16,10 +16,10 @@ import secrets
 import jwt
 import shutil
 
-import email_service
-
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
+
+import email_service  # noqa: E402  must follow load_dotenv()
 
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
