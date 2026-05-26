@@ -31,6 +31,8 @@ import HeritagePage from "./pages/HeritagePage";
 import BriefingTinaWilkinson from "./pages/BriefingTinaWilkinson";
 import CloudTopologyModule from "./pages/CloudTopologyModule";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import BlogIndexPage from "./pages/BlogIndexPage";
+import BlogArticlePage from "./pages/BlogArticlePage";
 
 // Protected Route Component
 const ProtectedRoute = ({ children, requiredRole }) => {
@@ -71,6 +73,9 @@ const AppRoutes = () => {
       <Route path="/cloud-topology" element={<CloudTopologyModule />} />
       <Route path="/privacy" element={<PrivacyPolicyPage />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+      <Route path="/blog" element={<BlogIndexPage />} />
+      <Route path="/insights" element={<BlogIndexPage />} />
+      <Route path="/blog/:slug" element={<BlogArticlePage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/platform" element={<PlatformPage />} />
       <Route path="/leadership" element={<LeadershipPage />} />

@@ -21,6 +21,13 @@ export const LandingNav = ({ onPriorityAccess }) => (
           >
             Our Path
           </Link>
+          <Link
+            to="/blog"
+            className="text-sm text-gray-500 hover:text-white transition-colors"
+            data-testid="nav-insights"
+          >
+            Insights
+          </Link>
           <button
             onClick={onPriorityAccess}
             className="px-4 py-2 bg-gradient-to-r from-[#C5A059] to-[#D4AF6A] text-[#030303] text-sm font-semibold rounded hover:opacity-90 transition-opacity"

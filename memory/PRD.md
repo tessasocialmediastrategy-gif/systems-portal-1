@@ -24,6 +24,16 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## What's Been Implemented
 
+### 2026-02-14 Session (Insights / Blog Section)
+- [x] **Blog Index page at `/blog`** (`BlogIndexPage.js`) — institutional dark aesthetic (Slate `#0E1217→#11161D` gradient, Libre Baskerville hero, gold `#C5A059` accents). Featured card layout w/ tags, reading time, prepared-by byline + "More insights coming soon" placeholder block. Also reachable at `/insights`.
+- [x] **Blog Article page at `/blog/:slug`** (`BlogArticlePage.js`) — eyebrow pill, hero w/ author meta, focus banner, sticky TOC + 3 long-form sections rendered from a structured `sections` array supporting `paragraph` / `callout` / `table` / `closer` sub-block kinds. Tail CTA routes to `/authority-review`.
+- [x] **First article published**: *Tech Base Blueprint: Eliminating the Single Point of Failure* — 3 sections (Architecture of Authority vs. Legacy Modernization · Engineering the Fault-Tolerant Decentralized Substrate · Autonomous Oversight & Mitigating Shadow AI Latency) including the Centralized Trapdoor callout, the 3-phase Technical Implementation Strategy table (Heritage Logic Isolation · App Router Decoupling · Cryptographic State Enforcement), and the Agentic Identity Protocol callout. Byline: *OnPoint Authority Systems Research Desk*.
+- [x] **Content data file** `/app/frontend/src/data/blogPosts.js` — single source of truth for posts; `getPostBySlug` helper consumed by article page.
+- [x] **Navigation wiring** — added "Insights" link in `LandingNav.js` (top nav, `data-testid="nav-insights"`) and `SiteFooter.js` (`data-testid="footer-insights"`).
+- [x] **SEO/OpenGraph** — both pages set canonical, OG title/description via `useSEO` hook.
+- [x] Smoke-tested via Playwright: index → click featured card → article renders w/ correct title; both routes return `data-testid` markers.
+
+
 ### 2026-05-14 Session (Heritage Page, Trust Teaser, Quantum Video Showcase & Componentization)
 - [x] **Institutional Briefing Deck for Tina Wilkinson** at `/briefing/tina-wilkinson` (Ref: AIS-BLR-0091Q)
   - Diamond Tier aesthetic: dark navy `#0a192f` + slate `#8892b0` + emerald-cyan `#64ffda`
