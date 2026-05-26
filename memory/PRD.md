@@ -24,6 +24,19 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## What's Been Implemented
 
+### 2026-02-14 Session (Lead-Gen Audit Funnel `/audit`)
+- [x] **Enterprise Technical Debt Audit (Framework v2.0)** as a gated lead-magnet at `/audit` — three-phase flow:
+  - **Phase 1 (Identity Gate)**: Full Name, Title, Company, Work Email required before any worksheet content is revealed (strict gating per spec).
+  - **Phase 2 (Worksheet)**: 9 questions across 3 sections — Centralized Control Layer (3) · Shadow AI Oversight (3) · Legacy Debt (2). Mix of numeric (%/ms/hours/joins) + binary choice inputs with risk-threshold microcopy on every question.
+  - **Phase 3 (Results)**: Computed risk tier (Acceptable Risk · Systemic Risk Exposure · Immediate Architecture Restructuring) shown as a glow-styled verdict card, full Indicator Breakdown grid (HIGH/CRITICAL/SEVERE/MEDIUM chips), and an embedded Calendly iframe (`calendly.com/ops-onpointauthoritysystems`) for direct private Architecture Review booking — branded with `#0B0F14` / `#C5A059` colors.
+- [x] **Backend scoring endpoint** `POST /api/audit/submit` (`server.py`) — Pydantic-validated `AuditSubmitRequest`, deterministic `_score_audit` per the spec (>40% gateway = HIGH, >200ms = CRITICAL, Cascade = HIGH, unsigned mutations = CRITICAL, >1h audit = HIGH, no registry = MEDIUM, >25% wrappers = HIGH, >3 joins = SEVERE). HIGH/CRITICAL/SEVERE indicators count toward tier rollup (1–2 = Acceptable, 3–4 = Systemic, 5+ = Critical). Persists to `audit_submissions` collection.
+- [x] **Resend dual emails**: confirmation to the CTO (tier verdict, indicator count, gold "Book Architecture Review" CTA → Calendly) + internal notification to `ops@onpointauthoritysystems.com` (full response set, tier, findings codes). Templates added to `email_service.py` (`render_audit_ack`, `render_audit_internal`).
+- [x] **Admin lister** `GET /api/admin/audit-submissions` for future Admin Dashboard panel.
+- [x] **Nav wiring**: "Audit" link added to top nav (`LandingNav.js`, `data-testid="nav-audit"`) and footer (`SiteFooter.js`, `data-testid="footer-audit"`).
+- [x] **Smoke-tested** via Playwright across all 3 phases — identity submit disabled until valid → worksheet revealed only after identity → CRITICAL tier verdict + 7 indicators correctly rendered for stress test inputs + Calendly iframe mounted.
+- [x] **Curl-verified** scoring logic: high-stress payload (gateway 70%, latency 350ms, cascade, unsigned mutations, 4h audit, no registry, 40% wrappers, 5 joins) returns `tier_key=critical` + `indicator_count=7` + full findings array.
+
+
 ### 2026-02-14 Session (Insights / Blog Section)
 - [x] **Blog Index page at `/blog`** (`BlogIndexPage.js`) — institutional dark aesthetic (Slate `#0E1217→#11161D` gradient, Libre Baskerville hero, gold `#C5A059` accents). Featured card layout w/ tags, reading time, prepared-by byline + "More insights coming soon" placeholder block. Also reachable at `/insights`.
 - [x] **Blog Article page at `/blog/:slug`** (`BlogArticlePage.js`) — eyebrow pill, hero w/ author meta, focus banner, sticky TOC + 3 long-form sections rendered from a structured `sections` array supporting `paragraph` / `callout` / `table` / `closer` sub-block kinds. Tail CTA routes to `/authority-review`.
