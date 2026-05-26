@@ -25,7 +25,7 @@ export const BLOG_POSTS = [
         kicker: 'Section 01',
         heading: 'The Architecture of Authority vs. Legacy Modernization',
         paragraphs: [
-          'Most traditional enterprise cloud migrations hit an invisible wall during execution. The critical failure mode is rarely the cloud infrastructure itself, but rather a fundamental strategic error: moving legacy monolithic applications to a cloud ecosystem without addressing the underlying data authority model. When organizations merely "lift and shift" their stacks, they transfer existing technical debt into cloud environments, multiplying architectural complexity without gaining operational resilience.'
+          'Most traditional enterprise cloud migrations hit an invisible wall during execution. The critical failure mode is not the cloud infrastructure itself, but rather a fundamental strategic error: moving legacy monolithic applications to a cloud ecosystem without addressing the underlying data authority model. When organizations merely "lift and shift" their stacks, they transfer existing technical debt into cloud environments, multiplying architectural complexity without gaining operational resilience.'
         ],
         subBlocks: [
           {
@@ -40,7 +40,7 @@ export const BLOG_POSTS = [
               },
               {
                 k: 'Unresolvable State Auditing',
-                v: 'As modern workloads scale and autonomous loops grow, auditing real-time transactional data states becomes structurally impossible.'
+                v: 'As modern workloads scale and automated loops grow, auditing real-time transactional data states becomes structurally impossible.'
               },
               {
                 k: 'Security Perimeter Vulnerabilities',
@@ -55,7 +55,7 @@ export const BLOG_POSTS = [
         kicker: 'Section 02',
         heading: 'Engineering the Fault-Tolerant Decentralized Substrate',
         paragraphs: [
-          'To eliminate the Single Point of Failure completely, Authority OS™ removes the single centralized gateway entirely, deploying an isolated, non-custodial software substrate that secures, decouples, and refactors core systems without operational interruption.'
+          'To eliminate the Single Point of Failure completely, OnPoint Authority Systems has engineered Authority OS™. This framework completely moves away from single centralized gateways, deploying an isolated, non-custodial software substrate that secures, decouples, and refactors core systems without operational interruption.'
         ],
         subBlocks: [
           {
