@@ -24,6 +24,16 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## What's Been Implemented
 
+### 2026-02-17 Session (Landing Page · The Agentic Shift Framework section)
+- [x] **New full-spec section inserted on `/` landing** (`AgenticShiftFramework.js`) between Services & Solutions and Legacy-to-Quantum at anchor `#agentic-shift-framework`. Comprises 4 components:
+  - **Component 1 — Header**: centered "THE OPERATIONAL WORKFLOW" eyebrow + H2 "The 4-Step *Agentic Shift* Framework" (italicized gold) + sub-headline.
+  - **Component 2 — Step blueprint**: 4-card responsive grid (1 col mobile → 2 col tablet → 4 col desktop) with inter-card arrow indicators on desktop. STEP 01 AUDIT (Search icon · `#00F2FE` cyan), 02 SCORE (Gauge · `#FFB300` amber), 03 PLAN (ClipboardCheck · `#00E676` emerald), 04 DEPLOY (Rocket · `#2979FF` solid electric blue). Each card: top accent gradient line, step number in accent color, icon tile, name (Libre Baskerville), badge, sub-title, body, bottom edge glow, hover lift.
+  - **Component 3 — Command Center Alpha asset**: hero photo embedded in rounded container with multi-layer shadow + cyan/blue radial floor glow + italic "Figure 1.1" caption.
+  - **Component 4 — CTA banner**: dark navy gradient w/ emerald micro-grid texture, "Agentic Readiness Score" eyebrow, italicized H3, primary `Run Free Technical Debt Audit` button (neon emerald gradient + glow + arrow) → `/audit`, secondary `Book Architecture Review` → Calendly (target="_blank"). Both buttons fire `cta_click` analytics events with source tag.
+- [x] Wired into `LandingPage.js` import + render order; landing-nav unchanged.
+- [x] Lint clean; Playwright smoke test confirmed 4 step cards present, primary CTA → `/audit`, secondary CTA → Calendly.
+
+
 ### 2026-02-17 Session (Second Insights article — Hidden Tax on Agentic AI)
 - [x] **Article #2 published**: *"The Hidden Tax on Agentic AI: Why Wasted Compute Starts in Your Legacy Architecture"* at `/blog/hidden-tax-agentic-ai` — Thought Leadership / Infrastructure Strategy category, byline *OnPoint Leadership / AI Architecture Team*, 8-min read.
   - 5 sections: Introduction (Accelerated Compute Illusion) · Anatomy of the Tax (3 h3 subsections: 350ms Gateway, Cascading Brokers, Heritage Wrappers) · Agentic Readiness (3-bullet protocol: Continuous Vector Auditing, Architectural Scoring 96%, Intentional Shift) · OnPoint Operational Workflow (4-step table: Audit → Score → Plan → Deploy) · Conclusion w/ italic closer block.

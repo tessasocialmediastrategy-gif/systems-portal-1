@@ -8,6 +8,7 @@ import { TrustTeaser } from '../components/landing/TrustTeaser';
 import { QuantumPillars } from '../components/landing/QuantumPillars';
 import { LegacyToQuantum } from '../components/landing/LegacyToQuantum';
 import { ServicesAndSolutions } from '../components/landing/ServicesAndSolutions';
+import { AgenticShiftFramework } from '../components/landing/AgenticShiftFramework';
 import { InstitutionalSeedingGateway } from '../components/landing/InstitutionalSeedingGateway';
 import { LegacyArchitect } from '../components/landing/LegacyArchitect';
 import { PriorityCTA } from '../components/landing/PriorityCTA';
@@ -47,6 +48,7 @@ const LandingPage = () => {
       <TrustTeaser />
       <QuantumPillars />
       <ServicesAndSolutions />
+      <AgenticShiftFramework />
       <LegacyToQuantum />
       <InstitutionalSeedingGateway />
       <LegacyArchitect />
