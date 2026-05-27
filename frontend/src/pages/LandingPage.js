@@ -9,6 +9,7 @@ import { QuantumPillars } from '../components/landing/QuantumPillars';
 import { LegacyToQuantum } from '../components/landing/LegacyToQuantum';
 import { ServicesAndSolutions } from '../components/landing/ServicesAndSolutions';
 import { AgenticShiftFramework } from '../components/landing/AgenticShiftFramework';
+import { AgenticShiftFrameworkSimple } from '../components/landing/AgenticShiftFrameworkSimple';
 import { InstitutionalSeedingGateway } from '../components/landing/InstitutionalSeedingGateway';
 import { LegacyArchitect } from '../components/landing/LegacyArchitect';
 import { PriorityCTA } from '../components/landing/PriorityCTA';
@@ -49,6 +50,7 @@ const LandingPage = () => {
       <QuantumPillars />
       <ServicesAndSolutions />
       <AgenticShiftFramework />
+      <AgenticShiftFrameworkSimple />
       <LegacyToQuantum />
       <InstitutionalSeedingGateway />
       <LegacyArchitect />

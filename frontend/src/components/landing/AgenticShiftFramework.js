@@ -107,7 +107,7 @@ export const AgenticShiftFramework = () => (
           return (
             <React.Fragment key={step.n}>
               <div
-                className="group relative rounded-lg bg-[#121212] p-6 md:p-7 transition-transform duration-300 hover:-translate-y-1"
+                className="group relative rounded-lg bg-[#121212] p-6 md:p-7 transition-all duration-300 hover:-translate-y-1"
                 style={{
                   border: `1px solid ${step.accent}33`,
                   boxShadow: `inset 0 0 0 1px rgba(255,255,255,0.02), 0 0 40px -18px ${step.accent}${Math.round(
@@ -115,6 +115,12 @@ export const AgenticShiftFramework = () => (
                   )
                     .toString(16)
                     .padStart(2, '0')}`
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = step.accent;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = `${step.accent}33`;
                 }}
                 data-testid={`step-${step.n}`}
               >
