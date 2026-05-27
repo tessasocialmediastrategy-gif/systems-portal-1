@@ -5,6 +5,160 @@
 
 export const BLOG_POSTS = [
   {
+    slug: 'hidden-tax-agentic-ai',
+    title: 'The Hidden Tax on Agentic AI: Why Wasted Compute Starts in Your Legacy Architecture',
+    subtitle:
+      'Autonomous agents on next-generation hardware are bounded by the legacy infrastructure they must touch. The bill comes due in burned compute cycles.',
+    eyebrow: 'Thought Leadership · Infrastructure Strategy',
+    author: 'OnPoint Leadership / AI Architecture Team',
+    authorRole: 'AI Architecture Team',
+    publishedAt: 'February 17, 2026',
+    readingMinutes: 8,
+    focus:
+      'Target Enterprise Focus: Agentic Readiness, Compute Efficiency, and the Cost of Legacy Architecture Tax.',
+    tags: ['Agentic AI', 'Authority OS™', 'Compute Efficiency', 'Architectural Scoring'],
+    heroImage:
+      'https://customer-assets.emergentagent.com/job_eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/artifacts/8dael470_OnPointAuthoritySystemsDeploymentReadyImage.jpg',
+    heroImageAlt:
+      'OnPoint Authority Systems Command Center Alpha showcasing the 4-step Agentic Shift workflow: Audit, Score, Plan, and Deploy.',
+    heroImageCaption:
+      'OnPoint Command Center Alpha — the 4-step Agentic Shift workflow: Audit, Score, Plan, Deploy.',
+    excerpt:
+      'Organizations are treating AI agents like modular plug-ins on accelerated compute. They are not. When an autonomous workflow hits legacy friction, it burns expensive GPU cycles waiting on a 350ms gateway. We call this The Legacy Architecture Tax — and this is how to eliminate it.',
+    tailCta: {
+      label: 'Run an Enterprise Technical Debt Audit',
+      href: '/audit'
+    },
+    sections: [
+      {
+        id: 'introduction',
+        kicker: 'Introduction',
+        heading: 'The Accelerated Compute Illusion',
+        paragraphs: [
+          'The modern enterprise is currently caught in a multi-billion-dollar arms race. Driven by massive hardware breakthroughs, organizations are rapidly standing up GPU clusters, investing in fault-tolerant quantum-hybrid research, and spinning up autonomous "Agentic AI" workflows designed to handle complex business processes.',
+          'But there is a silent crisis brewing in the data center. Organizations are treating AI agents like modular software plug-ins — assuming that if you throw enough accelerated compute at a model, it will execute flawlessly.',
+          'It won\u2019t. An autonomous AI agent running on next-generation hardware is ultimately bounded by the legacy infrastructure it must interact with. When a sophisticated agentic workflow hits a wall of technical debt, it doesn\u2019t just slow down — it burns expensive, high-performance compute cycles waiting on legacy friction.',
+          'We call this The Legacy Architecture Tax.'
+        ],
+        subBlocks: [
+          {
+            kind: 'image',
+            src: 'https://customer-assets.emergentagent.com/job_eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/artifacts/8dael470_OnPointAuthoritySystemsDeploymentReadyImage.jpg',
+            alt: 'OnPoint Authority Systems Command Center Alpha showcasing the 4-step Agentic Shift workflow: Audit, Score, Plan, and Deploy.',
+            caption:
+              'OnPoint Command Center Alpha — operators stepping through Technical Debt Audit, Risk Scoring, Implementation Plan, and Deployment under Authority OS\u2122. System Ready: 96%.'
+          }
+        ]
+      },
+      {
+        id: 'anatomy-of-the-tax',
+        kicker: 'Section 02',
+        heading: 'The Anatomy of the Tax: Where Compute Goes to Die',
+        paragraphs: [
+          'When an enterprise AI agent fails to deliver on its ROI, the fault rarely lies within the model\u2019s weights. It lies within the underlying infrastructure plumbing. Consider three critical operational bottlenecks that turn advanced computing budgets into wasted capital:'
+        ],
+        subBlocks: [
+          {
+            kind: 'subsection',
+            heading: '1. The Gateway Latency Trap (The 350ms Bottleneck)',
+            body:
+              'An autonomous agent operates on tight execution loops, constantly making real-time vector calls and cross-referencing system states. If your primary API data gateways are burdened by legacy overhead — averaging latencies of 350ms or higher — the agent\u2019s context window stalls. Instead of executing fluidly, the agent spends valuable operational time waiting for basic database handshakes, driving up cloud costs without delivering business value.'
+          },
+          {
+            kind: 'subsection',
+            heading: '2. Cascading Broker Outages & Unsigned Mutations',
+            body:
+              'Autonomous systems require strict, deterministic guardrails to operate safely. When infrastructure relies on unmapped data pipelines or tolerates "unsigned mutations" (untracked state changes across microservices), the operational environment becomes unstable. A minor bottleneck in an isolated service can trigger a cascading broker outage. For a human operator, this is an annoying bug; for an autonomous agent, it is a catastrophic loss of system context that paralyzes the entire workflow.'
+          },
+          {
+            kind: 'subsection',
+            heading: '3. Heritage Wrappers & Cross-Region Joins',
+            body:
+              'Many enterprises attempt to connect modern AI frameworks to legacy systems using complex "heritage wrappers" or inefficient cross-region database joins. This fractured data layer destroys the speed advantages of accelerated computing. Your AI models might compute an execution strategy in milliseconds, but if the deployment layer takes minutes to route that action through five different geographic regions, the competitive advantage is completely wiped out.'
+          }
+        ]
+      },
+      {
+        id: 'agentic-readiness',
+        kicker: 'Section 03',
+        heading: 'The Solution: Establishing "Agentic Readiness"',
+        paragraphs: [
+          'To stop paying the architecture tax, enterprises must shift their perspective from reactive application monitoring to proactive structural modernization. Before deploying autonomous agentic workflows, organizations must enforce an explicit Agentic Readiness Protocol:'
+        ],
+        subBlocks: [
+          {
+            kind: 'bullets',
+            items: [
+              {
+                k: 'Continuous Vector Auditing',
+                v: 'Move away from superficial uptime metrics. Infrastructure teams must run deep-layer vector analysis to map every dependency, wrapper, and hidden bottleneck connecting core databases to the AI runtime environment.'
+              },
+              {
+                k: 'Architectural Scoring',
+                v: 'Establish clear, quantifiable baselines for system health. Organizations should aim for a verified 96% System Ready Score — ensuring that latency boundaries, agent registries, and state mutations are completely optimized before autonomous systems are given execution privileges.'
+              },
+              {
+                k: 'The Intentional Shift',
+                v: 'Restructure legacy pipelines into fluid, AI-native microservices. By replacing heritage wrappers with resilient, modern orchestration layers, enterprises create an infrastructure ecosystem where accelerated hardware can actually run at full capacity.'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'operational-workflow',
+        kicker: 'Section 04',
+        heading: 'The OnPoint Operational Workflow',
+        paragraphs: [],
+        subBlocks: [
+          {
+            kind: 'table',
+            heading: '',
+            body: '',
+            columns: ['Step', 'Protocol', 'Core Objective'],
+            rows: [
+              [
+                '1. Audit',
+                'Deep-Layer Vector Analysis',
+                'Instantly expose hidden technical debt, identifying high-risk architecture vulnerabilities across key data gateways.'
+              ],
+              [
+                '2. Score',
+                'Compute Efficiency Matrix',
+                'Quantify systemic health into actionable metrics, mapping critical risk indicators against optimal baseline targets.'
+              ],
+              [
+                '3. Plan',
+                'The Agentic Shift Blueprint',
+                'Auto-generate an un-siloed, friction-free implementation plan to safely restructure legacy dependencies.'
+              ],
+              [
+                '4. Deploy',
+                'Authority OS\u2122 Activation',
+                'Transition operations smoothly onto a resilient, modern ecosystem without interrupting active service lines.'
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        id: 'conclusion',
+        kicker: 'Conclusion',
+        heading: 'Command the Performance, Don\u2019t Manage the Debt',
+        paragraphs: [
+          'The future of enterprise efficiency belongs to organizations that can successfully transition to an autonomous operational model. But true innovation cannot be bought simply by purchasing more GPUs or signing larger cloud contracts.'
+        ],
+        subBlocks: [
+          {
+            kind: 'closer',
+            body:
+              'If you want to capitalize on the next wave of computing, you must first clear the path for it. Stop managing legacy complexity, wipe out your technical debt, and ensure your infrastructure is ready to command the future.'
+          }
+        ]
+      }
+    ]
+  },
+  {
     slug: 'tech-base-blueprint',
     title: 'Tech Base Blueprint: Eliminating the Single Point of Failure',
     subtitle:

@@ -13,6 +13,7 @@ const BlogIndexPage = () => {
   });
 
   const featured = BLOG_POSTS[0];
+  const previous = BLOG_POSTS.slice(1);
 
   return (
     <div
@@ -163,6 +164,59 @@ const BlogIndexPage = () => {
           </Link>
         </div>
       </section>
+
+      {/* Previous Briefings (if any) */}
+      {previous.length > 0 && (
+        <section className="relative z-10 pb-12 md:pb-16">
+          <div className="container-custom">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent" />
+              <span className="text-[10px] text-gray-500 uppercase tracking-[0.3em]">
+                Previous Briefings
+              </span>
+              <div className="h-px flex-1 bg-gradient-to-l from-white/10 to-transparent" />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4" data-testid="blog-previous-grid">
+              {previous.map((post) => (
+                <Link
+                  key={post.slug}
+                  to={`/blog/${post.slug}`}
+                  className="group block rounded-lg border border-white/10 hover:border-[#C5A059]/40 transition-colors bg-[#0F141A]/70 p-6 md:p-7"
+                  data-testid={`blog-previous-card-${post.slug}`}
+                >
+                  <div className="text-[10px] text-[#C5A059] uppercase tracking-[0.3em] mb-3">
+                    {post.eyebrow}
+                  </div>
+                  <h3
+                    className="text-lg md:text-xl font-bold text-white leading-[1.25] tracking-tight mb-3 group-hover:text-[#C5A059] transition-colors"
+                    style={{ fontFamily: 'Libre Baskerville, serif' }}
+                  >
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-400 text-[13.5px] leading-[1.75] mb-5 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between text-[11px] text-gray-500">
+                    <span className="inline-flex items-center gap-3">
+                      <span>{post.publishedAt}</span>
+                      <span className="text-gray-700">·</span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <Clock className="w-3 h-3" />
+                        {post.readingMinutes} min
+                      </span>
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 text-[#C5A059] group-hover:gap-2.5 transition-all">
+                      Read
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Coming Soon placeholder */}
       <section className="relative z-10 pb-20 md:pb-28">

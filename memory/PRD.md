@@ -24,6 +24,17 @@ A Confidential Information Memorandum (CIM) Document Portal for TessaAuthority.c
 
 ## What's Been Implemented
 
+### 2026-02-17 Session (Second Insights article — Hidden Tax on Agentic AI)
+- [x] **Article #2 published**: *"The Hidden Tax on Agentic AI: Why Wasted Compute Starts in Your Legacy Architecture"* at `/blog/hidden-tax-agentic-ai` — Thought Leadership / Infrastructure Strategy category, byline *OnPoint Leadership / AI Architecture Team*, 8-min read.
+  - 5 sections: Introduction (Accelerated Compute Illusion) · Anatomy of the Tax (3 h3 subsections: 350ms Gateway, Cascading Brokers, Heritage Wrappers) · Agentic Readiness (3-bullet protocol: Continuous Vector Auditing, Architectural Scoring 96%, Intentional Shift) · OnPoint Operational Workflow (4-step table: Audit → Score → Plan → Deploy) · Conclusion w/ italic closer block.
+  - **Hero image** embedded under intro: Command Center Alpha photo (`OnPointAuthoritySystemsDeploymentReadyImage.jpg`) with full alt text and italic caption.
+  - **Tail CTA** routes to `/audit` with label *"Run an Enterprise Technical Debt Audit"* — per-post `tailCta` override added to data schema.
+- [x] **Schema extension** (`/app/frontend/src/data/blogPosts.js`) — added `heroImage`, `heroImageAlt`, `heroImageCaption`, `tailCta`, and three new `subBlock` kinds: `image` (figure + caption), `subsection` (h3 + paragraph), `bullets` (k/v bordered list). Backward compatible with the Tech Base Blueprint post.
+- [x] **Insights index refactor** (`BlogIndexPage.js`) — newest post (`BLOG_POSTS[0]`) renders as the large Featured Briefing card; older posts render in a 2-col "Previous Briefings" grid below (Tech Base Blueprint is now in that grid). Empty grid hidden via `previous.length > 0` guard.
+- [x] **SEO** — per-article `og:image` now wired from `post.heroImage` through `useSEO`.
+- [x] Smoke-tested via Playwright: featured title = new article ✅, previous grid present ✅, article renders end-to-end with image (1.1MB asset loads) + workflow table + closer + CTA → `/audit` confirmed.
+
+
 ### 2026-02-14 Session (Lead-Gen Audit Funnel `/audit`)
 - [x] **Enterprise Technical Debt Audit (Framework v2.0)** as a gated lead-magnet at `/audit` — three-phase flow:
   - **Phase 1 (Identity Gate)**: Full Name, Title, Company, Work Email required before any worksheet content is revealed (strict gating per spec).

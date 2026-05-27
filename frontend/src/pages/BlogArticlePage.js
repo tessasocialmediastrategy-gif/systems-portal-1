@@ -11,6 +11,56 @@ const SubBlock = ({ block }) => {
     );
   }
 
+  if (block.kind === 'subsection') {
+    return (
+      <div className="mt-7 max-w-3xl">
+        <h3
+          className="text-lg md:text-xl font-bold text-white mb-3 tracking-tight"
+          style={{ fontFamily: 'Libre Baskerville, serif' }}
+        >
+          {block.heading}
+        </h3>
+        <p className="text-gray-300 text-[15px] leading-[1.9]">{block.body}</p>
+      </div>
+    );
+  }
+
+  if (block.kind === 'bullets') {
+    return (
+      <ul className="mt-6 space-y-3 max-w-3xl">
+        {block.items.map((item, i) => (
+          <li
+            key={i}
+            className="pl-5 border-l border-[#C5A059]/30 text-gray-300 text-[14.5px] leading-[1.8]"
+          >
+            <span className="text-white font-medium">{item.k}:</span>{' '}
+            <span className="text-gray-400">{item.v}</span>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  if (block.kind === 'image') {
+    return (
+      <figure className="mt-8 max-w-4xl">
+        <div className="rounded-lg overflow-hidden border border-white/10 bg-[#0F141A]">
+          <img
+            src={block.src}
+            alt={block.alt}
+            loading="lazy"
+            className="w-full h-auto block"
+          />
+        </div>
+        {block.caption && (
+          <figcaption className="mt-3 text-[11.5px] text-gray-500 leading-[1.7] italic">
+            {block.caption}
+          </figcaption>
+        )}
+      </figure>
+    );
+  }
+
   if (block.kind === 'closer') {
     return (
       <div
@@ -55,12 +105,14 @@ const SubBlock = ({ block }) => {
   if (block.kind === 'table') {
     return (
       <div className="mt-8 max-w-4xl">
-        <h3
-          className="text-lg md:text-xl font-bold text-white mb-3 tracking-tight"
-          style={{ fontFamily: 'Libre Baskerville, serif' }}
-        >
-          {block.heading}
-        </h3>
+        {block.heading && (
+          <h3
+            className="text-lg md:text-xl font-bold text-white mb-3 tracking-tight"
+            style={{ fontFamily: 'Libre Baskerville, serif' }}
+          >
+            {block.heading}
+          </h3>
+        )}
         {block.body && (
           <p className="text-gray-300 text-[15px] leading-[1.85] mb-5">{block.body}</p>
         )}
@@ -140,6 +192,7 @@ const BlogArticlePage = () => {
       ? `${post.title} | OnPoint Insights`
       : 'Insight not found | OnPoint Authority Systems',
     description: post?.excerpt,
+    ogImage: post?.heroImage,
     canonical: `https://onpointauthoritysystems.com/blog/${slug}`
   });
 
@@ -301,10 +354,10 @@ const BlogArticlePage = () => {
                 </section>
               ))}
 
-              {/* Tail CTA */}
+              {/* Tail CTA — per-post override or default */}
               <div className="mt-12 rounded-lg border border-[#C5A059]/30 bg-gradient-to-br from-[#C5A059]/[0.08] to-transparent p-8 md:p-10 max-w-3xl">
                 <div className="text-[10px] text-[#C5A059] uppercase tracking-[0.3em] mb-3">
-                  Engage the Research Desk
+                  Engage the Engineering Desk
                 </div>
                 <h3
                   className="text-xl md:text-2xl font-bold text-white mb-4 tracking-tight"
@@ -314,15 +367,15 @@ const BlogArticlePage = () => {
                 </h3>
                 <p className="text-gray-400 text-[14.5px] leading-relaxed mb-6">
                   OnPoint Authority Systems delivers private Architectural Reviews for Tier-1
-                  institutions. Receive a tailored assessment of your single-point-of-failure
-                  exposure and a phased remediation plan from our engineering desk.
+                  institutions. Receive a tailored assessment of your structural exposure and a
+                  phased remediation plan from our engineering desk.
                 </p>
                 <Link
-                  to="/authority-review"
+                  to={post.tailCta?.href || '/authority-review'}
                   className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#C5A059] to-[#D4AF6A] text-[#0E1217] text-sm font-semibold rounded hover:opacity-95 transition-opacity"
                   data-testid="blog-article-cta"
                 >
-                  Request a Strategic Authority Review
+                  {post.tailCta?.label || 'Request a Strategic Authority Review'}
                   <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
