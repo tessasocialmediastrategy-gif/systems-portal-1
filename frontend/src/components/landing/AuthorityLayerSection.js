@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { track } from '../../services/analytics';
 
-// NOTE: temporary image — swap to "AI Doesn't Fail Image.jpg" once uploaded.
+// "AI Doesn't Fail Image.jpg" — Authority Layer governance command center.
 const AUTHORITY_IMG =
-  'https://customer-assets.emergentagent.com/job_eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/artifacts/8dael470_OnPointAuthoritySystemsDeploymentReadyImage.jpg';
+  'https://customer-assets.emergentagent.com/job_eb56a9ad-5d2b-4e41-bfb5-9dcc69b55a37/artifacts/fsmbqnz6_AI%20Doesn%27t%20Fail%20Image.jpg';
 
 export const AuthorityLayerSection = () => (
   <section
