@@ -46,7 +46,7 @@ const SECTIONS = [
     ],
     list: [
       { k: 'Infrastructure Providers', v: 'Google Cloud Platform (compute, IAM, BigQuery) and MongoDB Atlas (encrypted data-at-rest storage).' },
-      { k: 'Transactional Email', v: 'Resend, used to deliver acknowledgement and notification emails from ops@onpointauthoritysystems.com.' },
+      { k: 'Direct Communications', v: 'All institutional correspondence is routed directly to ops@onpointauthoritysystems.com. No third-party email processor handles or stores your messages.' },
       { k: 'Legal & Compliance', v: 'Disclosure may occur where required by law, subpoena, or to protect the rights and safety of OnPoint or its institutional partners.' }
     ]
   },

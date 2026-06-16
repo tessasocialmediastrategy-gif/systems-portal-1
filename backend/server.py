@@ -19,8 +19,6 @@ import shutil
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-import email_service  # noqa: E402  must follow load_dotenv()
-
 # MongoDB connection
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
@@ -566,29 +564,6 @@ async def submit_nda_request(request: NDARequest):
     
     logger.info(f"New NDA request from {request.email} ({request.company})")
 
-    # Fire-and-forget acknowledgement + internal notification (never blocks response)
-    await email_service.send_email(
-        to=request.email,
-        subject="NDA Request Received — OnPoint Authority Systems",
-        html=email_service.render_nda_ack(request.name),
-    )
-    if email_service.RESEND_MONITORING_EMAIL:
-        await email_service.send_email(
-            to=email_service.RESEND_MONITORING_EMAIL,
-            subject=f"[NDA] New request from {request.company}",
-            html=email_service.render_nda_internal({
-                "Name": request.name,
-                "Email": request.email,
-                "Company": request.company,
-                "Title": request.title,
-                "Phone": request.phone,
-                "Buyer Type": request.buyer_type,
-                "Interest": request.interest,
-                "Timeline": request.timeline,
-            }),
-            reply_to=request.email,
-        )
-
     return {"message": "NDA request submitted successfully", "id": nda_req.id}
 
 # Get NDA Requests (Admin)
@@ -636,29 +611,6 @@ async def submit_authority_review(request: AuthorityReviewRequest):
 
     logger.info(f"New Authority Review request from {request.email} ({request.company})")
 
-    await email_service.send_email(
-        to=request.email,
-        subject="Priority Access Confirmed — OnPoint Authority Systems",
-        html=email_service.render_priority_access_ack(request.name, request.company),
-    )
-    if email_service.RESEND_MONITORING_EMAIL:
-        await email_service.send_email(
-            to=email_service.RESEND_MONITORING_EMAIL,
-            subject=f"[Priority Access] New submission from {request.company}",
-            html=email_service.render_priority_access_internal({
-                "Name": request.name,
-                "Title": getattr(request, "title", "") or "",
-                "Email": request.email,
-                "Company": request.company,
-                "Phone": getattr(request, "phone", "") or "",
-                "Institution Type": getattr(request, "institution_type", "") or "",
-                "Annual Revenue": getattr(request, "annual_revenue", "") or "",
-                "Tier Interest": getattr(request, "tier_interest", "") or "",
-                "Source": getattr(request, "source", "") or "",
-            }),
-            reply_to=request.email,
-        )
-
     return {"message": "Authority Review request submitted", "id": review.id}
 
 # Get Authority Reviews (Admin)
@@ -693,23 +645,6 @@ async def submit_contact(request: ContactRequest):
     await db.contacts.insert_one(contact.model_dump())
 
     logger.info(f"New contact submission from {request.email}")
-
-    await email_service.send_email(
-        to=request.email,
-        subject="We received your message — OnPoint Authority Systems",
-        html=email_service.render_contact_ack(getattr(request, "full_name", "") or getattr(request, "name", "")),
-    )
-    if email_service.RESEND_MONITORING_EMAIL:
-        await email_service.send_email(
-            to=email_service.RESEND_MONITORING_EMAIL,
-            subject=f"[Contact] New submission from {request.email}",
-            html=email_service.render_contact_internal({
-                "Name": getattr(request, "full_name", "") or getattr(request, "name", "") or "",
-                "Email": request.email,
-                "Message": getattr(request, "message", "") or "",
-            }),
-            reply_to=request.email,
-        )
 
     return {"message": "Message sent successfully", "id": contact.id}
 
@@ -949,40 +884,6 @@ async def submit_audit(request: AuditSubmitRequest):
         "New Audit submission from %s (%s) — tier=%s indicators=%s",
         request.work_email, request.company, score["tier_key"], score["indicator_count"],
     )
-
-    # User confirmation email
-    await email_service.send_email(
-        to=request.work_email,
-        subject=f"Your Technical Debt Audit Results — {score['tier_label']}",
-        html=email_service.render_audit_ack(
-            request.full_name, score["tier_key"], score["indicator_count"], CALENDLY_BOOKING_URL
-        ),
-    )
-
-    # Internal ops notification
-    if email_service.RESEND_MONITORING_EMAIL:
-        await email_service.send_email(
-            to=email_service.RESEND_MONITORING_EMAIL,
-            subject=f"[Audit] {score['tier_label']} — {request.company} ({request.work_email})",
-            html=email_service.render_audit_internal({
-                "Name": request.full_name,
-                "Title": request.title,
-                "Company": request.company,
-                "Work Email": request.work_email,
-                "Tier": score["tier_label"],
-                "Indicators": score["indicator_count"],
-                "S1 Gateway %": f"{request.s1_q1_gateway_percent:.0f}%",
-                "S1 API Latency": f"{request.s1_q2_api_latency_ms:.0f}ms",
-                "S1 Broker Outage": request.s1_q3_broker_outage,
-                "S2 Unsigned Mutations": request.s2_q1_unsigned_agent_mutations,
-                "S2 Audit Context": f"{request.s2_q2_audit_context_hours:.1f}h",
-                "S2 Agent Registry": request.s2_q3_agent_identity_registry,
-                "S3 Heritage Wrappers": f"{request.s3_q1_heritage_wrapper_percent:.0f}%",
-                "S3 Cross-Region Joins": request.s3_q2_cross_region_joins,
-                "Findings": "; ".join(f"{f['code']}={f['level']}" for f in score["findings"]) or "None",
-            }),
-            reply_to=request.work_email,
-        )
 
     return {
         "id": record["id"],
